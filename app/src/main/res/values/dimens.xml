@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_screen_best_seller_margin_top">8dp</dimen>
+    <dimen name="padding_filter_button">16dp</dimen>
+    <dimen name="qr_code_button_size">34dp</dimen>
+    <dimen name="search_view_height">34dp</dimen>
+    <dimen name="search_view_margin_end">8dp</dimen>
+    <dimen name="main_screen_group_horizontal_margin">16dp</dimen>
+    <dimen name="main_screen_hot_sales_margin_top">16dp</dimen>
+    <dimen name="main_screen_best_seller_list_margin_horizontal">8dp</dimen>
+    <dimen name="main_screen_bottom_menu_height">72dp</dimen>
+    <dimen name="bottom_menu_margin_horizontal">60dp</dimen>
+    <dimen name="bottom_menu_button_distance">8dp</dimen>
+    <dimen name="main_screen_search_tab_horizontal_margin">32dp</dimen>
+    <dimen name="main_screen_search_tab_top_margin">16dp</dimen>
+    <dimen name="main_screen_content_bottom_margin">8dp</dimen>
+    <dimen name="main_screen_top_menu_horizontal_margin">12dp</dimen>
+    <dimen name="main_screen_hot_sales_card_corner_radius">10dp</dimen>
+    <dimen name="main_screen_hot_sales_card_start_margin">18dp</dimen>
+</resources>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".feature_main.presentation.MainScreenFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_screen_content_bottom_margin"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/main_screen_top_menu_horizontal_margin">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_geo"
+                        app:tint="@color/light_orange" />
+
+                    <TextView
+                        android:id="@+id/tvLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/mavenpro_medium"
+                        android:gravity="center"
+                        android:text="@string/geolocation_example"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="15sp" />
+
+                    <ImageButton
+                        android:id="@+id/btnArrowDown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_arrow_down" />
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btnFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:background="@drawable/background_circle_ripple_gray"
+                    android:padding="@dimen/padding_filter_button"
+                    android:src="@drawable/ic_filter" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/main_screen_group_horizontal_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvSelectCategory"
+                    style="@style/Header2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/select_category" />
+
+                <Button
+                    android:id="@+id/btnViewAllCategory"
+                    style="@style/HelperTextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/view_all" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="24dp"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/main_screen_search_tab_horizontal_margin"
+                android:layout_marginTop="@dimen/main_screen_search_tab_top_margin"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/search_view_height"
+                    android:layout_marginEnd="@dimen/search_view_margin_end"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_rounded_searchview_white"
+                    android:theme="@style/AppSearchView"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent"
+                    app:queryHint="Search"
+                    app:searchIcon="@drawable/ic_search" />
+
+                <ImageButton
+                    android:id="@+id/btnQrCode"
+                    android:layout_width="@dimen/qr_code_button_size"
+                    android:layout_height="@dimen/qr_code_button_size"
+                    android:background="@drawable/background_circle_ripple_orange"
+                    android:src="@drawable/ic_qr_code" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/main_screen_group_horizontal_margin"
+                android:layout_marginTop="@dimen/main_screen_hot_sales_margin_top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvHotSales"
+                    style="@style/Header2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/hot_sales" />
+
+                <Button
+                    android:id="@+id/btnSeeMoreHotSales"
+                    style="@style/HelperTextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_more" />
+
+            </LinearLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/main_screen_group_horizontal_margin"
+                android:layout_marginTop="@dimen/main_screen_best_seller_margin_top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvBestSeller"
+                    style="@style/Header2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/best_seller" />
+
+                <Button
+                    android:id="@+id/btnSeeMoreBestSeller"
+                    style="@style/HelperTextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/see_more" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBestSeller"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/main_screen_best_seller_list_margin_horizontal"
+                android:layout_marginTop="@dimen/main_screen_best_seller_margin_top"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_screen_bottom_menu_height"
+        android:layout_gravity="bottom"
+        android:background="@drawable/background_rounded_menu_dark_blue"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvExplorer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/bottom_menu_margin_horizontal"
+            android:layout_marginEnd="@dimen/bottom_menu_button_distance"
+            android:layout_weight="1"
+            android:fontFamily="@font/mavenpro_bold"
+            android:gravity="center"
+            android:text="@string/explorer_text_view"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+        <ImageButton
+            android:id="@+id/btnShoppingBag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/bottom_menu_button_distance"
+            android:layout_weight="1"
+            android:background="@drawable/background_circle_ripple_dark_blue"
+            android:src="@drawable/ic_shopping_bag"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/btnFavorite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/bottom_menu_button_distance"
+            android:layout_weight="1"
+            android:background="@drawable/background_circle_ripple_dark_blue"
+            android:src="@drawable/ic_bordered_favorite"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/btnAccount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/bottom_menu_button_distance"
+            android:layout_marginEnd="@dimen/bottom_menu_margin_horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/background_circle_ripple_dark_blue"
+            android:src="@drawable/ic_account"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

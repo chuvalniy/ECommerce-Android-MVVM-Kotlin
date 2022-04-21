@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="16dp"
+    app:cardCornerRadius="10dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/dark_gray">
+
+        <ImageView
+            android:id="@+id/ivHotSales"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp">
+
+            <TextView
+                android:id="@+id/tvNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New"
+                android:gravity="center"
+                android:fontFamily="@font/sfpro_bold"
+                android:textColor="@color/white"
+                android:layout_marginBottom="16dp"
+                android:visibility="invisible"
+                android:background="@drawable/background_circle_orange"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tvTitleHomeStore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:fontFamily="@font/sfpro_bold"
+                android:textColor="@color/white"
+                android:layout_marginBottom="4dp"
+                tools:text="Iphone 12" />
+
+            <TextView
+                android:id="@+id/tvSubtitleHomeScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:fontFamily="@font/sfpro_regular"
+                android:textColor="@color/white"
+                android:layout_marginBottom="24dp"
+                tools:text="Súper. Mega. Rápido." />
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:fontFamily="@font/sfpro_bold"-->
+<!--                android:textSize="11sp"-->
+<!--                android:foreground=""-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:paddingHorizontal="32dp"-->
+<!--                android:layout_marginBottom="24dp"-->
+<!--                android:text="Buy now!"/>-->
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:paddingHorizontal="32dp"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sfpro_bold"
+                android:textSize="11sp"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="5dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/buy_now"/>
+
+        </LinearLayout>
+
+
+
+
+
+    </FrameLayout>
+
+
+
+</androidx.cardview.widget.CardView>

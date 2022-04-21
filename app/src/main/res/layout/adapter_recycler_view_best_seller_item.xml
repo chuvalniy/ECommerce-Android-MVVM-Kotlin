@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="0dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/main_screen_hot_sales_card_corner_radius"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginBottom="12dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivBestSeller"
+                android:layout_width="match_parent"
+                android:layout_height="180dp" />
+
+            <FrameLayout
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="end"
+                android:elevation="4dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/background_circle_favorite">
+
+                <ToggleButton
+                    android:id="@+id/btnAddToFavorites"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:textOn=""
+                    android:textOff=""
+                    android:gravity="center"
+                    android:background="@drawable/selector_favorite_button"/>
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_screen_hot_sales_card_start_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDiscountPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/mavenpro_bold"
+                android:textColor="@color/dark_blue"
+                tools:text="$1,047" />
+
+            <TextView
+                android:id="@+id/tvDefaultPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:fontFamily="@font/mavenpro_medium"
+                android:textColor="@color/dark_gray"
+                android:background="@drawable/text_view_strike_through_line"
+                tools:text="$1,500" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_screen_hot_sales_card_start_margin"
+            android:layout_marginTop="6dp"
+            android:textSize="10sp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/dark_blue"
+            android:fontFamily="@font/mavenpro_regular"
+            tools:text="Samsung Galaxy s20 Ultra" />
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
