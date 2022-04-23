@@ -36,14 +36,14 @@
 
                 <ToggleButton
                     android:id="@+id/btnAddToFavorites"
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textOn=""
                     android:textOff=""
-                    android:gravity="center"
-                    android:background="@drawable/selector_favorite_button"/>
+                    android:background="@drawable/selector_toggle_button_custom"/>
             </FrameLayout>
+
 
         </FrameLayout>
 

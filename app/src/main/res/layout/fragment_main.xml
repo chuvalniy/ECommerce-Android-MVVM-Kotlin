@@ -184,6 +184,7 @@
 
             </LinearLayout>
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvBestSeller"
                 android:layout_width="match_parent"
@@ -209,13 +210,13 @@
 
         <TextView
             android:id="@+id/tvExplorer"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/bottom_menu_margin_horizontal"
-            android:layout_marginEnd="@dimen/bottom_menu_button_distance"
-            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
             android:fontFamily="@font/mavenpro_bold"
-            android:gravity="center"
+            android:maxLines="1"
+            android:paddingHorizontal="16dp"
             android:text="@string/explorer_text_view"
             android:textColor="@color/white"
             android:textSize="15sp" />
@@ -223,32 +224,33 @@
 
         <ImageButton
             android:id="@+id/btnShoppingBag"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/bottom_menu_button_distance"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
             android:background="@drawable/background_circle_ripple_dark_blue"
+            android:padding="16dp"
             android:src="@drawable/ic_shopping_bag"
             app:tint="@color/white" />
 
         <ImageButton
             android:id="@+id/btnFavorite"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/bottom_menu_button_distance"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
             android:background="@drawable/background_circle_ripple_dark_blue"
+
+            android:padding="16dp"
             android:src="@drawable/ic_bordered_favorite"
             app:tint="@color/white" />
 
         <ImageButton
             android:id="@+id/btnAccount"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/bottom_menu_button_distance"
-            android:layout_marginEnd="@dimen/bottom_menu_margin_horizontal"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/background_circle_ripple_dark_blue"
+            android:padding="16dp"
             android:src="@drawable/ic_account"
             app:tint="@color/white" />
     </LinearLayout>

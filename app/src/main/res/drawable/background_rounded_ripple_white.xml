@@ -3,9 +3,10 @@
     android:color="?colorControlHighlight"> <!-- default ripple color -->
 
     <item>
-        <shape android:shape="oval"
+        <shape android:shape="rectangle"
             android:color="?colorControlHighlight">
-            <solid android:color="@color/light_orange" />
+            <solid android:color="@color/white" />
+            <corners android:radius="5sp"/>
         </shape>
     </item>
 </ripple>

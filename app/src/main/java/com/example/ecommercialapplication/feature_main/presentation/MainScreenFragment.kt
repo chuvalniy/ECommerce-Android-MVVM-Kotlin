@@ -13,6 +13,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.ecommercialapplication.R
 import com.example.ecommercialapplication.core.BaseFragment
 import com.example.ecommercialapplication.databinding.FragmentMainBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
@@ -30,7 +31,6 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
 
         adapter = MainScreenAdapter()
         viewPagerAdapter = HomeStoreViewPagerAdapter()
-
         val filterBottomDialogFragment = FilterBottomDialogFragment()
 
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
@@ -52,12 +52,18 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
 
 
         binding.btnFilter.setOnClickListener {
-            filterBottomDialogFragment.show(parentFragmentManager, "FilterBottomSheetDialog")
+            showBottomDialogFragment(filterBottomDialogFragment)
         }
         binding.viewPager.adapter = viewPagerAdapter
         binding.rvBestSeller.adapter = adapter
     }
 
+    private fun showBottomDialogFragment(bottomSheetDialogFragment: BottomSheetDialogFragment) {
+        if (bottomSheetDialogFragment.isAdded) {
+            return
+        }
+        bottomSheetDialogFragment.show(parentFragmentManager, "FilterBottomSheetDialog")
+    }
 
     override fun initBinding(
         inflater: LayoutInflater,

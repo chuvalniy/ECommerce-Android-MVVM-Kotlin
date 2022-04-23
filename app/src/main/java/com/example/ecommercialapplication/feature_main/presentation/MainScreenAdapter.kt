@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.ecommercialapplication.core.utils.ImageLoader
 import com.example.ecommercialapplication.databinding.AdapterRecyclerViewBestSellerItemBinding
 import com.example.ecommercialapplication.feature_main.domain.model.BestSeller
 
@@ -21,12 +22,8 @@ class MainScreenAdapter :
                 tvDefaultPrice.text = "$${bestSeller.price_without_discount}"
                 tvDiscountPrice.text = "$${bestSeller.discount_price}"
                 tvTitle.text = bestSeller.title
-                btnAddToFavorites.isChecked = bestSeller.is_favorites
             }
-            Glide.with(binding.ivBestSeller.context)
-                .asBitmap()
-                .load(bestSeller.picture)
-                .into(binding.ivBestSeller)
+            ImageLoader.loadImage(bestSeller.picture, binding.ivBestSeller)
         }
     }
 

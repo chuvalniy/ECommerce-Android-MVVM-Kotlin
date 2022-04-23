@@ -10,6 +10,10 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/background_ripple_orange_circle.xml" value="0.166" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/background_rounded_bottom_dialog.xml" value="0.166" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/background_rounded_dark_blue.xml" value="0.166" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/background_rounded_menu_dark_blue.xml" value="0.228" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/background_rounded_ripple_dark_blue.xml" value="0.1" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/background_rounded_ripple_orange.xml" value="0.228" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/background_rounded_ripple_white.xml" value="0.1465" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/background_searchview.xml" value="0.166" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/background_spinner.xml" value="0.166" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/background_tab_selected.xml" value="0.166" />
@@ -37,6 +41,8 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/rounded_orange_background.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/rounded_qr_code_button.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/searchview_background.xml" value="0.164" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/selector_check_box_custom.xml" value="0.248" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/selector_checkbox_custom.xml" value="0.1465" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/selector_favorite_button.xml" value="0.166" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/selector_tab_background.xml" value="0.166" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/spinner_background.xml" value="0.1545" />
@@ -44,15 +50,18 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/strike_through_line.xml" value="0.2255" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/tab_background_selector.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/tab_selected_background.xml" value="0.164" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/test1.xml" value="0.1465" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/test2.xml" value="0.1465" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/text_view_strike_through_line.xml" value="0.166" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/white_circle.xml" value="0.166" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/activity_main.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/adapter_main_best_seller_item.xml" value="0.536" />
-        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/adapter_recycler_view_best_seller_item.xml" value="0.24320652173913043" />
-        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/adapter_view_pager_home_store_item.xml" value="0.264" />
-        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/fragment_filter_bottom_dialog.xml" value="0.2" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/adapter_recycler_view_best_seller_item.xml" value="0.36816720257234725" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/adapter_view_pager_home_store_item.xml" value="0.25" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/fragment_filter_bottom_dialog.xml" value="0.2337962962962963" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/fragment_home_store.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/fragment_main.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/recycler_view_shimmer_effect.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/tab_title.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/view_pager_adapter_home_screen_item.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/view_pager_adapter_home_store_item.xml" value="0.4" />

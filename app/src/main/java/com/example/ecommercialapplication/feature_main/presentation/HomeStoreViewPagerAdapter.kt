@@ -2,11 +2,12 @@ package com.example.ecommercialapplication.feature_main.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.example.ecommercialapplication.core.utils.ImageLoader
 import com.example.ecommercialapplication.databinding.AdapterViewPagerHomeStoreItemBinding
 import com.example.ecommercialapplication.feature_main.domain.model.HomeStore
 
@@ -26,10 +27,12 @@ class HomeStoreViewPagerAdapter :
             homeStore.is_new?.let {
                 binding.tvNew.isVisible = true
             }
-            Glide.with(binding.ivHotSales.context)
-                .asBitmap()
-                .load(homeStore.picture)
-                .into(binding.ivHotSales)
+            if (homeStore.is_buy) {
+                binding.btnBuyNow.isVisible = true
+            } else {
+                binding.btnBuyNow.isInvisible = true
+            }
+            ImageLoader.loadImage(homeStore.picture, binding.ivHotSales)
         }
     }
 

@@ -10,12 +10,12 @@
         android:layout_marginTop="24dp">
 
         <ImageButton
-            android:id="@+id/btnCloseFilter"
+            android:id="@+id/btnFilterCancelOptions"
             android:layout_width="37dp"
             android:layout_height="37dp"
-            android:layout_marginStart="44dp"
             android:layout_gravity="start"
-            android:background="@drawable/background_rounded_dark_blue"
+            android:layout_marginStart="44dp"
+            android:background="@drawable/background_rounded_ripple_dark_blue"
             android:src="@drawable/ic_close" />
 
         <TextView
@@ -25,17 +25,32 @@
             android:layout_gravity="center"
             android:fontFamily="@font/mavenpro_medium"
             android:gravity="center"
-            android:text="Filter options"
+            android:text="@string/filter_options"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/btnFilterDismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/background_rounded_ripple_orange"
+            android:fontFamily="@font/mavenpro_medium"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:text="@string/filter_done"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
 
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="44dp"
         android:orientation="vertical">
@@ -46,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/mavenpro_medium"
-            android:text="Brand"
+            android:text="@string/filter_brand"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 
@@ -71,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/mavenpro_medium"
-            android:text="Price"
+            android:text="@string/filter_price"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 
@@ -81,7 +96,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-
             android:hint="$300 - $500">
 
             <AutoCompleteTextView
@@ -97,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/mavenpro_medium"
-            android:text="Size"
+            android:text="@string/filter_size"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 
@@ -116,6 +130,5 @@
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>

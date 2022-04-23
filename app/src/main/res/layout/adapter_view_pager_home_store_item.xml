@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginHorizontal="16dp"
     app:cardCornerRadius="10dp">
 
@@ -21,78 +21,63 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="24dp">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvNew"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New"
-                android:gravity="center"
-                android:fontFamily="@font/sfpro_bold"
-                android:textColor="@color/white"
                 android:layout_marginBottom="16dp"
-                android:visibility="invisible"
                 android:background="@drawable/background_circle_orange"
-                android:textSize="10sp" />
+                android:fontFamily="@font/sfpro_bold"
+                android:gravity="center"
+                android:text="New"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/tvTitleHomeStore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25sp"
+                android:layout_marginBottom="4dp"
                 android:fontFamily="@font/sfpro_bold"
                 android:textColor="@color/white"
-                android:layout_marginBottom="4dp"
+                android:textSize="25sp"
                 tools:text="Iphone 12" />
 
             <TextView
                 android:id="@+id/tvSubtitleHomeScreen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="11sp"
+                android:layout_marginBottom="24dp"
                 android:fontFamily="@font/sfpro_regular"
                 android:textColor="@color/white"
-                android:layout_marginBottom="24dp"
+                android:textSize="11sp"
                 tools:text="Súper. Mega. Rápido." />
 
-<!--            <Button-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:textAllCaps="false"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:fontFamily="@font/sfpro_bold"-->
-<!--                android:textSize="11sp"-->
-<!--                android:foreground=""-->
-<!--                android:backgroundTint="@color/white"-->
-<!--                android:paddingHorizontal="32dp"-->
-<!--                android:layout_marginBottom="24dp"-->
-<!--                android:text="Buy now!"/>-->
-
-
-            <com.google.android.material.button.MaterialButton
+            <TextView
+                android:id="@+id/btnBuyNow"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:paddingHorizontal="32dp"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:fontFamily="@font/sfpro_bold"
-                android:textSize="11sp"
-                android:backgroundTint="@color/white"
-                app:cornerRadius="5dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
-                android:text="@string/buy_now"/>
+                android:background="@drawable/background_rounded_ripple_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/sfpro_bold"
+                android:gravity="center"
+                android:paddingHorizontal="27dp"
+                android:paddingVertical="5dp"
+                android:text="@string/buy_now"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
 
         </LinearLayout>
 
 
-
-
-
     </FrameLayout>
-
 
 
 </androidx.cardview.widget.CardView>
