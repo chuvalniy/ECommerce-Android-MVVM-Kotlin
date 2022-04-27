@@ -1,4 +1,4 @@
-package com.example.ecommercialapplication.feature_main.presentation
+package com.example.ecommercialapplication.feature_main.presentation.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -1,11 +1,9 @@
 <resources>
     <string name="app_name">ECommercialApplication</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="select_category">Select Category</string>
     <string name="hot_sales">Hot Sales</string>
     <string name="best_seller">Best Seller</string>
-    <string name="geolocation_example">Zihuatanejo, Gro</string>
     <string name="explorer_text_view">\u2022 Explorer</string>
     <string name="view_all">view all</string>
     <string name="see_more">see more</string>
@@ -15,4 +13,6 @@
     <string name="filter_brand">Brand</string>
     <string name="filter_price">Price</string>
     <string name="filter_size">Size</string>
+    <string name="search_view_hint">Search</string>
+    <string name="hot_sales_text_view_new">New</string>
 </resources>

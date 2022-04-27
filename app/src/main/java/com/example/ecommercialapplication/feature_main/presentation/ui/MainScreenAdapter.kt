@@ -1,11 +1,10 @@
-package com.example.ecommercialapplication.feature_main.presentation
+package com.example.ecommercialapplication.feature_main.presentation.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.ecommercialapplication.core.utils.ImageLoader
 import com.example.ecommercialapplication.databinding.AdapterRecyclerViewBestSellerItemBinding
 import com.example.ecommercialapplication.feature_main.domain.model.BestSeller

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="16dp"
-    app:cardCornerRadius="10dp">
+    android:layout_marginHorizontal="@dimen/main_screen_hot_sales_margin_horizontal"
+    app:cardCornerRadius="@dimen/main_screen_hot_sales_card_corner_radius">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -21,63 +21,53 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/main_screen_hot_sales_content_margin_start"
+            android:layout_marginTop="@dimen/main_screen_hot_sales_content_margin_top"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvNew"
+                style="@style/HotSalesNew"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="@dimen/main_screen_hot_sales_text_view_new_margin_bottom"
                 android:background="@drawable/background_circle_orange"
-                android:fontFamily="@font/sfpro_bold"
                 android:gravity="center"
-                android:text="New"
-                android:textColor="@color/white"
-                android:textSize="10sp"
+                android:text="@string/hot_sales_text_view_new"
                 android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/tvTitleHomeStore"
+                style="@style/HotSalesTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:fontFamily="@font/sfpro_bold"
-                android:textColor="@color/white"
-                android:textSize="25sp"
+                android:layout_marginBottom="@dimen/main_screen_hot_sales_title_margin_bottom"
                 tools:text="Iphone 12" />
 
             <TextView
                 android:id="@+id/tvSubtitleHomeScreen"
+                style="@style/HotSalesSubtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="@font/sfpro_regular"
-                android:textColor="@color/white"
-                android:textSize="11sp"
+                android:layout_marginBottom="@dimen/main_screen_hot_sales_subtitle_margin_bottom"
                 tools:text="Súper. Mega. Rápido." />
 
             <TextView
                 android:id="@+id/btnBuyNow"
+                style="@style/HotSalesButtonText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="@dimen/main_screen_hot_sales_button_buy_bottom_margin"
                 android:background="@drawable/background_rounded_ripple_white"
                 android:clickable="true"
                 android:focusable="true"
-                android:fontFamily="@font/sfpro_bold"
                 android:gravity="center"
-                android:paddingHorizontal="27dp"
-                android:paddingVertical="5dp"
-                android:text="@string/buy_now"
-                android:textColor="@color/black"
-                android:textSize="11sp" />
+                android:paddingHorizontal="@dimen/main_screen_hot_sales_button_buy_horizontal_size"
+                android:paddingVertical="@dimen/main_screen_hot_sales_button_buy_vertical_size"
+                android:text="@string/buy_now" />
 
         </LinearLayout>
 
-
     </FrameLayout>
-
 
 </androidx.cardview.widget.CardView>

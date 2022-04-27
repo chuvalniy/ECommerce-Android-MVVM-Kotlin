@@ -1,133 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:background="@color/white">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp">
+        android:layout_marginTop="@dimen/filter_bottom_dialog_margin_top">
 
         <ImageButton
             android:id="@+id/btnFilterCancelOptions"
-            android:layout_width="37dp"
-            android:layout_height="37dp"
+            android:layout_width="@dimen/filter_bottom_dialog_cancel_options_size"
+            android:layout_height="@dimen/filter_bottom_dialog_cancel_options_size"
             android:layout_gravity="start"
-            android:layout_marginStart="44dp"
+            android:layout_marginStart="@dimen/filter_bottom_dialog_cancel_button_margin_start"
             android:background="@drawable/background_rounded_ripple_dark_blue"
-            android:src="@drawable/ic_close" />
+            android:src="@drawable/ic_close"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/tvFilterOptions"
+            style="@style/FilterBottomDialogTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/mavenpro_medium"
             android:gravity="center"
-            android:text="@string/filter_options"
-            android:textColor="@color/dark_blue"
-            android:textSize="18sp" />
+            android:text="@string/filter_options" />
 
         <TextView
             android:id="@+id/btnFilterDismiss"
+            style="@style/FilterBottomDialogDismissButton"
             android:layout_width="wrap_content"
-            android:layout_height="37dp"
+            android:layout_height="@dimen/filter_bottom_dialog_dismiss_button_height"
             android:layout_gravity="end"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="@dimen/filter_bottom_dialog_dismiss_button_margin_end"
             android:background="@drawable/background_rounded_ripple_orange"
-            android:fontFamily="@font/mavenpro_medium"
             android:gravity="center"
-            android:paddingHorizontal="20dp"
-            android:text="@string/filter_done"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
+            android:paddingHorizontal="@dimen/filter_bottom_dialog_dismiss_button_horizontal_size"
+            android:text="@string/filter_done" />
 
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginStart="@dimen/filter_bottom_dialog_options_margin_start"
+        android:layout_marginTop="@dimen/filter_bottom_dialog_options_margin_top"
+        android:layout_marginEnd="@dimen/filter_bottom_dialog_options_margin_end"
+        android:layout_marginBottom="@dimen/filter_bottom_dialog_options_margin_bottom"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvBrandFilter"
+            style="@style/FilterBottomDialogOption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/mavenpro_medium"
-            android:text="@string/filter_brand"
-            android:textColor="@color/dark_blue"
-            android:textSize="18sp" />
+            android:layout_marginBottom="@dimen/filter_bottom_dialog_single_option_margin_bottom"
+            android:text="@string/filter_brand" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/menuBrand"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="Samsung">
+            android:layout_marginBottom="@dimen/filter_bottom_dialog_spinner_layout_bottom_margin"
+            android:background="@drawable/background_rounded_box_gray">
 
-            <AutoCompleteTextView
+            <Spinner
+                android:id="@+id/spinnerBrand"
                 android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:inputType="none" />
+                android:layout_height="@dimen/filter_bottom_dialog_spinner_height"
+                android:layout_marginStart="@dimen/filter_bottom_dialog_text_start_margin" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tvPriceFilter"
+            style="@style/FilterBottomDialogOption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/mavenpro_medium"
-            android:text="@string/filter_price"
-            android:textColor="@color/dark_blue"
-            android:textSize="18sp" />
+            android:layout_marginBottom="@dimen/filter_bottom_dialog_single_option_margin_bottom"
+            android:text="@string/filter_price" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/menuPrice"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="$300 - $500">
+            android:layout_marginBottom="@dimen/filter_bottom_dialog_spinner_layout_bottom_margin"
+            android:background="@drawable/background_rounded_box_gray">
 
-            <AutoCompleteTextView
+            <Spinner
+                android:id="@+id/spinnerPrice"
                 android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:inputType="none" />
+                android:layout_height="@dimen/filter_bottom_dialog_spinner_height"
+                android:layout_marginStart="@dimen/filter_bottom_dialog_text_start_margin" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tvSizeFilter"
+            style="@style/FilterBottomDialogOption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/mavenpro_medium"
-            android:text="@string/filter_size"
-            android:textColor="@color/dark_blue"
-            android:textSize="18sp" />
+            android:layout_marginBottom="@dimen/filter_bottom_dialog_single_option_margin_bottom"
+            android:text="@string/filter_size" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/menuSize"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="4.5 to 5.5 inches">
+            android:background="@drawable/background_rounded_box_gray">
 
-            <AutoCompleteTextView
+            <Spinner
+                android:id="@+id/spinnerSize"
                 android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:inputType="none" />
+                android:layout_height="@dimen/filter_bottom_dialog_spinner_height"
+                android:layout_marginStart="@dimen/filter_bottom_dialog_text_start_margin" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
 
     </LinearLayout>
 

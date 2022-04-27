@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="0dp"
-    android:orientation="vertical"
-    app:cardCornerRadius="@dimen/main_screen_hot_sales_card_corner_radius"
-    android:layout_marginHorizontal="8dp"
-    android:layout_marginBottom="12dp"
-    app:cardElevation="0dp">
+    android:layout_marginHorizontal="@dimen/main_screen_best_seller_card_horizontal_margin"
+    android:layout_marginBottom="@dimen/main_screen_best_seller_card_bottom_margin"
+    android:elevation="@dimen/main_screen_best_seller_card_elevation"
+    app:cardCornerRadius="@dimen/main_screen_best_seller_card_corner_radius"
+    app:cardElevation="@dimen/main_screen_best_seller_card_elevation">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,27 +22,27 @@
             <ImageView
                 android:id="@+id/ivBestSeller"
                 android:layout_width="match_parent"
-                android:layout_height="180dp" />
+                android:layout_height="@dimen/main_screen_best_seller_image_view_height" />
 
             <FrameLayout
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="@dimen/main_screen_best_seller_favorite_background_size"
+                android:layout_height="@dimen/main_screen_best_seller_favorite_background_size"
                 android:layout_gravity="end"
-                android:elevation="4dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/background_circle_favorite">
+                android:layout_marginTop="@dimen/main_screen_best_seller_favorite_top_margin"
+                android:layout_marginEnd="@dimen/main_screen_best_seller_favorite_margin_end"
+                android:background="@drawable/background_circle_favorite"
+                android:elevation="@dimen/main_screen_best_seller_favorite_elevation">
 
                 <ToggleButton
                     android:id="@+id/btnAddToFavorites"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textOn=""
+                    android:background="@drawable/selector_toggle_button_custom"
                     android:textOff=""
-                    android:background="@drawable/selector_toggle_button_custom"/>
-            </FrameLayout>
+                    android:textOn="" />
 
+            </FrameLayout>
 
         </FrameLayout>
 
@@ -55,21 +54,17 @@
 
             <TextView
                 android:id="@+id/tvDiscountPrice"
+                style="@style/BestSellerDiscountPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="@font/mavenpro_bold"
-                android:textColor="@color/dark_blue"
+                android:layout_marginEnd="@dimen/main_screen_best_seller_text_view_discount_margin_end"
                 tools:text="$1,047" />
 
             <TextView
                 android:id="@+id/tvDefaultPrice"
+                style="@style/BestSellerDefaultPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:fontFamily="@font/mavenpro_medium"
-                android:textColor="@color/dark_gray"
                 android:background="@drawable/text_view_strike_through_line"
                 tools:text="$1,500" />
 
@@ -77,16 +72,13 @@
 
         <TextView
             android:id="@+id/tvTitle"
+            style="@style/BestSellerTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/main_screen_hot_sales_card_start_margin"
-            android:layout_marginTop="6dp"
-            android:textSize="10sp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/dark_blue"
-            android:fontFamily="@font/mavenpro_regular"
+            android:layout_marginTop="@dimen/main_screen_best_seller_text_view_title_margin_top"
+            android:layout_marginBottom="@dimen/main_screen_best_seller_text_view_title_margin_bottom"
             tools:text="Samsung Galaxy s20 Ultra" />
     </LinearLayout>
-
 
 </androidx.cardview.widget.CardView>
