@@ -61,4 +61,5 @@
     <dimen name="filter_bottom_dialog_spinner_height">37dp</dimen>
     <dimen name="main_screen_location_icon_margin_end">8dp</dimen>
     <dimen name="filter_bottom_dialog_text_start_margin">4dp</dimen>
+    <dimen name="main_screen_top_menu_top_margin">4dp</dimen>
 </resources>

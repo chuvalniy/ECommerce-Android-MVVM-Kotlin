@@ -1,4 +1,4 @@
-package com.example.ecommercialapplication
+package com.example.ecommercialapplication.core
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

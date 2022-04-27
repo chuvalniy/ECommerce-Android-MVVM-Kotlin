@@ -2,7 +2,7 @@ package com.example.ecommercialapplication.feature_main.presentation.utils
 
 import com.example.ecommercialapplication.R
 
-object MainScreenLists {
+object ExampleData {
     
     val categories = mutableMapOf(
         "Phones" to R.drawable.ic_phone,

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".feature_main.presentation.ui.MainScreenFragment">
+    tools:context=".feature_main.presentation.main_screen.MainScreenFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -23,6 +23,7 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/main_screen_top_menu_top_margin"
                 android:layout_marginHorizontal="@dimen/main_screen_top_menu_horizontal_margin">
 
                 <LinearLayout

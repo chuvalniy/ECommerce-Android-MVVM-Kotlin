@@ -7,10 +7,8 @@ import com.example.ecommercialapplication.R
 object ImageLoader{
 
     fun loadImage(url: String, container: ImageView) {
-
         Glide.with(container.context)
             .asBitmap()
-            .placeholder(R.drawable.ic_placeholder)
             .load(url)
             .into(container)
     }

@@ -1,17 +1,15 @@
-package com.example.ecommercialapplication.feature_main.presentation.ui
+package com.example.ecommercialapplication.feature_main.presentation.filter_bottom_dialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import androidx.appcompat.R
 import com.example.ecommercialapplication.databinding.FragmentFilterBottomDialogBinding
-import com.example.ecommercialapplication.feature_main.presentation.utils.MainScreenLists
-import com.example.ecommercialapplication.feature_main.presentation.utils.MainScreenLists.brandFilter
-import com.example.ecommercialapplication.feature_main.presentation.utils.MainScreenLists.priceFilter
-import com.example.ecommercialapplication.feature_main.presentation.utils.MainScreenLists.sizeFilter
+import com.example.ecommercialapplication.feature_main.presentation.utils.ExampleData.brandFilter
+import com.example.ecommercialapplication.feature_main.presentation.utils.ExampleData.priceFilter
+import com.example.ecommercialapplication.feature_main.presentation.utils.ExampleData.sizeFilter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class FilterBottomDialogFragment : BottomSheetDialogFragment() {

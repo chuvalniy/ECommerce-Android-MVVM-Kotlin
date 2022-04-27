@@ -2,13 +2,13 @@ package com.example.ecommercialapplication.feature_main.data.mapper
 
 import com.example.ecommercialapplication.feature_main.data.remote.dto.BestSellerDto
 import com.example.ecommercialapplication.feature_main.data.remote.dto.HomeStoreDto
-import com.example.ecommercialapplication.feature_main.data.remote.dto.ShopItemDto
+import com.example.ecommercialapplication.feature_main.data.remote.dto.MainScreenDto
 import com.example.ecommercialapplication.feature_main.domain.model.BestSeller
 import com.example.ecommercialapplication.feature_main.domain.model.HomeStore
-import com.example.ecommercialapplication.feature_main.domain.model.ShopItem
+import com.example.ecommercialapplication.feature_main.domain.model.MainScreenDomain
 
-fun ShopItemDto.toShopItem(): ShopItem {
-    return ShopItem(
+fun MainScreenDto.toMainScreenDomain(): MainScreenDomain {
+    return MainScreenDomain(
         best_seller = best_seller.map { it.toBestSeller() },
         home_store = home_store.map { it.toHomeStore() }
     )
