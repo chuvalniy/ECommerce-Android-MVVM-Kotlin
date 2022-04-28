@@ -1,4 +1,4 @@
-package com.example.ecommercialapplication.feature_main.presentation.main_screen
+package com.example.ecommercialapplication.feature_main.presentation.main_screen.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

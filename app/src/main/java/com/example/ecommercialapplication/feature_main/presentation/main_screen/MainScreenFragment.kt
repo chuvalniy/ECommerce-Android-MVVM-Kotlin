@@ -15,6 +15,8 @@ import com.example.ecommercialapplication.R
 import com.example.ecommercialapplication.core.BaseFragment
 import com.example.ecommercialapplication.databinding.FragmentMainBinding
 import com.example.ecommercialapplication.feature_main.presentation.filter_bottom_dialog.FilterBottomDialogFragment
+import com.example.ecommercialapplication.feature_main.presentation.main_screen.adapters.MainScreenRecyclerViewAdapter
+import com.example.ecommercialapplication.feature_main.presentation.main_screen.adapters.MainScreenViewPagerAdapter
 import com.example.ecommercialapplication.feature_main.presentation.utils.ExampleData.categories
 import com.example.ecommercialapplication.feature_main.presentation.utils.ExampleData.locations
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
