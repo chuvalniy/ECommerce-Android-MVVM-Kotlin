@@ -1,4 +1,4 @@
-package com.example.ecommercialapplication.core
+package com.example.ecommercialapplication.core.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

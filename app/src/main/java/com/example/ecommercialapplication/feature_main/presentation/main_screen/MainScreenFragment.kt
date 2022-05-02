@@ -11,46 +11,57 @@ import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.RequestManager
 import com.example.ecommercialapplication.R
-import com.example.ecommercialapplication.core.BaseFragment
+import com.example.ecommercialapplication.core.ui.BaseFragment
 import com.example.ecommercialapplication.databinding.FragmentMainBinding
-import com.example.ecommercialapplication.feature_main.presentation.filter_bottom_dialog.FilterBottomDialogFragment
-import com.example.ecommercialapplication.feature_main.presentation.main_screen.adapters.MainScreenRecyclerViewAdapter
-import com.example.ecommercialapplication.feature_main.presentation.main_screen.adapters.MainScreenViewPagerAdapter
+import com.example.ecommercialapplication.feature_main.presentation.main_screen.bottom_dialog_filter.FilterBottomDialogFragment
+import com.example.ecommercialapplication.feature_main.presentation.main_screen.adapters.MainScreenBestSellerAdapter
+import com.example.ecommercialapplication.feature_main.presentation.main_screen.adapters.MainScreenHotSalesAdapter
 import com.example.ecommercialapplication.feature_main.presentation.utils.ExampleData.categories
 import com.example.ecommercialapplication.feature_main.presentation.utils.ExampleData.locations
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
 
+    @Inject
+    lateinit var glide: RequestManager
+
     private val viewModel: MainScreenViewModel by viewModels()
 
-    private lateinit var recyclerViewAdapter: MainScreenRecyclerViewAdapter
-    private lateinit var viewPagerAdapter: MainScreenViewPagerAdapter
+    private lateinit var bestSellerAdapter: MainScreenBestSellerAdapter
+    private lateinit var hotSalesAdapter: MainScreenHotSalesAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerViewAdapter = MainScreenRecyclerViewAdapter()
         val filterBottomDialogFragment = FilterBottomDialogFragment()
+
         val locationSpinnerAdapter = ArrayAdapter(
             requireContext(),
             R.layout.spinner_location_text_view,
             locations
         )
+        bestSellerAdapter = MainScreenBestSellerAdapter(glide)
+        hotSalesAdapter = MainScreenHotSalesAdapter(glide)
 
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.uiEvent.collect { event ->
                 when (event) {
                     is MainScreenEvent.Success -> {
-                        event.data.let {
-                            recyclerViewAdapter.submitList(event.data.best_seller)
-                            viewPagerAdapter = MainScreenViewPagerAdapter(event.data.home_store)
-                            binding.vpHotSales.adapter = viewPagerAdapter
-                            onInfinitePageChangeCallback(event.data.home_store.size + 2)
+                        event.data.let { data ->
+                            bestSellerAdapter.submitList(data.best_seller)
+                            binding.rvBestSeller.adapter = bestSellerAdapter
+
+                            val carouselHotSales =
+                                listOf(data.home_store.last()) + data.home_store + listOf(data.home_store.first())
+                            hotSalesAdapter.submitList(carouselHotSales)
+                            binding.vpHotSales.adapter = hotSalesAdapter
+                            onInfinitePageChangeCallback(data.home_store.size + 2)
                         }
                     }
                     is MainScreenEvent.Loading -> {
@@ -67,7 +78,6 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
         binding.btnFilter.setOnClickListener {
             showBottomDialogFragment(filterBottomDialogFragment)
         }
-        binding.rvBestSeller.adapter = recyclerViewAdapter
         binding.spinnerLocation.adapter = locationSpinnerAdapter
 
         setupTabLayout()

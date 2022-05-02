@@ -1,4 +1,4 @@
-package com.example.ecommercialapplication.feature_main.presentation.filter_bottom_dialog
+package com.example.ecommercialapplication.feature_main.presentation.main_screen.bottom_dialog_filter
 
 import android.os.Bundle
 import android.view.LayoutInflater

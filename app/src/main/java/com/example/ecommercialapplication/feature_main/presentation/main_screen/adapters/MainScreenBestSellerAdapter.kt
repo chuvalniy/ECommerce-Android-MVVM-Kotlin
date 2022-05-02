@@ -5,45 +5,49 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ecommercialapplication.core.utils.ImageLoader
+import com.bumptech.glide.RequestManager
 import com.example.ecommercialapplication.databinding.AdapterRecyclerViewBestSellerItemBinding
 import com.example.ecommercialapplication.feature_main.domain.model.BestSeller
 
-class MainScreenRecyclerViewAdapter :
-    ListAdapter<BestSeller, MainScreenRecyclerViewAdapter.MainScreenViewHolder>(DiffCallback) {
+class MainScreenBestSellerAdapter(
+    private val glide: RequestManager
+) : ListAdapter<BestSeller, MainScreenBestSellerAdapter.BestSellerViewHolder>(DiffCallbackBestSeller) {
 
-    class MainScreenViewHolder(
-        private val binding: AdapterRecyclerViewBestSellerItemBinding
+    class BestSellerViewHolder(
+        private val binding: AdapterRecyclerViewBestSellerItemBinding,
+        private val glide: RequestManager
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(bestSeller: BestSeller) {
             binding.tvDefaultPrice.text = "$${bestSeller.price_without_discount}"
             binding.tvDiscountPrice.text = "$${bestSeller.discount_price}"
             binding.tvTitle.text = bestSeller.title
+            binding.btnAddToFavorites.isChecked = bestSeller.is_favorites
 
-            ImageLoader.loadImage(bestSeller.picture, binding.ivBestSeller)
+            glide.load(bestSeller.picture).into(binding.ivBestSeller)
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainScreenViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestSellerViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return MainScreenViewHolder(
-            AdapterRecyclerViewBestSellerItemBinding.inflate(layoutInflater, parent, false)
+        return BestSellerViewHolder(
+            AdapterRecyclerViewBestSellerItemBinding.inflate(layoutInflater, parent, false),
+            glide
         )
     }
 
-    override fun onBindViewHolder(holder: MainScreenViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BestSellerViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<BestSeller>() {
+    companion object DiffCallbackBestSeller : DiffUtil.ItemCallback<BestSeller>() {
         override fun areItemsTheSame(oldItem: BestSeller, newItem: BestSeller): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(oldItem: BestSeller, newItem: BestSeller): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.hashCode() == newItem.hashCode()
         }
     }
 }
