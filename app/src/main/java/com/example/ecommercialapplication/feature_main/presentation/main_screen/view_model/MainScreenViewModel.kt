@@ -1,9 +1,10 @@
-package com.example.ecommercialapplication.feature_main.presentation.main_screen
+package com.example.ecommercialapplication.feature_main.presentation.main_screen.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ecommercialapplication.core.utils.Resource
 import com.example.ecommercialapplication.feature_main.domain.repository.MainScreenRepository
+import com.example.ecommercialapplication.feature_main.presentation.main_screen.fragment.MainScreenEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

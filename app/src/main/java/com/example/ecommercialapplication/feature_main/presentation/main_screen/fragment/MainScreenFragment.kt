@@ -1,4 +1,4 @@
-package com.example.ecommercialapplication.feature_main.presentation.main_screen
+package com.example.ecommercialapplication.feature_main.presentation.main_screen.fragment
 
 
 import android.os.Bundle
@@ -18,6 +18,7 @@ import com.example.ecommercialapplication.databinding.FragmentMainBinding
 import com.example.ecommercialapplication.feature_main.presentation.main_screen.bottom_dialog_filter.FilterBottomDialogFragment
 import com.example.ecommercialapplication.feature_main.presentation.main_screen.adapters.MainScreenBestSellerAdapter
 import com.example.ecommercialapplication.feature_main.presentation.main_screen.adapters.MainScreenHotSalesAdapter
+import com.example.ecommercialapplication.feature_main.presentation.main_screen.view_model.MainScreenViewModel
 import com.example.ecommercialapplication.feature_main.presentation.utils.ExampleData.categories
 import com.example.ecommercialapplication.feature_main.presentation.utils.ExampleData.locations
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -32,6 +33,9 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
     lateinit var glide: RequestManager
 
     private val viewModel: MainScreenViewModel by viewModels()
+
+    private val categoryTitles = ArrayList(categories.keys)
+    private val categoryIcons = ArrayList(categories.values)
 
     private lateinit var bestSellerAdapter: MainScreenBestSellerAdapter
     private lateinit var hotSalesAdapter: MainScreenHotSalesAdapter
@@ -55,12 +59,10 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
                     is MainScreenEvent.Success -> {
                         event.data.let { data ->
                             bestSellerAdapter.submitList(data.best_seller)
-                            binding.rvBestSeller.adapter = bestSellerAdapter
 
                             val carouselHotSales =
                                 listOf(data.home_store.last()) + data.home_store + listOf(data.home_store.first())
                             hotSalesAdapter.submitList(carouselHotSales)
-                            binding.vpHotSales.adapter = hotSalesAdapter
                             onInfinitePageChangeCallback(data.home_store.size + 2)
                         }
                     }
@@ -79,8 +81,10 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
             showBottomDialogFragment(filterBottomDialogFragment)
         }
         binding.spinnerLocation.adapter = locationSpinnerAdapter
+        binding.rvBestSeller.adapter = bestSellerAdapter
+        binding.vpHotSales.adapter = hotSalesAdapter
 
-        setupTabLayout()
+        setupTabLayout(categoryTitles, categoryIcons)
     }
 
     private fun onInfinitePageChangeCallback(listSize: Int) {
@@ -98,18 +102,16 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
         })
     }
 
-    private fun setupTabLayout() {
-        val categoryTitles = ArrayList(categories.keys)
-        val imageResIds = ArrayList(categories.values)
+    private fun setupTabLayout(titles: List<String>, icons: List<Int>) {
 
-        categoryTitles.forEachIndexed { index, title ->
+        titles.forEachIndexed { index, title ->
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText(title))
 
             binding.tabLayout.getTabAt(index)?.apply {
                 setCustomView(R.layout.tab_item)
                 customView?.findViewById<ImageButton>(R.id.tabIcon)
-                    ?.setImageResource(imageResIds[index])
-                customView?.findViewById<TextView>(R.id.tabTitle)?.text = categoryTitles[index]
+                    ?.setImageResource(icons[index])
+                customView?.findViewById<TextView>(R.id.tabTitle)?.text = title
             }
         }
     }

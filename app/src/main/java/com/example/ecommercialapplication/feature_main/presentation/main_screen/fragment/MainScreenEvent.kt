@@ -1,4 +1,4 @@
-package com.example.ecommercialapplication.feature_main.presentation.main_screen
+package com.example.ecommercialapplication.feature_main.presentation.main_screen.fragment
 
 import com.example.ecommercialapplication.feature_main.domain.model.MainScreenDomain
 
