@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ECommercialApplication"
 include ':app'
+include ':feature_main_screen'
+include ':core'
+include ':feature_details_screen'
