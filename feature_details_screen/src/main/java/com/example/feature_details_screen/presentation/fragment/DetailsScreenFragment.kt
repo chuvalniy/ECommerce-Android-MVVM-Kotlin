@@ -43,19 +43,20 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
                 when (event) {
                     is DetailScreenEvent.Success -> {
                         bindData(productDetails = event.data)
-                        adapter.submitList(event.data.images)
+                        adapter.submitList(event.data.images) // create function and it here
                     }
                     is DetailScreenEvent.Loading -> {
-
+                        // show skeleton and etc...
                     }
                     is DetailScreenEvent.Failure -> {
-
+                        // show error and etc...
                     }
                     else -> Unit
                 }
             }
         }
 
+        // TODO: create function for viewpager
         binding.viewPager2.adapter = adapter
 
         binding.viewPager2.offscreenPageLimit = 3
@@ -84,11 +85,14 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
 
         binding.btnAddToFavorites.isChecked = productDetails.isFavorites
 
+        // TODO: replace with radio group
         binding.rbMemoryLeft.text = getString(R.string.product_capacity, productDetails.capacity[0])
         binding.rbMemoryRight.text = getString(R.string.product_capacity, productDetails.capacity[1])
 
+        // TODO: create color picker
     }
 
+    // TODO: ? replace this fun with xml tab items
     private fun setupTabLayout(titles: List<String>) {
         titles.forEach { title ->
             binding.tlCategories.addTab(binding.tlCategories.newTab().setText(title))

@@ -2,6 +2,7 @@ package com.example.ecommercialapplication
 
 import android.app.Application
 import com.example.core.shopModule
+import com.example.feature_cart.di.cartScreenModule
 import com.example.feature_details_screen.di.detailsScreenModule
 import com.example.feature_main_screen.di.mainScreenModule
 import org.koin.android.ext.koin.androidContext
@@ -18,6 +19,7 @@ class ShopApp : Application() {
                 shopModule,
                 mainScreenModule,
                 detailsScreenModule,
+                cartScreenModule
             )
         }
     }

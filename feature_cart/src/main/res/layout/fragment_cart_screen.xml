@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_dark"
+    android:fillViewport="true"
+    tools:context=".presentation.fragment.CartScreenFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="36dp"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnGoBack"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:layout_gravity="start"
+                android:background="@drawable/background_rounded_ripple_dark_blue"
+                android:src="@drawable/ic_arrow_back" />
+
+            <TextView
+                android:id="@+id/btnCart"
+                style="@style/Subhead"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:gravity="end|center"
+                android:text="@string/add_address" />
+
+            <ImageButton
+                android:id="@+id/btnAddAddress"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:background="@drawable/background_rounded_ripple_orange"
+                android:src="@drawable/ic_geolocation" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMyCart"
+            style="@style/Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="42dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/my_cart" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/background_top_rounded_dark_blue"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCart"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="4dp"
+                android:alpha="0.25"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="@string/text_view_total_price"
+                    style="@style/CaptionBold"/>
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:layout_width="0dp"
+                    style="@style/CaptionBold"
+                    android:layout_weight="3"
+                    tools:text="$6,000 us"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:layout_height="match_parent"
+                    android:text="@string/delivery_cost"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    style="@style/CaptionBold"/>
+
+                <TextView
+                    android:id="@+id/tvDelivery"
+                    android:layout_width="0dp"
+                    style="@style/CaptionBold"
+                    android:layout_weight="3"
+                    tools:text="Free"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginTop="24dp"
+                android:alpha="0.2"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/btnCheckout"
+                style="@style/HeadlineBold"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginHorizontal="48dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/background_rounded_ripple_orange"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/checkout" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

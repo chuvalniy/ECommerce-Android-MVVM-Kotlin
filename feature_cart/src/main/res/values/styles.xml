@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <style name="Subhead">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:fontFamily">@font/mavenpro_medium</item>
+    </style>
+    
+    <style name="Header">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:fontFamily">@font/mavenpro_bold</item>
+    </style>
+
+    <style name="TitleMedium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/mavenpro_medium</item>
+    </style>
+
+    <style name="HeadlineBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/mavenpro_bold</item>
+    </style>
+
+
+    <style name="TitleMedium.White" parent="TitleMedium">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TitleMedium.Orange" parent="TitleMedium">
+        <item name="android:textColor">@color/light_orange</item>
+    </style>
+
+    <style name="CaptionRegular">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/mavenpro_medium</item>
+    </style>
+
+    <style name="CaptionBold">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/mavenpro_bold</item>
+    </style>
+
+</resources>

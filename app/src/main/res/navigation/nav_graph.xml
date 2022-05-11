@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/details">
+    app:startDestination="@id/cartScreenFragment">
 
     <fragment
         android:id="@+id/main"
@@ -14,4 +14,8 @@
         android:id="@+id/details"
         android:name="com.example.feature_details_screen.presentation.fragment.DetailsScreenFragment"
         android:label="DetailsScreenFragment" />
+    <fragment
+        android:id="@+id/cartScreenFragment"
+        android:name="com.example.feature_cart.presentation.fragment.CartScreenFragment"
+        android:label="CartScreenFragment" />
 </navigation>

@@ -8,6 +8,7 @@ interface MainScreenApi {
     @GET("v3/654bd15e-b121-49ba-a588-960956b15175")
     suspend fun fetchMainScreenItemsFromApi() : MainScreenResponse
 
+
     companion object {
         const val BASE_URL = "https://run.mocky.io/"
     }
