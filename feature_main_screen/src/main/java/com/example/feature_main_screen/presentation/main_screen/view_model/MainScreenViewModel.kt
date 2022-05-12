@@ -6,6 +6,7 @@ import com.example.core.utils.Constants
 import com.example.core.utils.Resource
 import com.example.feature_main_screen.domain.use_case.FetchBasketInfoUseCase
 import com.example.feature_main_screen.domain.use_case.FetchMainScreenItemsUseCase
+import com.example.feature_main_screen.domain.use_case.ShowNumberOfItemsInTheCartUseCase
 import com.example.feature_main_screen.presentation.main_screen.utils.CartScreenEvent
 import com.example.feature_main_screen.presentation.main_screen.utils.MainScreenEvent
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +16,8 @@ import kotlinx.coroutines.launch
 
 class MainScreenViewModel(
     private val fetchMainScreenItemsUseCase: FetchMainScreenItemsUseCase,
-    private val fetchBasketInfoUseCase: FetchBasketInfoUseCase
+    private val fetchBasketInfoUseCase: FetchBasketInfoUseCase,
+    private val showNumberOfItemsInTheCartUseCase: ShowNumberOfItemsInTheCartUseCase
 ) : ViewModel() {
 
     private val _mainScreenUiEvent = MutableStateFlow<MainScreenEvent>(MainScreenEvent.Empty)
@@ -34,9 +36,13 @@ class MainScreenViewModel(
         when (val response = fetchBasketInfoUseCase()) {
             is Resource.Success -> {
                 response.data?.let { data ->
-                    _cartUiEvent.value = CartScreenEvent.Success(data = data)
+                    _cartUiEvent.value = CartScreenEvent.Success(
+                        numberOfItems = data.size.toString(),
+                        shouldShowBadge = showNumberOfItemsInTheCartUseCase(data)
+                    )
                 }
             }
+            else -> Unit
         }
     }
 

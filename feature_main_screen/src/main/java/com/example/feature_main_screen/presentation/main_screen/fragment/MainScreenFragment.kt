@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.view.isVisible
@@ -23,6 +24,7 @@ import com.example.feature_main_screen.presentation.main_screen.adapters.MainScr
 import com.example.feature_main_screen.presentation.main_screen.bottom_dialog_filter.FilterBottomDialogFragment
 import com.example.feature_main_screen.presentation.main_screen.utils.CartScreenEvent
 import com.example.feature_main_screen.presentation.main_screen.utils.MainScreenEvent
+import com.example.feature_main_screen.presentation.main_screen.utils.SampleData
 import com.example.feature_main_screen.presentation.main_screen.utils.SampleData.categories
 import com.example.feature_main_screen.presentation.main_screen.view_model.MainScreenViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -67,10 +69,9 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
             viewModel.cartUiEvent.collect { event ->
                 when (event) {
                     is CartScreenEvent.Success -> {
-                        binding.tvNumberOfItems.text = event.data.size.toString()
-                        binding.tvNumberOfItems.isVisible = true
+                        binding.tvNumberOfItems.text = event.numberOfItems
+                        binding.tvNumberOfItems.isVisible = event.shouldShowBadge
                     }
-                    is CartScreenEvent.Failure -> binding.tvNumberOfItems.isVisible = false
                     else -> Unit
                 }
             }
@@ -82,6 +83,7 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
         }
 
         setupTabLayout()
+        setupSpinnerLocationAdapter()
     }
 
     private fun bindMainScreenData(
@@ -129,6 +131,17 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
             return
         }
         bottomSheetDialogFragment.show(parentFragmentManager, "FilterBottomSheetDialog")
+    }
+
+    private fun setupSpinnerLocationAdapter() {
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.locations,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(R.layout.spinner_location_text_view)
+            binding.spinnerLocation.adapter = adapter
+        }
     }
 
     override fun initBinding(

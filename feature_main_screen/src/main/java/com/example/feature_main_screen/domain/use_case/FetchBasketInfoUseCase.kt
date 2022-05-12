@@ -8,7 +8,6 @@ class FetchBasketInfoUseCase(
     private val repository: MainScreenRepository
 ) {
 
-    suspend operator fun invoke(): Resource<List<BasketDomain>> {
-        return repository.fetchCartInfo()
-    }
+    suspend operator fun invoke() = repository.fetchCartInfo()
+
 }

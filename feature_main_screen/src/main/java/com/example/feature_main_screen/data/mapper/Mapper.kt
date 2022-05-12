@@ -18,18 +18,18 @@ fun MainScreenResponse.toMainScreenDomain(): MainScreenDomain {
 
 fun BestSellerDto.toBestSeller(): BestSeller {
     return BestSeller(
-        discount_price = discount_price,
-        id = id,
+        discount_price = discount_price.toString(),
+        id = id.toString(),
         picture = picture,
         is_favorites = is_favorites,
-        price_without_discount = price_without_discount,
+        price_without_discount = price_without_discount.toString(),
         title = title
     )
 }
 
 fun HomeStoreDto.toHomeStore(): HomeStore {
     return HomeStore(
-        id = id,
+        id = id.toString(),
         is_buy = is_buy,
         is_new = is_new,
         picture = picture,
@@ -40,9 +40,9 @@ fun HomeStoreDto.toHomeStore(): HomeStore {
 
 fun BasketDto.toBasketDomain(): BasketDomain {
     return BasketDomain(
-        id = id,
+        id = id.toString(),
         images = images,
-        price = price,
+        price = price.toString(),
         title = title
     )
 }

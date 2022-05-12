@@ -8,7 +8,7 @@ data class ProductDetailsDomain(
     val id: String,
     val images: List<String>,
     val isFavorites: Boolean,
-    val price: Int,
+    val price: String,
     val rating: Float,
     val sd: String,
     val ssd: String,

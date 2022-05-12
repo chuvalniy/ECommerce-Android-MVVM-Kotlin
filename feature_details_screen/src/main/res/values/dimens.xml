@@ -27,4 +27,6 @@
     <dimen name="product_image_card_vertical_margin">16dp</dimen>
     <dimen name="product_image_card_corner_radius">16dp</dimen>
     <dimen name="product_image_content_padding">6dp</dimen>
+    <dimen name="color_selector_size">40dp</dimen>
+    <dimen name="left_color_select_margin_end">20dp</dimen>
 </resources>

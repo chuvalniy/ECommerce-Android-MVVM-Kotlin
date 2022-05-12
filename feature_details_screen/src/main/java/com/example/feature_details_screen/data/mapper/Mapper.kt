@@ -12,7 +12,7 @@ fun ProductDetailsDto.toProductDetailsDomain(): ProductDetailsDomain {
         id = id,
         images = images,
         isFavorites = isFavorites,
-        price = price,
+        price = price.toString(),
         rating = rating.toFloat(),
         sd = sd,
         ssd = ssd,

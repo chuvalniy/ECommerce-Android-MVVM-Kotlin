@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
+import com.example.feature_main_screen.R
 import com.example.feature_main_screen.databinding.AdapterRecyclerViewBestSellerItemBinding
 import com.example.feature_main_screen.domain.model.BestSeller
-import com.example.feature_main_screen.domain.model.HomeStore
 
 class MainScreenBestSellerAdapter(
     private val glide: RequestManager,
@@ -23,8 +23,14 @@ class MainScreenBestSellerAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(bestSeller: BestSeller) {
-            binding.tvDefaultPrice.text = "$${bestSeller.price_without_discount}"
-            binding.tvDiscountPrice.text = "$${bestSeller.discount_price}"
+            binding.tvDefaultPrice.text = this.itemView.context.getString(
+                R.string.price_without_discount,
+                bestSeller.price_without_discount
+            )
+            binding.tvDiscountPrice.text = this.itemView.context.getString(
+                R.string.discount_price,
+                bestSeller.discount_price
+            )
             binding.tvTitle.text = bestSeller.title
             binding.btnAddToFavorites.isChecked = bestSeller.is_favorites
 
