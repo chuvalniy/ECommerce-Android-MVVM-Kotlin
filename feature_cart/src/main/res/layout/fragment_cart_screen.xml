@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_dark"
+    android:fillViewport="true"
+    tools:context=".presentation.fragment.CartScreenFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/appbar_menu_horizontal_margin"
+            android:layout_marginTop="@dimen/appbar_menu_top_margin"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnGoBack"
+                android:layout_width="@dimen/appbar_menu_button_size"
+                android:layout_height="@dimen/appbar_menu_button_size"
+                android:layout_gravity="start"
+                android:background="@drawable/background_rounded_ripple_dark_blue"
+                android:src="@drawable/ic_arrow_back" />
+
+            <TextView
+                android:id="@+id/btnCart"
+                style="@style/Subhead"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/add_address_end_margin"
+                android:layout_weight="1"
+                android:gravity="end|center"
+                android:text="@string/add_address" />
+
+            <ImageButton
+                android:id="@+id/btnAddAddress"
+                android:layout_width="@dimen/appbar_menu_button_size"
+                android:layout_height="@dimen/appbar_menu_button_size"
+                android:background="@drawable/background_rounded_ripple_orange"
+                android:src="@drawable/ic_geolocation" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMyCart"
+            style="@style/Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/header_my_cart_margin_horizontal"
+            android:layout_marginTop="@dimen/header_my_cart_top_margin"
+            android:text="@string/my_cart" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/cart_content_top_margin"
+            android:background="@drawable/background_top_rounded_dark_blue"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCart"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingVertical="@dimen/cart_recycler_view_vertical_padding"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/top_separator_height"
+                android:layout_marginHorizontal="@dimen/separator_horizontal_margin"
+                android:alpha="0.25"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/total_cost_layout_start_margin"
+                android:layout_marginTop="@dimen/total_cost_layout_margin_top"
+                android:layout_marginEnd="@dimen/total_cost_layout_margin_end">
+
+                <TextView
+                    style="@style/CaptionBold"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="7"
+                    android:gravity="center_vertical"
+                    android:text="@string/text_view_total_price" />
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    style="@style/CaptionBold"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    tools:text="$6,000 us" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/total_cost_layout_start_margin"
+                android:layout_marginTop="@dimen/delivery_layout_top_margin"
+                android:layout_marginEnd="@dimen/total_cost_layout_margin_end">
+
+                <TextView
+                    style="@style/CaptionBold"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="7"
+                    android:gravity="center_vertical"
+                    android:text="@string/delivery_cost" />
+
+                <TextView
+                    android:id="@+id/tvDelivery"
+                    style="@style/CaptionBold"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    tools:text="Free" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bottom_separator_height"
+                android:layout_marginHorizontal="@dimen/top_separator_height"
+                android:layout_marginTop="@dimen/bottom_separator_top_margin"
+                android:alpha="0.2"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/btnCheckout"
+                style="@style/HeadlineBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/checkout_button_height"
+                android:layout_marginHorizontal="@dimen/checkout_button_horizontal_margin"
+                android:layout_marginVertical="@dimen/checkout_button_vertical_margin"
+                android:background="@drawable/background_rounded_ripple_orange"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/checkout" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

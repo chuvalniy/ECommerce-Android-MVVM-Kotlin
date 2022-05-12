@@ -1,0 +1,11 @@
+<resources>
+    <string name="add_address">Add address</string>
+    <string name="my_cart">My Cart</string>
+    <string name="text_view_total_price">Total</string>
+    <string name="delivery_cost">Delivery</string>
+    <string name="checkout">Checkout</string>
+
+    <string name="product_price">$%1$d.00</string>
+    <string name="total_price">$%1$s us</string>
+    <string name="sample_product_counter">1</string>
+</resources>
