@@ -24,8 +24,10 @@
                 android:layout_width="@dimen/rounded_button_size"
                 android:layout_height="@dimen/rounded_button_size"
                 android:layout_gravity="start"
+                android:contentDescription="@string/go_back"
                 android:background="@drawable/background_rounded_ripple_dark_blue"
-                android:src="@drawable/ic_arrow_back" />
+                android:src="@drawable/ic_arrow_back"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/tvProductDetails"
@@ -40,19 +42,21 @@
                 android:layout_width="@dimen/rounded_button_size"
                 android:layout_height="@dimen/rounded_button_size"
                 android:layout_gravity="end"
+                android:contentDescription="@string/go_to_cart"
                 android:background="@drawable/background_rounded_ripple_orange"
-                android:src="@drawable/ic_shopping_bag" />
+                android:src="@drawable/ic_shopping_bag"
+                tools:ignore="TouchTargetSizeCheck" />
         </FrameLayout>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager2"
             android:layout_width="match_parent"
             android:layout_height="@dimen/product_image_height"
-            android:paddingHorizontal="@dimen/product_image_horizontal_padding"
+            android:clipChildren="false"
             android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/product_image_horizontal_padding"
             android:paddingTop="@dimen/product_image_top_padding"
-            android:paddingBottom="@dimen/product_image_bottom_padding"
-            android:clipChildren="false"/>
+            android:paddingBottom="@dimen/product_image_bottom_padding" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -94,7 +98,8 @@
                             android:background="@drawable/selector_toggle_button_favorite"
                             android:gravity="center"
                             android:textOff=""
-                            android:textOn="" />
+                            android:textOn=""
+                            tools:ignore="TouchTargetSizeCheck" />
                     </FrameLayout>
 
                 </FrameLayout>
@@ -107,9 +112,9 @@
                     android:layout_marginTop="@dimen/rating_bar_top_margin"
                     android:isIndicator="true"
                     android:max="5"
+                    android:minHeight="0dp"
                     android:scaleX=".5"
                     android:scaleY=".5"
-                    android:minHeight="0dp"
                     android:transformPivotX="0dp"
                     android:transformPivotY="0dp" />
 
@@ -235,18 +240,23 @@
 
                         <RadioButton
                             android:id="@+id/rbColorLeft"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@drawable/selector_background_color"
-                            android:button="@android:color/transparent"
-                            android:checked="true" />
+                            android:layout_width="@dimen/color_selector_size"
+                            android:layout_height="@dimen/color_selector_size"
+                            android:layout_marginEnd="@dimen/left_color_select_margin_end"
+                            android:background="@drawable/background_unchecked_color"
+                            android:button="@drawable/selector_background_color"
+                            android:buttonTint="@color/white"
+                            android:checked="true"
+                            tools:ignore="TouchTargetSizeCheck" />
 
-                            <RadioButton
-                                android:id="@+id/rbColorRight"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="@drawable/selector_background_color"
-                                android:button="@android:color/transparent" />
+                        <RadioButton
+                            android:id="@+id/rbColorRight"
+                            android:layout_width="@dimen/color_selector_size"
+                            android:layout_height="@dimen/color_selector_size"
+                            android:background="@drawable/background_unchecked_color"
+                            android:button="@drawable/selector_background_color"
+                            android:buttonTint="@color/white"
+                            tools:ignore="TouchTargetSizeCheck" />
                     </RadioGroup>
 
                     <RadioGroup
@@ -267,6 +277,7 @@
                             android:button="@android:color/transparent"
                             android:checked="true"
                             android:textAlignment="center"
+                            tools:ignore="TouchTargetSizeCheck"
                             tools:text="128 GB" />
 
                         <RadioButton
@@ -279,6 +290,7 @@
                             android:background="@drawable/selector_background_memory"
                             android:button="@android:color/transparent"
                             android:textAlignment="center"
+                            tools:ignore="TouchTargetSizeCheck"
                             tools:text="128 GB" />
 
                     </RadioGroup>

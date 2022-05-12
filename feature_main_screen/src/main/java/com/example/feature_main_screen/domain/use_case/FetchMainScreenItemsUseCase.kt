@@ -8,7 +8,6 @@ class FetchMainScreenItemsUseCase(
     private val repository: MainScreenRepository
 ) {
 
-    suspend operator fun invoke(): Resource<MainScreenDomain> {
-        return repository.fetchMainScreenItems()
-    }
+    suspend operator fun invoke() = repository.fetchMainScreenItems()
+
 }

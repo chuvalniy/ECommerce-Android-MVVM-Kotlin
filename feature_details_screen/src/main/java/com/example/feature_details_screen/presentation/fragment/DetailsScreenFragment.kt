@@ -1,5 +1,8 @@
 package com.example.feature_details_screen.presentation.fragment
 
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -51,7 +54,7 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
             }
         }
 
-        setupViewPagerWithCompositePageTransformer()
+        setupViewPagerWithCompositePagerTransformer()
         setupTabLayout()
 
         binding.btnAddToCart.setOnClickListener {
@@ -59,8 +62,7 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
         }
     }
 
-    private fun setupViewPagerWithCompositePageTransformer() {
-
+    private fun setupViewPagerWithCompositePagerTransformer() {
         binding.viewPager2.offscreenPageLimit = 3
         binding.viewPager2.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
@@ -82,18 +84,18 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
         binding.tvSdCapacity.text = productDetails.sd
         binding.tvSsdCapacity.text = productDetails.ssd
         binding.tvPrice.text = getString(R.string.product_price, productDetails.price)
-
         binding.btnAddToFavorites.isChecked = productDetails.isFavorites
 
-        // TODO: replace with radio group
         binding.rbMemoryLeft.text = getString(R.string.product_capacity, productDetails.capacity[0])
         binding.rbMemoryRight.text =
             getString(R.string.product_capacity, productDetails.capacity[1])
 
-        // TODO: create color picker
+        binding.rbColorLeft.background.colorFilter =
+            PorterDuffColorFilter(Color.parseColor(productDetails.color[0]), PorterDuff.Mode.SRC_IN)
+        binding.rbColorRight.background.colorFilter =
+            PorterDuffColorFilter(Color.parseColor(productDetails.color[1]), PorterDuff.Mode.SRC_IN)
     }
 
-    // TODO: ? replace this fun with xml tab items
     private fun setupTabLayout() {
         categories.forEach { title ->
             binding.tlCategories.addTab(binding.tlCategories.newTab().setText(title))
