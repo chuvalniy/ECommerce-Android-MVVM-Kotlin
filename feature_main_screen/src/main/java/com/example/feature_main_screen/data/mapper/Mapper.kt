@@ -1,8 +1,10 @@
 package com.example.feature_main_screen.data.mapper
 
+import com.example.feature_main_screen.data.remote.dto.BasketDto
 import com.example.feature_main_screen.data.remote.dto.BestSellerDto
 import com.example.feature_main_screen.data.remote.dto.HomeStoreDto
 import com.example.feature_main_screen.data.remote.dto.MainScreenResponse
+import com.example.feature_main_screen.domain.model.BasketDomain
 import com.example.feature_main_screen.domain.model.BestSeller
 import com.example.feature_main_screen.domain.model.HomeStore
 import com.example.feature_main_screen.domain.model.MainScreenDomain
@@ -32,6 +34,15 @@ fun HomeStoreDto.toHomeStore(): HomeStore {
         is_new = is_new,
         picture = picture,
         subtitle = subtitle,
+        title = title
+    )
+}
+
+fun BasketDto.toBasketDomain(): BasketDomain {
+    return BasketDomain(
+        id = id,
+        images = images,
+        price = price,
         title = title
     )
 }

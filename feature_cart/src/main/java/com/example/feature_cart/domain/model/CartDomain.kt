@@ -4,5 +4,5 @@ data class CartDomain(
     val basket: List<BasketDomain>,
     val delivery: String,
     val id: String,
-    val total: Int
+    val total: String
 )

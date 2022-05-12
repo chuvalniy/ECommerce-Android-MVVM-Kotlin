@@ -10,15 +10,15 @@ fun CartDto.toCartDomain(): CartDomain {
         basket = basket.map { it.toBasketDomain() },
         delivery = delivery,
         id = id,
-        total = total
+        total = total.toString()
     )
 }
 
 fun BasketDto.toBasketDomain(): BasketDomain {
     return BasketDomain(
-        id = id,
+        id = id.toString(),
         images = images,
-        price = price,
+        price = price.toString(),
         title = title
     )
 }

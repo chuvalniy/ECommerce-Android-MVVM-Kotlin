@@ -2,6 +2,7 @@ package com.example.feature_details_screen.presentation.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.core.utils.Constants
 import com.example.core.utils.Resource
 import com.example.feature_details_screen.domain.repository.DetailsScreenRepository
 import com.example.feature_details_screen.presentation.utils.DetailScreenEvent
@@ -30,7 +31,9 @@ class DetailsScreenViewModel(
                     }
                 }
                 is Resource.Error -> {
-                    _uiEvent.value = DetailScreenEvent.Failure(error = response.error ?: "Error") // TODO: create const
+                    _uiEvent.value = DetailScreenEvent.Failure(
+                        error = response.error ?: Constants.ERROR_MESSAGE
+                    )
                 }
             }
         }

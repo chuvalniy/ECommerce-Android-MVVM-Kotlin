@@ -39,12 +39,6 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
                         binding.rvCart.adapter = adapter
                         bindData(event.data)
                     }
-                    is CartScreenEvent.Loading -> {
-
-                    }
-                    is CartScreenEvent.Failure -> {
-
-                    }
                     else -> Unit
                 }
             }
@@ -52,7 +46,7 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
     }
 
     private fun bindData(cartDomain: CartDomain) {
-        binding.tvTotal.text = getString(R.string.total_price, cartDomain.total.toString())
+        binding.tvTotal.text = getString(R.string.total_price, cartDomain.total)
         binding.tvDelivery.text = cartDomain.delivery
     }
 

@@ -20,7 +20,7 @@ class CartScreenAdapter(
     ): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(basketDomain: BasketDomain) {
-            binding.tvPrice.text = this.itemView.context.getString(R.string.product_price, basketDomain.price)
+            binding.tvPrice.text = this.itemView.context.getString(R.string.product_price, basketDomain.price.toInt())
             binding.tvTitle.text = basketDomain.title
             glide.load(basketDomain.images).into(binding.ivCartProduct)
         }

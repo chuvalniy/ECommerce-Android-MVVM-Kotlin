@@ -17,12 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/screen_horizontal_margin"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="@dimen/appbar_top_margin">
 
             <ImageButton
                 android:id="@+id/btnGoBack"
-                android:layout_width="37dp"
-                android:layout_height="37dp"
+                android:layout_width="@dimen/rounded_button_size"
+                android:layout_height="@dimen/rounded_button_size"
                 android:layout_gravity="start"
                 android:background="@drawable/background_rounded_ripple_dark_blue"
                 android:src="@drawable/ic_arrow_back" />
@@ -37,8 +37,8 @@
 
             <ImageButton
                 android:id="@+id/btnCart"
-                android:layout_width="37dp"
-                android:layout_height="37dp"
+                android:layout_width="@dimen/rounded_button_size"
+                android:layout_height="@dimen/rounded_button_size"
                 android:layout_gravity="end"
                 android:background="@drawable/background_rounded_ripple_orange"
                 android:src="@drawable/ic_shopping_bag" />
@@ -47,11 +47,11 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager2"
             android:layout_width="match_parent"
-            android:layout_height="360dp"
-            android:paddingHorizontal="60dp"
+            android:layout_height="@dimen/product_image_height"
+            android:paddingHorizontal="@dimen/product_image_horizontal_padding"
             android:clipToPadding="false"
-            android:paddingTop="30dp"
-            android:paddingBottom="16dp"
+            android:paddingTop="@dimen/product_image_top_padding"
+            android:paddingBottom="@dimen/product_image_bottom_padding"
             android:clipChildren="false"/>
 
         <FrameLayout
@@ -59,14 +59,14 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/background_top_rounded_white"
-            android:elevation="12dp"
-            android:paddingBottom="24dp">
+            android:elevation="@dimen/product_detail_layout_elevation"
+            android:paddingBottom="@dimen/product_detail_bottom_padding">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="@dimen/screen_horizontal_margin"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/product_content_top_margin"
                 android:orientation="vertical">
 
                 <FrameLayout
@@ -82,8 +82,8 @@
                         tools:text="Galaxy Note 20 Ultra" />
 
                     <FrameLayout
-                        android:layout_width="37dp"
-                        android:layout_height="37dp"
+                        android:layout_width="@dimen/rounded_button_size"
+                        android:layout_height="@dimen/rounded_button_size"
                         android:layout_gravity="end"
                         android:background="@drawable/background_rounded_ripple_dark_blue">
 
@@ -104,7 +104,7 @@
                     style="@android:attr/ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="@dimen/rating_bar_top_margin"
                     android:isIndicator="true"
                     android:max="5"
                     android:scaleX=".5"
@@ -122,8 +122,8 @@
                 <com.google.android.flexbox.FlexboxLayout
                     android:id="@+id/flexboxLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="28dp"
+                    android:layout_height="@dimen/flex_box_height"
+                    android:layout_marginTop="@dimen/flex_box_top_margin"
                     app:justifyContent="space_between">
 
                     <LinearLayout
@@ -217,13 +217,13 @@
                     style="@style/Subtitle2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="@dimen/select_options_top_margin"
                     android:text="@string/select_color_and_capacity" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="@dimen/select_option_layout_top_margin"
                     android:orientation="horizontal">
 
                     <RadioGroup
@@ -260,9 +260,9 @@
                         <RadioButton
                             android:id="@+id/rbMemoryLeft"
                             style="@style/CapacityRadioTextStyle"
-                            android:layout_width="72dp"
-                            android:layout_height="30dp"
-                            android:layout_marginEnd="16dp"
+                            android:layout_width="@dimen/capacity_button_width"
+                            android:layout_height="@dimen/capacity_button_height"
+                            android:layout_marginEnd="@dimen/capacity_button_margin_end"
                             android:background="@drawable/selector_background_memory"
                             android:button="@android:color/transparent"
                             android:checked="true"
@@ -272,24 +272,24 @@
                         <RadioButton
                             android:id="@+id/rbMemoryRight"
                             style="@style/CapacityRadioTextStyle"
-                            android:layout_width="72dp"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="16dp"
+                            android:layout_width="@dimen/capacity_button_width"
+                            android:layout_height="@dimen/capacity_button_height"
+                            android:layout_marginStart="@dimen/capacity_right_button_start_margin"
+                            android:layout_marginEnd="@dimen/capacity_button_margin_end"
                             android:background="@drawable/selector_background_memory"
                             android:button="@android:color/transparent"
                             android:textAlignment="center"
                             tools:text="128 GB" />
 
                     </RadioGroup>
-                </LinearLayout>
 
+                </LinearLayout>
 
                 <FrameLayout
                     android:id="@+id/btnAddToCart"
                     android:layout_width="match_parent"
-                    android:layout_height="54dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_height="@dimen/button_add_to_cart_height"
+                    android:layout_marginTop="@dimen/button_add_to_cart_top_margin"
                     android:background="@drawable/background_rounded_ripple_orange"
                     android:clickable="true"
                     android:focusable="true">
@@ -300,8 +300,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start|center"
-                        android:layout_marginStart="28dp"
-                        android:text="Add to Cart" />
+                        android:layout_marginStart="@dimen/button_add_to_cart_content_margin_horizontal"
+                        android:text="@string/add_to_cart" />
 
                     <TextView
                         android:id="@+id/tvPrice"
@@ -309,7 +309,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|end"
-                        android:layout_marginEnd="28dp"
+                        android:layout_marginEnd="@dimen/button_add_to_cart_content_margin_horizontal"
                         tools:text="$1,500.00" />
                 </FrameLayout>
             </LinearLayout>

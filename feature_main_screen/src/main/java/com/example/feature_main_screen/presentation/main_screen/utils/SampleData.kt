@@ -1,6 +1,7 @@
-package com.example.feature_main_screen.presentation.utils
+package com.example.feature_main_screen.presentation.main_screen.utils
 
 import com.example.feature_main_screen.R
+import com.example.feature_main_screen.domain.model.BasketDomain
 
 object SampleData {
 
@@ -10,11 +11,6 @@ object SampleData {
         "Health" to R.drawable.ic_health,
         "Books" to R.drawable.ic_books,
         "Other" to R.drawable.ic_devices_other
-    )
-
-    val locations = mutableListOf(
-        "Zihuatanejo, Gro",
-        "Los Angeles, Cali"
     )
 
     val brandFilter = mutableListOf(

@@ -11,12 +11,13 @@ import com.example.feature_main_screen.databinding.AdapterViewPagerHomeStoreItem
 import com.example.feature_main_screen.domain.model.HomeStore
 
 class MainScreenHotSalesAdapter(
-    private val glide: RequestManager
+    private val glide: RequestManager,
 ) : ListAdapter<HomeStore, MainScreenHotSalesAdapter.HomeStoreViewHolder>(DiffCallbackHomeStore) {
 
     class HomeStoreViewHolder(
         private val binding: AdapterViewPagerHomeStoreItemBinding,
-        private val glide: RequestManager
+        private val glide: RequestManager,
+
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(homeStore: HomeStore) {
