@@ -25,7 +25,7 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
     private val glide by inject<RequestManager>()
 
     private lateinit var adapter: CartScreenAdapter
-
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
