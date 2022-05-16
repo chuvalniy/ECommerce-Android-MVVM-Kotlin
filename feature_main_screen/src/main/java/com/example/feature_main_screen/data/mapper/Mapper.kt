@@ -5,8 +5,8 @@ import com.example.feature_main_screen.data.remote.dto.BestSellerDto
 import com.example.feature_main_screen.data.remote.dto.HomeStoreDto
 import com.example.feature_main_screen.data.remote.dto.MainScreenResponse
 import com.example.feature_main_screen.domain.model.BasketDomain
-import com.example.feature_main_screen.domain.model.BestSeller
-import com.example.feature_main_screen.domain.model.HomeStore
+import com.example.feature_main_screen.domain.model.BestSellerDomain
+import com.example.feature_main_screen.domain.model.HomeStoreDomain
 import com.example.feature_main_screen.domain.model.MainScreenDomain
 
 fun MainScreenResponse.toMainScreenDomain(): MainScreenDomain {
@@ -16,10 +16,10 @@ fun MainScreenResponse.toMainScreenDomain(): MainScreenDomain {
     )
 }
 
-fun BestSellerDto.toBestSeller(): BestSeller {
-    return BestSeller(
+fun BestSellerDto.toBestSeller(): BestSellerDomain {
+    return BestSellerDomain(
         discount_price = discount_price.toString(),
-        id = id.toString(),
+        id = id,
         picture = picture,
         is_favorites = is_favorites,
         price_without_discount = price_without_discount.toString(),
@@ -27,9 +27,9 @@ fun BestSellerDto.toBestSeller(): BestSeller {
     )
 }
 
-fun HomeStoreDto.toHomeStore(): HomeStore {
-    return HomeStore(
-        id = id.toString(),
+fun HomeStoreDto.toHomeStore(): HomeStoreDomain {
+    return HomeStoreDomain(
+        id = id,
         is_buy = is_buy,
         is_new = is_new,
         picture = picture,

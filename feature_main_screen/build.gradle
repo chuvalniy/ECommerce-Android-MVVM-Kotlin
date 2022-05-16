@@ -55,7 +55,11 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
+    // Lifecycle
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
+
+    // Adapter Delegate
+    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.2'
 
     // Coroutines
     def coroutine_version = "1.5.2"

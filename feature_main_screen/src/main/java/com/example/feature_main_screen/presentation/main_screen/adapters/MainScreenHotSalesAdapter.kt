@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.example.feature_main_screen.databinding.AdapterViewPagerHomeStoreItemBinding
-import com.example.feature_main_screen.domain.model.HomeStore
+import com.example.feature_main_screen.domain.model.HomeStoreDomain
 
 class MainScreenHotSalesAdapter(
     private val glide: RequestManager,
-) : ListAdapter<HomeStore, MainScreenHotSalesAdapter.HomeStoreViewHolder>(DiffCallbackHomeStore) {
+) : ListAdapter<HomeStoreDomain, MainScreenHotSalesAdapter.HomeStoreViewHolder>(DiffCallbackHomeStore) {
 
     class HomeStoreViewHolder(
         private val binding: AdapterViewPagerHomeStoreItemBinding,
@@ -20,7 +20,7 @@ class MainScreenHotSalesAdapter(
 
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(homeStore: HomeStore) {
+        fun bind(homeStore: HomeStoreDomain) {
             binding.tvTitleHomeStore.text = homeStore.title
             binding.tvSubtitleHomeScreen.text = homeStore.subtitle
             binding.btnBuyNow.isVisible = homeStore.is_buy
@@ -49,12 +49,12 @@ class MainScreenHotSalesAdapter(
         holder.bind(item)
     }
 
-    companion object DiffCallbackHomeStore : DiffUtil.ItemCallback<HomeStore>() {
-        override fun areItemsTheSame(oldItem: HomeStore, newItem: HomeStore): Boolean {
+    companion object DiffCallbackHomeStore : DiffUtil.ItemCallback<HomeStoreDomain>() {
+        override fun areItemsTheSame(oldItem: HomeStoreDomain, newItem: HomeStoreDomain): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: HomeStore, newItem: HomeStore): Boolean {
+        override fun areContentsTheSame(oldItem: HomeStoreDomain, newItem: HomeStoreDomain): Boolean {
             return oldItem.hashCode() == newItem.hashCode()
         }
 
