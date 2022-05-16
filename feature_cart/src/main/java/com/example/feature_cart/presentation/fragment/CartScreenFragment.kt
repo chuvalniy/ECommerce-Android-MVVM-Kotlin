@@ -35,8 +35,8 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
             viewModel.uiEvent.collect { event ->
                 when (event) {
                     is CartScreenEvent.Success -> {
-                        adapter.submitList(event.data.basket)
                         binding.rvCart.adapter = adapter
+                        adapter.items = event.data.basket
                         bindData(event.data)
                     }
                     else -> Unit

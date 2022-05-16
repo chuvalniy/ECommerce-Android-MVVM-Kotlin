@@ -46,6 +46,9 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
 
         val filterBottomDialogFragment = FilterBottomDialogFragment()
 
+        setupTabLayout()
+        setupSpinnerLocationAdapter()
+
         bestSellerAdapter = MainScreenBestSellerAdapter(glide) {
             findNavController().navigate(Uri.parse(Constants.DETAILS_SCREEN_DEEP_LINK))
         }
@@ -81,9 +84,6 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
         binding.btnShoppingBag.setOnClickListener {
             findNavController().navigate(Uri.parse(Constants.CART_SCREEN_DEEP_LINK))
         }
-
-        setupTabLayout()
-        setupSpinnerLocationAdapter()
     }
 
     private fun bindMainScreenData(
