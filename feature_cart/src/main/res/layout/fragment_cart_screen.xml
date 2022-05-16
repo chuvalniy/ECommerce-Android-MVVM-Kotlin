@@ -68,6 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                tools:listitem="@layout/cart_item"
                 android:clipToPadding="false"
                 android:paddingVertical="@dimen/cart_recycler_view_vertical_padding"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />

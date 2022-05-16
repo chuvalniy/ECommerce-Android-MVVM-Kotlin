@@ -16,9 +16,9 @@ fun CartDto.toCartDomain(): CartDomain {
 
 fun BasketDto.toBasketDomain(): BasketDomain {
     return BasketDomain(
-        id = id.toString(),
+        id = id,
         images = images,
-        price = price.toString(),
+        price = price,
         title = title
     )
 }

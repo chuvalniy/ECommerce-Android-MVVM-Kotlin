@@ -62,6 +62,7 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/selector_toggle_button_custom.xml" value="0.1375" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/spinner_background.xml" value="0.1545" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/spinner_corner.xml" value="0.1" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/splash_screen.xml" value="0.162" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/strike_through_line.xml" value="0.2255" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/tab_background_selected.xml" value="0.1" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/tab_background_selector.xml" value="0.164" />
@@ -98,7 +99,7 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/drawable/ic_add.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/drawable/ic_geolocation.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/drawable/ic_remove.xml" value="0.164" />
-        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/cart_item.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/cart_item.xml" value="0.4" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/fragment_cart_screen.xml" value="0.264" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/drawable/background_checked_color.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/drawable/background_checked_memory.xml" value="0.164" />

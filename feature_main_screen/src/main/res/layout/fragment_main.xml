@@ -187,7 +187,7 @@
                 android:layout_marginHorizontal="@dimen/main_screen_best_seller_list_margin_horizontal"
                 android:layout_marginTop="@dimen/main_screen_best_seller_margin_top"
                 android:overScrollMode="never"
-                tools:listitem="@layout/adapter_recycler_view_best_seller_item"
+                tools:listitem="@layout/item_best_seller"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2" />
 
