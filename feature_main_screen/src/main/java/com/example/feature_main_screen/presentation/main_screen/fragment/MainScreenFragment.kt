@@ -20,7 +20,7 @@ import com.example.feature_main_screen.databinding.FragmentMainBinding
 import com.example.feature_main_screen.domain.model.BestSellerDomain
 import com.example.feature_main_screen.domain.model.HomeStoreDomain
 import com.example.feature_main_screen.presentation.main_screen.adapters.BestSellerAdapter
-import com.example.feature_main_screen.presentation.main_screen.adapters.MainScreenHotSalesAdapter
+import com.example.feature_main_screen.presentation.main_screen.adapters.HotSalesAdapter
 import com.example.feature_main_screen.presentation.main_screen.bottom_dialog_filter.FilterBottomDialogFragment
 import com.example.feature_main_screen.presentation.main_screen.utils.CartScreenEvent
 import com.example.feature_main_screen.presentation.main_screen.utils.MainScreenEvent
@@ -38,7 +38,7 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
     private val glide by inject<RequestManager>()
 
     private lateinit var bestSellerAdapter: BestSellerAdapter
-    private lateinit var hotSalesAdapter: MainScreenHotSalesAdapter
+    private lateinit var hotSalesAdapter: HotSalesAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -51,7 +51,7 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
         bestSellerAdapter = BestSellerAdapter(glide) {
             findNavController().navigate(Uri.parse(Constants.DETAILS_SCREEN_DEEP_LINK))
         }
-        hotSalesAdapter = MainScreenHotSalesAdapter(glide)
+        hotSalesAdapter = HotSalesAdapter(glide)
 
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.mainScreenUiEvent.collect { event ->
@@ -94,10 +94,10 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
         bestSellerAdapter.items = bestSeller
 
         // homeStore
-        val carouselHotSales = listOf(homeStore.last()) + homeStore + listOf(homeStore.first())
-        hotSalesAdapter.submitList(carouselHotSales)
-        onInfinitePageChangeCallback(carouselHotSales.size)
         binding.vpHotSales.adapter = hotSalesAdapter
+        val carouselHotSales = listOf(homeStore.last()) + homeStore + listOf(homeStore.first())
+        hotSalesAdapter.items = carouselHotSales
+        onInfinitePageChangeCallback(carouselHotSales.size)
     }
 
     private fun onInfinitePageChangeCallback(listSize: Int) {
