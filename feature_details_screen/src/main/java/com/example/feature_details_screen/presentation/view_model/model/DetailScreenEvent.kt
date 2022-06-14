@@ -1,4 +1,4 @@
-package com.example.feature_details_screen.presentation.utils
+package com.example.feature_details_screen.presentation.view_model.model
 
 import com.example.feature_details_screen.domain.model.ProductDetailsDomain
 

@@ -1,4 +1,4 @@
-package com.example.feature_main_screen.presentation.main_screen.utils
+package com.example.feature_main_screen.presentation.main_screen.view_model.model
 
 sealed class CartScreenEvent {
     class Success(

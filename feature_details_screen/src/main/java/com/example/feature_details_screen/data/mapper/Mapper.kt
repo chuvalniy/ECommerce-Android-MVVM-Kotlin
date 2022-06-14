@@ -9,7 +9,7 @@ fun ProductDetailsDto.toProductDetailsDomain(): ProductDetailsDomain {
         camera = camera,
         capacity = capacity,
         color = color,
-        id = id,
+        id = id.toInt(),
         images = images,
         isFavorites = isFavorites,
         price = price.toString(),

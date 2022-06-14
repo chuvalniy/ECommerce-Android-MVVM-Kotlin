@@ -1,4 +1,4 @@
-package com.example.feature_main_screen.presentation.main_screen.utils
+package com.example.feature_main_screen.presentation.main_screen.view_model.model
 
 import com.example.feature_main_screen.domain.model.MainScreenDomain
 

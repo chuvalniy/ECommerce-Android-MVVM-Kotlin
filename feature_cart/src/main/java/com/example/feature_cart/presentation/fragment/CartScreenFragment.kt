@@ -11,41 +11,46 @@ import com.example.feature_cart.R
 import com.example.feature_cart.databinding.FragmentCartScreenBinding
 import com.example.feature_cart.domain.model.CartDomain
 import com.example.feature_cart.presentation.adapter.CartScreenAdapter
-import com.example.feature_cart.presentation.utils.CartScreenEvent
+import com.example.feature_cart.presentation.view_model.model.CartScreenEvent
 import com.example.feature_cart.presentation.view_model.CartScreenViewModel
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
 class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
 
     private val viewModel by viewModel<CartScreenViewModel>()
-
     private val glide by inject<RequestManager>()
 
-    private lateinit var adapter: CartScreenAdapter
-    
+    private var adapter: CartScreenAdapter? = null
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = CartScreenAdapter(glide)
+        setupAdapter()
 
-        viewLifecycleOwner.lifecycleScope.launchWhenCreated {
-            viewModel.uiEvent.collect { event ->
-                when (event) {
-                    is CartScreenEvent.Success -> {
-                        binding.rvCart.adapter = adapter
-                        adapter.items = event.data.basket
-                        bindData(event.data)
-                    }
-                    else -> Unit
+        observeCart()
+    }
+
+    private fun setupAdapter() {
+        adapter = CartScreenAdapter(glide)
+        binding.rvCart.adapter = adapter
+    }
+
+    private fun observeCart() = viewLifecycleOwner.lifecycleScope.launchWhenCreated {
+        viewModel.uiEvent.collect { event ->
+            when (event) {
+                is CartScreenEvent.Success -> {
+                    bindData(event.data)
                 }
+                else -> Unit
             }
         }
     }
 
     private fun bindData(cartDomain: CartDomain) {
+        adapter?.items = cartDomain.basket
+
         binding.tvTotal.text = getString(R.string.total_price, cartDomain.total)
         binding.tvDelivery.text = cartDomain.delivery
     }

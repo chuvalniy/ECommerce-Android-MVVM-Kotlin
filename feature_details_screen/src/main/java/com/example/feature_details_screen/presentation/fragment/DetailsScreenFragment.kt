@@ -20,9 +20,9 @@ import com.example.feature_details_screen.R
 import com.example.feature_details_screen.databinding.FragmentDetailsScreenBinding
 import com.example.feature_details_screen.domain.model.ProductDetailsDomain
 import com.example.feature_details_screen.presentation.adapter.DetailsScreenViewPagerAdapter
-import com.example.feature_details_screen.presentation.utils.DetailScreenEvent
 import com.example.feature_details_screen.presentation.utils.SampleData.categories
 import com.example.feature_details_screen.presentation.view_model.DetailsScreenViewModel
+import com.example.feature_details_screen.presentation.view_model.model.DetailScreenEvent
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -31,38 +31,42 @@ import kotlin.math.abs
 class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
 
     private val viewModel by viewModel<DetailsScreenViewModel>()
-
-    lateinit var adapter: DetailsScreenViewPagerAdapter
-
+    private var adapter: DetailsScreenViewPagerAdapter? = null
     private val glide by inject<RequestManager>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = DetailsScreenViewPagerAdapter(glide)
-
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.uiEvent.collect { event ->
-                when (event) {
-                    is DetailScreenEvent.Success -> {
-                        bindData(productDetails = event.data)
-                        adapter.submitList(event.data.images)
-                        binding.viewPager2.adapter = adapter
-                    }
-                    else -> Unit
-                }
-            }
-        }
-
         setupViewPagerWithCompositePagerTransformer()
         setupTabLayout()
 
-        binding.btnAddToCart.setOnClickListener {
+        observeUi()
+
+        applyBinding()
+    }
+
+    private fun applyBinding() = binding.apply {
+        btnAddToCart.setOnClickListener {
             findNavController().navigate(Uri.parse(Constants.CART_SCREEN_DEEP_LINK))
         }
     }
 
+    private fun observeUi() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+        viewModel.uiEvent.collect { event ->
+            when (event) {
+                is DetailScreenEvent.Success -> {
+                    bindData(productDetails = event.data)
+                    adapter?.submitList(event.data.images)
+                }
+                else -> Unit
+            }
+        }
+    }
+
     private fun setupViewPagerWithCompositePagerTransformer() {
+        adapter = DetailsScreenViewPagerAdapter(glide)
+        binding.viewPager2.adapter = adapter
+
         binding.viewPager2.offscreenPageLimit = 3
         binding.viewPager2.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
@@ -76,30 +80,28 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
         binding.viewPager2.setPageTransformer(compositePagerTransformer)
     }
 
-    private fun bindData(productDetails: ProductDetailsDomain) {
-        binding.ratingBar.rating = productDetails.rating
-        binding.tvTitle.text = productDetails.title
-        binding.tvCpu.text = productDetails.cpu
-        binding.tvCamera.text = productDetails.camera
-        binding.tvSdCapacity.text = productDetails.sd
-        binding.tvSsdCapacity.text = productDetails.ssd
-        binding.tvPrice.text = getString(R.string.product_price, productDetails.price)
-        binding.btnAddToFavorites.isChecked = productDetails.isFavorites
+    private fun bindData(productDetails: ProductDetailsDomain) = binding.apply {
+        ratingBar.rating = productDetails.rating
+        tvTitle.text = productDetails.title
+        tvCpu.text = productDetails.cpu
+        tvCamera.text = productDetails.camera
+        tvSdCapacity.text = productDetails.sd
+        tvSsdCapacity.text = productDetails.ssd
+        tvPrice.text = getString(R.string.product_price, productDetails.price)
+        btnAddToFavorites.isChecked = productDetails.isFavorites
 
-        binding.rbMemoryLeft.text = getString(R.string.product_capacity, productDetails.capacity[0])
-        binding.rbMemoryRight.text =
-            getString(R.string.product_capacity, productDetails.capacity[1])
+        rbMemoryLeft.text = getString(R.string.product_capacity, productDetails.capacity[0])
+        rbMemoryRight.text = getString(R.string.product_capacity, productDetails.capacity[1])
 
-        binding.rbColorLeft.background.colorFilter =
+        rbColorLeft.background.colorFilter =
             PorterDuffColorFilter(Color.parseColor(productDetails.color[0]), PorterDuff.Mode.SRC_IN)
-        binding.rbColorRight.background.colorFilter =
+
+        rbColorRight.background.colorFilter =
             PorterDuffColorFilter(Color.parseColor(productDetails.color[1]), PorterDuff.Mode.SRC_IN)
     }
 
-    private fun setupTabLayout() {
-        categories.forEach { title ->
-            binding.tlCategories.addTab(binding.tlCategories.newTab().setText(title))
-        }
+    private fun setupTabLayout() = categories.forEach { title ->
+        binding.tlCategories.addTab(binding.tlCategories.newTab().setText(title))
     }
 
     override fun initBinding(

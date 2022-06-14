@@ -1,4 +1,4 @@
-package com.example.feature_main_screen.presentation.main_screen.bottom_dialog_filter
+package com.example.feature_main_screen.presentation.main_screen.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -29,6 +29,18 @@ class FilterBottomDialogFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupAdapter()
+
+        applyBinding()
+    }
+
+    private fun applyBinding() = binding.apply {
+        btnFilterDismiss.setOnClickListener {
+            this@FilterBottomDialogFragment.dismiss() // close dialog fragment
+        }
+    }
+
+    private fun setupAdapter() {
         val brandSpinnerAdapter = ArrayAdapter(
             requireContext(),
             R.layout.support_simple_spinner_dropdown_item,
@@ -45,14 +57,11 @@ class FilterBottomDialogFragment : BottomSheetDialogFragment() {
             sizeFilter
         )
 
-        binding.btnFilterDismiss.setOnClickListener {
-            this.dismiss() // close dialog fragment
-        }
         binding.spinnerBrand.adapter = brandSpinnerAdapter
         binding.spinnerPrice.adapter = priceSpinnerAdapter
         binding.spinnerSize.adapter = sizeSpinnerAdapter
-
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

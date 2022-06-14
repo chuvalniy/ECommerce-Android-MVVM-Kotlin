@@ -7,8 +7,8 @@ import com.example.core.utils.Resource
 import com.example.feature_main_screen.domain.use_case.FetchBasketInfoUseCase
 import com.example.feature_main_screen.domain.use_case.FetchMainScreenItemsUseCase
 import com.example.feature_main_screen.domain.use_case.ShowNumberOfItemsInTheCartUseCase
-import com.example.feature_main_screen.presentation.main_screen.utils.CartScreenEvent
-import com.example.feature_main_screen.presentation.main_screen.utils.MainScreenEvent
+import com.example.feature_main_screen.presentation.main_screen.view_model.model.CartScreenEvent
+import com.example.feature_main_screen.presentation.main_screen.view_model.model.MainScreenEvent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch

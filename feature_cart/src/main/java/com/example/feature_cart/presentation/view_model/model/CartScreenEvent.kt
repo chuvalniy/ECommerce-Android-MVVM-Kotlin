@@ -1,4 +1,4 @@
-package com.example.feature_cart.presentation.utils
+package com.example.feature_cart.presentation.view_model.model
 
 import com.example.feature_cart.domain.model.CartDomain
 
