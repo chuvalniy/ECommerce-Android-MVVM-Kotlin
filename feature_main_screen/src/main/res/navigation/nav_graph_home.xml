@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/home_screen">
+
+    <dialog
+        android:id="@+id/filter_screen"
+        android:name="com.example.feature_main_screen.presentation.main_screen.fragment.FilterBottomDialogFragment"
+        android:label="FilterBottomDialogFragment" />
+    <fragment
+        android:id="@+id/home_screen"
+        android:name="com.example.feature_main_screen.presentation.main_screen.fragment.MainScreenFragment"
+        android:label="MainScreenFragment" >
+        <deepLink
+            android:id="@+id/deepLinkMain"
+            app:uri="myApp://featureMain" />
+        <action
+            android:id="@+id/action_home_screen_to_filter_screen"
+            app:destination="@id/filter_screen" />
+    </fragment>
+</navigation>

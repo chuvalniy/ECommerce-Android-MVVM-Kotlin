@@ -17,15 +17,11 @@ import com.example.core.ui.BaseFragment
 import com.example.core.utils.Constants
 import com.example.feature_main_screen.R
 import com.example.feature_main_screen.databinding.FragmentMainBinding
-import com.example.feature_main_screen.domain.model.BestSellerDomain
-import com.example.feature_main_screen.domain.model.HomeStoreDomain
 import com.example.feature_main_screen.presentation.main_screen.adapters.BestSellerAdapter
 import com.example.feature_main_screen.presentation.main_screen.adapters.HotSalesAdapter
 import com.example.feature_main_screen.presentation.main_screen.utils.SampleData.categories
+import com.example.feature_main_screen.presentation.main_screen.view_model.MainScreenState
 import com.example.feature_main_screen.presentation.main_screen.view_model.MainScreenViewModel
-import com.example.feature_main_screen.presentation.main_screen.view_model.model.CartScreenEvent
-import com.example.feature_main_screen.presentation.main_screen.view_model.model.MainScreenEvent
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -41,65 +37,81 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val filterBottomDialogFragment = FilterBottomDialogFragment()
-
         setupTabLayout()
         setupSpinnerLocationAdapter()
         setupAdapter()
 
-        observeMainScreen()
-        observeCart()
+        observeUiState()
+        observeUiEffect()
 
-        binding.btnFilter.setOnClickListener { showBottomDialogFragment(filterBottomDialogFragment) }
-        binding.btnShoppingBag.setOnClickListener {
-            findNavController().navigate(Uri.parse(Constants.CART_SCREEN_DEEP_LINK))
-        }
+        processButtonClicks()
     }
 
-    private fun observeCart() = viewLifecycleOwner.lifecycleScope.launchWhenCreated {
-        viewModel.cartUiEvent.collect { event ->
-            when (event) {
-                is CartScreenEvent.Success -> {
-                    binding.tvNumberOfItems.text = event.numberOfItems
-                    binding.tvNumberOfItems.isVisible = event.shouldShowBadge
+    private fun processButtonClicks() {
+        binding.btnFilter.setOnClickListener { viewModel.filterButtonClicked() }
+        binding.btnShoppingBag.setOnClickListener { viewModel.cartButtonClicked() }
+    }
+
+    private fun observeUiEffect() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+        viewModel.uiEffect.collect { effect ->
+            when (effect) {
+                is MainScreenViewModel.UiEffect.ShowSnackbar -> {
+
                 }
-                else -> Unit
+                is MainScreenViewModel.UiEffect.NavigateToCartScreen -> {
+                    findNavController().navigate(Uri.parse(Constants.CART_SCREEN_DEEP_LINK))
+                }
+                is MainScreenViewModel.UiEffect.NavigateToDetailsScreen -> {
+                    findNavController().navigate(Uri.parse(Constants.DETAILS_SCREEN_DEEP_LINK))
+                }
+                is MainScreenViewModel.UiEffect.NavigateToFilterDialogScreen -> with(
+                    findNavController()
+                ) {
+                    if (currentDestination?.id == R.id.home_screen) {
+                        navigate(R.id.action_home_screen_to_filter_screen)
+                    }
+                }
             }
         }
     }
 
-    private fun observeMainScreen() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-        viewModel.mainScreenUiEvent.collect { event ->
-            when (event) {
-                is MainScreenEvent.Success -> {
-                    bindMainScreenData(
-                        bestSeller = event.data.best_seller,
-                        homeStore = event.data.home_store
-                    )
-                }
-                else -> Unit
-            }
+    private fun observeUiState() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+        viewModel.mainScreenState.collect { state ->
+            processUiState(state)
+        }
+    }
+
+    private fun processUiState(state: MainScreenState) {
+        processBestSellers(state)
+        processHotSales(state)
+        processCartInfo(state)
+    }
+
+    private fun processBestSellers(state: MainScreenState) {
+        bestSellerAdapter?.items = state.bestSellers
+    }
+
+    private fun processHotSales(state: MainScreenState) {
+        if (state.homeStoreInfo.isEmpty()) return
+        val carouselHotSales =
+            listOf(state.homeStoreInfo.last()) + state.homeStoreInfo + listOf(state.homeStoreInfo.first())
+        hotSalesAdapter?.items = carouselHotSales
+        onInfinitePageChangeCallback(carouselHotSales.size)
+    }
+
+    private fun processCartInfo(state: MainScreenState) {
+        state.numberOfItemsInTheCart?.let {
+            binding.tvNumberOfItems.text = it.toString()
+            binding.tvNumberOfItems.isVisible = true
         }
     }
 
     private fun setupAdapter() {
-        bestSellerAdapter = BestSellerAdapter(glide) {
-            findNavController().navigate(Uri.parse(Constants.DETAILS_SCREEN_DEEP_LINK))
-        }
+        bestSellerAdapter = BestSellerAdapter(glide) { viewModel.productClicked() }
         hotSalesAdapter = HotSalesAdapter(glide)
+
         binding.rvBestSeller.adapter = bestSellerAdapter
         binding.vpHotSales.adapter = hotSalesAdapter
-    }
-
-    private fun bindMainScreenData(
-        bestSeller: List<BestSellerDomain>,
-        homeStore: List<HomeStoreDomain>
-    ) {
-        bestSellerAdapter?.items = bestSeller
-
-        val carouselHotSales = listOf(homeStore.last()) + homeStore + listOf(homeStore.first())
-        hotSalesAdapter?.items = carouselHotSales
-        onInfinitePageChangeCallback(carouselHotSales.size)
     }
 
     private fun onInfinitePageChangeCallback(
@@ -117,7 +129,6 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
         }
     })
 
-
     private fun setupTabLayout() = categories.onEachIndexed { index, (title, image) ->
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText(title))
         binding.tabLayout.getTabAt(index)?.apply {
@@ -126,13 +137,6 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
                 ?.setImageResource(image)
             customView?.findViewById<TextView>(R.id.tabTitle)?.text = title
         }
-    }
-
-    private fun showBottomDialogFragment(bottomSheetDialogFragment: BottomSheetDialogFragment) {
-        if (bottomSheetDialogFragment.isAdded) {
-            return
-        }
-        bottomSheetDialogFragment.show(parentFragmentManager, "FilterBottomSheetDialog")
     }
 
     private fun setupSpinnerLocationAdapter() {

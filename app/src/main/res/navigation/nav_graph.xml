@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/main">
+    app:startDestination="@id/nav_graph_home">
 
-    <fragment
-        android:id="@+id/main"
-        android:name="com.example.feature_main_screen.presentation.main_screen.fragment.MainScreenFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main">
-
-        <deepLink
-            android:id="@+id/deepLinkMain"
-            app:uri="myApp://featureMain" />
-    </fragment>
-    <fragment
-        android:id="@+id/details"
-        android:name="com.example.feature_details_screen.presentation.fragment.DetailsScreenFragment"
-        android:label="DetailsScreenFragment">
-
-        <deepLink
-            android:id="@+id/deepLinkDetails"
-            app:uri="myapp://featureDetails" />
-    </fragment>
-    <fragment
-        android:id="@+id/cart"
-        android:name="com.example.feature_cart.presentation.fragment.CartScreenFragment"
-        android:label="CartScreenFragment">
-        <deepLink
-            android:id="@+id/deepLinkCart"
-            app:uri="myapp://featureCart" />
-    </fragment>
+    <include app:graph="@navigation/nav_graph_cart" />
+    <include app:graph="@navigation/nav_graph_details" />
+    <include app:graph="@navigation/nav_graph_home" />
 </navigation>

@@ -1,12 +1,9 @@
 package com.example.feature_main_screen.domain.repository
 
 import com.example.core.utils.Resource
-import com.example.feature_main_screen.domain.model.BasketDomain
-import com.example.feature_main_screen.domain.model.MainScreenDomain
+import com.example.feature_main_screen.domain.model.DomainDataSource
 
 interface MainScreenRepository {
 
-    suspend fun fetchMainScreenItems(): Resource<MainScreenDomain>
-
-    suspend fun fetchCartInfo(): Resource<List<BasketDomain>>
+    suspend fun fetchMainScreenItems(): Resource<DomainDataSource>
 }
