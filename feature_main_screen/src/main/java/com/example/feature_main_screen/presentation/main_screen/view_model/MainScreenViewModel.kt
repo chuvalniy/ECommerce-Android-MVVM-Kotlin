@@ -35,7 +35,7 @@ class MainScreenViewModel(
                         isLoading = false,
                         homeStoreInfo = response.data?.homeStore ?: emptyList(),
                         bestSellers = response.data?.bestSeller ?: emptyList(),
-                        numberOfItemsInTheCart = response.data?.cartInfo
+                        numberOfItemsInTheCart = if (response.data?.cartInfo!! > 0) response.data?.cartInfo else null
                     )
                 }
                 is Resource.Error -> {

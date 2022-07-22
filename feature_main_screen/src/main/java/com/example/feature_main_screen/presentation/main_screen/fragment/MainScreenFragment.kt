@@ -93,6 +93,7 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
 
     private fun processHotSales(state: MainScreenState) {
         if (state.homeStoreInfo.isEmpty()) return
+
         val carouselHotSales =
             listOf(state.homeStoreInfo.last()) + state.homeStoreInfo + listOf(state.homeStoreInfo.first())
         hotSalesAdapter?.items = carouselHotSales

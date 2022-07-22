@@ -19,6 +19,7 @@ class MainScreenRepositoryImpl(
 
             val domainHomeStore = mainScreenResponse.home_store.map { it.toHomeStore() }
             val domainBestSeller = mainScreenResponse.best_seller.map { it.toBestSeller() }
+
             val cartInfo = api.fetchCartInfoFromApi().basket.size
 
             val response = DomainDataSource(

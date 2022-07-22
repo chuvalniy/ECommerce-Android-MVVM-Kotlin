@@ -238,7 +238,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 style="@style/MainScreenBottomMenuText"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/background_circle_cart_items"
                 tools:text="2" />
         </FrameLayout>
