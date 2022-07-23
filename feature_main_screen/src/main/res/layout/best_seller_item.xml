@@ -5,7 +5,6 @@
     android:id="@+id/cvBestSeller"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="@dimen/main_screen_best_seller_card_horizontal_margin"
     android:layout_marginBottom="@dimen/main_screen_best_seller_card_bottom_margin"
     android:elevation="@dimen/main_screen_best_seller_card_elevation"
     app:cardCornerRadius="@dimen/main_screen_best_seller_card_corner_radius"

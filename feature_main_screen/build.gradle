@@ -4,6 +4,10 @@ plugins {
     id 'kotlin-kapt'
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 android {
     compileSdk 32
 
@@ -58,8 +62,10 @@ dependencies {
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
 
-    // Adapter Delegate
-    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.2'
+    // Epoxy
+    def epoxy_version = "4.6.3"
+    implementation "com.airbnb.android:epoxy:$epoxy_version"
+    kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
 
     // Coroutines
     def coroutine_version = "1.5.2"

@@ -2,39 +2,53 @@ package com.example.feature_details_screen.presentation.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.core.utils.Constants
 import com.example.core.utils.Resource
 import com.example.feature_details_screen.domain.use_case.FetchProductDetailsUseCase
-import com.example.feature_details_screen.presentation.view_model.model.DetailScreenEvent
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class DetailsScreenViewModel(
     private val fetchProductDetailsUseCase: FetchProductDetailsUseCase
 ) : ViewModel() {
 
-    private val _uiEvent = MutableStateFlow<DetailScreenEvent>(DetailScreenEvent.Empty)
-    val uiEvent get() = _uiEvent.asStateFlow()
+    private val _uiState = MutableStateFlow(DetailsScreenState())
+    val uiState get() = _uiState.asStateFlow()
+
+    private val _uiChannel = Channel<UiEffect>()
+    val uiEffect = _uiChannel.receiveAsFlow()
 
     init {
         fetchProductDetails()
     }
 
     private fun fetchProductDetails() = viewModelScope.launch {
-        _uiEvent.value = DetailScreenEvent.Loading
+        _uiState.value = _uiState.value.copy(isLoading = true)
+
         when (val response = fetchProductDetailsUseCase()) {
             is Resource.Success -> {
-                response.data?.let { details ->
-                    _uiEvent.value = DetailScreenEvent.Success(data = details)
-                }
+                _uiState.value = _uiState.value.copy(data = response.data)
             }
             is Resource.Error -> {
-                _uiEvent.value = DetailScreenEvent.Failure(
-                    error = response.error ?: Constants.ERROR_MESSAGE
-                )
+                _uiState.value = _uiState.value.copy(isLoading = false)
+                showSnackbar(response.error ?: "Error")
             }
             else -> Unit
         }
+    }
+
+    fun addToCartButtonClicked() = viewModelScope.launch {
+        _uiChannel.send(UiEffect.NavigateToCartScreen)
+    }
+
+    private suspend fun showSnackbar(message: String) {
+           _uiChannel.send(UiEffect.ShowSnackbar(message))
+    }
+
+    sealed class UiEffect {
+        data class ShowSnackbar(val message: String) : UiEffect()
+        object NavigateToCartScreen : UiEffect()
     }
 }

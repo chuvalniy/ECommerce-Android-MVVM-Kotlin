@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_screen_content_bottom_margin"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/main_screen_top_menu_horizontal_margin"
+                android:layout_marginTop="@dimen/main_screen_top_menu_top_margin">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/main_screen_location_icon_margin_end"
+                        android:padding="@dimen/main_screen_location_icon_padding"
+                        android:src="@drawable/ic_geo"
+                        app:tint="@color/light_orange" />
+
+                    <Spinner
+                        android:id="@+id/spinnerLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:textAlignment="center">
+                    </Spinner>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btnFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:background="@drawable/background_circle_ripple_gray"
+                    android:padding="@dimen/main_screen_padding_filter_button"
+                    android:src="@drawable/ic_filter" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/main_screen_group_horizontal_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvSelectCategory"
+                    style="@style/MainScreenHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/select_category" />
+
+                <Button
+                    android:id="@+id/btnViewAllCategory"
+                    style="@style/MainScreenHelperTextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/view_all" />
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_layout_height"
+                android:layout_marginVertical="@dimen/tab_layout_margin_vertical"
+                android:background="@color/light_gray"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/tab_layout_horizontal_padding"
+                app:tabIndicatorHeight="0dp"
+                app:tabMode="scrollable"
+                app:tabRippleColor="@null" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/main_screen_search_tab_horizontal_margin"
+                android:layout_marginTop="@dimen/main_screen_search_tab_top_margin"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/main_screen_search_view_height"
+                    android:layout_marginEnd="@dimen/main_screen_search_view_margin_end"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_rounded_searchview_white"
+                    android:theme="@style/AppSearchView"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent"
+                    app:queryHint="@string/search_view_hint"
+                    app:searchIcon="@drawable/ic_search" />
+
+                <ImageButton
+                    android:id="@+id/btnQrCode"
+                    android:layout_width="@dimen/main_screen_qr_code_button_size"
+                    android:layout_height="@dimen/main_screen_qr_code_button_size"
+                    android:background="@drawable/background_circle_ripple_orange"
+                    android:src="@drawable/ic_qr_code" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/main_screen_group_horizontal_margin"
+                android:layout_marginTop="@dimen/main_screen_hot_sales_margin_top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvHotSales"
+                    style="@style/MainScreenHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/hot_sales" />
+
+                <Button
+                    android:id="@+id/btnSeeMoreHotSales"
+                    style="@style/MainScreenHelperTextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_more" />
+
+            </LinearLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpHotSales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/main_screen_group_horizontal_margin"
+                android:layout_marginTop="@dimen/main_screen_best_seller_margin_top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvBestSeller"
+                    style="@style/MainScreenHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/best_seller" />
+
+                <Button
+                    android:id="@+id/btnSeeMoreBestSeller"
+                    style="@style/MainScreenHelperTextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/see_more" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBestSeller"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/main_screen_best_seller_list_margin_horizontal"
+                android:layout_marginTop="@dimen/main_screen_best_seller_margin_top"
+                android:overScrollMode="never"
+                tools:listitem="@layout/best_seller_item"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_screen_bottom_menu_height"
+        android:layout_gravity="bottom"
+        android:background="@drawable/background_rounded_menu_dark_blue"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvExplorer"
+            style="@style/MainScreenBottomMenuText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/bottom_menu_horizontal_margin"
+            android:layout_marginEnd="@dimen/bottom_menu_button_distance"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/bottom_menu_text_view_padding"
+            android:text="@string/explorer_text_view" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/bottom_menu_button_distance"
+            android:background="@drawable/background_circle_ripple_dark_blue">
+
+            <ImageButton
+                android:id="@+id/btnShoppingBag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_circle_ripple_dark_blue"
+                android:padding="@dimen/bottom_menu_button_size"
+                android:src="@drawable/ic_shopping_bag"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tvNumberOfItems"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                style="@style/MainScreenBottomMenuText"
+                android:visibility="gone"
+                android:background="@drawable/background_circle_cart_items"
+                tools:text="2" />
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/btnFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/bottom_menu_button_distance"
+            android:background="@drawable/background_circle_ripple_dark_blue"
+            android:padding="@dimen/bottom_menu_button_size"
+            android:src="@drawable/ic_bordered_favorite"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/btnAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/bottom_menu_button_distance"
+            android:layout_marginEnd="@dimen/bottom_menu_horizontal_margin"
+            android:background="@drawable/background_circle_ripple_dark_blue"
+            android:padding="@dimen/bottom_menu_button_size"
+            android:src="@drawable/ic_account"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -22,7 +22,6 @@ import com.example.feature_details_screen.domain.model.ProductDetailsDomain
 import com.example.feature_details_screen.presentation.adapter.DetailsScreenViewPagerAdapter
 import com.example.feature_details_screen.presentation.utils.SampleData.categories
 import com.example.feature_details_screen.presentation.view_model.DetailsScreenViewModel
-import com.example.feature_details_screen.presentation.view_model.model.DetailScreenEvent
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -40,26 +39,31 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
         setupViewPagerWithCompositePagerTransformer()
         setupTabLayout()
 
-        observeUi()
+        observeUiState()
+        observeUiEffect()
 
-        applyBinding()
+        processButtonClicks()
     }
 
-    private fun applyBinding() = binding.apply {
-        btnAddToCart.setOnClickListener {
-            findNavController().navigate(Uri.parse(Constants.CART_SCREEN_DEEP_LINK))
+    private fun observeUiEffect() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+        viewModel.uiEffect.collect { effect ->
+            when (effect) {
+                is DetailsScreenViewModel.UiEffect.NavigateToCartScreen -> {
+                    findNavController().navigate(Uri.parse(Constants.CART_SCREEN_DEEP_LINK))
+                }
+                is DetailsScreenViewModel.UiEffect.ShowSnackbar -> TODO()
+            }
         }
     }
 
-    private fun observeUi() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-        viewModel.uiEvent.collect { event ->
-            when (event) {
-                is DetailScreenEvent.Success -> {
-                    bindData(productDetails = event.data)
-                    adapter?.submitList(event.data.images)
-                }
-                else -> Unit
-            }
+    private fun processButtonClicks() = binding.apply {
+        btnAddToCart.setOnClickListener { viewModel.addToCartButtonClicked() }
+    }
+
+    private fun observeUiState() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+        viewModel.uiState.collect { state ->
+            state.data?.let { bindData(productDetails = it) }
+            adapter?.submitList(state.data?.images)
         }
     }
 
