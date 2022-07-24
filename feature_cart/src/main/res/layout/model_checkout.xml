@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="36dp"
+    android:background="@color/dark_blue">
+
+    <View
+        android:id="@+id/topSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_separator_height"
+        android:layout_marginHorizontal="@dimen/separator_horizontal_margin"
+        android:alpha="0.25"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTotalTitle"
+        style="@style/CaptionBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_view_total_price"
+        app:layout_constraintStart_toStartOf="@+id/verticalLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/topSeparator" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        style="@style/CaptionBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotalTitle"
+        app:layout_constraintEnd_toStartOf="@+id/verticalRightGuideline"
+        app:layout_constraintTop_toTopOf="@+id/tvTotalTitle"
+        tools:text="$6,000 us" />
+
+    <TextView
+        android:id="@+id/tvDeliveryTitle"
+        style="@style/CaptionBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/delivery_cost"
+        app:layout_constraintStart_toStartOf="@+id/verticalLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalTitle" />
+
+    <TextView
+        android:id="@+id/tvDelivery"
+        style="@style/CaptionBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDeliveryTitle"
+        app:layout_constraintEnd_toStartOf="@+id/verticalRightGuideline"
+        app:layout_constraintStart_toStartOf="@+id/tvTotal"
+        app:layout_constraintTop_toTopOf="@+id/tvDeliveryTitle"
+        tools:text="Free" />
+
+    <View
+        android:id="@+id/bottomSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_separator_height"
+        android:layout_marginHorizontal="@dimen/top_separator_height"
+        android:layout_marginTop="@dimen/bottom_separator_top_margin"
+        android:alpha="0.2"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDeliveryTitle" />
+
+    <TextView
+        android:id="@+id/btnCheckout"
+        style="@style/HeadlineBold"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/checkout_button_height"
+        android:layout_marginHorizontal="@dimen/checkout_button_horizontal_margin"
+        android:layout_marginVertical="@dimen/checkout_button_vertical_margin"
+        android:background="@drawable/background_rounded_ripple_orange"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/checkout"
+        app:layout_constraintEnd_toStartOf="@+id/verticalRightGuideline"
+        app:layout_constraintStart_toStartOf="@+id/verticalLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/bottomSeparator" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalLeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="36dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalRightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="36dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

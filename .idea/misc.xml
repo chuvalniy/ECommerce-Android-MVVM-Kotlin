@@ -102,6 +102,12 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/drawable/ic_remove.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/cart_item.xml" value="0.4" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/fragment_cart_screen.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/model_cart_content_background.xml" value="0.2" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/model_cart_content_rounded_background.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/model_cart_header.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/model_cart_top_bar.xml" value="0.20778110303548525" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/model_checkout.xml" value="0.3952755905511811" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/temp.xml" value="0.20778110303548525" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/drawable/background_checked_color.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/drawable/background_checked_memory.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/drawable/background_favorite_checked.xml" value="0.164" />

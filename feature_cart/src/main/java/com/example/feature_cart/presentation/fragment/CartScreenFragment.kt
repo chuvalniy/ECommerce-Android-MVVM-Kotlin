@@ -7,11 +7,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.RequestManager
 import com.example.core.ui.BaseFragment
-import com.example.feature_cart.R
 import com.example.feature_cart.databinding.FragmentCartScreenBinding
-import com.example.feature_cart.domain.model.CartDomain
-import com.example.feature_cart.presentation.adapter.CartScreenAdapter
-import com.example.feature_cart.presentation.view_model.model.CartScreenEvent
+import com.example.feature_cart.presentation.epoxy.CartScreenEpoxyController
 import com.example.feature_cart.presentation.view_model.CartScreenViewModel
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
@@ -22,7 +19,7 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
     private val viewModel by viewModel<CartScreenViewModel>()
     private val glide by inject<RequestManager>()
 
-    private var adapter: CartScreenAdapter? = null
+    private var epoxyController: CartScreenEpoxyController? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,27 +30,16 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
     }
 
     private fun setupAdapter() {
-        adapter = CartScreenAdapter(glide)
-        binding.rvCart.adapter = adapter
+        epoxyController = CartScreenEpoxyController(glide)
+        binding.epoxyRecylerView.setController(epoxyController!!)
     }
 
     private fun observeCart() = viewLifecycleOwner.lifecycleScope.launchWhenCreated {
-        viewModel.uiEvent.collect { event ->
-            when (event) {
-                is CartScreenEvent.Success -> {
-                    bindData(event.data)
-                }
-                else -> Unit
-            }
+        viewModel.uiState.collect { state ->
+            epoxyController?.setData(state.cartInfo)
         }
     }
 
-    private fun bindData(cartDomain: CartDomain) {
-        adapter?.items = cartDomain.basket
-
-        binding.tvTotal.text = getString(R.string.total_price, cartDomain.total)
-        binding.tvDelivery.text = cartDomain.delivery
-    }
 
     override fun initBinding(
         inflater: LayoutInflater,
