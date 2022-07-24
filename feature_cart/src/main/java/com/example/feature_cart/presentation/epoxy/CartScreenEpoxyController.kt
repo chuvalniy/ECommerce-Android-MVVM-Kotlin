@@ -14,7 +14,8 @@ class CartScreenEpoxyController(
     override fun buildModels(data: CartDomain?) {
 
         data?.let { cart ->
-            cart.basket.forEach { item ->
+            val cartBasket= cart.basket + cart.basket + cart.basket + cart.basket
+            cartBasket.forEach { item ->
                 CartItemEpoxyModel(item, glide).id(item.id).addTo(this)
             }
 

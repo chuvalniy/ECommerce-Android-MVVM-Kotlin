@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="36dp"
+    android:paddingBottom="@dimen/checkout_bottom_padding"
     android:background="@color/dark_blue">
 
     <View
         android:id="@+id/topSeparator"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/top_separator_height"
-        android:layout_marginTop="32dp"
-        android:layout_marginHorizontal="@dimen/separator_horizontal_margin"
+        android:layout_height="@dimen/checkout_separator_height"
+        android:layout_marginTop="@dimen/checkout_top_separator_top_margin"
+        android:layout_marginHorizontal="@dimen/checkout_top_separator_horizontal_margin"
         android:alpha="0.25"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,8 +24,8 @@
         style="@style/CaptionBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/text_view_total_price"
+        android:layout_marginTop="@dimen/checkout_title_top_margin"
+        android:text="@string/title_total_price"
         app:layout_constraintStart_toStartOf="@+id/verticalLeftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/topSeparator" />
 
@@ -44,7 +44,7 @@
         style="@style/CaptionBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/checkout_delivery_top_margin"
         android:text="@string/delivery_cost"
         app:layout_constraintStart_toStartOf="@+id/verticalLeftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/tvTotalTitle" />
@@ -63,9 +63,9 @@
     <View
         android:id="@+id/bottomSeparator"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/bottom_separator_height"
-        android:layout_marginHorizontal="@dimen/top_separator_height"
-        android:layout_marginTop="@dimen/bottom_separator_top_margin"
+        android:layout_height="@dimen/checkout_bottom_separator_height"
+        android:layout_marginHorizontal="@dimen/checkout_separator_height"
+        android:layout_marginTop="@dimen/checkout_bottom_separator_top_margin"
         android:alpha="0.2"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,13 +93,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="36dp" />
+        app:layout_constraintGuide_begin="@dimen/checkout_vertical_guideline_margin" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/verticalRightGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="36dp" />
+        app:layout_constraintGuide_end="@dimen/checkout_vertical_guideline_margin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

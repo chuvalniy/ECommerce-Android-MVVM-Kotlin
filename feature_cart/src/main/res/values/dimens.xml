@@ -1,40 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="appbar_menu_horizontal_margin">36dp</dimen>
-    <dimen name="appbar_menu_top_margin">24dp</dimen>
-    <dimen name="appbar_menu_button_size">37dp</dimen>
-    <dimen name="add_address_end_margin">8dp</dimen>
+
+
+<!--    Top bar-->
+    <dimen name="top_bar_horizontal_margin">36dp</dimen>
+    <dimen name="top_bar_top_margin">24dp</dimen>
+    <dimen name="top_bar_button_size">37dp</dimen>
+    <dimen name="top_bar_add_address_margin_end">8dp</dimen>
+
+<!--    Header -->
     <dimen name="header_my_cart_margin_horizontal">42dp</dimen>
     <dimen name="header_my_cart_top_margin">50dp</dimen>
-    <dimen name="cart_content_top_margin">50dp</dimen>
-    <dimen name="cart_recycler_view_vertical_padding">16dp</dimen>
-    <dimen name="top_separator_height">2dp</dimen>
-    <dimen name="separator_horizontal_margin">4dp</dimen>
-    <dimen name="total_cost_layout_start_margin">36dp</dimen>
-    <dimen name="total_cost_layout_margin_top">16dp</dimen>
-    <dimen name="total_cost_layout_margin_end">24dp</dimen>
-    <dimen name="delivery_layout_top_margin">4dp</dimen>
-    <dimen name="bottom_separator_height">1dp</dimen>
-    <dimen name="bottom_separator_top_margin">24dp</dimen>
+
+<!--    Checkout -->
+    <dimen name="checkout_bottom_padding">36dp</dimen>
+
+    <dimen name="checkout_separator_height">2dp</dimen>
+    <dimen name="checkout_top_separator_horizontal_margin">4dp</dimen>
+    <dimen name="checkout_top_separator_top_margin">32dp</dimen>
+    <dimen name="checkout_bottom_separator_height">1dp</dimen>
+    <dimen name="checkout_bottom_separator_top_margin">24dp</dimen>
+
     <dimen name="checkout_button_height">54dp</dimen>
     <dimen name="checkout_button_horizontal_margin">48dp</dimen>
     <dimen name="checkout_button_vertical_margin">28dp</dimen>
-    <dimen name="cart_product_top_margin">36dp</dimen>
+
+    <dimen name="checkout_title_top_margin">16dp</dimen>
+    <dimen name="checkout_delivery_top_margin">4dp</dimen>
+
+    <dimen name="checkout_vertical_guideline_margin">36dp</dimen>
+
+<!--    Cart -->
+    <dimen name="cart_product_top_padding">32dp</dimen>
+
     <dimen name="cart_product_image_size">90dp</dimen>
     <dimen name="cart_product_image_vertical_margin">4dp</dimen>
     <dimen name="cart_product_image_start_margin">32dp</dimen>
     <dimen name="cart_product_image_corner_radius">12dp</dimen>
-    <dimen name="button_remove_from_cart_margin_end">12dp</dimen>
-    <dimen name="button_remove_from_cart_padding">8dp</dimen>
-    <dimen name="card_view_product_counter_width">26dp</dimen>
-    <dimen name="card_view_product_counter_height">64dp</dimen>
-    <dimen name="card_view_product_counter_start_margin">32dp</dimen>
-    <dimen name="product_title_width">150dp</dimen>
-    <dimen name="product_title_start_margin">16dp</dimen>
-    <dimen name="product_title_top_margin">4dp</dimen>
-    <dimen name="btn_remove_item_top_margin">8dp</dimen>
-    <dimen name="buttom_remove_item_padding">2dp</dimen>
-    <dimen name="button_add_item_bottom_margin">8dp</dimen>
-    <dimen name="button_add_item_padding">2dp</dimen>
-    <dimen name="product_price_bottom_margin">4dp</dimen>
+
+    <dimen name="cart_product_btn_remove_from_cart_margin_end">12dp</dimen>
+    <dimen name="cart_product_btn_remove_from_cart_padding">8dp</dimen>
+
+    <dimen name="cart_product_card_item_counter_width">26dp</dimen>
+    <dimen name="cart_product_card_item_counter_height">64dp</dimen>
+    <dimen name="cart_product_card_item_counter_start_margin">32dp</dimen>
+
+    <dimen name="cart_product_title_width">150dp</dimen>
+    <dimen name="cart_product_title_start_margin">16dp</dimen>
+    <dimen name="cart_product_title_top_margin">4dp</dimen>
+
+    <dimen name="cart_product_btn_remove_item_top_margin">8dp</dimen>
+    <dimen name="cart_product_btn_remove_item_padding">2dp</dimen>
+
+    <dimen name="cart_product_btn_add_item_bottom_margin">8dp</dimen>
+    <dimen name="cart_product_btn_add_item_padding">2dp</dimen>
+
+    <dimen name="cart_product_price_bottom_margin">4dp</dimen>
+
+
 </resources>
