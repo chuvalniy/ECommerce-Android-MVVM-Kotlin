@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/main_screen_search_tab_horizontal_margin"
+    android:layout_marginTop="@dimen/main_screen_search_tab_top_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/main_screen_search_view_height"
+        android:layout_marginEnd="@dimen/main_screen_search_view_margin_end"
+        android:layout_weight="1"
+        android:background="@drawable/background_rounded_searchview_white"
+        android:theme="@style/AppSearchView"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@android:color/transparent"
+        app:queryHint="@string/search_view_hint"
+        app:searchIcon="@drawable/ic_search" />
+
+    <ImageButton
+        android:id="@+id/btnQrCode"
+        android:layout_width="@dimen/main_screen_qr_code_button_size"
+        android:layout_height="@dimen/main_screen_qr_code_button_size"
+        android:background="@drawable/background_circle_ripple_orange"
+        android:src="@drawable/ic_qr_code" />
+</LinearLayout>

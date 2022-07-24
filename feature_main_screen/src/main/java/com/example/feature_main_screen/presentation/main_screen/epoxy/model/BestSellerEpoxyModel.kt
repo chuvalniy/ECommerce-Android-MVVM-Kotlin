@@ -1,4 +1,4 @@
-package com.example.feature_main_screen.presentation.main_screen.epoxy
+package com.example.feature_main_screen.presentation.main_screen.epoxy.model
 
 import com.bumptech.glide.RequestManager
 import com.example.core.helpers.ViewBindingKotlinModel
@@ -29,4 +29,6 @@ data class BestSellerEpoxyModel(
 
         glide.load(bestSeller.picture).into(ivBestSeller)
     }
+
+
 }

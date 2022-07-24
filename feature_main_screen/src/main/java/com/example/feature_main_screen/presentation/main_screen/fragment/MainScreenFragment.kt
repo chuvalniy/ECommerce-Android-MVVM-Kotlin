@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.RequestManager
@@ -31,7 +32,6 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
 
         setupEpoxyController()
 //        setupTabLayout()
-//        setupSpinnerLocationAdapter()
 
         observeUiState()
         observeUiEffect()
@@ -99,16 +99,6 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
 //        }
 //    }
 //
-//    private fun setupSpinnerLocationAdapter() {
-//        ArrayAdapter.createFromResource(
-//            requireContext(),
-//            R.array.locations,
-//            android.R.layout.simple_spinner_item
-//        ).also { adapter ->
-//            adapter.setDropDownViewResource(R.layout.spinner_location_text_view)
-//            binding.spinnerLocation.adapter = adapter
-//        }
-//    }
 
     override fun initBinding(
         inflater: LayoutInflater,

@@ -1,4 +1,4 @@
-package com.example.feature_main_screen.presentation.main_screen.epoxy
+package com.example.feature_main_screen.presentation.main_screen.epoxy.model
 
 import androidx.core.view.isVisible
 import com.bumptech.glide.RequestManager
@@ -23,4 +23,5 @@ data class HotSalesEpoxyModel(
 
         glide.load(hotSales.picture).into(ivHotSales)
     }
+
 }

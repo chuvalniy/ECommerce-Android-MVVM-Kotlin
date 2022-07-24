@@ -157,15 +157,20 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/activity_main.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/adapter_recycler_view_best_seller_item.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/adapter_view_pager_home_store_item.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/best_seller_header.xml" value="0.20778110303548525" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/fragment_blank.xml" value="0.19709277469003847" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/fragment_filter_bottom_dialog.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/fragment_main.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/hot_sales_header.xml" value="0.20778110303548525" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/item_best_seller.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/item_hot_sales.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/location_picker.xml" value="0.20778110303548525" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/model_search.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/model_top_bar.xml" value="0.20778110303548525" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/spinner_filter_text_view.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/spinner_location_text_view.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/tab_item.xml" value="0.20863616930312098" />
-        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/temp.xml" value="0.16154371584699453" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/temp.xml" value="0.176" />
       </map>
     </option>
   </component>
