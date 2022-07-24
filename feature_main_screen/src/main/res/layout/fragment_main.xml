@@ -13,17 +13,15 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toStartOf="@+id/rightVerticalGuideline"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/leftVerticalGuideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:spanCount="2"
         tools:listitem="@layout/best_seller_item" />
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/main_screen_bottom_menu_height"
+        android:layout_height="@dimen/bottom_menu_height"
         android:background="@drawable/background_rounded_menu_dark_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +29,7 @@
 
     <TextView
         android:id="@+id/tvExplorer"
-        style="@style/MainScreenBottomMenuText"
+        style="@style/HomeBottomMenuText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxLines="1"
@@ -58,9 +56,9 @@
 
     <TextView
         android:id="@+id/tvNumberOfItems"
-        style="@style/MainScreenBottomMenuText"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        style="@style/HomeBottomMenuText"
+        android:layout_width="@dimen/bottom_menu_shopping_bag_text_size"
+        android:layout_height="@dimen/bottom_menu_shopping_bag_text_size"
         android:layout_gravity="center"
         android:background="@drawable/background_circle_cart_items"
         android:gravity="center"
@@ -101,14 +99,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/main_screen_hot_sales_margin_horizontal" />
+        app:layout_constraintGuide_begin="@dimen/home_guideline_margin" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/rightVerticalGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="@dimen/main_screen_hot_sales_margin_horizontal" />
+        app:layout_constraintGuide_end="@dimen/home_guideline_margin" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

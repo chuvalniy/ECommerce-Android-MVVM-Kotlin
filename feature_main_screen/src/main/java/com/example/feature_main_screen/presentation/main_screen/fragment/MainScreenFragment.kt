@@ -16,6 +16,7 @@ import com.example.feature_main_screen.databinding.FragmentMainBinding
 import com.example.feature_main_screen.presentation.main_screen.epoxy.MainScreenEpoxyController
 import com.example.feature_main_screen.presentation.main_screen.view_model.MainScreenState
 import com.example.feature_main_screen.presentation.main_screen.view_model.MainScreenViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -56,7 +57,7 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
         viewModel.uiEffect.collect { effect ->
             when (effect) {
                 is MainScreenViewModel.UiEffect.ShowSnackbar -> {
-
+                    Snackbar.make(requireView(), effect.message, Snackbar.LENGTH_LONG).show()
                 }
                 is MainScreenViewModel.UiEffect.NavigateToCartScreen -> {
                     findNavController().navigate(Uri.parse(Constants.CART_SCREEN_DEEP_LINK))

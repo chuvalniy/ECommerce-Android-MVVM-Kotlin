@@ -14,6 +14,7 @@ import com.example.feature_cart.databinding.FragmentCartScreenBinding
 import com.example.feature_cart.presentation.epoxy.CartScreenEpoxyController
 import com.example.feature_cart.presentation.view_model.CartScreenState
 import com.example.feature_cart.presentation.view_model.CartScreenViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -51,8 +52,8 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
 
     private fun observeUiEffects() {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.uiEffect.collect { event ->
-                when(event) {
+            viewModel.uiEffect.collect { effect ->
+                when(effect) {
                     is CartScreenViewModel.UiEffect.NavigateBack -> {
                         findNavController().popBackStack()
                     }
@@ -62,7 +63,9 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
                             navigate(Uri.parse(MAIN_SCREEN_DEEP_LINK))
                         }
                     }
-                    is CartScreenViewModel.UiEffect.ShowSnackbar -> TODO()
+                    is CartScreenViewModel.UiEffect.ShowSnackbar -> {
+                        Snackbar.make(requireView(), effect.message, Snackbar.LENGTH_SHORT).show()
+                    }
                 }
             }
         }

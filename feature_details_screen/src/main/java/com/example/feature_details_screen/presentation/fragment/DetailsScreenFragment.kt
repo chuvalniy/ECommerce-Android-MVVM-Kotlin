@@ -13,6 +13,7 @@ import com.example.core.utils.Constants
 import com.example.feature_details_screen.databinding.FragmentDetailsScreenBinding
 import com.example.feature_details_screen.presentation.epoxy.DetailsScreenEpoxyController
 import com.example.feature_details_screen.presentation.view_model.DetailsScreenViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -52,7 +53,9 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
                 is DetailsScreenViewModel.UiEffect.NavigateBack -> {
                     findNavController().popBackStack()
                 }
-                is DetailsScreenViewModel.UiEffect.ShowSnackbar -> Unit
+                is DetailsScreenViewModel.UiEffect.ShowSnackbar -> {
+                    Snackbar.make(requireView(), effect.message, Snackbar.LENGTH_LONG).show()
+                }
             }
         }
     }

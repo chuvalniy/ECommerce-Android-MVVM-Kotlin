@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="@dimen/main_screen_hot_sales_card_corner_radius">
+    app:cardCornerRadius="@dimen/hot_sales_card_corner_radius">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -20,8 +20,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/main_screen_hot_sales_content_margin_start"
-            android:layout_marginTop="@dimen/main_screen_hot_sales_content_margin_top"
+            android:layout_marginStart="@dimen/hot_sales_content_margin_start"
+            android:layout_marginTop="@dimen/hot_sales_content_margin_top"
             android:orientation="vertical">
 
             <TextView
@@ -29,10 +29,10 @@
                 style="@style/HotSalesNew"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/main_screen_hot_sales_text_view_new_margin_bottom"
+                android:layout_marginBottom="@dimen/hot_sales_new_marker_margin_bottom"
                 android:background="@drawable/background_circle_orange"
                 android:gravity="center"
-                android:text="@string/hot_sales_text_view_new"
+                android:text="@string/hot_sales_new"
                 android:visibility="invisible" />
 
             <TextView
@@ -40,7 +40,7 @@
                 style="@style/HotSalesTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/main_screen_hot_sales_title_margin_bottom"
+                android:layout_marginBottom="@dimen/hot_sales_title_margin_bottom"
                 tools:text="Iphone 12" />
 
             <TextView
@@ -48,7 +48,7 @@
                 style="@style/HotSalesSubtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/main_screen_hot_sales_subtitle_margin_bottom"
+                android:layout_marginBottom="@dimen/hot_sales_subtitle_margin_bottom"
                 tools:text="Súper. Mega. Rápido." />
 
             <TextView
@@ -56,14 +56,14 @@
                 style="@style/HotSalesButtonText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/main_screen_hot_sales_button_buy_bottom_margin"
+                android:layout_marginBottom="@dimen/hot_sales_button_buy_bottom_margin"
                 android:background="@drawable/background_rounded_ripple_white"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
-                android:paddingHorizontal="@dimen/main_screen_hot_sales_button_buy_horizontal_size"
-                android:paddingVertical="@dimen/main_screen_hot_sales_button_buy_vertical_size"
-                android:text="@string/buy_now" />
+                android:paddingHorizontal="@dimen/hot_sales_button_buy_horizontal_size"
+                android:paddingVertical="@dimen/hot_sales_button_buy_vertical_size"
+                android:text="@string/hot_sales_buy_now" />
 
         </LinearLayout>
 

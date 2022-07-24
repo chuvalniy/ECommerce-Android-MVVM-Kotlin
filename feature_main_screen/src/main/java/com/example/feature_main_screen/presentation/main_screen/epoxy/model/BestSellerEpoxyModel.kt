@@ -14,11 +14,11 @@ data class BestSellerEpoxyModel(
 
     override fun BestSellerItemBinding.bind() {
         tvDefaultPrice.text = root.context.getString(
-            R.string.price_without_discount,
+            R.string.best_selelr_price_without_discount,
             bestSeller.price_without_discount
         )
         tvDiscountPrice.text = root.context.getString(
-            R.string.discount_price,
+            R.string.best_seller_discount_price,
             bestSeller.discount_price
         )
         tvTitle.text = bestSeller.title

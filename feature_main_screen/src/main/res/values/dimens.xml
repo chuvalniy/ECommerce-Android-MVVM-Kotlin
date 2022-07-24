@@ -1,65 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="main_screen_best_seller_margin_top">8dp</dimen>
-    <dimen name="main_screen_padding_filter_button">16dp</dimen>
-    <dimen name="main_screen_qr_code_button_size">34dp</dimen>
-    <dimen name="main_screen_search_view_height">34dp</dimen>
-    <dimen name="main_screen_search_view_margin_end">8dp</dimen>
-    <dimen name="main_screen_group_horizontal_margin">16dp</dimen>
-    <dimen name="main_screen_hot_sales_margin_top">16dp</dimen>
-    <dimen name="main_screen_best_seller_list_margin_horizontal">8dp</dimen>
-    <dimen name="main_screen_bottom_menu_height">72dp</dimen>
-    <dimen name="main_screen_search_tab_horizontal_margin">16dp</dimen>
-    <dimen name="main_screen_search_tab_top_margin">8dp</dimen>
-    <dimen name="main_screen_content_bottom_margin">8dp</dimen>
-    <dimen name="main_screen_top_menu_horizontal_margin">12dp</dimen>
-    <dimen name="main_screen_best_seller_card_corner_radius">10dp</dimen>
-    <dimen name="main_screen_hot_sales_card_start_margin">18dp</dimen>
-    <dimen name="tab_layout_horizontal_padding">12dp</dimen>
-    <dimen name="tab_layout_margin_vertical">12dp</dimen>
-    <dimen name="tab_layout_height">100dp</dimen>
-    <dimen name="bottom_menu_horizontal_margin">16dp</dimen>
-    <dimen name="bottom_menu_button_distance">8dp</dimen>
-    <dimen name="bottom_menu_button_size">16dp</dimen>
-    <dimen name="bottom_menu_text_view_padding">16dp</dimen>
-    <dimen name="select_category_tab_icon_size">71dp</dimen>
-    <dimen name="select_category_text_view_top_margin">8dp</dimen>
-    <dimen name="main_screen_location_icon_padding">8dp</dimen>
-    <dimen name="main_screen_best_seller_card_horizontal_margin">8dp</dimen>
-    <dimen name="main_screen_best_seller_card_bottom_margin">12dp</dimen>
-    <dimen name="main_screen_best_seller_card_elevation">0dp</dimen>
-    <dimen name="main_screen_best_seller_image_view_height">180dp</dimen>
-    <dimen name="main_screen_best_seller_favorite_background_size">25dp</dimen>
-    <dimen name="main_screen_best_seller_favorite_top_margin">12dp</dimen>
-    <dimen name="main_screen_best_seller_favorite_margin_end">16dp</dimen>
-    <dimen name="main_screen_best_seller_favorite_elevation">4dp</dimen>
-    <dimen name="main_screen_best_seller_text_view_discount_margin_end">8dp</dimen>
-    <dimen name="main_screen_best_seller_text_view_title_margin_top">6dp</dimen>
-    <dimen name="main_screen_best_seller_text_view_title_margin_bottom">16dp</dimen>
-    <dimen name="main_screen_hot_sales_margin_horizontal">16dp</dimen>
-    <dimen name="main_screen_hot_sales_card_corner_radius">10dp</dimen>
-    <dimen name="main_screen_hot_sales_content_margin_start">24dp</dimen>
-    <dimen name="main_screen_hot_sales_content_margin_top">16dp</dimen>
-    <dimen name="main_screen_hot_sales_text_view_new_margin_bottom">16dp</dimen>
-    <dimen name="main_screen_hot_sales_title_margin_bottom">4dp</dimen>
-    <dimen name="main_screen_hot_sales_subtitle_margin_bottom">24dp</dimen>
-    <dimen name="main_screen_hot_sales_button_buy_bottom_margin">24dp</dimen>
-    <dimen name="main_screen_hot_sales_button_buy_horizontal_size">27dp</dimen>
-    <dimen name="main_screen_hot_sales_button_buy_vertical_size">5dp</dimen>
+
+<!--    Best seller item-->
+    <dimen name="best_seller_card_corner_radius">10dp</dimen>
+    <dimen name="best_seller_card_elevation">0dp</dimen>
+    <dimen name="best_seller_card_height">180dp</dimen>
+    <dimen name="best_seller_card_margin_bottom">12dp</dimen>
+
+    <dimen name="best_seller_btn_favorite_size">25dp</dimen>
+    <dimen name="best_seller_btn_favorite_margin_top">12dp</dimen>
+    <dimen name="best_seller_btn_favorite_margin_end">16dp</dimen>
+    <dimen name="best_seller_btn_favorite_elevation">4dp</dimen>
+
+    <dimen name="best_seller_text_discount_margin_end">8dp</dimen>
+
+    <dimen name="best_seller_text_title_margin_top">6dp</dimen>
+    <dimen name="best_seller_text_title_margin_bottom">16dp</dimen>
+
+    <!--    Hot sales -->
+    <dimen name="hot_sales_card_start_margin">18dp</dimen>
+    <dimen name="hot_sales_card_corner_radius">10dp</dimen>
+
+    <dimen name="hot_sales_content_margin_start">24dp</dimen>
+    <dimen name="hot_sales_content_margin_top">16dp</dimen>
+
+    <dimen name="hot_sales_new_marker_margin_bottom">16dp</dimen>
+    <dimen name="hot_sales_title_margin_bottom">4dp</dimen>
+    <dimen name="hot_sales_subtitle_margin_bottom">24dp</dimen>
+
+    <dimen name="hot_sales_button_buy_bottom_margin">24dp</dimen>
+    <dimen name="hot_sales_button_buy_horizontal_size">27dp</dimen>
+    <dimen name="hot_sales_button_buy_vertical_size">5dp</dimen>
+
+
+<!--    Filter bottom dialog fragment sheet-->
     <dimen name="filter_bottom_dialog_margin_top">24dp</dimen>
+
     <dimen name="filter_bottom_dialog_cancel_options_size">37dp</dimen>
     <dimen name="filter_bottom_dialog_cancel_button_margin_start">44dp</dimen>
+
     <dimen name="filter_bottom_dialog_dismiss_button_height">37dp</dimen>
     <dimen name="filter_bottom_dialog_dismiss_button_margin_end">20dp</dimen>
     <dimen name="filter_bottom_dialog_dismiss_button_horizontal_size">20dp</dimen>
+
     <dimen name="filter_bottom_dialog_options_margin_start">44dp</dimen>
     <dimen name="filter_bottom_dialog_options_margin_top">40dp</dimen>
     <dimen name="filter_bottom_dialog_options_margin_end">30dp</dimen>
     <dimen name="filter_bottom_dialog_options_margin_bottom">44dp</dimen>
+
     <dimen name="filter_bottom_dialog_single_option_margin_bottom">8dp</dimen>
+
     <dimen name="filter_bottom_dialog_spinner_layout_bottom_margin">16dp</dimen>
     <dimen name="filter_bottom_dialog_spinner_height">37dp</dimen>
-    <dimen name="main_screen_location_icon_margin_end">8dp</dimen>
+
     <dimen name="filter_bottom_dialog_text_start_margin">4dp</dimen>
-    <dimen name="main_screen_top_menu_top_margin">4dp</dimen>
+
+<!--    Home bottom menu-->
+    <dimen name="bottom_menu_text_view_padding">16dp</dimen>
+
+    <dimen name="bottom_menu_shopping_bag_text_size">20dp</dimen>
+
+    <dimen name="bottom_menu_height">72dp</dimen>
+    <dimen name="bottom_menu_button_distance">8dp</dimen>
+    <dimen name="bottom_menu_button_size">16dp</dimen>
+
+<!--    Search tab -->
+    <dimen name="search_tab_horizontal_margin">16dp</dimen>
+    <dimen name="search_tab_top_margin">8dp</dimen>
+
+    <dimen name="search_view_height">34dp</dimen>
+    <dimen name="search_view_margin_end">8dp</dimen>
+
+    <dimen name="main_screen_qr_code_button_size">34dp</dimen>
+
+<!--    Top bar-->
+    <dimen name="top_bar_filter_button_padding">16dp</dimen>
+    <dimen name="top_bar_location_icon_padding">8dp</dimen>
+
+
+    <dimen name="tab_layout_horizontal_padding">12dp</dimen>
+    <dimen name="tab_layout_margin_vertical">12dp</dimen>
+    <dimen name="tab_layout_height">100dp</dimen>
+
+    <dimen name="select_category_tab_icon_size">71dp</dimen>
+    <dimen name="select_category_text_view_top_margin">8dp</dimen>
+
+<!--    Core -->
+    <dimen name="home_guideline_margin">16dp</dimen>
+
 </resources>

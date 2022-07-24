@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/select_category_text_view_top_margin"
-        style="@style/MainScreenTabText"
+        style="@style/HomeTabText"
         tools:text="Example"/>
 
 </LinearLayout>
