@@ -8,6 +8,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.consumeAsFlow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 
@@ -19,7 +20,7 @@ class MainScreenViewModel(
     val mainScreenState get() = _mainScreenState.asStateFlow()
 
     private val _uiChannel = Channel<UiEffect>()
-    val uiEffect = _uiChannel.consumeAsFlow()
+    val uiEffect get() = _uiChannel.receiveAsFlow()
 
     init {
         fetchMainScreenDataSource()

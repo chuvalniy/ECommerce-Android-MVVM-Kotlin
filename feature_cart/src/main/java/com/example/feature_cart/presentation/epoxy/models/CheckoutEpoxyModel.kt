@@ -7,10 +7,13 @@ import com.example.feature_cart.databinding.ModelCheckoutBinding
 data class CheckoutEpoxyModel(
     val totalPrice: String,
     val deliveryPrice: String,
+    val onCheckoutButtonClick: () -> Unit
 ): ViewBindingKotlinModel<ModelCheckoutBinding>(R.layout.model_checkout) {
 
     override fun ModelCheckoutBinding.bind() {
         tvTotal.text = root.context.getString(R.string.total_price, totalPrice)
         tvDelivery.text = deliveryPrice
+
+        btnCheckout.setOnClickListener { onCheckoutButtonClick() }
     }
 }

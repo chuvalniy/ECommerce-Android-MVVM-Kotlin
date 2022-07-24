@@ -1,4 +1,4 @@
-package com.example.feature_details_screen.presentation.epoxy
+package com.example.feature_details_screen.presentation.epoxy.models
 
 import android.graphics.Color
 import android.graphics.PorterDuff
@@ -10,7 +10,8 @@ import com.example.feature_details_screen.domain.model.ProductDetailsDomain
 import com.example.feature_details_screen.presentation.utils.SampleData
 
 data class ProductInfoEpoxyModel(
-    val productDetails: ProductDetailsDomain
+    val productDetails: ProductDetailsDomain,
+    val onAddToCartButtonClick: () -> Unit
 ): ViewBindingKotlinModel<ModelProductInfoBinding>(R.layout.model_product_info) {
 
     override fun ModelProductInfoBinding.bind() {
@@ -34,5 +35,7 @@ data class ProductInfoEpoxyModel(
         SampleData.categories.forEach { title ->
             tlCategories.addTab(tlCategories.newTab().setText(title))
         }
+
+        btnAddToCart.setOnClickListener { onAddToCartButtonClick() }
     }
 }

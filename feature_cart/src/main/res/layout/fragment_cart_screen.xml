@@ -8,22 +8,24 @@
     tools:background="@color/white_dark"
     tools:context=".presentation.fragment.CartScreenFragment">
 
-    <include layout="@layout/model_cart_top_bar" />
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/model_cart_top_bar" />
 
-    <include layout="@layout/model_cart_header" />
+    <include
+        android:id="@+id/header"
+        layout="@layout/model_cart_header" />
 
     <com.google.android.material.card.MaterialCardView
         style="@style/CustomCardViewStyle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/dark_blue"
         app:cardBackgroundColor="@color/dark_blue">
 
         <com.airbnb.epoxy.EpoxyRecyclerView
             android:id="@+id/epoxyRecylerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/cart_item" />
 

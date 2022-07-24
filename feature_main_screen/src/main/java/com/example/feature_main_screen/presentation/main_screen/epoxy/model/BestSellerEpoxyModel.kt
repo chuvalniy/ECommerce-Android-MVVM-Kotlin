@@ -8,6 +8,7 @@ import com.example.feature_main_screen.domain.model.BestSellerDomain
 
 data class BestSellerEpoxyModel(
     val bestSeller: BestSellerDomain,
+    val onProductClick: () -> Unit,
     val glide: RequestManager
 ) : ViewBindingKotlinModel<BestSellerItemBinding>(R.layout.best_seller_item) {
 
@@ -23,9 +24,7 @@ data class BestSellerEpoxyModel(
         tvTitle.text = bestSeller.title
         btnAddToFavorites.isChecked = bestSeller.is_favorites
 
-//        cvBestSeller.setOnClickListener {
-//            onGoToDetails(item)
-//        }
+        cvBestSeller.setOnClickListener { onProductClick() }
 
         glide.load(bestSeller.picture).into(ivBestSeller)
     }

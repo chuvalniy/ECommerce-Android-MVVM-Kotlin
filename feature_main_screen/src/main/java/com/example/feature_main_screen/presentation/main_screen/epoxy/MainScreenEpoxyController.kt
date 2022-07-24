@@ -8,7 +8,9 @@ import com.example.feature_main_screen.domain.model.HomeStoreDomain
 import com.example.feature_main_screen.presentation.main_screen.epoxy.model.*
 
 class MainScreenEpoxyController(
-    private val glide: RequestManager
+    private val glide: RequestManager,
+    private val onFilterButtonClick: () -> Unit,
+    private val onProductClick: () -> Unit
 ) : Typed2EpoxyController<List<BestSellerDomain>, List<HomeStoreDomain>>() {
 
     override fun buildModels(
@@ -18,7 +20,7 @@ class MainScreenEpoxyController(
 //        if (bestSeller.isNullOrEmpty() || hotSales.isNullOrEmpty()) return
 
         // Top bar
-        TopBarEpoxyModel()
+        TopBarEpoxyModel(onFilterButtonClick)
             .id(TOP_BAR_ID)
             .spanSizeOverride { _, _, _ -> 2 }
             .addTo(this)
@@ -62,7 +64,7 @@ class MainScreenEpoxyController(
         // Best sellers content
         bestSellers?.let { items ->
             items.forEach { bestSeller ->
-                BestSellerEpoxyModel(bestSeller, glide)
+                BestSellerEpoxyModel(bestSeller, onProductClick, glide)
                     .id(BEST_SELLER_ID)
                     .addTo(this)
             }
@@ -77,4 +79,10 @@ class MainScreenEpoxyController(
         const val TOP_BAR_ID = "top_bar"
     }
 
+}
+
+interface OnItemClickListener {
+    fun onFilterButtonClick()
+    fun onCartButtonClick()
+    fun onProductClick()
 }

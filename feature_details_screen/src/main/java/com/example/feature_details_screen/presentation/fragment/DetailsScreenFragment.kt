@@ -1,8 +1,5 @@
 package com.example.feature_details_screen.presentation.fragment
 
-import android.graphics.Color
-import android.graphics.PorterDuff
-import android.graphics.PorterDuffColorFilter
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,11 +10,8 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.RequestManager
 import com.example.core.ui.BaseFragment
 import com.example.core.utils.Constants
-import com.example.feature_details_screen.R
 import com.example.feature_details_screen.databinding.FragmentDetailsScreenBinding
-import com.example.feature_details_screen.domain.model.ProductDetailsDomain
 import com.example.feature_details_screen.presentation.epoxy.DetailsScreenEpoxyController
-import com.example.feature_details_screen.presentation.utils.SampleData.categories
 import com.example.feature_details_screen.presentation.view_model.DetailsScreenViewModel
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
@@ -33,13 +27,20 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        epoxyController = DetailsScreenEpoxyController(glide)
-        binding.epoxyAdapter.setController(epoxyController!!)
+        setupAdapter()
 
         observeUiState()
         observeUiEffect()
+    }
 
-        processButtonClicks()
+    private fun setupAdapter() {
+        epoxyController = DetailsScreenEpoxyController(
+            glide,
+            onAddToCartButtonClick = { viewModel.addToCartButtonClicked() },
+            onBackButtonClick = { viewModel.backButtonClicked() }
+        ).also {
+            binding.epoxyAdapter.setController(it)
+        }
     }
 
     private fun observeUiEffect() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
@@ -48,13 +49,12 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
                 is DetailsScreenViewModel.UiEffect.NavigateToCartScreen -> {
                     findNavController().navigate(Uri.parse(Constants.CART_SCREEN_DEEP_LINK))
                 }
+                is DetailsScreenViewModel.UiEffect.NavigateBack -> {
+                    findNavController().popBackStack()
+                }
                 is DetailsScreenViewModel.UiEffect.ShowSnackbar -> Unit
             }
         }
-    }
-
-    private fun processButtonClicks() = binding.apply {
-//        btnAddToCart.setOnClickListener { viewModel.addToCartButtonClicked() }
     }
 
     private fun observeUiState() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {

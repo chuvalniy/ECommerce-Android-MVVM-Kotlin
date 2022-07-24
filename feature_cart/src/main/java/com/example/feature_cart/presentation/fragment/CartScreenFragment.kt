@@ -1,14 +1,18 @@
 package com.example.feature_cart.presentation.fragment
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.RequestManager
 import com.example.core.ui.BaseFragment
+import com.example.core.utils.Constants.MAIN_SCREEN_DEEP_LINK
 import com.example.feature_cart.databinding.FragmentCartScreenBinding
 import com.example.feature_cart.presentation.epoxy.CartScreenEpoxyController
+import com.example.feature_cart.presentation.view_model.CartScreenState
 import com.example.feature_cart.presentation.view_model.CartScreenViewModel
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
@@ -26,18 +30,52 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
 
         setupAdapter()
 
-        observeCart()
+        observeUiState()
+        observeUiEffects()
+
+        processButtonClicks()
+    }
+
+    private fun processButtonClicks() {
+        binding.topBar.btnGoBack.setOnClickListener { viewModel.backButtonPressed() }
     }
 
     private fun setupAdapter() {
-        epoxyController = CartScreenEpoxyController(glide)
-        binding.epoxyRecylerView.setController(epoxyController!!)
+        epoxyController = CartScreenEpoxyController(
+            glide,
+            onCheckoutButtonClick = { viewModel.checkoutButtonPressed() }
+        ).also {
+            binding.epoxyRecylerView.setController(it)
+        }
     }
 
-    private fun observeCart() = viewLifecycleOwner.lifecycleScope.launchWhenCreated {
-        viewModel.uiState.collect { state ->
-            epoxyController?.setData(state.cartInfo)
+    private fun observeUiEffects() {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.uiEffect.collect { event ->
+                when(event) {
+                    is CartScreenViewModel.UiEffect.NavigateBack -> {
+                        findNavController().popBackStack()
+                    }
+                    is CartScreenViewModel.UiEffect.NavigateToMainScreen -> {
+                        with(findNavController()) {
+                            popBackStack()
+                            navigate(Uri.parse(MAIN_SCREEN_DEEP_LINK))
+                        }
+                    }
+                    is CartScreenViewModel.UiEffect.ShowSnackbar -> TODO()
+                }
+            }
         }
+    }
+
+    private fun observeUiState() = viewLifecycleOwner.lifecycleScope.launchWhenCreated {
+        viewModel.uiState.collect { state ->
+            processUiState(state)
+        }
+    }
+
+    private fun processUiState(state: CartScreenState) {
+        epoxyController?.setData(state.cartInfo)
     }
 
 

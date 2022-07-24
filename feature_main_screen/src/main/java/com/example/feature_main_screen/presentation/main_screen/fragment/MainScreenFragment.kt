@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.RequestManager
@@ -36,17 +36,20 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
         observeUiState()
         observeUiEffect()
 
-        processButtonClicks()
+        processButtonClick()
+    }
+
+    private fun processButtonClick() {
+        binding.btnShoppingBag.setOnClickListener { viewModel.cartButtonClicked() }
     }
 
     private fun setupEpoxyController() {
-        epoxyController = MainScreenEpoxyController(glide)
+        epoxyController = MainScreenEpoxyController(
+            glide,
+            onFilterButtonClick = { viewModel.filterButtonClicked() },
+            onProductClick = { viewModel.productClicked() }
+        )
         binding.epoxyRecyclerView.setController(epoxyController!!)
-    }
-
-    private fun processButtonClicks() {
-//        binding.btnFilter.setOnClickListener { viewModel.filterButtonClicked() }
-//        binding.btnShoppingBag.setOnClickListener { viewModel.cartButtonClicked() }
     }
 
     private fun observeUiEffect() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
@@ -74,19 +77,18 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
 
     private fun observeUiState() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
         viewModel.mainScreenState.collect { state ->
-            epoxyController?.setData(state.bestSellers, state.homeStoreInfo)
+            processUiState(state)
         }
     }
 
+    private fun processUiState(state: MainScreenState) {
+        epoxyController?.setData(state.bestSellers, state.homeStoreInfo)
 
-
-    private fun processCartInfo(state: MainScreenState) {
-//        state.numberOfItemsInTheCart?.let {
-//            binding.tvNumberOfItems.text = it.toString()
-//            binding.tvNumberOfItems.isVisible = true
-//        }
+        state.numberOfItemsInTheCart?.let {
+            binding.tvNumberOfItems.text = it.toString()
+            binding.tvNumberOfItems.isVisible = true
+        }
     }
-
 
 
 //    private fun setupTabLayout() = categories.onEachIndexed { index, (title, image) ->

@@ -18,7 +18,7 @@ class DetailsScreenViewModel(
     val uiState get() = _uiState.asStateFlow()
 
     private val _uiChannel = Channel<UiEffect>()
-    val uiEffect = _uiChannel.receiveAsFlow()
+    val uiEffect get() = _uiChannel.receiveAsFlow()
 
     init {
         fetchProductDetails()
@@ -43,6 +43,10 @@ class DetailsScreenViewModel(
         _uiChannel.send(UiEffect.NavigateToCartScreen)
     }
 
+    fun backButtonClicked() = viewModelScope.launch {
+        _uiChannel.send(UiEffect.NavigateBack)
+    }
+
     private suspend fun showSnackbar(message: String) {
            _uiChannel.send(UiEffect.ShowSnackbar(message))
     }
@@ -50,5 +54,6 @@ class DetailsScreenViewModel(
     sealed class UiEffect {
         data class ShowSnackbar(val message: String) : UiEffect()
         object NavigateToCartScreen : UiEffect()
+        object NavigateBack : UiEffect()
     }
 }

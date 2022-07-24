@@ -2,7 +2,6 @@ package com.example.feature_cart.presentation.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.core.utils.Constants
 import com.example.core.utils.Resource
 import com.example.feature_cart.domain.use_case.FetchCartInfoUseCase
 import kotlinx.coroutines.channels.Channel
@@ -18,8 +17,8 @@ class CartScreenViewModel(
     private val _uiState = MutableStateFlow(CartScreenState())
     val uiState get() = _uiState.asStateFlow()
 
-    private val _uiChannel = Channel<UiEvent>()
-    val uiEvent get() = _uiChannel.receiveAsFlow()
+    private val _uiChannel = Channel<UiEffect>()
+    val uiEffect get() = _uiChannel.receiveAsFlow()
 
     init {
         fetchCartInfo()
@@ -40,11 +39,21 @@ class CartScreenViewModel(
         }
     }
 
-    private suspend fun showSnackbar(message: String) {
-        _uiChannel.send(UiEvent.ShowSnackbar(message))
+    fun backButtonPressed() {
+        viewModelScope.launch { _uiChannel.send(UiEffect.NavigateBack) }
     }
 
-    sealed class UiEvent {
-        data class ShowSnackbar(val message: String): UiEvent()
+    fun checkoutButtonPressed() {
+        viewModelScope.launch { _uiChannel.send(UiEffect.NavigateToMainScreen) }
+    }
+
+    private suspend fun showSnackbar(message: String) {
+        _uiChannel.send(UiEffect.ShowSnackbar(message))
+    }
+
+    sealed class UiEffect {
+        data class ShowSnackbar(val message: String) : UiEffect()
+        object NavigateBack : UiEffect()
+        object NavigateToMainScreen : UiEffect()
     }
 }

@@ -11,6 +11,7 @@
         android:id="@+id/topSeparator"
         android:layout_width="match_parent"
         android:layout_height="@dimen/top_separator_height"
+        android:layout_marginTop="32dp"
         android:layout_marginHorizontal="@dimen/separator_horizontal_margin"
         android:alpha="0.25"
         android:background="@color/white"
