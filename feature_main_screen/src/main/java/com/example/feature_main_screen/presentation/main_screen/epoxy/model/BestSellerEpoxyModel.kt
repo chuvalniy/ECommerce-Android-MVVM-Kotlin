@@ -15,14 +15,14 @@ data class BestSellerEpoxyModel(
     override fun BestSellerItemBinding.bind() {
         tvDefaultPrice.text = root.context.getString(
             R.string.best_selelr_price_without_discount,
-            bestSeller.price_without_discount
+            bestSeller.priceWithoutDiscount
         )
         tvDiscountPrice.text = root.context.getString(
             R.string.best_seller_discount_price,
-            bestSeller.discount_price
+            bestSeller.discountPrice
         )
         tvTitle.text = bestSeller.title
-        btnAddToFavorites.isChecked = bestSeller.is_favorites
+        btnAddToFavorites.isChecked = bestSeller.isFavorites
 
         cvBestSeller.setOnClickListener { onProductClick() }
 

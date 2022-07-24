@@ -4,18 +4,18 @@ import com.airbnb.epoxy.CarouselModel_
 import com.airbnb.epoxy.Typed2EpoxyController
 import com.bumptech.glide.RequestManager
 import com.example.feature_main_screen.domain.model.BestSellerDomain
-import com.example.feature_main_screen.domain.model.HomeStoreDomain
+import com.example.feature_main_screen.domain.model.HotSalesDomain
 import com.example.feature_main_screen.presentation.main_screen.epoxy.model.*
 
 class MainScreenEpoxyController(
     private val glide: RequestManager,
     private val onFilterButtonClick: () -> Unit,
     private val onProductClick: () -> Unit
-) : Typed2EpoxyController<List<BestSellerDomain>, List<HomeStoreDomain>>() {
+) : Typed2EpoxyController<List<BestSellerDomain>, List<HotSalesDomain>>() {
 
     override fun buildModels(
         bestSellers: List<BestSellerDomain>?,
-        hotSales: List<HomeStoreDomain>?
+        hotSales: List<HotSalesDomain>?
     ) {
 //        if (bestSeller.isNullOrEmpty() || hotSales.isNullOrEmpty()) return
 
@@ -79,10 +79,4 @@ class MainScreenEpoxyController(
         const val TOP_BAR_ID = "top_bar"
     }
 
-}
-
-interface OnItemClickListener {
-    fun onFilterButtonClick()
-    fun onCartButtonClick()
-    fun onProductClick()
 }

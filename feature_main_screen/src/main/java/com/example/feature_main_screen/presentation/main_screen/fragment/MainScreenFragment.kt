@@ -83,25 +83,14 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
     }
 
     private fun processUiState(state: MainScreenState) {
-        epoxyController?.setData(state.bestSellers, state.homeStoreInfo)
+        epoxyController?.setData(state.bestSellers, state.hotSales)
 
-        state.numberOfItemsInTheCart?.let {
-            binding.tvNumberOfItems.text = it.toString()
+        if (state.numberOfItemsInTheCart > 0) {
+            binding.tvNumberOfItems.text = state.numberOfItemsInTheCart.toString()
             binding.tvNumberOfItems.isVisible = true
         }
     }
 
-
-//    private fun setupTabLayout() = categories.onEachIndexed { index, (title, image) ->
-//        binding.tabLayout.addTab(binding.tabLayout.newTab().setText(title))
-//        binding.tabLayout.getTabAt(index)?.apply {
-//            setCustomView(R.layout.tab_item)
-//            customView?.findViewById<ImageButton>(R.id.tabIcon)
-//                ?.setImageResource(image)
-//            customView?.findViewById<TextView>(R.id.tabTitle)?.text = title
-//        }
-//    }
-//
 
     override fun initBinding(
         inflater: LayoutInflater,

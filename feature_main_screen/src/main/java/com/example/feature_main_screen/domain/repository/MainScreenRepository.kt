@@ -5,5 +5,5 @@ import com.example.feature_main_screen.domain.model.DomainDataSource
 
 interface MainScreenRepository {
 
-    suspend fun fetchMainScreenItems(): Resource<DomainDataSource>
+    suspend fun fetchMainScreenDataSource(): Resource<DomainDataSource>
 }

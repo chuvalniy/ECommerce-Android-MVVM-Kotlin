@@ -1,10 +1,15 @@
 package com.example.feature_main_screen.data.remote.dto
 
+import com.google.gson.annotations.SerializedName
+
 data class BestSellerDto(
-    val discount_price: Int,
+    @SerializedName("discount_price")
+    val discountPrice: Int,
     val id: Int,
-    val is_favorites: Boolean,
+    @SerializedName("is_favorites")
+    val isFavorites: Boolean,
     val picture: String,
-    val price_without_discount: Int,
+    @SerializedName("price_without_discount")
+    val priceWithoutDiscount: Int,
     val title: String
 )

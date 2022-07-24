@@ -35,9 +35,7 @@ class FilterBottomDialogFragment : BottomSheetDialogFragment() {
     }
 
     private fun applyBinding() = binding.apply {
-        btnFilterDismiss.setOnClickListener {
-            this@FilterBottomDialogFragment.dismiss() // close dialog fragment
-        }
+        btnFilterDismiss.setOnClickListener { this@FilterBottomDialogFragment.dismiss() }
     }
 
     private fun setupAdapter() {
@@ -68,7 +66,4 @@ class FilterBottomDialogFragment : BottomSheetDialogFragment() {
         _binding = null
     }
 
-    companion object {
-        const val TAG = "FilterBottomSheetDialog"
-    }
 }

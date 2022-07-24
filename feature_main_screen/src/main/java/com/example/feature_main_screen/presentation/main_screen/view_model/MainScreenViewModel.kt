@@ -3,17 +3,17 @@ package com.example.feature_main_screen.presentation.main_screen.view_model
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.utils.Resource
-import com.example.feature_main_screen.domain.use_case.FetchMainScreenItemsUseCase
+import com.example.feature_main_screen.domain.model.DomainDataSource
+import com.example.feature_main_screen.domain.use_case.FetchMainScreenDataSource
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 
 class MainScreenViewModel(
-    private val fetchMainScreenItemsUseCase: FetchMainScreenItemsUseCase
+    private val fetchMainScreenDataSource: FetchMainScreenDataSource
 ) : ViewModel() {
 
     private val _mainScreenState = MutableStateFlow(MainScreenState())
@@ -30,22 +30,30 @@ class MainScreenViewModel(
         viewModelScope.launch {
             _mainScreenState.value = _mainScreenState.value.copy(isLoading = true)
 
-            when (val response = fetchMainScreenItemsUseCase()) {
+            when (val response = fetchMainScreenDataSource.execute()) {
                 is Resource.Success -> {
-                    _mainScreenState.value = _mainScreenState.value.copy(
-                        isLoading = false,
-                        homeStoreInfo = response.data?.homeStore ?: emptyList(),
-                        bestSellers = response.data?.bestSeller ?: emptyList(),
-                        numberOfItemsInTheCart = if (response.data?.cartInfo!! > 0) response.data?.cartInfo else null
-                    )
+                    processSuccessState(response)
                 }
                 is Resource.Error -> {
-                    _mainScreenState.value = _mainScreenState.value.copy(isLoading = false)
-                    showSnackbar(message = response.error ?: "")
+                    processErrorState(response)
                 }
                 else -> Unit
             }
         }
+    }
+
+    private suspend fun processErrorState(response: Resource<DomainDataSource>) {
+        _mainScreenState.value = _mainScreenState.value.copy(isLoading = false)
+        showSnackbar(message = response.error ?: "")
+    }
+
+    private fun processSuccessState(response: Resource<DomainDataSource>) {
+        _mainScreenState.value = _mainScreenState.value.copy(
+            isLoading = false,
+            hotSales = response.data?.hotSales ?: emptyList(),
+            bestSellers = response.data?.bestSellers ?: emptyList(),
+            numberOfItemsInTheCart = response.data?.cartInfo ?: 0
+        )
     }
 
     private suspend fun showSnackbar(message: String) {
