@@ -19,7 +19,7 @@ data class ProductInfoEpoxyModel(
         tvCpu.text = productDetails.cpu
         tvCamera.text = productDetails.camera
         tvSdCapacity.text = productDetails.sd
-        tvSsdCapacity.text = productDetails.ssd
+        tvRam.text = productDetails.ssd
         tvPrice.text = root.context.getString(R.string.product_price, productDetails.price)
         btnAddToFavorites.isChecked = productDetails.isFavorites
 

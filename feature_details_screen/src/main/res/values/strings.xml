@@ -1,10 +1,13 @@
 <resources>
-    <string name="select_color_and_capacity">Select color and capacity</string>
 
+<!--    Product info-->
+    <string name="select_color_and_capacity">Select color and capacity</string>
     <string name="product_price">$%1$s.00</string>
     <string name="product_capacity">%1$s GB</string>
-    <string name="add_to_cart">Add to Cart</string>
     <string name="product_details">Product Details</string>
+
+<!--    Buttons -->
+    <string name="add_to_cart">Add to Cart</string>
     <string name="go_back">Go back</string>
     <string name="go_to_cart">Go to Cart</string>
 

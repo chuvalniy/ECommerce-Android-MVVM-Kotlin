@@ -10,9 +10,9 @@
         style="@style/CustomCardViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/product_info_top_margin"
         android:background="@color/white"
-        android:elevation="@dimen/product_detail_layout_elevation"
+        android:elevation="@dimen/product_info_elevation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,14 +27,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="16dp" />
+                app:layout_constraintGuide_begin="@dimen/product_info_vertical_margin" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/verticalRightGuideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_end="16dp" />
+                app:layout_constraintGuide_end="@dimen/product_info_vertical_margin" />
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -52,7 +52,7 @@
                 android:layout_width="@dimen/rounded_button_size"
                 android:layout_height="@dimen/rounded_button_size"
                 android:layout_gravity="end"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/btn_favorites_top_margin"
                 android:background="@drawable/background_rounded_ripple_dark_blue"
                 app:layout_constraintEnd_toStartOf="@+id/verticalRightGuideline"
                 app:layout_constraintTop_toTopOf="parent">
@@ -73,8 +73,7 @@
                 style="@android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="@dimen/rating_bar_top_margin"
                 android:isIndicator="true"
                 android:max="5"
                 android:minHeight="0dp"
@@ -96,48 +95,48 @@
                 tools:background="@color/black" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/ivCpu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/category_top_margin"
                 android:src="@drawable/ic_cpu"
-                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintEnd_toStartOf="@+id/ivCamera"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tlCategories" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/ivCamera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_camera"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                app:layout_constraintEnd_toStartOf="@+id/imageView3"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
+                app:layout_constraintBottom_toBottomOf="@+id/ivCpu"
+                app:layout_constraintEnd_toStartOf="@+id/ivRam"
+                app:layout_constraintStart_toEndOf="@+id/ivCpu"
+                app:layout_constraintTop_toTopOf="@+id/ivCpu" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/ivRam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_ram"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                app:layout_constraintEnd_toStartOf="@+id/imageView4"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toTopOf="@+id/imageView2" />
+                app:layout_constraintBottom_toBottomOf="@+id/ivCamera"
+                app:layout_constraintEnd_toStartOf="@+id/ivSd"
+                app:layout_constraintStart_toEndOf="@+id/ivCamera"
+                app:layout_constraintTop_toTopOf="@+id/ivCamera" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/ivSd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_sd"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                app:layout_constraintBottom_toBottomOf="@+id/ivRam"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="@+id/imageView3" />
+                app:layout_constraintStart_toEndOf="@+id/ivRam"
+                app:layout_constraintTop_toTopOf="@+id/ivRam" />
 
             <TextView
                 android:id="@+id/tvCpu"
@@ -146,9 +145,9 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="bottom"
-                app:layout_constraintEnd_toEndOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="@+id/ivCpu"
+                app:layout_constraintStart_toStartOf="@+id/ivCpu"
+                app:layout_constraintTop_toBottomOf="@+id/ivCpu"
                 tools:text="Exynos 990" />
 
             <TextView
@@ -159,22 +158,22 @@
                 android:layout_gravity="center"
                 android:gravity="bottom"
                 app:layout_constraintBottom_toBottomOf="@+id/tvCpu"
-                app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="@+id/ivCamera"
+                app:layout_constraintStart_toStartOf="@+id/ivCamera"
+                app:layout_constraintTop_toBottomOf="@+id/ivCpu"
                 tools:text="108 + 12 mp" />
 
             <TextView
-                android:id="@+id/tvSsdCapacity"
+                android:id="@+id/tvRam"
                 style="@style/CaptionRegular"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="bottom"
                 app:layout_constraintBottom_toBottomOf="@+id/tvCamera"
-                app:layout_constraintEnd_toEndOf="@+id/imageView3"
-                app:layout_constraintStart_toStartOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="@+id/ivRam"
+                app:layout_constraintStart_toStartOf="@+id/ivRam"
+                app:layout_constraintTop_toBottomOf="@+id/ivCamera"
                 tools:text="8 GB" />
 
             <TextView
@@ -184,10 +183,10 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="bottom"
-                app:layout_constraintBottom_toBottomOf="@+id/tvSsdCapacity"
-                app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                app:layout_constraintStart_toStartOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:layout_constraintBottom_toBottomOf="@+id/tvRam"
+                app:layout_constraintEnd_toEndOf="@+id/ivSd"
+                app:layout_constraintStart_toStartOf="@+id/ivSd"
+                app:layout_constraintTop_toBottomOf="@+id/ivRam"
                 tools:text="256 GB" />
 
             <TextView
@@ -195,18 +194,18 @@
                 style="@style/Subtitle2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="@dimen/config_picker_top_margin"
                 android:text="@string/select_color_and_capacity"
                 app:layout_constraintEnd_toStartOf="@+id/verticalRightGuideline"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/verticalLeftGuideline"
-                app:layout_constraintTop_toBottomOf="@+id/tvSsdCapacity" />
+                app:layout_constraintTop_toBottomOf="@+id/tvRam" />
 
             <RadioGroup
                 android:id="@+id/rgColor"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/color_radio_group_top_margin"
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="@+id/verticalLeftGuideline"
@@ -247,8 +246,8 @@
                 <RadioButton
                     android:id="@+id/rbMemoryLeft"
                     style="@style/CapacityRadioTextStyle"
-                    android:layout_width="@dimen/capacity_button_width"
-                    android:layout_height="@dimen/capacity_button_height"
+                    android:layout_width="@dimen/capacity_selector_width"
+                    android:layout_height="@dimen/capacity_selector_height"
                     android:layout_marginEnd="@dimen/capacity_button_margin_end"
                     android:background="@drawable/selector_background_memory"
                     android:button="@android:color/transparent"
@@ -260,8 +259,8 @@
                 <RadioButton
                     android:id="@+id/rbMemoryRight"
                     style="@style/CapacityRadioTextStyle"
-                    android:layout_width="@dimen/capacity_button_width"
-                    android:layout_height="@dimen/capacity_button_height"
+                    android:layout_width="@dimen/capacity_selector_width"
+                    android:layout_height="@dimen/capacity_selector_height"
                     android:layout_marginStart="@dimen/capacity_right_button_start_margin"
                     android:layout_marginEnd="@dimen/capacity_button_margin_end"
                     android:background="@drawable/selector_background_memory"
@@ -275,8 +274,8 @@
             <FrameLayout
                 android:id="@+id/btnAddToCart"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/button_add_to_cart_height"
-                android:layout_marginTop="32dp"
+                android:layout_height="@dimen/btn_add_to_cart_height"
+                android:layout_marginTop="@dimen/btn_add_to_cart_top_margin"
                 android:background="@drawable/background_rounded_ripple_orange"
                 android:clickable="true"
                 android:focusable="true"
@@ -290,7 +289,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
-                    android:layout_marginStart="@dimen/button_add_to_cart_content_margin_horizontal"
+                    android:layout_marginStart="@dimen/btn_add_to_cart_content_margin_horizontal"
                     android:text="@string/add_to_cart" />
 
                 <TextView
@@ -299,7 +298,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
-                    android:layout_marginEnd="@dimen/button_add_to_cart_content_margin_horizontal"
+                    android:layout_marginEnd="@dimen/btn_add_to_cart_content_margin_horizontal"
                     tools:text="$1,500.00" />
             </FrameLayout>
 
