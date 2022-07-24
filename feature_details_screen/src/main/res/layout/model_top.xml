@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageButton
+        android:id="@+id/btnGoBack"
+        android:layout_width="@dimen/rounded_button_size"
+        android:layout_height="@dimen/rounded_button_size"
+        android:layout_gravity="start"
+        android:contentDescription="@string/go_back"
+        android:background="@drawable/background_rounded_ripple_dark_blue"
+        android:src="@drawable/ic_arrow_back"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tvProductDetails"
+        style="@style/Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/product_details" />
+
+    <ImageButton
+        android:id="@+id/btnCart"
+        android:layout_width="@dimen/rounded_button_size"
+        android:layout_height="@dimen/rounded_button_size"
+        android:layout_gravity="end"
+        android:contentDescription="@string/go_to_cart"
+        android:background="@drawable/background_rounded_ripple_orange"
+        android:src="@drawable/ic_shopping_bag"
+        tools:ignore="TouchTargetSizeCheck" />
+</FrameLayout>

@@ -4,6 +4,10 @@ plugins {
     id 'kotlin-kapt'
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 android {
     compileSdk 32
 
@@ -44,6 +48,11 @@ dependencies {
 
     // Koin
     implementation "io.insert-koin:koin-android:3.2.0-beta-1"
+
+    // Epoxy
+    def epoxy_version = "4.6.3"
+    implementation "com.airbnb.android:epoxy:$epoxy_version"
+    kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
 
     // Navigation Component
     def nav_version = "2.4.0"
