@@ -1,7 +1,5 @@
 package com.example.feature_details_screen.domain.model
 
-import com.example.core.ui.DisplayableItem
-
 data class ProductDetailsDomain(
     val cpu: String,
     val camera: String,
@@ -15,7 +13,4 @@ data class ProductDetailsDomain(
     val sd: String,
     val ssd: String,
     val title: String
-) : DisplayableItem {
-    override val itemId: Int
-        get() = id
-}
+)

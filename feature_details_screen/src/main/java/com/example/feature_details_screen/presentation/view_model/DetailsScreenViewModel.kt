@@ -3,7 +3,8 @@ package com.example.feature_details_screen.presentation.view_model
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.utils.Resource
-import com.example.feature_details_screen.domain.use_case.FetchProductDetailsUseCase
+import com.example.feature_details_screen.domain.model.ProductDetailsDomain
+import com.example.feature_details_screen.domain.use_case.FetchDetailsScreenDataSource
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -11,7 +12,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class DetailsScreenViewModel(
-    private val fetchProductDetailsUseCase: FetchProductDetailsUseCase
+    private val fetchDetailsScreenDataSource: FetchDetailsScreenDataSource
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(DetailsScreenState())
@@ -27,15 +28,25 @@ class DetailsScreenViewModel(
     private fun fetchProductDetails() = viewModelScope.launch {
         _uiState.value = _uiState.value.copy(isLoading = true)
 
-        when (val response = fetchProductDetailsUseCase()) {
+        when (val response = fetchDetailsScreenDataSource()) {
             is Resource.Success -> {
-                _uiState.value = _uiState.value.copy(data = response.data)
+                processSuccessState(response)
             }
             is Resource.Error -> {
-                _uiState.value = _uiState.value.copy(isLoading = false)
-                showSnackbar(response.error ?: "Error")
+                processErrorState(response)
             }
             else -> Unit
+        }
+    }
+
+    private suspend fun processErrorState(response: Resource<ProductDetailsDomain>) {
+        _uiState.value = _uiState.value.copy(isLoading = false)
+        showSnackbar(response.error ?: "Error")
+    }
+
+    private fun processSuccessState(response: Resource<ProductDetailsDomain>) {
+        response.data?.let { product ->
+            _uiState.value = _uiState.value.copy(data = product)
         }
     }
 

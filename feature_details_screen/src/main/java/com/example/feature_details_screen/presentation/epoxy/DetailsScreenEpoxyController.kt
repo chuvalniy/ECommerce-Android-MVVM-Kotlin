@@ -21,12 +21,13 @@ class DetailsScreenEpoxyController(
             .id("top_bar")
             .addTo(this)
 
+
         data?.images?.let { items ->
             val photos = items.map {
                 ProductPhotoEpoxyModel(glide, it).id(Random.nextInt())
             }
             CarouselModel_()
-                .id("PHOTO")
+                .id("carousel_photo")
                 .models(photos)
                 .addTo(this)
 

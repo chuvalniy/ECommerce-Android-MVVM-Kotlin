@@ -2,7 +2,7 @@ package com.example.feature_details_screen.domain.use_case
 
 import com.example.feature_details_screen.domain.repository.DetailsScreenRepository
 
-class FetchProductDetailsUseCase(
+class FetchDetailsScreenDataSource(
     private val repository: DetailsScreenRepository
 ) {
 

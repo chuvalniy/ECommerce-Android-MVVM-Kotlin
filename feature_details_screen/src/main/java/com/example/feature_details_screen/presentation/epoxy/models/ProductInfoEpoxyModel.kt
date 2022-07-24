@@ -12,9 +12,10 @@ import com.example.feature_details_screen.presentation.utils.SampleData
 data class ProductInfoEpoxyModel(
     val productDetails: ProductDetailsDomain,
     val onAddToCartButtonClick: () -> Unit
-): ViewBindingKotlinModel<ModelProductInfoBinding>(R.layout.model_product_info) {
+) : ViewBindingKotlinModel<ModelProductInfoBinding>(R.layout.model_product_info) {
 
     override fun ModelProductInfoBinding.bind() {
+
         tvTitle.text = productDetails.title
         tvCpu.text = productDetails.cpu
         tvCamera.text = productDetails.camera
@@ -23,15 +24,27 @@ data class ProductInfoEpoxyModel(
         tvPrice.text = root.context.getString(R.string.product_price, productDetails.price)
         btnAddToFavorites.isChecked = productDetails.isFavorites
 
-        rbMemoryLeft.text = root.context.getString(R.string.product_capacity, productDetails.capacity[0])
-        rbMemoryRight.text = root.context.getString(R.string.product_capacity, productDetails.capacity[1])
+        if (productDetails.capacity.isNotEmpty()) {
+            rbMemoryLeft.text =
+                root.context.getString(R.string.product_capacity, productDetails.capacity[0])
+            rbMemoryRight.text =
+                root.context.getString(R.string.product_capacity, productDetails.capacity[1])
+        }
+        if (productDetails.color.isNotEmpty()) {
+            rbColorLeft.background.colorFilter =
+                PorterDuffColorFilter(
+                    Color.parseColor(productDetails.color[0]),
+                    PorterDuff.Mode.SRC_IN
+                )
 
-        rbColorLeft.background.colorFilter =
-            PorterDuffColorFilter(Color.parseColor(productDetails.color[0]), PorterDuff.Mode.SRC_IN)
+            rbColorRight.background.colorFilter =
+                PorterDuffColorFilter(
+                    Color.parseColor(productDetails.color[1]),
+                    PorterDuff.Mode.SRC_IN
+                )
+        }
 
-        rbColorRight.background.colorFilter =
-            PorterDuffColorFilter(Color.parseColor(productDetails.color[1]), PorterDuff.Mode.SRC_IN)
-
+        tlCategories.removeAllTabs()
         SampleData.categories.forEach { title ->
             tlCategories.addTab(tlCategories.newTab().setText(title))
         }

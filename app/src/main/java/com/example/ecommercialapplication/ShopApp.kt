@@ -1,9 +1,11 @@
 package com.example.ecommercialapplication
 
 import android.app.Application
-import com.example.core.shopModule
+import com.example.core.coreModule
 import com.example.feature_cart.di.cartScreenModule
-import com.example.feature_details_screen.di.detailsScreenModule
+import com.example.feature_details_screen.di.detailsDataModule
+import com.example.feature_details_screen.di.detailsDomainModule
+import com.example.feature_details_screen.di.detailsPresentationModule
 import com.example.feature_main_screen.di.mainScreenDataModule
 import com.example.feature_main_screen.di.mainScreenDomainModule
 import com.example.feature_main_screen.di.mainScreenPresentationModule
@@ -18,11 +20,13 @@ class ShopApp : Application() {
         startKoin {
             androidContext(this@ShopApp)
             modules(
+                coreModule,
                 mainScreenDataModule,
                 mainScreenDomainModule,
                 mainScreenPresentationModule,
-                shopModule,
-                detailsScreenModule,
+                detailsDataModule,
+                detailsDomainModule,
+                detailsPresentationModule,
                 cartScreenModule
             )
         }
