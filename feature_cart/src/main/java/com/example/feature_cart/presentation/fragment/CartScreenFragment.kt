@@ -78,7 +78,7 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
     }
 
     private fun processUiState(state: CartScreenState) {
-        epoxyController?.setData(state.cartInfo)
+        epoxyController?.setData(state)
     }
 
 

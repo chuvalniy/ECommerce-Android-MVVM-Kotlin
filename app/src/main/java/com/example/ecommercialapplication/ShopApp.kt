@@ -2,7 +2,9 @@ package com.example.ecommercialapplication
 
 import android.app.Application
 import com.example.core.coreModule
-import com.example.feature_cart.di.cartScreenModule
+import com.example.feature_cart.di.cartDataModule
+import com.example.feature_cart.di.cartDomainModule
+import com.example.feature_cart.di.cartPresentationModule
 import com.example.feature_details_screen.di.detailsDataModule
 import com.example.feature_details_screen.di.detailsDomainModule
 import com.example.feature_details_screen.di.detailsPresentationModule
@@ -27,7 +29,9 @@ class ShopApp : Application() {
                 detailsDataModule,
                 detailsDomainModule,
                 detailsPresentationModule,
-                cartScreenModule
+                cartDataModule,
+                cartDomainModule,
+                cartPresentationModule
             )
         }
     }

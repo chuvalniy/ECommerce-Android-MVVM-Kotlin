@@ -40,13 +40,16 @@ class DetailsScreenViewModel(
     }
 
     private suspend fun processErrorState(response: Resource<ProductDetailsDomain>) {
-        _uiState.value = _uiState.value.copy(isLoading = false)
+        _uiState.value = _uiState.value.copy(isLoading = true)
         showSnackbar(response.error ?: "Error")
     }
 
     private fun processSuccessState(response: Resource<ProductDetailsDomain>) {
         response.data?.let { product ->
-            _uiState.value = _uiState.value.copy(data = product)
+            _uiState.value = _uiState.value.copy(
+                data = product,
+                isLoading = false
+            )
         }
     }
 

@@ -67,6 +67,9 @@ dependencies {
     implementation "com.airbnb.android:epoxy:$epoxy_version"
     kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
 
+    // Facebook shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
     // Coroutines
     def coroutine_version = "1.5.2"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"

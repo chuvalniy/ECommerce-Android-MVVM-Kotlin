@@ -1,27 +1,24 @@
 package com.example.feature_main_screen.presentation.main_screen.epoxy
 
 import com.airbnb.epoxy.CarouselModel_
-import com.airbnb.epoxy.Typed2EpoxyController
+import com.airbnb.epoxy.TypedEpoxyController
 import com.bumptech.glide.RequestManager
-import com.example.feature_main_screen.domain.model.BestSellerDomain
-import com.example.feature_main_screen.domain.model.HotSalesDomain
 import com.example.feature_main_screen.presentation.main_screen.epoxy.model.*
+import com.example.feature_main_screen.presentation.main_screen.view_model.MainScreenState
 
 class MainScreenEpoxyController(
     private val glide: RequestManager,
     private val onFilterButtonClick: () -> Unit,
     private val onProductClick: () -> Unit
-) : Typed2EpoxyController<List<BestSellerDomain>, List<HotSalesDomain>>() {
+) : TypedEpoxyController<MainScreenState>() {
 
     override fun buildModels(
-        bestSellers: List<BestSellerDomain>?,
-        hotSales: List<HotSalesDomain>?
+        state: MainScreenState?
     ) {
-//        if (bestSeller.isNullOrEmpty() || hotSales.isNullOrEmpty()) return
 
         // Top bar
         TopBarEpoxyModel(onFilterButtonClick)
-            .id(TOP_BAR_ID)
+            .id("top_bar")
             .spanSizeOverride { _, _, _ -> 2 }
             .addTo(this)
 
@@ -33,7 +30,7 @@ class MainScreenEpoxyController(
 
         // Search
         SearchEpoxyModel()
-            .id(SEARCH_ID)
+            .id("search_bar")
             .spanSizeOverride { _, _, _ -> 2 }
             .addTo(this)
 
@@ -43,17 +40,23 @@ class MainScreenEpoxyController(
             .spanSizeOverride { _, _, _ -> 2 }
             .addTo(this)
 
-        // Hot sales content
-        hotSales?.let {
-            val items = hotSales.map { item ->
-                HotSalesEpoxyModel(item, glide).id(item.id)
-            }
-            CarouselModel_()
-                .id(HOT_SALES_ID)
-                .models(items)
-                .numViewsToShowOnScreen(1F)
-                .addTo(this)
+        if (state?.isLoading == true) {
+            processLoadingState()
+        } else if (state?.isLoading == false) {
+            processSuccessState(state)
         }
+    }
+
+    private fun processSuccessState(state: MainScreenState) {
+        val models = state.hotSales.map { item ->
+            HotSalesEpoxyModel(item, glide).id(item.id)
+        }
+        CarouselModel_()
+            .id("hot_sales")
+            .models(models)
+            .numViewsToShowOnScreen(1F)
+            .addTo(this)
+
 
         // Best sellers header
         HeaderEpoxyModel(header = HeaderType.BEST_SELLERS)
@@ -62,21 +65,32 @@ class MainScreenEpoxyController(
             .addTo(this)
 
         // Best sellers content
-        bestSellers?.let { items ->
-            items.forEach { bestSeller ->
-                BestSellerEpoxyModel(bestSeller, onProductClick, glide)
-                    .id(BEST_SELLER_ID)
-                    .addTo(this)
-            }
+        state.bestSellers.forEach { bestSeller ->
+            BestSellerEpoxyModel(bestSeller, onProductClick, glide)
+                .id("best_sellers_${bestSeller.id}")
+                .addTo(this)
         }
-
     }
 
-    companion object {
-        const val HOT_SALES_ID = "hot_sales_carousel"
-        const val BEST_SELLER_ID = "best_seller"
-        const val SEARCH_ID = "search"
-        const val TOP_BAR_ID = "top_bar"
-    }
+    private fun processLoadingState() {
+        val hotSalesShimmerFirst = ShimmerHotSalesEpoxyModel()
+            .id("shimmer_hot_sales")
 
+        CarouselModel_()
+            .id("shimmer_hot_sales_carousel")
+            .models(listOf(hotSalesShimmerFirst))
+            .numViewsToShowOnScreen(1F)
+            .addTo(this)
+
+        HeaderEpoxyModel(header = HeaderType.BEST_SELLERS)
+            .id(HeaderType.BEST_SELLERS.name)
+            .spanSizeOverride { _, _, _ -> 2 }
+            .addTo(this)
+
+        repeat(4) {
+            ShimmerBestSellerEpoxyModel()
+                .id("shimmer_best_seller_$it")
+                .addTo(this)
+        }
+    }
 }

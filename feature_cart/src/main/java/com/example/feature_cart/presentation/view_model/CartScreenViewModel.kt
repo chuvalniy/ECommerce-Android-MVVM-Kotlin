@@ -3,6 +3,7 @@ package com.example.feature_cart.presentation.view_model
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.utils.Resource
+import com.example.feature_cart.domain.model.CartDomain
 import com.example.feature_cart.domain.use_case.FetchCartInfoUseCase
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -29,13 +30,29 @@ class CartScreenViewModel(
 
         when (val response = fetchCartInfoUseCase()) {
             is Resource.Success -> {
-                _uiState.value = _uiState.value.copy(cartInfo = response.data!!)
+                processSuccess(response)
+
             }
             is Resource.Error -> {
-                _uiState.value = _uiState.value.copy(isLoading = false)
-                showSnackbar(response.error ?: "")
+                processError(response)
             }
             else -> Unit
+        }
+    }
+
+    private suspend fun CartScreenViewModel.processError(
+        response: Resource<CartDomain>
+    ) {
+        _uiState.value = _uiState.value.copy(isLoading = false)
+        showSnackbar(response.error ?: "")
+    }
+
+    private fun processSuccess(response: Resource<CartDomain>) {
+        response.data?.let { data ->
+            _uiState.value = _uiState.value.copy(
+                cartInfo = data,
+                isLoading = false
+            )
         }
     }
 

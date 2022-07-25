@@ -83,7 +83,7 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
     }
 
     private fun processUiState(state: MainScreenState) {
-        epoxyController?.setData(state.bestSellers, state.hotSales)
+        epoxyController?.setData(state)
 
         if (state.numberOfItemsInTheCart > 0) {
             binding.tvNumberOfItems.text = state.numberOfItemsInTheCart.toString()

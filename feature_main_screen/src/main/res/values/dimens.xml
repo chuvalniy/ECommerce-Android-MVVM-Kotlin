@@ -18,6 +18,8 @@
     <dimen name="best_seller_text_title_margin_bottom">16dp</dimen>
 
     <!--    Hot sales -->
+    <dimen name="hot_sales_card_height">195dp</dimen>
+
     <dimen name="hot_sales_card_start_margin">18dp</dimen>
     <dimen name="hot_sales_card_corner_radius">10dp</dimen>
 

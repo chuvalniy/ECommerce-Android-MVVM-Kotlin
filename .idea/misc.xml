@@ -108,6 +108,7 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/model_cart_header.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/model_cart_top_bar.xml" value="0.20778110303548525" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/model_checkout.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/shimmer_cart_item.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/temp.xml" value="0.20778110303548525" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/drawable/background_checked_color.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/drawable/background_checked_memory.xml" value="0.164" />
@@ -141,6 +142,8 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/layout/model_product_photo.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/layout/model_top.xml" value="0.10196406184705391" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/layout/model_top_bar.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/layout/shimmer_model_product_photo.xml" value="0.20778110303548525" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/layout/shimmer_product_info.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/layout/view_pager_item.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/drawable/background_circle_cart_items.xml" value="0.162" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/drawable/background_circle_favorite.xml" value="0.164" />
@@ -181,6 +184,8 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/model_header.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/model_search.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/model_top_bar.xml" value="0.20778110303548525" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/shimmer_best_seller_item.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/shimmer_hot_sales_item.xml" value="0.20778110303548525" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/spinner_filter_text_view.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/spinner_location_text_view.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/tab_item.xml" value="0.20863616930312098" />

@@ -62,7 +62,7 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
 
     private fun observeUiState() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
         viewModel.uiState.collect { state ->
-            epoxyController?.setData(state.data)
+            epoxyController?.setData(state)
         }
     }
 

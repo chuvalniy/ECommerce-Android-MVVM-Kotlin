@@ -6,6 +6,7 @@ import com.example.feature_main_screen.data.mapper.toHotSales
 import com.example.feature_main_screen.data.remote.MainScreenApi
 import com.example.feature_main_screen.domain.model.DomainDataSource
 import com.example.feature_main_screen.domain.repository.MainScreenRepository
+import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import java.io.IOException
 

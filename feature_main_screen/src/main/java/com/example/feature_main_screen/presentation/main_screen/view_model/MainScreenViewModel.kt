@@ -43,7 +43,7 @@ class MainScreenViewModel(
     }
 
     private suspend fun processErrorState(response: Resource<DomainDataSource>) {
-        _mainScreenState.value = _mainScreenState.value.copy(isLoading = false)
+        _mainScreenState.value = _mainScreenState.value.copy(isLoading = true)
         showSnackbar(message = response.error ?: "")
     }
 

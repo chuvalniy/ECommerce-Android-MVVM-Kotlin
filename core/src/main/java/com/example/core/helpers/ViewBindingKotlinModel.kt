@@ -17,6 +17,7 @@ abstract class ViewBindingKotlinModel<T : ViewBinding>(
     private val bindingMethod by lazy { getBindMethodFrom(this::class.java) }
 
     abstract fun T.bind()
+    open fun T.unbind() {}
 
     @Suppress("UNCHECKED_CAST")
     override fun bind(view: View) {
@@ -26,6 +27,20 @@ abstract class ViewBindingKotlinModel<T : ViewBinding>(
             view.setTag(R.id.epoxy_viewbinding, binding)
         }
         binding.bind()
+    }
+
+    override fun unbind(view: View) {
+        view.getBinding().unbind()
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    protected fun View.getBinding(): T {
+        var binding = getTag(R.id.epoxy_viewbinding) as? T
+        if (binding == null) {
+            binding = bindingMethod.invoke(null, this) as T
+            setTag(R.id.epoxy_viewbinding, binding)
+        }
+        return binding
     }
 
     override fun getDefaultLayout() = layoutRes

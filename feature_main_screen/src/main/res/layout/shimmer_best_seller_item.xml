@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bestSellerShimmerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/bestSellerItem"
+        layout="@layout/best_seller_item"/>
+
+</com.facebook.shimmer.ShimmerFrameLayout>
