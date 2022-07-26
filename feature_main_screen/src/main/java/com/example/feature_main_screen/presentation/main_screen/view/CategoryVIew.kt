@@ -19,35 +19,36 @@ class CategoryView @JvmOverloads constructor(
     defStyleRes: Int = 0
 ) : View(context, attributeSet, defStyleAttr, defStyleRes) {
 
-    private val selectedTabCirclePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        style = Paint.Style.FILL
-        color = ContextCompat.getColor(context, R.color.light_orange)
-    }
-    private val unselectedTabCirclePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        style = Paint.Style.FILL
-        color = ContextCompat.getColor(context, R.color.white)
-    }
-
-    private val selectedTabTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        textSize = resources.getDimension(R.dimen.category_view_title_text_size)
-        color = ContextCompat.getColor(context, R.color.light_orange)
-    }
-    private val unselectedTabTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        textSize = resources.getDimension(R.dimen.category_view_title_text_size)
-        color = ContextCompat.getColor(context, R.color.dark_blue)
-    }
-
     private val rowPaint = Paint().apply { style = Paint.Style.FILL }
 
-    private val selectedTabIconColor = ContextCompat.getColor(context, R.color.white)
-    private val unselectedTabIconColor = ContextCompat.getColor(context, R.color.gray)
+    private val circlePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        style = Paint.Style.FILL
+    }
+
+    private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        textSize = resources.getDimension(R.dimen.category_view_title_text_size)
+    }
+
+    private val circleColors = listOf(
+        ContextCompat.getColor(context, R.color.light_orange),
+        ContextCompat.getColor(context, R.color.white)
+    )
+
+    private val textColors = listOf(
+        ContextCompat.getColor(context, R.color.light_orange),
+        ContextCompat.getColor(context, R.color.dark_blue)
+    )
+
+    private val iconColors = listOf(
+        ContextCompat.getColor(context, R.color.white),
+        ContextCompat.getColor(context, R.color.gray)
+    )
 
     private val circleSize = resources.getDimensionPixelSize(R.dimen.category_view_circle_size)
 
     private val textHeight = resources.getDimensionPixelSize(R.dimen.category_view_text_height)
 
     private lateinit var bitmap: Bitmap
-
 
     private val contentHeight = circleSize + textHeight
 
@@ -59,8 +60,8 @@ class CategoryView @JvmOverloads constructor(
     private val iconRect = RectF(0F, 0F, 0F, 0F)
     private val rowRect = Rect(0, 0, 0, 0)
 
-    private val iconHorizontalPadding = 72
-
+    private val iconHorizontalPadding =
+        resources.getDimensionPixelSize(R.dimen.category_view_item_horizontal_padding)
 
     private val contentWidth: Int
         get() = (circleSize + iconHorizontalPadding) * tabs.size
@@ -116,75 +117,43 @@ class CategoryView @JvmOverloads constructor(
 
             val iconRect = getTabRect(index)
 
-            if (index == currentlySelectedTabId) {
-                drawCircle(
-                    iconRect.centerX(),
-                    iconRect.centerY(),
-                    (circleSize / 2).toFloat(),
-                    selectedTabCirclePaint
-                )
+            val icon: Drawable? = ContextCompat.getDrawable(context, tab.icon)
 
-                val titleY =
-                    selectedTabTextPaint.getTextBaselineByCenter((contentHeight + circleSize).toFloat() / 2)
-                val titleX =
-                    (iconHorizontalPadding + circleSize) * (index + 0.5f) - selectedTabTextPaint.measureText(
-                        tab.title
-                    ) / 2
-                drawText(tab.title, titleX, titleY, selectedTabTextPaint)
-
-
-                val drawable: Drawable? = ContextCompat.getDrawable(context, tab.icon)
-
-                drawable?.let {
-
-                    val startX = (iconRect.centerX() - drawable.intrinsicWidth / 2).toInt()
-                    val endX = (iconRect.centerX() + drawable.intrinsicWidth / 2).toInt()
-                    val startY = circleSize / 2 - drawable.intrinsicHeight / 2
-                    val endY =
-                        circleSize / 2 + drawable.intrinsicHeight - drawable.intrinsicHeight / 2
-
-                    drawable.setBounds(startX, startY, endX, endY)
-
-                    drawable.setTint(selectedTabIconColor)
-                    drawable.draw(this)
-                }
+            if (currentlySelectedTabId == index) {
+                circlePaint.color = circleColors[0]
+                textPaint.color = textColors[0]
+                icon?.setTint(iconColors[0])
             } else {
-
-                drawCircle(
-                    iconRect.centerX(),
-                    iconRect.centerY(),
-                    (circleSize / 2).toFloat(),
-                    unselectedTabCirclePaint
-                )
-
-                val titleY =
-                    unselectedTabTextPaint.getTextBaselineByCenter((contentHeight + circleSize).toFloat() / 2)
-                val titleX =
-                    (iconHorizontalPadding + circleSize) * (index + 0.5f) - unselectedTabTextPaint.measureText(
-                        tab.title
-                    ) / 2
-                drawText(tab.title, titleX, titleY, unselectedTabTextPaint)
-
-                val drawable: Drawable? = ContextCompat.getDrawable(context, tab.icon)
-
-                drawable?.let {
-
-                    val xStart = (iconRect.centerX() - drawable.intrinsicWidth / 2).toInt()
-                    val xEnd = (iconRect.centerX() + drawable.intrinsicWidth / 2).toInt()
-                    val yStart = circleSize / 2 - drawable.intrinsicHeight / 2
-                    val yEnd =
-                        circleSize / 2 + drawable.intrinsicHeight - drawable.intrinsicHeight / 2
-
-                    drawable.setBounds(xStart, yStart, xEnd, yEnd)
-
-                    drawable.setTint(unselectedTabIconColor)
-                    drawable.draw(this)
-                }
+                circlePaint.color = circleColors[1]
+                textPaint.color = textColors[1]
+                icon?.setTint(iconColors[1])
             }
 
+            drawCircle(
+                iconRect.centerX(),
+                iconRect.centerY(),
+                (circleSize / 2).toFloat(),
+                circlePaint
+            )
+
+            val titleY =
+                textPaint.getTextBaselineByCenter((contentHeight + circleSize).toFloat() / 2)
+            val titleX =
+                (iconHorizontalPadding + circleSize) * (index + 0.5f) - textPaint.measureText(tab.title) / 2
+
+            drawText(tab.title, titleX, titleY, textPaint)
+
+            icon?.let {
+                val startX = (iconRect.centerX() - icon.intrinsicWidth / 2).toInt()
+                val endX = (iconRect.centerX() + icon.intrinsicWidth / 2).toInt()
+                val startY = circleSize / 2 - icon.intrinsicHeight / 2
+                val endY = circleSize / 2 + icon.intrinsicHeight / 2
+
+                icon.setBounds(startX, startY, endX, endY)
+                icon.draw(this)
+            }
         }
     }
-
 
     private fun getTabRect(index: Int): RectF {
         iconRect.left = (index * (circleSize + iconHorizontalPadding)).toFloat()

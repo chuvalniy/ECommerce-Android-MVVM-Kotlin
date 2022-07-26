@@ -50,7 +50,9 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
             onFilterButtonClick = { viewModel.filterButtonClicked() },
             onProductClick = { viewModel.productClicked() }
         )
-        binding.epoxyRecyclerView.setController(epoxyController!!)
+        with(binding.epoxyRecyclerView) {
+            setController(epoxyController!!)
+        }
     }
 
     private fun observeUiEffect() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {

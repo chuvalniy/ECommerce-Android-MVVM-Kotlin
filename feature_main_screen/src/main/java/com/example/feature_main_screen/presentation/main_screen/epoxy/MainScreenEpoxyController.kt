@@ -70,8 +70,8 @@ class MainScreenEpoxyController(
             .addTo(this)
 
         // Best sellers content
-        state.bestSellers.forEach { bestSeller ->
-            BestSellerEpoxyModel(bestSeller, onProductClick, glide)
+        state.bestSellers.forEachIndexed { index, bestSeller ->
+            BestSellerEpoxyModel(bestSeller, index, onProductClick, glide)
                 .id("best_sellers_${bestSeller.id}")
                 .addTo(this)
         }

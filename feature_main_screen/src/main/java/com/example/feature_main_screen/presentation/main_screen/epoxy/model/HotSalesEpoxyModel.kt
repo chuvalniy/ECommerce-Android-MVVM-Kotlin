@@ -1,5 +1,7 @@
 package com.example.feature_main_screen.presentation.main_screen.epoxy.model
 
+import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.core.view.isVisible
 import com.bumptech.glide.RequestManager
 import com.example.core.helpers.ViewBindingKotlinModel
