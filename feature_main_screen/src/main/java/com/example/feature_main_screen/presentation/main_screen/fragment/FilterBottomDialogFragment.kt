@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.appcompat.R
 import com.example.feature_main_screen.databinding.FragmentFilterBottomDialogBinding
-import com.example.feature_main_screen.presentation.main_screen.utils.SampleData.brandFilter
-import com.example.feature_main_screen.presentation.main_screen.utils.SampleData.priceFilter
-import com.example.feature_main_screen.presentation.main_screen.utils.SampleData.sizeFilter
+import com.example.feature_main_screen.presentation.main_screen.view.SampleData.brandFilter
+import com.example.feature_main_screen.presentation.main_screen.view.SampleData.priceFilter
+import com.example.feature_main_screen.presentation.main_screen.view.SampleData.sizeFilter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class FilterBottomDialogFragment : BottomSheetDialogFragment() {

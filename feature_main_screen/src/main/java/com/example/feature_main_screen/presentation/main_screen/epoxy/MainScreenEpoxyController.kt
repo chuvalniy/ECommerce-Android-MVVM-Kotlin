@@ -28,6 +28,11 @@ class MainScreenEpoxyController(
             .spanSizeOverride { _, _, _ -> 2 }
             .addTo(this)
 
+        ProductCategoryEpoxyModel()
+            .id("product_categories")
+            .spanSizeOverride { _, _, _ -> 2 }
+            .addTo(this)
+
         // Search
         SearchEpoxyModel()
             .id("search_bar")

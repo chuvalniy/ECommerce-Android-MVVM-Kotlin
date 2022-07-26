@@ -66,6 +66,12 @@
     <dimen name="bottom_menu_button_distance">8dp</dimen>
     <dimen name="bottom_menu_button_size">16dp</dimen>
 
+<!--    Categories -->
+    <dimen name="category_view_title_text_size">12sp</dimen>
+    <dimen name="category_view_circle_size">72dp</dimen>
+    <dimen name="category_view_text_height">30dp</dimen>
+
+
 <!--    Search tab -->
     <dimen name="search_tab_horizontal_margin">16dp</dimen>
     <dimen name="search_tab_top_margin">8dp</dimen>
