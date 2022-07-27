@@ -3,7 +3,10 @@ package com.example.feature_main_screen.presentation.main_screen.view
 import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.Drawable
+import android.os.Parcel
+import android.os.Parcelable
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import androidx.core.content.ContextCompat
@@ -75,6 +78,23 @@ class CategoryView @JvmOverloads constructor(
             requestLayout()
 
             invalidate()
+        }
+    }
+
+    override fun onSaveInstanceState(): Parcelable {
+        return SavedState(super.onSaveInstanceState()).also {
+            it.currentSelectedPosition = currentlySelectedTabId
+            it.translationX = transformations.translationX
+        }
+    }
+
+    override fun onRestoreInstanceState(state: Parcelable?) {
+        if (state is SavedState) {
+            super.onRestoreInstanceState(state.superState)
+            currentlySelectedTabId = state.currentSelectedPosition
+            transformations.translationX = state.translationX
+        } else {
+            super.onRestoreInstanceState(state)
         }
     }
 
@@ -185,7 +205,7 @@ class CategoryView @JvmOverloads constructor(
                     val pointerId = event.getPointerId(0)
 
                     if (lastPointerId == pointerId) {
-                        transformations.addTranslation(event.x - lastPoint.x)
+                        transformations.addTranslation(lastPoint.x - event.x)
                     }
 
                     lastPoint.set(event.x, event.y)
@@ -206,7 +226,6 @@ class CategoryView @JvmOverloads constructor(
 
     private inner class Transformations {
         var translationX = 0F
-            private set
 
         private val minTranslation: Float
             get() = (width - contentWidth).toFloat().coerceAtMost(0F)
@@ -214,6 +233,39 @@ class CategoryView @JvmOverloads constructor(
         fun addTranslation(dx: Float) {
             translationX = (translationX - dx).coerceIn(minTranslation, 0F)
             invalidate()
+        }
+    }
+
+    private class SavedState : BaseSavedState {
+        var translationX: Float = 0F
+        var currentSelectedPosition: Int = 0
+
+        constructor(superState: Parcelable?): super(superState)
+
+        constructor(source: Parcel?): super(source) {
+            source?.apply {
+                translationX = readFloat()
+                currentSelectedPosition = readInt()
+            }
+        }
+
+        override fun writeToParcel(out: Parcel?, flags: Int) {
+            super.writeToParcel(out, flags)
+            out?.writeFloat(translationX)
+            out?.writeInt(currentSelectedPosition)
+        }
+
+        companion object {
+            @JvmField
+            val CREATOR: Parcelable.Creator<SavedState> = object : Parcelable.Creator<SavedState> {
+                override fun createFromParcel(p0: Parcel): SavedState {
+                    return SavedState(p0)
+                }
+
+                override fun newArray(p0: Int): Array<SavedState?> {
+                    return Array(p0) { null }
+                }
+            }
         }
     }
 }

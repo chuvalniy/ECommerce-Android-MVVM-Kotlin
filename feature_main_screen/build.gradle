@@ -70,6 +70,11 @@ dependencies {
     // Facebook shimmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
+    // Room
+    def room_version = "2.4.2"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
     // Coroutines
     def coroutine_version = "1.5.2"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"

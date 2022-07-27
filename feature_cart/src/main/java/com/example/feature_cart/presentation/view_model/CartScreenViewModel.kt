@@ -6,9 +6,7 @@ import com.example.core.utils.Resource
 import com.example.feature_cart.domain.model.CartDomain
 import com.example.feature_cart.domain.use_case.FetchCartInfoUseCase
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 class CartScreenViewModel(
@@ -26,26 +24,23 @@ class CartScreenViewModel(
     }
 
     private fun fetchCartInfo() = viewModelScope.launch {
-        _uiState.value = _uiState.value.copy(isLoading = true)
-
-        when (val response = fetchCartInfoUseCase()) {
-            is Resource.Success -> {
-                processSuccess(response)
-
+        fetchCartInfoUseCase().onEach { result ->
+            when (result) {
+                is Resource.Success -> processSuccess(result)
+                is Resource.Error -> processError(result)
+                is Resource.Loading ->  {
+                    _uiState.value = _uiState.value.copy(isLoading = result.isLoading)
+                }
             }
-            is Resource.Error -> {
-                processError(response)
-            }
-            else -> Unit
-        }
+        }.launchIn(this)
     }
 
-    private suspend fun CartScreenViewModel.processError(
-        response: Resource<CartDomain>
-    ) {
+    private suspend fun processError(response: Resource<CartDomain>) {
         _uiState.value = _uiState.value.copy(isLoading = false)
         showSnackbar(response.error ?: "")
     }
+
+
 
     private fun processSuccess(response: Resource<CartDomain>) {
         response.data?.let { data ->
