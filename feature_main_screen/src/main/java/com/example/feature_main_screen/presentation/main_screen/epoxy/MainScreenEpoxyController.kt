@@ -93,7 +93,7 @@ class MainScreenEpoxyController(
             .addTo(this)
 
         repeat(4) {
-            ShimmerBestSellerEpoxyModel()
+            ShimmerBestSellerEpoxyModel(it)
                 .id("shimmer_best_seller_$it")
                 .addTo(this)
         }
