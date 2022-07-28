@@ -1,6 +1,5 @@
 package com.example.feature_details_screen.data.local.utils
 
-import android.util.Log
 import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
 import com.example.core.utils.parser.JsonParser

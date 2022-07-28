@@ -6,9 +6,7 @@ import com.example.core.utils.Resource
 import com.example.feature_main_screen.domain.model.DomainDataSource
 import com.example.feature_main_screen.domain.use_case.FetchMainScreenDataSource
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 
@@ -16,8 +14,8 @@ class MainScreenViewModel(
     private val fetchMainScreenDataSource: FetchMainScreenDataSource
 ) : ViewModel() {
 
-    private val _mainScreenState = MutableStateFlow(MainScreenState())
-    val mainScreenState get() = _mainScreenState.asStateFlow()
+    private val _uiState = MutableStateFlow(MainScreenState())
+    val uiState get() = _uiState.asStateFlow()
 
     private val _uiChannel = Channel<UiEffect>()
     val uiEffect get() = _uiChannel.receiveAsFlow()
@@ -26,29 +24,30 @@ class MainScreenViewModel(
         fetchMainScreenDataSource()
     }
 
-    private fun fetchMainScreenDataSource() {
-        viewModelScope.launch {
-            _mainScreenState.value = _mainScreenState.value.copy(isLoading = true)
-
-            when (val response = fetchMainScreenDataSource.execute()) {
+    private fun fetchMainScreenDataSource() = viewModelScope.launch {
+        fetchMainScreenDataSource.execute().onEach { result ->
+            when (result) {
                 is Resource.Success -> {
-                    processSuccessState(response)
+                    processSuccessState(result)
                 }
                 is Resource.Error -> {
-                    processErrorState(response)
+                    processErrorState(result)
                 }
-                else -> Unit
+                is Resource.Loading -> {
+                    _uiState.value = _uiState.value.copy(isLoading = result.isLoading)
+                }
             }
-        }
+        }.launchIn(this)
     }
 
+
     private suspend fun processErrorState(response: Resource<DomainDataSource>) {
-        _mainScreenState.value = _mainScreenState.value.copy(isLoading = true)
+        _uiState.value = _uiState.value.copy(isLoading = false)
         showSnackbar(message = response.error ?: "")
     }
 
     private fun processSuccessState(response: Resource<DomainDataSource>) {
-        _mainScreenState.value = _mainScreenState.value.copy(
+        _uiState.value = _uiState.value.copy(
             isLoading = false,
             hotSales = response.data?.hotSales ?: emptyList(),
             bestSellers = response.data?.bestSellers ?: emptyList(),

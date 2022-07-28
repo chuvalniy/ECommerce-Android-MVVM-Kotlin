@@ -6,6 +6,6 @@ class FetchMainScreenDataSource(
     private val repository: MainScreenRepository
 ) {
 
-    suspend  fun execute() = repository.fetchMainScreenDataSource()
+    fun execute() = repository.fetchMainScreenDataSource()
 
 }

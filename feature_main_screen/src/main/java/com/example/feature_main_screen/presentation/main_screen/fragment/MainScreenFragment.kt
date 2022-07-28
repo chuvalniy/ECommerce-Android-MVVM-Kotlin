@@ -79,7 +79,7 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
     }
 
     private fun observeUiState() = viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-        viewModel.mainScreenState.collect { state ->
+        viewModel.uiState.collect { state ->
             processUiState(state)
         }
     }

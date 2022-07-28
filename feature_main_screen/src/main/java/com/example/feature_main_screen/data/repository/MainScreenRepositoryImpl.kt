@@ -1,39 +1,59 @@
 package com.example.feature_main_screen.data.repository
 
+import androidx.room.withTransaction
 import com.example.core.utils.Resource
-import com.example.feature_main_screen.data.mapper.toBestSeller
-import com.example.feature_main_screen.data.mapper.toHotSales
+import com.example.feature_main_screen.data.local.MainScreenDatabase
+import com.example.feature_main_screen.data.local.model.CacheDataSource
+import com.example.feature_main_screen.data.mapper.*
 import com.example.feature_main_screen.data.remote.MainScreenApi
 import com.example.feature_main_screen.domain.model.DomainDataSource
 import com.example.feature_main_screen.domain.repository.MainScreenRepository
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
 
 class MainScreenRepositoryImpl(
-    private val api: MainScreenApi
+    private val api: MainScreenApi,
+    private val db: MainScreenDatabase
 ) : MainScreenRepository {
 
-    override suspend fun fetchMainScreenDataSource(): Resource<DomainDataSource> {
-        return try {
-            val mainScreenResponse = api.fetchMainScreenItemsFromApi()
+    private val dao = db.dao
 
-            val domainHomeStore = mainScreenResponse.hotSales.map { it.toHotSales() }
-            val domainBestSeller = mainScreenResponse.bestSellers.map { it.toBestSeller() }
+    override fun fetchMainScreenDataSource(): Flow<Resource<DomainDataSource>> = flow {
+        emit(Resource.Loading(isLoading = true))
 
-            val cartInfo = api.fetchCartInfoFromApi().basket.size
+        val cache = dao.fetchCache()
 
-            val response = DomainDataSource(
-                bestSellers = domainBestSeller,
-                hotSales = domainHomeStore,
-                cartInfo = cartInfo
-            )
+        if (cache != null) {
+            emit(Resource.Success(cache.toDomainDataSource()))
+            emit(Resource.Loading(isLoading = false))
+        }
 
-            Resource.Success(response)
+        val response = try {
+            val productResponse = api.fetchMainScreenItemsFromApi()
+            val cartResponse = api.fetchCartInfoFromApi()
+            Pair(productResponse, cartResponse)
         } catch (e: IOException) {
-            Resource.Error(error = e.message)
+            emit(Resource.Error(error = e.message))
+            null
         } catch (e: HttpException) {
-            Resource.Error(error = e.message)
+            emit(Resource.Error(error = e.message))
+            null
+        }
+
+        response?.let { data ->
+            val cacheDataSource = CacheDataSource(
+                bestSellers = data.first.bestSellers.map { it.toBestSellerEntity() },
+                hotSales = data.first.hotSales.map { it.toHotSalesEntity() },
+                cartInfo = data.second.basket.size
+            )
+            db.withTransaction {
+                dao.clearCache()
+                dao.insertCache(cacheDataSource)
+            }
+            emit(Resource.Success(cacheDataSource.toDomainDataSource()))
+            emit(Resource.Loading(isLoading = false))
         }
     }
 }
