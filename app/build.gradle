@@ -36,9 +36,9 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':feature_main_screen')
+    implementation project(path: ':feature_home')
     implementation project(path: ':core')
-    implementation project(path: ':feature_details_screen')
+    implementation project(path: ':feature_details')
     implementation project(path: ':feature_cart')
 
     // Koin

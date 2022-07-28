@@ -8,9 +8,9 @@ import com.example.feature_cart.di.cartPresentationModule
 import com.example.feature_details_screen.di.detailsDataModule
 import com.example.feature_details_screen.di.detailsDomainModule
 import com.example.feature_details_screen.di.detailsPresentationModule
-import com.example.feature_main_screen.di.mainScreenDataModule
-import com.example.feature_main_screen.di.mainScreenDomainModule
-import com.example.feature_main_screen.di.mainScreenPresentationModule
+import com.example.feature_main_screen.di.homeScreenDataModule
+import com.example.feature_main_screen.di.homeScreenDomainModule
+import com.example.feature_main_screen.di.homeScreenPresentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -23,9 +23,9 @@ class ShopApp : Application() {
             androidContext(this@ShopApp)
             modules(
                 coreModule,
-                mainScreenDataModule,
-                mainScreenDomainModule,
-                mainScreenPresentationModule,
+                homeScreenDataModule,
+                homeScreenDomainModule,
+                homeScreenPresentationModule,
                 detailsDataModule,
                 detailsDomainModule,
                 detailsPresentationModule,
