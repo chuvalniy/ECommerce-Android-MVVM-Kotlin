@@ -7,5 +7,4 @@ data class MainScreenState(
     val bestSellers: List<BestSellerDomain> = emptyList(),
     val hotSales: List<HotSalesDomain> = emptyList(),
     val isLoading: Boolean = false,
-    val numberOfItemsInTheCart: Int = 0
 )

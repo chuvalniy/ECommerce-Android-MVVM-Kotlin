@@ -31,9 +31,7 @@ class MainScreenRepositoryImpl(
         }
 
         val response = try {
-            val productResponse = api.fetchMainScreenItemsFromApi()
-            val cartResponse = api.fetchCartInfoFromApi()
-            Pair(productResponse, cartResponse)
+            api.fetchMainScreenItemsFromApi()
         } catch (e: IOException) {
             emit(Resource.Error(error = e.message))
             null
@@ -43,16 +41,11 @@ class MainScreenRepositoryImpl(
         }
 
         response?.let { data ->
-            val cacheDataSource = CacheDataSource(
-                bestSellers = data.first.bestSellers.map { it.toBestSellerEntity() },
-                hotSales = data.first.hotSales.map { it.toHotSalesEntity() },
-                cartInfo = data.second.basket.size
-            )
             db.withTransaction {
                 dao.clearCache()
-                dao.insertCache(cacheDataSource)
+                dao.insertCache(data.toCacheDataSource())
             }
-            emit(Resource.Success(cacheDataSource.toDomainDataSource()))
+            emit(Resource.Success(dao.fetchCache()?.toDomainDataSource()))
             emit(Resource.Loading(isLoading = false))
         }
     }

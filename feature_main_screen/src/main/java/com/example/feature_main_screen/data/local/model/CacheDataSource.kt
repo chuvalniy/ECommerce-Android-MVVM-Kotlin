@@ -10,5 +10,4 @@ data class CacheDataSource(
     val id: Int = 0,
     val bestSellers: List<BestSellerEntity>,
     val hotSales: List<HotSalesEntity>,
-    val cartInfo: Int? = null
 )

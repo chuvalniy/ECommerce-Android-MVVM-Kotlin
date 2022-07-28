@@ -14,9 +14,6 @@
     <string name="view_all">view all</string>
     <string name="see_more">see more</string>
 
-<!--    Bottom menu -->
-    <string name="explorer_text_view">\u2022 Explorer</string>
-
 <!--    Hot sales -->
     <string name="hot_sales_buy_now">Buy now!</string>
     <string name="hot_sales_new">New</string>

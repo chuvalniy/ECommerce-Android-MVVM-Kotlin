@@ -51,7 +51,6 @@ class MainScreenViewModel(
             isLoading = false,
             hotSales = response.data?.hotSales ?: emptyList(),
             bestSellers = response.data?.bestSellers ?: emptyList(),
-            numberOfItemsInTheCart = response.data?.cartInfo ?: 0
         )
     }
 
@@ -63,10 +62,6 @@ class MainScreenViewModel(
         _uiChannel.send(UiEffect.NavigateToFilterDialogScreen)
     }
 
-    fun cartButtonClicked() = viewModelScope.launch {
-        _uiChannel.send(UiEffect.NavigateToCartScreen)
-    }
-
     fun productClicked() = viewModelScope.launch {
         _uiChannel.send(UiEffect.NavigateToDetailsScreen)
     }
@@ -74,7 +69,6 @@ class MainScreenViewModel(
     sealed class UiEffect {
         data class ShowSnackbar(val message: String) : UiEffect()
         object NavigateToFilterDialogScreen : UiEffect()
-        object NavigateToCartScreen : UiEffect()
         object NavigateToDetailsScreen : UiEffect()
     }
 }

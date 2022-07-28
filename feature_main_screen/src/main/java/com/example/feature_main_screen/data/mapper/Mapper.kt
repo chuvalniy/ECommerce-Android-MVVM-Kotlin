@@ -21,7 +21,6 @@ fun CacheDataSource.toDomainDataSource(): DomainDataSource {
     return DomainDataSource(
         bestSellers = bestSellers.map { it.toBestSellerDomain() },
         hotSales = hotSales.map { it.toHotSalesDomain() },
-        cartInfo = cartInfo
     )
 }
 

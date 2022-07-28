@@ -41,7 +41,7 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
     }
 
     private fun processButtonClick() {
-        binding.btnShoppingBag.setOnClickListener { viewModel.cartButtonClicked() }
+//        binding.btnShoppingBag.setOnClickListener { viewModel.cartButtonClicked() }
     }
 
     private fun setupEpoxyController() {
@@ -60,9 +60,6 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
             when (effect) {
                 is MainScreenViewModel.UiEffect.ShowSnackbar -> {
                     Snackbar.make(requireView(), effect.message, Snackbar.LENGTH_LONG).show()
-                }
-                is MainScreenViewModel.UiEffect.NavigateToCartScreen -> {
-                    findNavController().navigate(Uri.parse(Constants.CART_SCREEN_DEEP_LINK))
                 }
                 is MainScreenViewModel.UiEffect.NavigateToDetailsScreen -> {
                     findNavController().navigate(Uri.parse(Constants.DETAILS_SCREEN_DEEP_LINK))
@@ -86,11 +83,6 @@ class MainScreenFragment : BaseFragment<FragmentMainBinding>() {
 
     private fun processUiState(state: MainScreenState) {
         epoxyController?.setData(state)
-
-        if (state.numberOfItemsInTheCart > 0) {
-            binding.tvNumberOfItems.text = state.numberOfItemsInTheCart.toString()
-            binding.tvNumberOfItems.isVisible = true
-        }
     }
 
 
