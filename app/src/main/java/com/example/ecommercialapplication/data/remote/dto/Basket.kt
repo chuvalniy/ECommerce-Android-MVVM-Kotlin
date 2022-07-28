@@ -1,6 +1,6 @@
-package com.example.feature_main_screen.data.remote.dto
+package com.example.ecommercialapplication.data.remote.dto
 
-data class BasketDto(
+data class Basket(
     val id: Int,
     val images: String,
     val price: Int,

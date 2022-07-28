@@ -19,7 +19,7 @@ class HomeScreenRepositoryImpl(
 
     private val dao = db.dao
 
-    override fun fetchMainScreenDataSource(): Flow<Resource<DomainDataSource>> = flow {
+    override fun fetchData(): Flow<Resource<DomainDataSource>> = flow {
         emit(Resource.Loading(isLoading = true))
 
         val cache = dao.fetchCache()
@@ -30,7 +30,7 @@ class HomeScreenRepositoryImpl(
         }
 
         val response = try {
-            api.fetchMainScreenItemsFromApi()
+            api.fetchCloudDataSource()
         } catch (e: IOException) {
             emit(Resource.Error(error = e.message))
             null

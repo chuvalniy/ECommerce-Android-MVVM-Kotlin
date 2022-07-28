@@ -4,14 +4,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.utils.Resource
 import com.example.feature_main_screen.domain.model.DomainDataSource
-import com.example.feature_main_screen.domain.use_case.FetchDomainDataSource
+import com.example.feature_main_screen.domain.use_case.FetchDataUseCase
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 
 class HomeScreenViewModel(
-    private val fetchDomainDataSource: FetchDomainDataSource
+    private val fetchDataUseCase: FetchDataUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HomeScreenState())
@@ -25,7 +25,7 @@ class HomeScreenViewModel(
     }
 
     private fun fetchDomainDataSource() = viewModelScope.launch {
-        fetchDomainDataSource.execute().onEach { result ->
+        fetchDataUseCase.execute().onEach { result ->
             when (result) {
                 is Resource.Success -> {
                     processSuccessState(result)

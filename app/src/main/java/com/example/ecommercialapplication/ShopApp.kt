@@ -2,6 +2,8 @@ package com.example.ecommercialapplication
 
 import android.app.Application
 import com.example.core.coreModule
+import com.example.ecommercialapplication.data.di.mainDataModule
+import com.example.ecommercialapplication.data.di.mainPresentationModule
 import com.example.feature_cart.di.cartDataModule
 import com.example.feature_cart.di.cartDomainModule
 import com.example.feature_cart.di.cartPresentationModule
@@ -23,6 +25,8 @@ class ShopApp : Application() {
             androidContext(this@ShopApp)
             modules(
                 coreModule,
+                mainDataModule,
+                mainPresentationModule,
                 homeScreenDataModule,
                 homeScreenDomainModule,
                 homeScreenPresentationModule,

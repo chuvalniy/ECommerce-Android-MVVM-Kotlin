@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface HomeScreenRepository {
 
-    fun fetchMainScreenDataSource(): Flow<Resource<DomainDataSource>>
+    fun fetchData(): Flow<Resource<DomainDataSource>>
 }
