@@ -30,7 +30,6 @@
         android:id="@+id/btnRemoveFromCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/cart_product_btn_remove_from_cart_margin_end"
         android:background="@null"
         android:padding="@dimen/cart_product_btn_remove_from_cart_padding"
         android:src="@drawable/ic_basket"

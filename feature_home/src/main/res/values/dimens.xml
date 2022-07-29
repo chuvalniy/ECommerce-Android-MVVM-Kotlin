@@ -66,7 +66,7 @@
 
 
 <!--    Search tab -->
-    <dimen name="search_tab_horizontal_margin">16dp</dimen>
+    <dimen name="search_tab_horizontal_margin">32dp</dimen>
     <dimen name="search_tab_top_margin">8dp</dimen>
 
     <dimen name="search_view_height">34dp</dimen>

@@ -3,26 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/user_name"
+        android:id="@+id/nav_graph_home"
         android:icon="@drawable/ic_home"
-        app:showAsAction="always"
-        android:title="@string/explorer_text_view" />
+        android:title="Home"/>
 
     <item
-        android:id="@+id/cart"
+        android:id="@+id/nav_graph_cart"
         android:icon="@drawable/ic_cart"
-        app:showAsAction="always"
         android:title="Cart" />
 
     <item
         android:id="@+id/favorites"
-        app:showAsAction="always"
         android:icon="@drawable/ic_bordered_favorite"
         android:title="Favorites" />
 
     <item
         android:id="@+id/account"
-        app:showAsAction="always"
         android:icon="@drawable/ic_account"
         android:title="Account" />
 </menu>

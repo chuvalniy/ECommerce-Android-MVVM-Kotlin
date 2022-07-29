@@ -35,7 +35,7 @@
 
     <dimen name="cart_product_image_size">90dp</dimen>
     <dimen name="cart_product_image_vertical_margin">4dp</dimen>
-    <dimen name="cart_product_image_start_margin">32dp</dimen>
+    <dimen name="cart_product_image_start_margin">24dp</dimen>
     <dimen name="cart_product_image_corner_radius">12dp</dimen>
 
     <dimen name="cart_product_btn_remove_from_cart_margin_end">12dp</dimen>

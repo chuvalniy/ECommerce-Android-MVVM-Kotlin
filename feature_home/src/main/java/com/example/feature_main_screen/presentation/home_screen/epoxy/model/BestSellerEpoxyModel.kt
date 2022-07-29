@@ -37,7 +37,7 @@ data class BestSellerEpoxyModel(
         val params: ViewGroup.MarginLayoutParams = root.layoutParams as ViewGroup.MarginLayoutParams
         when (index % 2) {
             0 -> params.setMargins(
-                0,
+                root.context.resources.getDimensionPixelSize(R.dimen.home_padding),
                 0,
                 root.context.resources.getDimensionPixelSize(R.dimen.best_seller_card_margin_horizontal),
                 root.context.resources.getDimensionPixelSize(R.dimen.best_seller_card_margin_bottom)
@@ -45,7 +45,7 @@ data class BestSellerEpoxyModel(
             1 -> params.setMargins(
                 root.context.resources.getDimensionPixelSize(R.dimen.best_seller_card_margin_horizontal),
                 0,
-                0,
+                root.context.resources.getDimensionPixelSize(R.dimen.home_padding),
                 root.context.resources.getDimensionPixelSize(R.dimen.best_seller_card_margin_bottom)
             )
         }

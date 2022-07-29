@@ -59,7 +59,6 @@ class HomeScreenEpoxyController(
         CarouselModel_()
             .id("hot_sales")
             .models(models)
-            .numViewsToShowOnScreen(1F)
             .addTo(this)
 
 

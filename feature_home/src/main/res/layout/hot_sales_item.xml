@@ -1,72 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/hot_sales_card_height"
-    app:cardCornerRadius="@dimen/hot_sales_card_corner_radius">
+    android:paddingHorizontal="@dimen/home_padding"
+    android:layout_height="@dimen/hot_sales_card_height">
 
-    <FrameLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:background="@color/dark_gray">
+        app:cardCornerRadius="@dimen/hot_sales_card_corner_radius"
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/ivHotSales"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
+            tools:background="@color/dark_gray">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/hot_sales_content_margin_start"
-            android:layout_marginTop="@dimen/hot_sales_content_margin_top"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvNew"
-                style="@style/HotSalesNew"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/hot_sales_new_marker_margin_bottom"
-                android:background="@drawable/background_circle_orange"
-                android:gravity="center"
-                android:text="@string/hot_sales_new"
-                android:visibility="invisible" />
-
-            <TextView
-                android:id="@+id/tvTitleHomeStore"
-                style="@style/HotSalesTitle"
+            <ImageView
+                android:id="@+id/ivHotSales"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/hot_sales_title_margin_bottom"
-                tools:text="Iphone 12" />
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
 
-            <TextView
-                android:id="@+id/tvSubtitleHomeScreen"
-                style="@style/HotSalesSubtitle"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/hot_sales_subtitle_margin_bottom"
-                tools:text="Súper. Mega. Rápido." />
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/hot_sales_content_margin_start"
+                android:layout_marginTop="@dimen/hot_sales_content_margin_top"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/btnBuyNow"
-                style="@style/HotSalesButtonText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/hot_sales_button_buy_bottom_margin"
-                android:background="@drawable/background_rounded_ripple_white"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:paddingHorizontal="@dimen/hot_sales_button_buy_horizontal_size"
-                android:paddingVertical="@dimen/hot_sales_button_buy_vertical_size"
-                android:text="@string/hot_sales_buy_now" />
+                <TextView
+                    android:id="@+id/tvNew"
+                    style="@style/HotSalesNew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/hot_sales_new_marker_margin_bottom"
+                    android:background="@drawable/background_circle_orange"
+                    android:gravity="center"
+                    android:text="@string/hot_sales_new"
+                    android:visibility="invisible" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tvTitleHomeStore"
+                    style="@style/HotSalesTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/hot_sales_title_margin_bottom"
+                    tools:text="Iphone 12" />
 
-    </FrameLayout>
+                <TextView
+                    android:id="@+id/tvSubtitleHomeScreen"
+                    style="@style/HotSalesSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/hot_sales_subtitle_margin_bottom"
+                    tools:text="Súper. Mega. Rápido." />
 
-</androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/btnBuyNow"
+                    style="@style/HotSalesButtonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/hot_sales_button_buy_bottom_margin"
+                    android:background="@drawable/background_rounded_ripple_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/hot_sales_button_buy_horizontal_size"
+                    android:paddingVertical="@dimen/hot_sales_button_buy_vertical_size"
+                    android:text="@string/hot_sales_buy_now" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>
