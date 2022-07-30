@@ -1,6 +1,5 @@
 package com.example.feature_cart.data.repository
 
-import android.util.Log
 import androidx.room.withTransaction
 import com.example.core.utils.Resource
 import com.example.feature_cart.data.local.CartDatabase

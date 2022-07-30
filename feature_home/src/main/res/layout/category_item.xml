@@ -4,15 +4,15 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="4dp"
+    android:padding="@dimen/category_layout_padding"
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvCategory"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
-        app:cardElevation="6dp"
-        android:elevation="6dp"
+        android:layout_width="@dimen/category_circle_size"
+        android:layout_height="@dimen/category_circle_size"
+        app:cardElevation="@dimen/category_card_elevation"
+        android:elevation="@dimen/category_card_elevation"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="1000dp">
 
@@ -28,9 +28,10 @@
     <TextView
         android:id="@+id/tvCategory"
         android:layout_width="match_parent"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/category_text_view_margin_top"
         android:textColor="@color/dark_blue"
         tools:text="Example"
+        android:textSize="@dimen/category_title_text_size"
         android:gravity="center"
         android:layout_height="wrap_content"/>
 

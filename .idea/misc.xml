@@ -50,6 +50,7 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/ic_qr_code.xml" value="0.2075" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/ic_search.xml" value="0.1375" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/ic_shopping_bag.xml" value="0.166" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/ic_splash.xml" value="0.1" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/item_selector.xml" value="0.18" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/ripple_orange_circle_background.xml" value="0.166" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/drawable/ripple_white.xml" value="0.166" />
@@ -176,6 +177,9 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/layout/shimmer_hot_sales_item.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/layout/spinner_filter_text_view.xml" value="0.20036264732547598" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/layout/spinner_location_text_view.xml" value="0.20036264732547598" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main/src/main/res/drawable/ic_bordered_favorite.xml" value="0.1" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main/src/main/res/layout/fragment_main.xml" value="0.19709277469003847" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main/src/main/res/menu/menu_item.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/drawable/background_circle_cart_items.xml" value="0.162" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/drawable/background_circle_favorite.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/drawable/background_circle_orange.xml" value="0.164" />

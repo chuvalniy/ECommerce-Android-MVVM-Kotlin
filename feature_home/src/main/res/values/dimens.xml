@@ -59,13 +59,15 @@
     <dimen name="filter_bottom_dialog_text_start_margin">4dp</dimen>
 
 <!--    Categories -->
-    <dimen name="category_view_title_text_size">12sp</dimen>
-    <dimen name="category_view_circle_size">72dp</dimen>
-    <dimen name="category_view_text_height">30dp</dimen>
-    <dimen name="category_view_item_horizontal_padding">16dp</dimen>
+    <dimen name="category_title_text_size">12sp</dimen>
+    <dimen name="category_circle_size">72dp</dimen>
+    <dimen name="category_layout_padding">4dp</dimen>
+    <dimen name="category_card_elevation">6dp</dimen>
+    <dimen name="category_text_view_margin_top">4dp</dimen>
 
 
-<!--    Search tab -->
+
+    <!--    Search tab -->
     <dimen name="search_tab_horizontal_margin">32dp</dimen>
     <dimen name="search_tab_top_margin">8dp</dimen>
 
@@ -88,5 +90,4 @@
 
 <!--    Core -->
     <dimen name="home_padding">16dp</dimen>
-
 </resources>

@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation project(path: ':feature_home')
     implementation project(path: ':core')
+    implementation project(path: ':feature_main')
     implementation project(path: ':feature_details')
     implementation project(path: ':feature_cart')
 
@@ -51,16 +52,6 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
-    // Retrofit
-    def retrofit_version = "2.9.0"
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
-
-    // Coroutines
-    def coroutine_version = "1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
 
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:30.3.1')
