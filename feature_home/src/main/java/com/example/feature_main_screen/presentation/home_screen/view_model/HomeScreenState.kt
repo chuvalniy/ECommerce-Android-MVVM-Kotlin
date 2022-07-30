@@ -6,5 +6,6 @@ import com.example.feature_main_screen.domain.model.HotSalesDomain
 data class HomeScreenState(
     val bestSellers: List<BestSellerDomain> = emptyList(),
     val hotSales: List<HotSalesDomain> = emptyList(),
+    val currentlySelectedCategory: Int = 0,
     val isLoading: Boolean = false,
 )

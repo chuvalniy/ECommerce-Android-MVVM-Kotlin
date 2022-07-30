@@ -40,7 +40,8 @@ class HomeScreenFragment : BaseFragment<FragmentHomeBinding>() {
         epoxyController = HomeScreenEpoxyController(
             glide,
             onFilterButtonClick = { viewModel.filterButtonClicked() },
-            onProductClick = { viewModel.productClicked() }
+            onProductClick = { viewModel.productClicked() },
+            onCategoryClick = { viewModel.categorySelected(it) }
         )
         with(binding.epoxyRecyclerView) {
             setController(epoxyController!!)

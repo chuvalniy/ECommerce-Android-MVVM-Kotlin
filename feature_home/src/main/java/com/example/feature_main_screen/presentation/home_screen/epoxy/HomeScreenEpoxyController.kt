@@ -4,12 +4,14 @@ import com.airbnb.epoxy.CarouselModel_
 import com.airbnb.epoxy.TypedEpoxyController
 import com.bumptech.glide.RequestManager
 import com.example.feature_main_screen.presentation.home_screen.epoxy.model.*
+import com.example.feature_main_screen.presentation.home_screen.view.SampleData
 import com.example.feature_main_screen.presentation.home_screen.view_model.HomeScreenState
 
 class HomeScreenEpoxyController(
     private val glide: RequestManager,
     private val onFilterButtonClick: () -> Unit,
-    private val onProductClick: () -> Unit
+    private val onProductClick: () -> Unit,
+    private val onCategoryClick: (Int) -> Unit
 ) : TypedEpoxyController<HomeScreenState>() {
 
     override fun buildModels(
@@ -28,9 +30,17 @@ class HomeScreenEpoxyController(
             .spanSizeOverride { _, _, _ -> 2 }
             .addTo(this)
 
-        ProductCategoryEpoxyModel()
+        val categoryModels = SampleData.categories.mapIndexed { index, item ->
+            ProductCategoryEpoxyModel(
+                item,
+                state?.currentlySelectedCategory!!,
+                index,
+                onCategoryClick
+            ).id("category_${item.title}")
+        }
+        CarouselModel_()
             .id("product_categories")
-            .spanSizeOverride { _, _, _ -> 2 }
+            .models(categoryModels)
             .addTo(this)
 
         // Search

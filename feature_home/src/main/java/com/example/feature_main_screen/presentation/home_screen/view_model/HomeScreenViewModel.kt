@@ -58,6 +58,12 @@ class HomeScreenViewModel(
         _uiChannel.send(UiEffect.ShowSnackbar(message))
     }
 
+    fun categorySelected(selectedCategory: Int) {
+        _uiState.value = _uiState.value.copy(
+            currentlySelectedCategory = selectedCategory
+        )
+    }
+
     fun filterButtonClicked() = viewModelScope.launch {
         _uiChannel.send(UiEffect.NavigateToFilterDialogScreen)
     }
