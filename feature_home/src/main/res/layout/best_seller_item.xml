@@ -2,16 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cvBestSeller"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvBestSeller"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:elevation="@dimen/best_seller_card_elevation"
-        app:cardCornerRadius="@dimen/best_seller_card_corner_radius"
-        app:cardElevation="@dimen/best_seller_card_elevation">
+        app:cardElevation="@dimen/best_seller_card_elevation"
+        app:cardCornerRadius="@dimen/best_seller_card_corner_radius">
 
         <LinearLayout
             android:layout_width="match_parent"

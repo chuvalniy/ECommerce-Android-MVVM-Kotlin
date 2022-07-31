@@ -13,8 +13,8 @@
         android:name="com.example.feature_main_screen.presentation.home_screen.fragment.HomeScreenFragment"
         android:label="MainScreenFragment" >
         <deepLink
-            android:id="@+id/deepLinkMain"
-            app:uri="myApp://featureMain" />
+            android:id="@+id/deepLinkHome"
+            app:uri="myApp://featureHome" />
         <action
             android:id="@+id/action_home_screen_to_filter_screen"
             app:destination="@id/filter_screen" />

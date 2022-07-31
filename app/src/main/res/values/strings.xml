@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">ECommercialApplication</string>
 
-    <!--    Bottom menu -->
-    <string name="explorer_text_view">\u2022 Explorer</string>
 </resources>

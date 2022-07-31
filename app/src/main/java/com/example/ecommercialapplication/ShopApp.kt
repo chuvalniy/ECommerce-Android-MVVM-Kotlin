@@ -1,6 +1,7 @@
 package com.example.ecommercialapplication
 
 import android.app.Application
+import com.example.ecommercialapplication.di.coreModule
 import com.example.feature_main.di.mainDataModule
 import com.example.feature_main.di.mainPresentationModule
 import com.example.feature_cart.di.cartDataModule

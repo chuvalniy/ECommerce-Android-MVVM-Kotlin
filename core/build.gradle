@@ -40,13 +40,6 @@ android {
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    // Glide
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
-    kapt 'com.github.bumptech.glide:compiler:4.11.0'
-
-    // Koin
-    implementation "io.insert-koin:koin-android:3.2.0-beta-1"
-
     // Epoxy
     def epoxy_version = "4.6.3"
     implementation "com.airbnb.android:epoxy:$epoxy_version"
@@ -54,6 +47,11 @@ dependencies {
 
     // Gson
     implementation 'com.google.code.gson:gson:2.9.0'
+
+    // Navigation Component
+    def nav_version = "2.4.0"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
 
     implementation 'androidx.core:core-ktx:1.7.0'

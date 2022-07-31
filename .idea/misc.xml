@@ -87,6 +87,7 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/fragment_filter_bottom_dialog.xml" value="0.264" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/fragment_home_store.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/fragment_main.xml" value="0.16" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/fragment_splash.xml" value="0.14913871260199457" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/location_spinner_text_view.xml" value="0.1" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/recycler_view_shimmer_effect.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/app/src/main/res/layout/spinner_filter_text_view.xml" value="0.2" />
@@ -199,6 +200,7 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/drawable/background_circle_orange.xml" value="0.1885" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/drawable/background_circle_ripple_dark_blue.xml" value="0.1885" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/drawable/background_circle_ripple_gray.xml" value="0.1885" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/drawable/background_rounded_menu_dark_blue.xml" value="0.13" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/drawable/test.xml" value="0.1885" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/layout/best_seller_item.xml" value="0.20036264732547598" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/layout/category_item.xml" value="0.264" />
