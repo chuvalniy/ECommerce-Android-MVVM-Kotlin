@@ -9,9 +9,6 @@ import com.example.feature_details_screen.R
 import com.example.feature_details_screen.presentation.epoxy.models.add_to_cart.detailsAddToCart
 import com.example.feature_details_screen.presentation.epoxy.models.add_to_cart.shimmerAddToCart
 import com.example.feature_details_screen.presentation.epoxy.models.category_tabs.detailsCategoryTabs
-import com.example.feature_details_screen.presentation.epoxy.models.color_picker.DetailsColorPickerModel_
-import com.example.feature_details_screen.presentation.epoxy.models.color_picker.ShimmerColorPickerModel_
-import com.example.feature_details_screen.presentation.epoxy.models.options_header.detailsOptionsPickerHeader
 import com.example.feature_details_screen.presentation.epoxy.models.product_image.DetailsProductImageModel_
 import com.example.feature_details_screen.presentation.epoxy.models.product_image.ShimmerProductImageModel_
 import com.example.feature_details_screen.presentation.epoxy.models.product_info.detailsProductInfo
@@ -28,7 +25,7 @@ class DetailsScreenEpoxyController(
     private val context: Context,
     private val glide: RequestManager,
     private val onBackButtonClick: () -> Unit,
-    private val onAddToCartButtonClick: () -> Unit
+    private val onAddToCartButtonClick: () -> Unit,
 ) : TypedEpoxyController<DetailsScreenState>() {
 
     override fun buildModels(state: DetailsScreenState) {
@@ -39,101 +36,84 @@ class DetailsScreenEpoxyController(
         }
 
         if (state.isLoading) {
-            val shimmerProductImage = ShimmerProductImageModel_().id("shimmer_product_image")
-
-            carousel {
-                id("shimmer_product_photo_carousel")
-                models(listOf(shimmerProductImage))
-            }
+            processLoadingState()
         } else {
-            val productImageModels = state.data.images.map {
-                DetailsProductImageModel_()
-                    .id(UUID.randomUUID().toString())
-                    .glide(glide)
-                    .imageUrl(it)
-            }
+            processSuccessState(state)
+        }
+    }
 
-            carousel {
-                id("product_photo_carousel")
-                models(productImageModels)
-            }
+    private fun processSuccessState(state: DetailsScreenState) {
+        val productImageModels = state.data.images.map {
+            DetailsProductImageModel_()
+                .id(UUID.randomUUID().toString())
+                .glide(glide)
+                .imageUrl(it)
+        }
+
+        carousel {
+            id("product_photo_carousel")
+            models(productImageModels)
         }
 
         group {
             id("product_info_group")
             layout(R.layout.vertical_linear_group)
 
-            if (state.isLoading) {
-                shimmerProductTitle { id("shimmer_product_title") }
-
-                shimmerProductRating { id("shimmer_rating") }
-
-                detailsCategoryTabs { id("shimmer_details_product_categories") }
-
-                shimmerProductInfo { id("shimmer_product_info") }
-
-                detailsOptionsPickerHeader {
-                    id("shimmer_details_product_color_header")
-                    title(this@DetailsScreenEpoxyController.context.getString(R.string.select_color))
-                }
-
-                val shimmerProductColorModel = ShimmerColorPickerModel_().id("shimmer_color_picker")
-
-                carousel {
-                    id("shimmer_carousel_color_picker")
-                    models(listOf(shimmerProductColorModel))
-                }
-
-                shimmerAddToCart { id("shimmer_add_to_cart") }
-            } else {
-                detailsProductTitle {
-                    id("details_product_title")
-                    productTitle(state.data.title)
-                }
-
-                detailsProductRating {
-                    id("details_product_rating")
-                    rating(state.data.rating)
-                }
-
-                detailsCategoryTabs { id("details_product_categories") }
-
-                detailsProductInfo {
-                    id("details_product_features")
-                    cpu(state.data.cpu)
-                    camera(state.data.camera)
-                    sdCapacity(state.data.sd)
-                    ram(state.data.ssd)
-                }
-
-                detailsOptionsPickerHeader {
-                    id("details_product_color_header")
-                    title(this@DetailsScreenEpoxyController.context.getString(R.string.select_color))
-                }
-
-                val productColorModels = state.data.color.map {
-                    DetailsColorPickerModel_()
-                        .id("details_product_color_${UUID.randomUUID()}")
-                        .color(it)
-                }
-
-                carousel {
-                    id("details_carousel_color_picker")
-                    models(productColorModels)
-                }
-
-                detailsAddToCart {
-                    id("details_add_to_cart")
-
-                    productPrice(
-                        this@DetailsScreenEpoxyController.context.getString(
-                            R.string.product_price, state.data.price
-                        )
-                    )
-
-                    onAddToCartClick(this@DetailsScreenEpoxyController.onAddToCartButtonClick)
-                }
+            detailsProductTitle {
+                id("details_product_title")
+                productTitle(state.data.title)
             }
+
+            detailsProductRating {
+                id("details_product_rating")
+                rating(state.data.rating)
+            }
+
+            detailsCategoryTabs { id("details_product_categories") }
+
+            detailsProductInfo {
+                id("details_product_features")
+                cpu(state.data.cpu)
+                camera(state.data.camera)
+                sdCapacity(state.data.sd)
+                ram(state.data.ssd)
+            }
+
+            detailsAddToCart {
+                id("details_add_to_cart")
+
+                productPrice(
+                    this@DetailsScreenEpoxyController.context.getString(
+                        R.string.product_price, state.data.price
+                    )
+                )
+
+                onAddToCartClick(this@DetailsScreenEpoxyController.onAddToCartButtonClick)
+            }
+        }
+    }
+
+    private fun processLoadingState() {
+        val shimmerProductImage = ShimmerProductImageModel_().id("shimmer_product_image")
+
+        carousel {
+            id("shimmer_product_photo_carousel")
+            models(listOf(shimmerProductImage))
+        }
+
+        group {
+            id("shimmer_product_info_group")
+            layout(R.layout.vertical_linear_group)
+
+            shimmerProductTitle { id("shimmer_product_title") }
+
+            shimmerProductRating { id("shimmer_rating") }
+
+            detailsCategoryTabs { id("shimmer_details_product_categories") }
+
+            shimmerProductInfo { id("shimmer_product_info") }
+
+            shimmerAddToCart { id("shimmer_add_to_cart") }
         }
     }
 }

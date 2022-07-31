@@ -17,11 +17,16 @@
     <dimen name="product_image_margin">32dp</dimen>
 
     <!--    Product info-->
+    <dimen name="title_horizontal_margin">16dp</dimen>
+
     <dimen name="btn_favorites_top_margin">16dp</dimen>
 
     <dimen name="rating_bar_top_margin">4dp</dimen>
+    <dimen name="rating_bar_horizontal_margin">16dp</dimen>
 
     <dimen name="category_top_margin">24dp</dimen>
+    <dimen name="category_bottom_padding">16dp</dimen>
+
 
     <dimen name="product_info_elevation">12dp</dimen>
     <dimen name="product_info_vertical_margin">16dp</dimen>
@@ -44,6 +49,8 @@
     <dimen name="btn_add_to_cart_height">54dp</dimen>
     <dimen name="btn_add_to_cart_content_margin_horizontal">28dp</dimen>
     <dimen name="btn_add_to_cart_top_margin">16dp</dimen>
+    <dimen name="btn_add_to_cart_horizontal_margin">16dp</dimen>
+
 
 
 </resources>

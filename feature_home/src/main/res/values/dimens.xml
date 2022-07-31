@@ -61,7 +61,7 @@
 <!--    Categories -->
     <dimen name="category_title_text_size">12sp</dimen>
     <dimen name="category_circle_size">72dp</dimen>
-    <dimen name="category_layout_padding">4dp</dimen>
+    <dimen name="category_layout_padding">6dp</dimen>
     <dimen name="category_card_elevation">6dp</dimen>
     <dimen name="category_text_view_margin_top">4dp</dimen>
 

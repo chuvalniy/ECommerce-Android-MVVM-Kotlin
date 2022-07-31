@@ -39,7 +39,7 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
             requireContext(),
             glide,
             onAddToCartButtonClick = { viewModel.addToCartButtonClicked() },
-            onBackButtonClick = { viewModel.backButtonClicked() }
+            onBackButtonClick = { viewModel.backButtonClicked() },
         ).also {
             binding.epoxyAdapter.setController(it)
         }

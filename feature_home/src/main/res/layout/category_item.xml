@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="@dimen/category_layout_padding"
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.card.MaterialCardView
@@ -13,6 +12,7 @@
         android:layout_height="@dimen/category_circle_size"
         app:cardElevation="@dimen/category_card_elevation"
         android:elevation="@dimen/category_card_elevation"
+        android:layout_margin="@dimen/category_layout_padding"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="1000dp">
 

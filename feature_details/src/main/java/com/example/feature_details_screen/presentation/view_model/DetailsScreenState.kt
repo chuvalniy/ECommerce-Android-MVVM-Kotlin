@@ -17,5 +17,5 @@ data class DetailsScreenState(
         ssd = "",
         title = ""
     ),
-    val isLoading: Boolean = false
+    val isLoading: Boolean = false,
 )
