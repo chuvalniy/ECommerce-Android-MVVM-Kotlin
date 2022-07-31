@@ -28,7 +28,7 @@
     <dimen name="product_info_top_margin">12dp</dimen>
 
 <!--    Product config picker -->
-    <dimen name="config_picker_top_margin">32dp</dimen>
+    <dimen name="config_picker_top_margin">8dp</dimen>
 
     <dimen name="capacity_selector_width">72dp</dimen>
     <dimen name="capacity_selector_height">30dp</dimen>
@@ -43,7 +43,7 @@
 <!--    Add to cart-->
     <dimen name="btn_add_to_cart_height">54dp</dimen>
     <dimen name="btn_add_to_cart_content_margin_horizontal">28dp</dimen>
-    <dimen name="btn_add_to_cart_top_margin">32dp</dimen>
+    <dimen name="btn_add_to_cart_top_margin">16dp</dimen>
 
 
 </resources>

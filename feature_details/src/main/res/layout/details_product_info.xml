@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/category_top_margin"
+    android:paddingBottom="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/ivCpu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_cpu"
+        app:layout_constraintEnd_toStartOf="@+id/ivCamera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/ivCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCpu"
+        app:layout_constraintEnd_toStartOf="@+id/ivRam"
+        app:layout_constraintStart_toEndOf="@+id/ivCpu"
+        app:layout_constraintTop_toTopOf="@+id/ivCpu" />
+
+    <ImageView
+        android:id="@+id/ivRam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_ram"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCamera"
+        app:layout_constraintEnd_toStartOf="@+id/ivSd"
+        app:layout_constraintStart_toEndOf="@+id/ivCamera"
+        app:layout_constraintTop_toTopOf="@+id/ivCamera" />
+
+    <ImageView
+        android:id="@+id/ivSd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_sd"
+        app:layout_constraintBottom_toBottomOf="@+id/ivRam"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivRam"
+        app:layout_constraintTop_toTopOf="@+id/ivRam" />
+
+    <TextView
+        android:id="@+id/tvCpu"
+        style="@style/CaptionRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        app:layout_constraintEnd_toEndOf="@+id/ivCpu"
+        app:layout_constraintStart_toStartOf="@+id/ivCpu"
+        app:layout_constraintTop_toBottomOf="@+id/ivCpu"
+        tools:text="Exynos 990" />
+
+    <TextView
+        android:id="@+id/tvCamera"
+        style="@style/CaptionRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCpu"
+        app:layout_constraintEnd_toEndOf="@+id/ivCamera"
+        app:layout_constraintStart_toStartOf="@+id/ivCamera"
+        app:layout_constraintTop_toBottomOf="@+id/ivCpu"
+        tools:text="108 + 12 mp" />
+
+    <TextView
+        android:id="@+id/tvRam"
+        style="@style/CaptionRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCamera"
+        app:layout_constraintEnd_toEndOf="@+id/ivRam"
+        app:layout_constraintStart_toStartOf="@+id/ivRam"
+        app:layout_constraintTop_toTopOf="@+id/tvCamera"
+        tools:text="8 GB" />
+
+    <TextView
+        android:id="@+id/tvSdCapacity"
+        style="@style/CaptionRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRam"
+        app:layout_constraintEnd_toEndOf="@+id/ivSd"
+        app:layout_constraintStart_toStartOf="@+id/ivSd"
+        app:layout_constraintTop_toTopOf="@+id/tvRam"
+        tools:text="256 GB" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.example.feature_details_screen.data.repository
 
-import android.util.Log
 import androidx.room.withTransaction
 import com.example.core.utils.Resource
 import com.example.feature_details_screen.data.local.DetailsScreenDatabase
@@ -9,6 +8,7 @@ import com.example.feature_details_screen.data.mapper.toProductDetailsEntity
 import com.example.feature_details_screen.data.remote.DetailsScreenApi
 import com.example.feature_details_screen.domain.model.ProductDetailsDomain
 import com.example.feature_details_screen.domain.repository.DetailsScreenRepository
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -23,8 +23,6 @@ class DetailsScreenRepositoryImpl(
         emit(Resource.Loading(isLoading = true))
 
         val cache = dao.fetchCache()
-
-        Log.d("TAGTAG", cache.toString())
 
         if (cache != null) {
             emit(Resource.Success(cache.toProductDetailsDomain()))

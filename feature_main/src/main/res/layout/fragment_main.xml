@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context=".presentation.ui.MainFragment">
 
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_main"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -26,7 +25,5 @@
         app:labelVisibilityMode="unlabeled"
         app:itemRippleColor="@color/gray"
         app:itemIconTint="@drawable/item_selector"/>
-
-
 
 </LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CustomCardViewStyle"
+        android:layout_marginTop="@dimen/product_info_top_margin"
+        android:elevation="@dimen/product_info_elevation"
+        app:cardElevation="@dimen/product_info_elevation"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/epoxy_model_group_child_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"/>
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

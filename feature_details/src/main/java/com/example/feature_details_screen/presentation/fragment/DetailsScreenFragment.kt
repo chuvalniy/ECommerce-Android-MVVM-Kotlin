@@ -36,6 +36,7 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
 
     private fun setupAdapter() {
         epoxyController = DetailsScreenEpoxyController(
+            requireContext(),
             glide,
             onAddToCartButtonClick = { viewModel.addToCartButtonClicked() },
             onBackButtonClick = { viewModel.backButtonClicked() }

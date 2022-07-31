@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_marginHorizontal="16dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout"
+        tools:text="Galaxy Note 20 Ultra" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="@dimen/rounded_button_size"
+        android:layout_height="@dimen/rounded_button_size"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/btn_favorites_top_margin"
+        android:background="@drawable/background_rounded_ripple_dark_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ToggleButton
+            android:id="@+id/btnAddToFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_toggle_button_favorite"
+            android:gravity="center"
+            android:textOff=""
+            android:textOn=""
+            tools:ignore="TouchTargetSizeCheck" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

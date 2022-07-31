@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_marginStart="16dp"
+        style="@android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/rating_bar_top_margin"
+        android:isIndicator="true"
+        android:max="5"
+        android:minHeight="0dp"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:transformPivotX="0dp"
+        android:transformPivotY="0dp" />
+</LinearLayout>

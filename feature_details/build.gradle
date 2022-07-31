@@ -3,11 +3,9 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
 }
-
 kapt {
-    correctErrorTypes = true
+    correctErrorTypes true
 }
-
 android {
     compileSdk 32
 

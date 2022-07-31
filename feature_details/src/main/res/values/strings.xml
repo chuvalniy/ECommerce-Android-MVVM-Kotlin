@@ -1,7 +1,8 @@
 <resources>
 
 <!--    Product info-->
-    <string name="select_color_and_capacity">Select color and capacity</string>
+    <string name="select_color">Select color</string>
+    <string name="select_capacity">Select capacity</string>
     <string name="product_price">$%1$s.00</string>
     <string name="product_capacity">%1$s GB</string>
     <string name="product_details">Product Details</string>

@@ -116,13 +116,49 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/model_checkout.xml" value="0.264" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/shimmer_cart_item.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/temp.xml" value="0.20778110303548525" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_add_to_cart.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_category_tab_layout.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_color_header.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_color_item.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_image.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_model_top_bar.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_product_feature.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_product_info.xml" value="0.72" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_product_info_add_to_cart.xml" value="0.2" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_product_info_capacity_item.xml" value="0.4" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_product_info_color_item.xml" value="0.4" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_product_info_header.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_product_options_header.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_product_photo.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_product_rating.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_product_title.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_rating.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_title.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_top_bar.xml" value="0.14913871260199457" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/fragment_details_screen.xml" value="0.1958295557570263" />
-        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/model_product_info.xml" value="0.1958295557570263" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/model_details_category_tab_layout.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/model_details_product_color_header.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/model_details_product_feature.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/model_details_product_info_header.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/model_details_product_rating.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/model_product_info.xml" value="0.4" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/model_product_photo.xml" value="0.1958295557570263" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/model_top.xml" value="0.1958295557570263" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/model_top_bar.xml" value="0.14913871260199457" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/product_header.xml" value="0.1958295557570263" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/product_options_picker.xml" value="0.1958295557570263" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/shimmer_details_add_to_cart.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/shimmer_details_color_picker.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/shimmer_details_image.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/shimmer_details_product_info.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/shimmer_details_product_rating.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/shimmer_details_product_title.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/shimmer_details_rating.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/shimmer_details_title.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/shimmer_product_info.xml" value="0.14913871260199457" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/shimmer_product_photo.xml" value="0.1958295557570263" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/vertical_linear_group.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/view_holder_item.xml" value="0.14913871260199457" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/drawable/background_checked_color.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/drawable/background_checked_memory.xml" value="0.164" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details_screen/src/main/res/drawable/background_favorite_checked.xml" value="0.164" />
