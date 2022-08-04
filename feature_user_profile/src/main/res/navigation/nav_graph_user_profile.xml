@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_user_profile"
+    app:startDestination="@id/user_profile">
+
+    <fragment
+        android:id="@+id/user_profile"
+        android:name="com.example.feature_user_profile.presentation.profile_screen.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_user_profile_to_settings"
+            app:destination="@id/settings" />
+        <action
+            android:id="@+id/action_user_profile_to_orders"
+            app:destination="@id/orders" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.feature_user_profile.presentation.settings_screen.UserSettingsFragment"
+        android:label="fragment_user_settings" />
+    <fragment
+        android:id="@+id/orders"
+        android:name="com.example.feature_user_profile.presentation.orders_screen.OrdersFragment"
+        android:label="UserSettingsFragment"
+        tools:layout="@layout/fragment_orders" />
+</navigation>

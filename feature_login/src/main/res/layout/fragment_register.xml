@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:background="@color/light_gray"
+    tools:context=".presentation.register_screen.RegisterFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvLoginTitle"
+            style="@style/Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Sign up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvFirstName"
+            style="@style/Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="64dp"
+            android:text="First name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle" />
+
+        <EditText
+            android:id="@+id/etFirstName"
+            style="@style/HelperTextStyleMedium1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/white_rounded_background"
+            android:hint="Kevin"
+            android:inputType="text"
+            android:minHeight="56dp"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFirstName" />
+
+        <TextView
+            android:id="@+id/tvSecondName"
+            style="@style/Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Second name"
+            app:layout_constraintStart_toStartOf="@+id/tvFirstName"
+            app:layout_constraintTop_toBottomOf="@+id/etFirstName" />
+
+        <EditText
+            android:id="@+id/etSecondName"
+            style="@style/HelperTextStyleMedium1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/white_rounded_background"
+            android:hint="Uoltes"
+            android:inputType="text"
+            android:minHeight="56dp"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/etFirstName"
+            app:layout_constraintStart_toStartOf="@+id/etFirstName"
+            app:layout_constraintTop_toBottomOf="@+id/tvSecondName" />
+
+        <TextView
+            android:id="@+id/tvEmailTitle"
+            style="@style/Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="E-mail"
+            app:layout_constraintStart_toStartOf="@+id/tvSecondName"
+            app:layout_constraintTop_toBottomOf="@+id/etSecondName" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            style="@style/HelperTextStyleMedium1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/white_rounded_background"
+            android:hint="example@example.com"
+            android:inputType="textEmailAddress"
+            android:minHeight="56dp"
+            android:paddingStart="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/etSecondName"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/etSecondName"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle" />
+
+        <TextView
+            android:id="@+id/tvPassword"
+            style="@style/Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Password"
+            app:layout_constraintStart_toStartOf="@+id/tvEmailTitle"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/HelperTextStyleMedium1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/white_rounded_background"
+            android:hint="*************"
+            android:inputType="textPassword"
+            android:minHeight="56dp"
+            android:paddingStart="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/etEmail"
+            app:layout_constraintStart_toStartOf="@+id/etEmail"
+            app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+
+        <TextView
+            android:id="@+id/tvRepeatPassword"
+            style="@style/Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Repeat password"
+            app:layout_constraintStart_toStartOf="@+id/tvPassword"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+        <EditText
+            android:id="@+id/etRepeatPassword"
+            style="@style/HelperTextStyleMedium1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/white_rounded_background"
+            android:hint="*************"
+            android:minHeight="56dp"
+            android:paddingStart="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/etPassword"
+            app:layout_constraintStart_toStartOf="@+id/etPassword"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepeatPassword" />
+
+        <CheckBox
+            android:id="@+id/cbAcceptTerms"
+            style="@style/Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"
+            android:paddingStart="8dp"
+            android:text="Accept terms"
+            app:layout_constraintStart_toStartOf="@+id/etRepeatPassword"
+            app:layout_constraintTop_toBottomOf="@+id/etRepeatPassword" />
+
+        <TextView
+            android:id="@+id/btnSignUp"
+            style="@style/HeadlineBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/orange_rounded_background"
+            android:gravity="center"
+            android:minHeight="56dp"
+            android:text="Sign up"
+            app:layout_constraintEnd_toEndOf="@+id/etRepeatPassword"
+            app:layout_constraintStart_toStartOf="@+id/etRepeatPassword"
+            app:layout_constraintTop_toBottomOf="@+id/cbAcceptTerms" />
+
+        <Button
+            android:id="@+id/btnToLogin"
+            style="@style/ReportBugButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Already have an account?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

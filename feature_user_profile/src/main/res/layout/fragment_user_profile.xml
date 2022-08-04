@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/light_gray"
+    tools:context=".presentation.profile_screen.UserProfileFragment">
+
+    <ImageButton
+        android:id="@+id/btnProfileGoBack"
+        android:layout_width="@dimen/rounded_button_size"
+        android:layout_height="@dimen/rounded_button_size"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_rounded_ripple_dark_blue"
+        android:contentDescription="@string/navigate_back"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tvUserProfile"
+        style="@style/Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/top_bar_user_profile"
+        app:layout_constraintBottom_toBottomOf="@+id/btnProfileGoBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnProfileGoBack" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivUserAvatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="64dp"
+        android:src="@color/dark_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserProfile" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        style="@style/Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Shreya Ghosal"
+        app:layout_constraintEnd_toEndOf="@+id/ivUserAvatar"
+        app:layout_constraintStart_toStartOf="@+id/ivUserAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/ivUserAvatar"
+        tools:text="Shreya Ghosal" />
+
+    <TextView
+        android:id="@+id/tvUserEmail"
+        style="@style/HelperTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="shreya_ghosal@gmail.com"
+        app:layout_constraintEnd_toEndOf="@+id/tvUserName"
+        app:layout_constraintStart_toStartOf="@+id/tvUserName"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName"
+        tools:text="shreya_ghosal@gmail.com" />
+
+    <TextView
+        android:id="@+id/tvMyOrders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        style="@style/Subtitle1"
+        android:text="@string/user_profile_my_orders"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserEmail"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvMyOrdersHelper"
+        style="@style/HelperTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Already have 12 orders"
+        app:layout_constraintStart_toStartOf="@+id/tvMyOrders"
+        app:layout_constraintTop_toBottomOf="@+id/tvMyOrders"
+        tools:ignore="TextContrastCheck"
+        tools:text="Already have 12 orders" />
+
+    <ImageButton
+        android:id="@+id/btnGoToMyOrders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:backgroundTint="@color/gray_helper"
+        android:contentDescription="@string/my_orders"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMyOrdersHelper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMyOrders"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMyOrdersHelper" />
+
+    <TextView
+        android:id="@+id/tvSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        style="@style/Subtitle1"
+        android:layout_marginTop="24dp"
+        android:text="@string/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <TextView
+        android:id="@+id/tvSettingsHelper"
+        style="@style/HelperTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/change_e_mail_log_out"
+        app:layout_constraintStart_toStartOf="@+id/tvSettings"
+        app:layout_constraintTop_toBottomOf="@+id/tvSettings" />
+
+    <ImageButton
+        android:id="@+id/btnGoToSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:backgroundTint="@color/gray_helper"
+        android:contentDescription="@string/my_orders"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSettingsHelper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvSettings"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

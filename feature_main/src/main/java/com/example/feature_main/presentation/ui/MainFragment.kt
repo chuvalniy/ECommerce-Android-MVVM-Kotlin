@@ -12,7 +12,6 @@ import com.example.core.ui.BaseFragment
 import com.example.feature_main.R
 import com.example.feature_main.databinding.FragmentMainBinding
 import com.example.feature_main.presentation.view_model.MainViewModel
-import kotlinx.coroutines.flow.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -31,7 +30,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             binding.bottomNavBar.isVisible =
-                destination.id == com.example.feature_main_screen.R.id.home_screen
+                destination.id == com.example.feature_home.R.id.home_screen || destination.id  == com.example.feature_user_profile.R.id.user_profile
         }
 
         val badge = binding.bottomNavBar.getOrCreateBadge(R.id.nav_graph_cart)

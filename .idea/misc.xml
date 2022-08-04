@@ -117,6 +117,9 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/model_checkout.xml" value="0.264" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/shimmer_cart_item.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_cart/src/main/res/layout/temp.xml" value="0.20778110303548525" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/drawable/background_rounded_ripple_dark_blue.xml" value="0.13" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/drawable/background_unchecked_color.xml" value="0.1795" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/drawable/ic_camera.xml" value="0.1795" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_add_to_cart.xml" value="0.14913871260199457" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_category_tab_layout.xml" value="0.14913871260199457" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_details/src/main/res/layout/details_color_header.xml" value="0.14913871260199457" />
@@ -215,6 +218,10 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/layout/shimmer_hot_sales_item.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/layout/spinner_filter_text_view.xml" value="0.20036264732547598" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_home/src/main/res/layout/spinner_location_text_view.xml" value="0.20036264732547598" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_login/src/main/res/drawable/orange_rounded_background.xml" value="0.1325" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_login/src/main/res/drawable/white_rounded_background.xml" value="0.1325" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_login/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_login/src/main/res/layout/fragment_register.xml" value="0.41088180112570355" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main/src/main/res/drawable/ic_bordered_favorite.xml" value="0.1" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main/src/main/res/layout/fragment_main.xml" value="0.19709277469003847" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main/src/main/res/menu/menu_item.xml" value="0.20863616930312098" />
@@ -267,6 +274,24 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/spinner_location_text_view.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/tab_item.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_main_screen/src/main/res/layout/temp.xml" value="0.176" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/_747f84f3aca93ea24f4ae1d66c784c4.xml" value="0.1285" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/background_rounded_ripple_dark_blue.xml" value="0.13" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/background_rounded_ripple_orange.xml" value="0.1815" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/bug_report.xml" value="0.1285" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/circle_gray_background.xml" value="0.1815" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/ic_account.xml" value="0.1815" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/ic_arrow_back.xml" value="0.13" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.1485" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/ic_bug_report.xml" value="0.158" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/ic_log_out.xml" value="0.158" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/ic_notifications.xml" value="0.148" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/ic_orders.xml" value="0.1485" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/drawable/ic_question_mark.xml" value="0.1485" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/layout/fragment_orders.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/layout/fragment_user_profile.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/layout/fragment_user_settings.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/layout/my_orders_top_bar.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_user_profile/src/main/res/layout/order_item.xml" value="0.264" />
       </map>
     </option>
   </component>

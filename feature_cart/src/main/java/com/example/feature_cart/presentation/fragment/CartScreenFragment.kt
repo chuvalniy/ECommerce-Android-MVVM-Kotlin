@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.RequestManager
 import com.example.core.ui.BaseFragment
-import com.example.core.utils.Constants.MAIN_SCREEN_DEEP_LINK
+import com.example.core.utils.Constants
 import com.example.feature_cart.databinding.FragmentCartScreenBinding
 import com.example.feature_cart.presentation.epoxy.CartScreenEpoxyController
 import com.example.feature_cart.presentation.view_model.CartScreenState
@@ -53,14 +53,14 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
     private fun observeUiEffects() {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.uiEffect.collect { effect ->
-                when(effect) {
+                when (effect) {
                     is CartScreenViewModel.UiEffect.NavigateBack -> {
                         findNavController().popBackStack()
                     }
                     is CartScreenViewModel.UiEffect.NavigateToMainScreen -> {
                         with(findNavController()) {
                             popBackStack()
-                            navigate(Uri.parse(MAIN_SCREEN_DEEP_LINK))
+                            navigate(Uri.parse(Constants.HOME_SCREEN_DEEP_LINK))
                         }
                     }
                     is CartScreenViewModel.UiEffect.ShowSnackbar -> {

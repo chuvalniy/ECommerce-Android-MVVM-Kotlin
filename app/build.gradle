@@ -43,9 +43,11 @@ dependencies {
     implementation project(path: ':feature_main')
     implementation project(path: ':feature_details')
     implementation project(path: ':feature_cart')
+    implementation project(path: ':feature_login')
 
     // Koin
     implementation "io.insert-koin:koin-android:3.2.0-beta-1"
+    implementation project(path: ':feature_user_profile')
 
     // Navigation Component
     def nav_version = "2.4.0"

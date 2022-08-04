@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/light_gray"
+    tools:context=".presentation.orders_screen.OrdersFragment">
+
+    <ImageButton
+        android:id="@+id/btnUserSettingsGoBack"
+        android:layout_width="@dimen/rounded_button_size"
+        android:layout_height="@dimen/rounded_button_size"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_rounded_ripple_dark_blue"
+        android:contentDescription="@string/navigate_back"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tvUserSettings"
+        style="@style/Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        app:layout_constraintBottom_toBottomOf="@+id/btnUserSettingsGoBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnUserSettingsGoBack" />
+
+    <ImageView
+        android:id="@+id/ivUsername"
+        android:layout_width="@dimen/settings_icon_size"
+        android:layout_height="@dimen/settings_icon_size"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/ic_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUserSettingsGoBack"
+        app:tint="@color/dark_blue" />
+
+    <TextView
+        android:id="@+id/tvUsername"
+        style="@style/Subtitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/username"
+        app:layout_constraintBottom_toBottomOf="@+id/ivUsername"
+        app:layout_constraintStart_toEndOf="@+id/ivUsername"
+        app:layout_constraintTop_toTopOf="@+id/ivUsername" />
+
+    <ImageButton
+        android:id="@+id/btnChangeUsername"
+        android:layout_width="@dimen/settings_go_to_button_size"
+        android:layout_height="@dimen/settings_go_to_button_size"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/change_username"
+        app:layout_constraintBottom_toBottomOf="@+id/ivUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivUsername"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeEmail"
+        app:layout_constraintStart_toStartOf="@+id/ivEmail"
+        app:layout_constraintTop_toBottomOf="@+id/ivUsername" />
+
+    <ImageView
+        android:id="@+id/ivEmail"
+        android:layout_width="@dimen/settings_icon_size"
+        android:layout_height="@dimen/settings_icon_size"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_mail"
+        app:icon="@color/dark_blue"
+        app:layout_constraintStart_toStartOf="@+id/ivUsername"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        style="@style/Subtitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        app:layout_constraintBottom_toBottomOf="@+id/ivEmail"
+        app:layout_constraintStart_toStartOf="@+id/tvUsername"
+        app:layout_constraintTop_toTopOf="@+id/ivEmail" />
+
+    <ImageButton
+        android:id="@+id/btnChangeEmail"
+        android:layout_width="@dimen/settings_go_to_button_size"
+        android:layout_height="@dimen/settings_go_to_button_size"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/change_email"
+        app:layout_constraintBottom_toBottomOf="@+id/ivEmail"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeUsername"
+        app:layout_constraintStart_toStartOf="@+id/btnChangeUsername"
+        app:layout_constraintTop_toTopOf="@+id/ivEmail"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeEmail"
+        app:layout_constraintStart_toStartOf="@+id/ivEmail"
+        app:layout_constraintTop_toBottomOf="@+id/ivEmail" />
+
+
+    <ImageView
+        android:id="@+id/ivPassword"
+        android:layout_width="@dimen/settings_icon_size"
+        android:layout_height="@dimen/settings_icon_size"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_lock"
+        app:layout_constraintStart_toStartOf="@+id/ivEmail"
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        app:tint="@color/dark_blue" />
+
+    <TextView
+        android:id="@+id/tvPassword"
+        style="@style/Subtitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPassword"
+        app:layout_constraintStart_toStartOf="@+id/tvEmail"
+        app:layout_constraintTop_toTopOf="@+id/ivPassword" />
+
+    <ImageButton
+        android:id="@+id/btnChangePassword"
+        android:layout_width="@dimen/settings_go_to_button_size"
+        android:layout_height="@dimen/settings_go_to_button_size"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/change_password"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPassword"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeEmail"
+        app:layout_constraintStart_toStartOf="@+id/btnChangeEmail"
+        app:layout_constraintTop_toTopOf="@+id/ivPassword"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeEmail"
+        app:layout_constraintStart_toStartOf="@+id/ivEmail"
+        app:layout_constraintTop_toBottomOf="@+id/ivPassword" />
+
+    <ImageView
+        android:id="@+id/ivNotification"
+        android:layout_width="@dimen/settings_icon_size"
+        android:layout_height="@dimen/settings_icon_size"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_notifications"
+        app:layout_constraintStart_toStartOf="@+id/ivPassword"
+        app:layout_constraintTop_toBottomOf="@+id/divider3"
+        app:tint="@color/dark_blue" />
+
+    <TextView
+        android:id="@+id/tvNotification"
+        style="@style/Subtitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notifications"
+        app:layout_constraintBottom_toBottomOf="@+id/ivNotification"
+        app:layout_constraintStart_toStartOf="@+id/tvPassword"
+        app:layout_constraintTop_toTopOf="@+id/ivNotification" />
+
+    <ImageButton
+        android:id="@+id/btnToNotifications"
+        android:layout_width="@dimen/settings_go_to_button_size"
+        android:layout_height="@dimen/settings_go_to_button_size"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/notifications"
+        app:layout_constraintBottom_toBottomOf="@+id/ivNotification"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangePassword"
+        app:layout_constraintStart_toStartOf="@+id/btnChangePassword"
+        app:layout_constraintTop_toTopOf="@+id/ivNotification"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeEmail"
+        app:layout_constraintStart_toStartOf="@+id/ivEmail"
+        app:layout_constraintTop_toBottomOf="@+id/ivNotification" />
+
+    <ImageView
+        android:id="@+id/ivFeedback"
+        android:layout_width="@dimen/settings_icon_size"
+        android:layout_height="@dimen/settings_icon_size"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_feedback"
+        app:layout_constraintStart_toStartOf="@+id/ivNotification"
+        app:layout_constraintTop_toBottomOf="@+id/divider4"
+        app:tint="@color/dark_blue" />
+
+    <TextView
+        android:id="@+id/tvFeedback"
+        style="@style/Subtitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_feedback"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFeedback"
+        app:layout_constraintStart_toStartOf="@+id/tvNotification"
+        app:layout_constraintTop_toTopOf="@+id/ivFeedback" />
+
+    <ImageButton
+        android:id="@+id/btnSendFeedback"
+        android:layout_width="@dimen/settings_go_to_button_size"
+        android:layout_height="@dimen/settings_go_to_button_size"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/send_feedback"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFeedback"
+        app:layout_constraintEnd_toEndOf="@+id/btnToNotifications"
+        app:layout_constraintStart_toStartOf="@+id/btnToNotifications"
+        app:layout_constraintTop_toTopOf="@+id/ivFeedback"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeEmail"
+        app:layout_constraintStart_toStartOf="@+id/ivEmail"
+        app:layout_constraintTop_toBottomOf="@+id/ivFeedback" />
+
+    <ImageView
+        android:id="@+id/ivAbout"
+        android:layout_width="@dimen/settings_icon_size"
+        android:layout_height="@dimen/settings_icon_size"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_about"
+        app:layout_constraintStart_toStartOf="@+id/ivFeedback"
+        app:layout_constraintTop_toBottomOf="@+id/divider5"
+        app:tint="@color/dark_blue" />
+
+    <TextView
+        android:id="@+id/tvAbout"
+        style="@style/Subtitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about"
+        app:layout_constraintBottom_toBottomOf="@+id/ivAbout"
+        app:layout_constraintStart_toStartOf="@+id/tvFeedback"
+        app:layout_constraintTop_toTopOf="@+id/ivAbout" />
+
+    <ImageButton
+        android:id="@+id/btnGoToAbout"
+        android:layout_width="@dimen/settings_go_to_button_size"
+        android:layout_height="@dimen/settings_go_to_button_size"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/about"
+        app:layout_constraintBottom_toBottomOf="@+id/ivAbout"
+        app:layout_constraintEnd_toEndOf="@+id/btnSendFeedback"
+        app:layout_constraintStart_toStartOf="@+id/btnSendFeedback"
+        app:layout_constraintTop_toTopOf="@+id/ivAbout"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeEmail"
+        app:layout_constraintStart_toStartOf="@+id/ivEmail"
+        app:layout_constraintTop_toBottomOf="@+id/ivAbout" />
+
+    <ImageView
+        android:id="@+id/ivLogOut"
+        android:layout_width="@dimen/settings_icon_size"
+        android:layout_height="@dimen/settings_icon_size"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_log_out"
+        app:layout_constraintStart_toStartOf="@+id/ivAbout"
+        app:layout_constraintTop_toBottomOf="@+id/divider6"
+        app:tint="@color/dark_blue" />
+
+    <TextView
+        android:id="@+id/tvLogOut"
+        style="@style/Subtitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log_out"
+        app:layout_constraintBottom_toBottomOf="@+id/ivLogOut"
+        app:layout_constraintStart_toStartOf="@+id/tvAbout"
+        app:layout_constraintTop_toTopOf="@+id/ivLogOut" />
+
+    <ImageButton
+        android:id="@+id/btnLogOut"
+        android:layout_width="@dimen/settings_go_to_button_size"
+        android:layout_height="@dimen/settings_go_to_button_size"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/about"
+        app:layout_constraintBottom_toBottomOf="@+id/ivLogOut"
+        app:layout_constraintEnd_toEndOf="@+id/btnGoToAbout"
+        app:layout_constraintStart_toStartOf="@+id/btnGoToAbout"
+        app:layout_constraintTop_toTopOf="@+id/ivLogOut"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

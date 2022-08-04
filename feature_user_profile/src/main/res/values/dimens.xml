@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Core-->
+    <dimen name="rounded_button_size">37dp</dimen>
+    <dimen name="settings_icon_size">24dp</dimen>
+    <dimen name="settings_start_margin">20dp</dimen>
+    <dimen name="settings_description_start_margin">12dp</dimen>
+    <dimen name="settings_action_top_margin">28dp</dimen>
+    <dimen name="action_to_header_top_margin">16dp</dimen>
+    <dimen name="settings_vertical_margin">24dp</dimen>
+    <dimen name="settings_category_top_margin">36dp</dimen>
+    <dimen name="settings_go_to_button_size">20dp</dimen>
+</resources>

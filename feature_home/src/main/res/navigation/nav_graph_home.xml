@@ -6,11 +6,11 @@
 
     <dialog
         android:id="@+id/filter_screen"
-        android:name="com.example.feature_main_screen.presentation.home_screen.fragment.FilterBottomDialogFragment"
+        android:name="com.example.feature_home.presentation.home_screen.fragment.FilterBottomDialogFragment"
         android:label="FilterBottomDialogFragment" />
     <fragment
         android:id="@+id/home_screen"
-        android:name="com.example.feature_main_screen.presentation.home_screen.fragment.HomeScreenFragment"
+        android:name="com.example.feature_home.presentation.home_screen.fragment.HomeScreenFragment"
         android:label="MainScreenFragment" >
         <deepLink
             android:id="@+id/deepLinkHome"

@@ -18,7 +18,7 @@
         android:title="Favorites" />
 
     <item
-        android:id="@+id/account"
+        android:id="@+id/nav_graph_user_profile"
         android:icon="@drawable/ic_account"
         android:title="Account" />
 </menu>

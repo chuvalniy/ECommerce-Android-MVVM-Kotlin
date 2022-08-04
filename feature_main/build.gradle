@@ -37,6 +37,7 @@ dependencies {
     implementation project(path: ':core')
     implementation project(path: ':feature_cart')
     implementation project(path: ':feature_details')
+    implementation project(path: ':feature_user_profile')
 
 
     // Navigation Component
