@@ -16,3 +16,9 @@
   - Navigation Component
   - Airbnb Epoxy (Recycler view adapter replacement)
   - Facebook Shimmer (Displays loading state)
+
+# todo
+login, user profile, search screens
+some user interactions (adding to cart, processing payment (not actually), searching and etc)
+
+the goal is to create an ecommerce app that somehow can be interpreted as real production ecommerce app but with reduced functionality
