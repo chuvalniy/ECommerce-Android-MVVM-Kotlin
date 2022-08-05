@@ -4,10 +4,6 @@
     android:id="@+id/nav_graph_home"
     app:startDestination="@id/home_screen">
 
-    <dialog
-        android:id="@+id/filter_screen"
-        android:name="com.example.feature_home.presentation.home_screen.fragment.FilterBottomDialogFragment"
-        android:label="FilterBottomDialogFragment" />
     <fragment
         android:id="@+id/home_screen"
         android:name="com.example.feature_home.presentation.home_screen.fragment.HomeScreenFragment"
@@ -15,8 +11,5 @@
         <deepLink
             android:id="@+id/deepLinkHome"
             app:uri="myApp://featureHome" />
-        <action
-            android:id="@+id/action_home_screen_to_filter_screen"
-            app:destination="@id/filter_screen" />
     </fragment>
 </navigation>

@@ -31,5 +31,6 @@
 
 <!--    Search-->
     <string name="search_view_hint">Search</string>
+    <string name="search">Search</string>
 
 </resources>

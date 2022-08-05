@@ -26,7 +26,7 @@ data class BestSellerEpoxyModel(
             bestSeller.discountPrice
         )
         tvTitle.text = bestSeller.title
-        btnAddToFavorites.isChecked = bestSeller.isFavorites
+        btnAddFavorites.isChecked = bestSeller.isFavorites
 
         cvBestSeller.setOnClickListener { onProductClick() }
 

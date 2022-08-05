@@ -49,7 +49,7 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
         viewModel.uiEffect.collect { effect ->
             when (effect) {
                 is DetailsScreenViewModel.UiEffect.NavigateToCartScreen -> {
-                    findNavController().navigate(Uri.parse(Constants.CART_SCREEN_DEEP_LINK))
+                    findNavController().navigate(Uri.parse("myApp://featureCart"))
                 }
                 is DetailsScreenViewModel.UiEffect.NavigateBack -> {
                     findNavController().popBackStack()

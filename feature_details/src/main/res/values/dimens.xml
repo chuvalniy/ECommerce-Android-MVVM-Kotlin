@@ -27,30 +27,14 @@
     <dimen name="category_top_margin">24dp</dimen>
     <dimen name="category_bottom_padding">16dp</dimen>
 
-
     <dimen name="product_info_elevation">12dp</dimen>
     <dimen name="product_info_vertical_margin">16dp</dimen>
     <dimen name="product_info_top_margin">12dp</dimen>
-
-<!--    Product config picker -->
-    <dimen name="config_picker_top_margin">8dp</dimen>
-
-    <dimen name="capacity_selector_width">72dp</dimen>
-    <dimen name="capacity_selector_height">30dp</dimen>
-    <dimen name="capacity_button_margin_end">16dp</dimen>
-    <dimen name="capacity_right_button_start_margin">8dp</dimen>
-
-    <dimen name="color_radio_group_top_margin">16dp</dimen>
-    <dimen name="color_selector_size">40dp</dimen>
-    <dimen name="left_color_select_margin_end">20dp</dimen>
-
 
 <!--    Add to cart-->
     <dimen name="btn_add_to_cart_height">54dp</dimen>
     <dimen name="btn_add_to_cart_content_margin_horizontal">28dp</dimen>
     <dimen name="btn_add_to_cart_top_margin">16dp</dimen>
     <dimen name="btn_add_to_cart_horizontal_margin">16dp</dimen>
-
-
 
 </resources>

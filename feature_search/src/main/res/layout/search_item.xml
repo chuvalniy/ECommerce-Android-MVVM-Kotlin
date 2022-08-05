@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvBestSeller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/best_seller_card_elevation"
+        app:cardCornerRadius="@dimen/best_seller_card_corner_radius"
+        app:cardElevation="@dimen/best_seller_card_elevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivBestSeller"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/best_seller_card_height" />
+
+                <FrameLayout
+                    android:layout_width="@dimen/best_seller_btn_favorite_size"
+                    android:layout_height="@dimen/best_seller_btn_favorite_size"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/best_seller_btn_favorite_margin_top"
+                    android:layout_marginEnd="@dimen/best_seller_btn_favorite_margin_end"
+                    android:background="@drawable/background_circle_favorite"
+                    android:elevation="@dimen/best_seller_btn_favorite_elevation">
+
+                    <ToggleButton
+                        android:id="@+id/btnAddToFavorites"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/selector_toggle_button_custom"
+                        android:textOff=""
+                        android:textOn="" />
+
+                </FrameLayout>
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_marginStart="@dimen/hot_sales_card_start_margin"
+                android:id="@+id/tvDiscountPrice"
+                style="@style/BestSellerDiscountPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/best_seller_text_discount_margin_end"
+                tools:text="$1,047" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/BestSellerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/hot_sales_card_start_margin"
+                android:layout_marginTop="@dimen/best_seller_text_title_margin_top"
+                android:layout_marginBottom="@dimen/best_seller_text_title_margin_bottom"
+                tools:text="Samsung Galaxy s20 Ultra" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

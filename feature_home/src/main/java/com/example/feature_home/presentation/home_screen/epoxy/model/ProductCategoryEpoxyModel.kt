@@ -4,7 +4,7 @@ import androidx.core.content.ContextCompat
 import com.example.core.helpers.ViewBindingKotlinModel
 import com.example.feature_home.R
 import com.example.feature_home.databinding.CategoryItemBinding
-import com.example.feature_home.presentation.home_screen.view.CategoryItem
+import com.example.feature_home.presentation.home_screen.utils.CategoryItem
 
 data class ProductCategoryEpoxyModel(
     val category: CategoryItem,

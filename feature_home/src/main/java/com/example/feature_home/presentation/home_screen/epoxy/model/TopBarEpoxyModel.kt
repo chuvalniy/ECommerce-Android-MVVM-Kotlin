@@ -5,9 +5,7 @@ import com.example.core.helpers.ViewBindingKotlinModel
 import com.example.feature_home.R
 import com.example.feature_home.databinding.ModelTopBarBinding
 
-data class TopBarEpoxyModel(
-    val onFilterButtonClick: () -> Unit
-) : ViewBindingKotlinModel<ModelTopBarBinding>(R.layout.model_top_bar) {
+class TopBarEpoxyModel : ViewBindingKotlinModel<ModelTopBarBinding>(R.layout.model_top_bar) {
 
     override fun ModelTopBarBinding.bind() {
         ArrayAdapter.createFromResource(
@@ -17,8 +15,6 @@ data class TopBarEpoxyModel(
         ).also { adapter ->
             adapter.setDropDownViewResource(R.layout.spinner_location_text_view)
             spinnerLocation.adapter = adapter
-
-            btnFilter.setOnClickListener { onFilterButtonClick() }
         }
     }
 }

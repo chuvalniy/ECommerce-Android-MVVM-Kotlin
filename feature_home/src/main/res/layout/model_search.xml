@@ -1,27 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/search_tab_horizontal_margin"
-    android:layout_marginTop="@dimen/search_tab_top_margin"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginVertical="@dimen/search_tab_top_margin">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvSearch"
         android:layout_width="0dp"
         android:layout_height="@dimen/search_view_height"
         android:layout_marginEnd="@dimen/search_view_margin_end"
         android:layout_weight="1"
-        android:background="@drawable/background_rounded_searchview_white"
-        app:iconifiedByDefault="false"
-        app:queryBackground="@android:color/transparent"
-        app:queryHint="@string/search_view_hint"
-        app:searchIcon="@drawable/ic_search" />
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="17dp">
 
-    <ImageButton
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/mavenpro_regular"
+                android:gravity="center_vertical"
+                android:text="@string/search"
+                android:textColor="@color/gray_helper"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnQrCode"
+        style="@style/Widget.Material3.Button.Icon"
         android:layout_width="@dimen/main_screen_qr_code_button_size"
         android:layout_height="@dimen/main_screen_qr_code_button_size"
-        android:background="@drawable/background_circle_ripple_orange"
-        android:src="@drawable/ic_qr_code" />
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:icon="@drawable/ic_qr_code"
+        app:iconGravity="textEnd" />
 </LinearLayout>

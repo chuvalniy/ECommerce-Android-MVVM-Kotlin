@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:elevation="@dimen/best_seller_card_elevation"
-        app:cardElevation="@dimen/best_seller_card_elevation"
-        app:cardCornerRadius="@dimen/best_seller_card_corner_radius">
+        app:cardCornerRadius="@dimen/best_seller_card_corner_radius"
+        app:cardElevation="@dimen/best_seller_card_elevation">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,25 +27,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/best_seller_card_height" />
 
-                <FrameLayout
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddFavorites"
+                    style="@style/Widget.Material3.Button.ElevatedButton.Icon"
                     android:layout_width="@dimen/best_seller_btn_favorite_size"
                     android:layout_height="@dimen/best_seller_btn_favorite_size"
                     android:layout_gravity="end"
                     android:layout_marginTop="@dimen/best_seller_btn_favorite_margin_top"
                     android:layout_marginEnd="@dimen/best_seller_btn_favorite_margin_end"
-                    android:background="@drawable/background_circle_favorite"
-                    android:elevation="@dimen/best_seller_btn_favorite_elevation">
-
-                    <ToggleButton
-                        android:id="@+id/btnAddToFavorites"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="@drawable/selector_toggle_button_custom"
-                        android:textOff=""
-                        android:textOn="" />
-
-                </FrameLayout>
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:elevation="4dp"
+                    app:icon="@drawable/ic_favorite_border"
+                    app:iconGravity="textEnd"
+                    app:iconSize="14dp" />
 
             </FrameLayout>
 

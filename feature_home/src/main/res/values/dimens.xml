@@ -36,29 +36,6 @@
     <dimen name="hot_sales_button_buy_horizontal_size">27dp</dimen>
     <dimen name="hot_sales_button_buy_vertical_size">5dp</dimen>
 
-
-<!--    Filter bottom dialog fragment sheet-->
-    <dimen name="filter_bottom_dialog_margin_top">24dp</dimen>
-
-    <dimen name="filter_bottom_dialog_cancel_options_size">37dp</dimen>
-    <dimen name="filter_bottom_dialog_cancel_button_margin_start">44dp</dimen>
-
-    <dimen name="filter_bottom_dialog_dismiss_button_height">37dp</dimen>
-    <dimen name="filter_bottom_dialog_dismiss_button_margin_end">20dp</dimen>
-    <dimen name="filter_bottom_dialog_dismiss_button_horizontal_size">20dp</dimen>
-
-    <dimen name="filter_bottom_dialog_options_margin_start">44dp</dimen>
-    <dimen name="filter_bottom_dialog_options_margin_top">40dp</dimen>
-    <dimen name="filter_bottom_dialog_options_margin_end">30dp</dimen>
-    <dimen name="filter_bottom_dialog_options_margin_bottom">44dp</dimen>
-
-    <dimen name="filter_bottom_dialog_single_option_margin_bottom">8dp</dimen>
-
-    <dimen name="filter_bottom_dialog_spinner_layout_bottom_margin">16dp</dimen>
-    <dimen name="filter_bottom_dialog_spinner_height">37dp</dimen>
-
-    <dimen name="filter_bottom_dialog_text_start_margin">4dp</dimen>
-
 <!--    Categories -->
     <dimen name="category_title_text_size">12sp</dimen>
     <dimen name="category_circle_size">72dp</dimen>
@@ -66,11 +43,9 @@
     <dimen name="category_card_elevation">6dp</dimen>
     <dimen name="category_text_view_margin_top">4dp</dimen>
 
-
-
     <!--    Search tab -->
     <dimen name="search_tab_horizontal_margin">32dp</dimen>
-    <dimen name="search_tab_top_margin">8dp</dimen>
+    <dimen name="search_tab_top_margin">12dp</dimen>
 
     <dimen name="search_view_height">34dp</dimen>
     <dimen name="search_view_margin_end">8dp</dimen>
@@ -78,9 +53,7 @@
     <dimen name="main_screen_qr_code_button_size">34dp</dimen>
 
 <!--    Top bar-->
-    <dimen name="top_bar_filter_button_padding">16dp</dimen>
     <dimen name="top_bar_location_icon_padding">8dp</dimen>
-
 
     <dimen name="tab_layout_horizontal_padding">12dp</dimen>
     <dimen name="tab_layout_margin_vertical">12dp</dimen>
@@ -91,4 +64,5 @@
 
 <!--    Core -->
     <dimen name="home_padding">16dp</dimen>
+
 </resources>

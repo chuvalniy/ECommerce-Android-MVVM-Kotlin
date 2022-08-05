@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/feature_home" />
             <option value="$PROJECT_DIR$/feature_login" />
             <option value="$PROJECT_DIR$/feature_main" />
+            <option value="$PROJECT_DIR$/feature_search" />
             <option value="$PROJECT_DIR$/feature_user_profile" />
           </set>
         </option>

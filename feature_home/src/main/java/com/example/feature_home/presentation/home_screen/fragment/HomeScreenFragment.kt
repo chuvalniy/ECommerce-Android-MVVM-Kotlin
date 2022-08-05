@@ -39,9 +39,9 @@ class HomeScreenFragment : BaseFragment<FragmentHomeBinding>() {
     private fun setupEpoxyController() {
         epoxyController = HomeScreenEpoxyController(
             glide,
-            onFilterButtonClick = { viewModel.filterButtonClicked() },
             onProductClick = { viewModel.productClicked() },
-            onCategoryClick = { viewModel.categorySelected(it) }
+            onCategoryClick = { viewModel.categorySelected(it) },
+            onSearchClick = { viewModel.searchClicked() }
         )
         with(binding.epoxyRecyclerView) {
             setController(epoxyController!!)
@@ -55,14 +55,10 @@ class HomeScreenFragment : BaseFragment<FragmentHomeBinding>() {
                     Snackbar.make(requireView(), effect.message, Snackbar.LENGTH_LONG).show()
                 }
                 is HomeScreenViewModel.UiEffect.NavigateToDetailsScreen -> {
-                    findNavController().navigate(Uri.parse(Constants.DETAILS_SCREEN_DEEP_LINK))
+                    findNavController().navigate(Uri.parse("myApp://featureDetails"))
                 }
-                is HomeScreenViewModel.UiEffect.NavigateToFilterDialogScreen -> with(
-                    findNavController()
-                ) {
-                    if (currentDestination?.id == R.id.home_screen) {
-                        navigate(R.id.action_home_screen_to_filter_screen)
-                    }
+                is HomeScreenViewModel.UiEffect.NavigateToSearchScreen -> {
+                    findNavController().navigate(Uri.parse("myApp://featureSearch"))
                 }
             }
         }

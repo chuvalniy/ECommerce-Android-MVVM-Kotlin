@@ -33,12 +33,6 @@
         <item name="android:textColor">@color/light_orange</item>
     </style>
 
-    <style name="CaptionRegular">
-        <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:fontFamily">@font/mavenpro_medium</item>
-    </style>
-
     <style name="CaptionBold">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/white</item>

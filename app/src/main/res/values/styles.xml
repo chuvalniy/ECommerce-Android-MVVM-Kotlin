@@ -13,11 +13,4 @@
     </style>
 
 
-<!--    SearchView style-->
-
-    <style name="AppSearchView" parent="Widget.AppCompat.SearchView">
-        <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/mavenpro_regular</item>
-    </style>
-
 </resources>

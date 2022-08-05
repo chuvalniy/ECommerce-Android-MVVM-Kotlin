@@ -64,17 +64,17 @@ class HomeScreenViewModel(
         )
     }
 
-    fun filterButtonClicked() = viewModelScope.launch {
-        _uiChannel.send(UiEffect.NavigateToFilterDialogScreen)
-    }
-
     fun productClicked() = viewModelScope.launch {
         _uiChannel.send(UiEffect.NavigateToDetailsScreen)
     }
 
+    fun searchClicked() = viewModelScope.launch {
+        _uiChannel.send(UiEffect.NavigateToSearchScreen)
+    }
+
     sealed class UiEffect {
         data class ShowSnackbar(val message: String) : UiEffect()
-        object NavigateToFilterDialogScreen : UiEffect()
         object NavigateToDetailsScreen : UiEffect()
+        object NavigateToSearchScreen : UiEffect()
     }
 }

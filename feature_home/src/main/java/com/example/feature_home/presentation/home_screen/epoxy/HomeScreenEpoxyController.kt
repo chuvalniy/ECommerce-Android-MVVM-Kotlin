@@ -4,14 +4,14 @@ import com.airbnb.epoxy.CarouselModel_
 import com.airbnb.epoxy.TypedEpoxyController
 import com.bumptech.glide.RequestManager
 import com.example.feature_home.presentation.home_screen.epoxy.model.*
-import com.example.feature_home.presentation.home_screen.view.SampleData
+import com.example.feature_home.presentation.home_screen.utils.SampleData
 import com.example.feature_home.presentation.home_screen.view_model.HomeScreenState
 
 class HomeScreenEpoxyController(
     private val glide: RequestManager,
-    private val onFilterButtonClick: () -> Unit,
     private val onProductClick: () -> Unit,
-    private val onCategoryClick: (Int) -> Unit
+    private val onCategoryClick: (Int) -> Unit,
+    private val onSearchClick: () -> Unit
 ) : TypedEpoxyController<HomeScreenState>() {
 
     override fun buildModels(
@@ -19,7 +19,7 @@ class HomeScreenEpoxyController(
     ) {
 
         // Top bar
-        TopBarEpoxyModel(onFilterButtonClick)
+        TopBarEpoxyModel()
             .id("top_bar")
             .spanSizeOverride { _, _, _ -> 2 }
             .addTo(this)
@@ -44,7 +44,7 @@ class HomeScreenEpoxyController(
             .addTo(this)
 
         // Search
-        SearchEpoxyModel()
+        SearchEpoxyModel(onSearchClick)
             .id("search_bar")
             .spanSizeOverride { _, _, _ -> 2 }
             .addTo(this)

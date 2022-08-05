@@ -37,11 +37,12 @@ dependencies {
     implementation project(path: ':core')
     implementation project(path: ':feature_cart')
     implementation project(path: ':feature_details')
+    implementation project(path: ':feature_search')
     implementation project(path: ':feature_user_profile')
 
 
     // Navigation Component
-    def nav_version = "2.4.0"
+    def nav_version = "2.5.1"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
@@ -54,13 +55,13 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
     // Lifecycle
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
 
     // Coroutines
     def coroutine_version = "1.5.2"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     testImplementation 'junit:junit:4.13.2'

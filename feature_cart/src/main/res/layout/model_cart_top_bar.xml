@@ -30,5 +30,5 @@
         android:layout_width="@dimen/top_bar_button_size"
         android:layout_height="@dimen/top_bar_button_size"
         android:background="@drawable/background_rounded_ripple_orange"
-        android:src="@drawable/ic_geolocation" />
+        android:src="@drawable/ic_location" />
 </LinearLayout>
