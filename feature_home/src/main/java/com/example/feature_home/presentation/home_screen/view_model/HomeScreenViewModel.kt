@@ -62,8 +62,8 @@ class HomeScreenViewModel(
         viewModelScope.launch { fetchData() }
     }
 
-    fun productClicked() = viewModelScope.launch {
-        _uiChannel.send(UiEffect.NavigateToDetailsScreen)
+    fun productClicked(id: String) = viewModelScope.launch {
+        _uiChannel.send(UiEffect.NavigateToDetailsScreen(id))
     }
 
     fun searchClicked() = viewModelScope.launch {
@@ -72,7 +72,7 @@ class HomeScreenViewModel(
 
     sealed class UiEffect {
         data class ShowSnackbar(val message: String) : UiEffect()
-        object NavigateToDetailsScreen : UiEffect()
+        data class NavigateToDetailsScreen(val id: String) : UiEffect()
         object NavigateToSearchScreen : UiEffect()
     }
 }

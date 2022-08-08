@@ -10,9 +10,13 @@
         android:name="com.example.feature_details_screen.presentation.fragment.DetailsScreenFragment"
         android:label="fragment_details_screen"
         tools:layout="@layout/fragment_details_screen">
+        <argument
+            android:name="id"
+            android:defaultValue="empty"
+            app:argType="string"/>
         <deepLink
             android:id="@+id/deepLinkDetails"
-            app:uri="myapp://featureDetails" />
+            app:uri="myapp://featureDetails/{id}" />
     </fragment>
 
 </navigation>

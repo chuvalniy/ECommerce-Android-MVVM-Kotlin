@@ -1,16 +1,18 @@
 package com.example.feature_details_screen.presentation.view_model
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.utils.Resource
-import com.example.feature_details_screen.domain.model.ProductDetailsDomain
-import com.example.feature_details_screen.domain.use_case.FetchDetailsScreenDataSource
+import com.example.feature_details_screen.domain.model.DomainDataSource
+import com.example.feature_details_screen.domain.use_case.FetchDataUseCase
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 class DetailsScreenViewModel(
-    private val fetchDetailsScreenDataSource: FetchDetailsScreenDataSource
+    private val fetchDataUseCase: FetchDataUseCase,
+    private val state: SavedStateHandle
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(DetailsScreenState())
@@ -20,11 +22,11 @@ class DetailsScreenViewModel(
     val uiEffect get() = _uiChannel.receiveAsFlow()
 
     init {
-        fetchProductDetails()
+        fetchData()
     }
 
-    private fun fetchProductDetails() = viewModelScope.launch {
-        fetchDetailsScreenDataSource().onEach { result ->
+    private fun fetchData(id: String = state.get<String>("id") ?: "") = viewModelScope.launch {
+        fetchDataUseCase(id).onEach { result ->
             when (result) {
                 is Resource.Success -> {
                     processSuccessState(result)
@@ -40,12 +42,12 @@ class DetailsScreenViewModel(
 
     }
 
-    private suspend fun processErrorState(response: Resource<ProductDetailsDomain>) {
+    private suspend fun processErrorState(response: Resource<DomainDataSource>) {
         _uiState.value = _uiState.value.copy(isLoading = false)
         showSnackbar(response.error ?: "Error")
     }
 
-    private fun processSuccessState(response: Resource<ProductDetailsDomain>) {
+    private fun processSuccessState(response: Resource<DomainDataSource>) {
         response.data?.let { product ->
             _uiState.value = _uiState.value.copy(
                 data = product,

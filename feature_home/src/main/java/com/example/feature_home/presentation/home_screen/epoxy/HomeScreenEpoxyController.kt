@@ -9,7 +9,7 @@ import com.example.feature_home.presentation.home_screen.view_model.HomeScreenSt
 
 class HomeScreenEpoxyController(
     private val glide: RequestManager,
-    private val onProductClick: () -> Unit,
+    private val onProductClick: (String) -> Unit,
     private val onCategoryClick: (Int) -> Unit,
     private val onSearchClick: () -> Unit
 ) : TypedEpoxyController<HomeScreenState>() {

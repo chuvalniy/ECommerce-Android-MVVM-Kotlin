@@ -73,10 +73,6 @@ class DetailsScreenEpoxyController(
 
             detailsProductInfo {
                 id("details_product_features")
-                cpu(state.data.cpu)
-                camera(state.data.camera)
-                sdCapacity(state.data.sd)
-                ram(state.data.ssd)
             }
 
             detailsAddToCart {

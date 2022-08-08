@@ -11,7 +11,7 @@ import com.example.feature_home.domain.model.DomainDataSource
 data class BestSellerEpoxyModel(
     val bestSeller: BestSellerDomain,
     val index: Int,
-    val onProductClick: () -> Unit,
+    val onProductClick: (String) -> Unit,
     val glide: RequestManager
 ) : ViewBindingKotlinModel<BestSellerItemBinding>(R.layout.best_seller_item) {
 
@@ -24,7 +24,7 @@ data class BestSellerEpoxyModel(
         )
         tvTitle.text = bestSeller.title
 
-        cvBestSeller.setOnClickListener { onProductClick() }
+        cvBestSeller.setOnClickListener { onProductClick(bestSeller.id) }
 
         glide.load(bestSeller.image).into(ivBestSeller)
     }

@@ -10,8 +10,6 @@ import com.example.feature_home.domain.model.DomainDataSource
 import com.example.feature_home.domain.repository.HomeScreenRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import retrofit2.HttpException
-import java.io.IOException
 
 class HomeScreenRepositoryImpl(
     private val api: HomeFirestore,
@@ -36,10 +34,7 @@ class HomeScreenRepositoryImpl(
 
         val response = try {
             api.fetchCloudDataSource(selectedCategory)
-        } catch (e: IOException) {
-            emit(Resource.Error(error = e.message))
-            null
-        } catch (e: HttpException) {
+        } catch (e: Exception) {
             emit(Resource.Error(error = e.message))
             null
         }

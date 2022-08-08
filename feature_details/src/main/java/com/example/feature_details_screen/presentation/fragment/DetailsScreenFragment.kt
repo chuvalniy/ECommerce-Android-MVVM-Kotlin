@@ -16,11 +16,17 @@ import com.example.feature_details_screen.presentation.view_model.DetailsScreenV
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
 
-    private val viewModel by viewModel<DetailsScreenViewModel>()
+    private val viewModel by stateViewModel<DetailsScreenViewModel>(state = {
+        val bundle = Bundle()
+        bundle.putString("id", arguments?.getString("id"))
+        bundle
+    })
+
     private val glide by inject<RequestManager>()
 
     private var epoxyController: DetailsScreenEpoxyController? = null

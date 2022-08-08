@@ -2,6 +2,7 @@ package com.example.feature_home.presentation.home_screen.fragment
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +10,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.RequestManager
 import com.example.core.ui.BaseFragment
-import com.example.core.utils.Constants
-import com.example.feature_home.R
 import com.example.feature_home.databinding.FragmentHomeBinding
 import com.example.feature_home.presentation.home_screen.epoxy.HomeScreenEpoxyController
 import com.example.feature_home.presentation.home_screen.view_model.HomeScreenState
 import com.example.feature_home.presentation.home_screen.view_model.HomeScreenViewModel
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.flow.collect
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -39,7 +37,7 @@ class HomeScreenFragment : BaseFragment<FragmentHomeBinding>() {
     private fun setupEpoxyController() {
         epoxyController = HomeScreenEpoxyController(
             glide,
-            onProductClick = { viewModel.productClicked() },
+            onProductClick = { id -> viewModel.productClicked(id) },
             onCategoryClick = { viewModel.categorySelected(it) },
             onSearchClick = { viewModel.searchClicked() }
         )
@@ -55,7 +53,8 @@ class HomeScreenFragment : BaseFragment<FragmentHomeBinding>() {
                     Snackbar.make(requireView(), effect.message, Snackbar.LENGTH_LONG).show()
                 }
                 is HomeScreenViewModel.UiEffect.NavigateToDetailsScreen -> {
-                    findNavController().navigate(Uri.parse("myApp://featureDetails"))
+                    Log.d("TAGTAG", "effect ${effect.id}")
+                    findNavController().navigate(Uri.parse("myApp://featureDetails/${effect.id}"))
                 }
                 is HomeScreenViewModel.UiEffect.NavigateToSearchScreen -> {
                     findNavController().navigate(Uri.parse("myApp://featureSearch"))
