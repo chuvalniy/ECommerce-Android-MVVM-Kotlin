@@ -25,10 +25,12 @@
                 <ImageView
                     android:id="@+id/ivBestSeller"
                     android:layout_width="match_parent"
+                    android:contentDescription="@string/best_seller_product_image"
                     android:layout_height="@dimen/best_seller_card_height" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnAddFavorites"
+                    android:contentDescription="@string/add_to_favorites"
                     style="@style/Widget.Material3.Button.ElevatedButton.Icon"
                     android:layout_width="@dimen/best_seller_btn_favorite_size"
                     android:layout_height="@dimen/best_seller_btn_favorite_size"
@@ -40,7 +42,8 @@
                     app:elevation="4dp"
                     app:icon="@drawable/ic_favorite_border"
                     app:iconGravity="textEnd"
-                    app:iconSize="14dp" />
+                    app:iconSize="14dp"
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </FrameLayout>
 
@@ -51,26 +54,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvDiscountPrice"
-                    style="@style/BestSellerDiscountPrice"
+                    android:id="@+id/tvPrice"
+                    style="@style/Subhead"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/best_seller_text_discount_margin_end"
                     tools:text="$1,047" />
 
-                <TextView
-                    android:id="@+id/tvDefaultPrice"
-                    style="@style/BestSellerDefaultPrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/text_view_strike_through_line"
-                    tools:text="$1,500" />
-
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tvTitle"
-                style="@style/BestSellerTitle"
+                style="@style/Subhead2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/hot_sales_card_start_margin"

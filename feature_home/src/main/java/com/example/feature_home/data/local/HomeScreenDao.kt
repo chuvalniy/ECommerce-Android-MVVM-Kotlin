@@ -9,12 +9,13 @@ import com.example.feature_home.data.local.model.CacheDataSource
 @Dao
 interface HomeScreenDao {
 
-    @Query("SELECT * FROM ${HomeScreenDatabase.DATABASE_NAME}")
-    suspend fun fetchCache(): CacheDataSource?
+
+    @Query("SELECT * FROM ${HomeScreenDatabase.DATABASE_NAME} WHERE category = :selectedCategory")
+    suspend fun fetchCache(selectedCategory: Int): List<CacheDataSource>
 
     @Query("DELETE FROM ${HomeScreenDatabase.DATABASE_NAME}")
     suspend fun clearCache()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCache(cache: CacheDataSource)
+    suspend fun insertCache(cache: List<CacheDataSource>)
 }

@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/data_user_session" />
             <option value="$PROJECT_DIR$/feature_cart" />
             <option value="$PROJECT_DIR$/feature_details" />
             <option value="$PROJECT_DIR$/feature_home" />

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    Core-->
+    <dimen name="layout_margin">24dp</dimen>
+    <dimen name="helper_top_margin_to_top_bar">64dp</dimen>
+    <dimen name="edit_text_top_margin">8dp</dimen>
+    <dimen name="edit_text_start_padding">12dp</dimen>
+    <dimen name="edit_text_min_height">56dp</dimen>
+    <dimen name="helper_tv_top_margin">24dp</dimen>
+
+<!--    Sign in-->
+    <dimen name="btn_sign_in_top_margin">64dp</dimen>
+    <dimen name="btn_to_register_bottom_margin">8dp</dimen>
+
+<!--    Sign up-->
+    <dimen name="btn_to_login_top_margin">32dp</dimen>
+    <dimen name="sign_up_margin_top">36dp</dimen>
+</resources>

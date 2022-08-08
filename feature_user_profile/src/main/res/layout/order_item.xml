@@ -8,9 +8,9 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_marginHorizontal="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginEnd="@dimen/layout_margin">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -20,44 +20,46 @@
                 android:id="@+id/tvOrderId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="@dimen/order_cv_margin"
                 style="@style/Subtitle2"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="@dimen/order_cv_margin"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Order №19701281" />
 
             <TextView
                 android:id="@+id/tvOrderDate"
-                style="@style/HelperTextStyle"
+                style="@style/Helper3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="@dimen/order_cv_margin"
                 app:layout_constraintBottom_toBottomOf="@+id/tvOrderId"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tvOrderId"
+                tools:ignore="TextContrastCheck"
                 tools:text="05-12-2021" />
 
             <TextView
                 android:id="@+id/tvSummary"
+                style="@style/Helper3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/HelperTextStyle"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="12dp"
-                android:text="Total amount: 112$"
+                android:layout_marginTop="@dimen/summary_top_margin"
+                android:layout_marginBottom="@dimen/order_cv_margin"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tvOrderId"
-                app:layout_constraintTop_toBottomOf="@+id/tvOrderId" />
+                app:layout_constraintTop_toBottomOf="@+id/tvOrderId"
+                tools:ignore="TextContrastCheck"
+                tools:text="Total amount: 112$" />
 
             <TextView
                 android:id="@+id/textView2"
+                style="@style/Subtitle1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/Subtitle3"
-                android:text="Delivered"
+                tools:text="Delivered"
                 app:layout_constraintBottom_toBottomOf="@+id/tvSummary"
-                app:layout_constraintStart_toStartOf="@+id/tvOrderDate"
+                app:layout_constraintEnd_toEndOf="@+id/tvOrderDate"
                 app:layout_constraintTop_toTopOf="@+id/tvSummary" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

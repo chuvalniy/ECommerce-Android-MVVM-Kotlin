@@ -46,6 +46,7 @@ dependencies {
     implementation project(path: ':feature_login')
     implementation project(path: ':feature_user_profile')
     implementation project(path: ':feature_search')
+    implementation project(path: ':data_user_session')
 
     // Koin
     implementation "io.insert-koin:koin-android:3.2.0-beta-1"

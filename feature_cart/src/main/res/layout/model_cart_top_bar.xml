@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/top_bar_horizontal_margin"
     android:layout_marginTop="@dimen/top_bar_top_margin"
@@ -12,7 +13,9 @@
         android:layout_height="@dimen/top_bar_button_size"
         android:layout_gravity="start"
         android:background="@drawable/background_rounded_ripple_dark_blue"
-        android:src="@drawable/ic_arrow_back" />
+        android:contentDescription="@string/go_back"
+        android:src="@drawable/ic_arrow_back"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/btnCart"
@@ -30,5 +33,7 @@
         android:layout_width="@dimen/top_bar_button_size"
         android:layout_height="@dimen/top_bar_button_size"
         android:background="@drawable/background_rounded_ripple_orange"
-        android:src="@drawable/ic_location" />
+        android:contentDescription="@string/add_address"
+        android:src="@drawable/ic_location"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,ImageContrastCheck" />
 </LinearLayout>

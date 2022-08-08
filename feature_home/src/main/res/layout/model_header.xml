@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        style="@style/HomeHeader"
+        style="@style/Header2"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -17,9 +17,11 @@
 
     <Button
         android:id="@+id/btnSeeMore"
-        style="@style/HomeSeeMoreTextStyle"
+        style="@style/TextButtonHelper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/see_more"
+        tools:ignore="TextContrastCheck"
         tools:text="@string/see_more" />
 
 

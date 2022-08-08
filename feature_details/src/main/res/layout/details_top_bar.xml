@@ -30,8 +30,8 @@
         android:layout_width="@dimen/rounded_button_size"
         android:layout_height="@dimen/rounded_button_size"
         android:layout_gravity="end"
-        android:contentDescription="@string/go_to_cart"
         android:background="@drawable/background_rounded_ripple_orange"
+        android:contentDescription="@string/go_to_cart"
         android:src="@drawable/ic_shopping_bag"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 </FrameLayout>

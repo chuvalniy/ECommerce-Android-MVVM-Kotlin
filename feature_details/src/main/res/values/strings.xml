@@ -9,4 +9,9 @@
     <string name="add_to_cart">Add to Cart</string>
     <string name="go_back">Go back</string>
     <string name="go_to_cart">Go to Cart</string>
+    <string name="product_image">Product image</string>
+    <string name="product_cpu">Product CPU</string>
+    <string name="product_camera">Product camera</string>
+    <string name="product_ram">Product RAM</string>
+    <string name="product_sd">Product SD</string>
 </resources>

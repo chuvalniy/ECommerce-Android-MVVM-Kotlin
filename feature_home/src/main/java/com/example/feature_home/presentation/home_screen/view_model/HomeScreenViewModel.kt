@@ -3,15 +3,18 @@ package com.example.feature_home.presentation.home_screen.view_model
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.utils.Resource
-import com.example.feature_home.domain.model.DomainDataSource
 import com.example.feature_home.domain.use_case.FetchDataUseCase
+import com.example.feature_home.domain.use_case.FilterBestSellerDomain
+import com.example.feature_home.domain.use_case.FilterHotSalesUseCase
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 
 class HomeScreenViewModel(
-    private val fetchDataUseCase: FetchDataUseCase
+    private val fetchDataUseCase: FetchDataUseCase,
+    private val filterBestSellerDomain: FilterBestSellerDomain,
+    private val filterHotSalesUseCase: FilterHotSalesUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HomeScreenState())
@@ -21,17 +24,24 @@ class HomeScreenViewModel(
     val uiEffect get() = _uiChannel.receiveAsFlow()
 
     init {
-        fetchDomainDataSource()
+        fetchData()
     }
 
-    private fun fetchDomainDataSource() = viewModelScope.launch {
-        fetchDataUseCase.execute().onEach { result ->
+    private fun fetchData(
+        selectedCategory: Int = _uiState.value.currentlySelectedCategory
+    ) = viewModelScope.launch {
+        fetchDataUseCase.execute(selectedCategory).onEach { result ->
             when (result) {
                 is Resource.Success -> {
-                    processSuccessState(result)
+                    _uiState.value = _uiState.value.copy(
+                        isLoading = false,
+                        hotSales =  filterHotSalesUseCase.execute(result.data ?: emptyList()),
+                        bestSellers = filterBestSellerDomain.execute(result.data ?: emptyList())
+                    )
                 }
                 is Resource.Error -> {
-                    processErrorState(result)
+                    _uiState.value = _uiState.value.copy(isLoading = false)
+                    showSnackbar(message = result.error ?: "")
                 }
                 is Resource.Loading -> {
                     _uiState.value = _uiState.value.copy(isLoading = result.isLoading)
@@ -41,19 +51,6 @@ class HomeScreenViewModel(
     }
 
 
-    private suspend fun processErrorState(response: Resource<DomainDataSource>) {
-        _uiState.value = _uiState.value.copy(isLoading = false)
-        showSnackbar(message = response.error ?: "")
-    }
-
-    private fun processSuccessState(response: Resource<DomainDataSource>) {
-        _uiState.value = _uiState.value.copy(
-            isLoading = false,
-            hotSales = response.data?.hotSales ?: emptyList(),
-            bestSellers = response.data?.bestSellers ?: emptyList(),
-        )
-    }
-
     private suspend fun showSnackbar(message: String) {
         _uiChannel.send(UiEffect.ShowSnackbar(message))
     }
@@ -62,6 +59,7 @@ class HomeScreenViewModel(
         _uiState.value = _uiState.value.copy(
             currentlySelectedCategory = selectedCategory
         )
+        viewModelScope.launch { fetchData() }
     }
 
     fun productClicked() = viewModelScope.launch {

@@ -6,8 +6,13 @@ import com.example.feature_home.data.local.HomeScreenDatabase
 
 @Entity(tableName = HomeScreenDatabase.DATABASE_NAME)
 data class CacheDataSource(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
-    val bestSellers: List<BestSellerEntity>,
-    val hotSales: List<HotSalesEntity>,
+    @PrimaryKey
+    val id: String,
+    val title: String,
+    val description: String,
+    val imagePreview: String,
+    val image: String,
+    val price: Int,
+    val subcategories: String,
+    val category: Int,
 )

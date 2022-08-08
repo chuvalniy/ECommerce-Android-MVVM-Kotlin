@@ -3,8 +3,9 @@ package com.example.feature_home.data.repository
 import androidx.room.withTransaction
 import com.example.core.utils.Resource
 import com.example.feature_home.data.local.HomeScreenDatabase
-import com.example.feature_home.data.mapper.*
-import com.example.feature_home.data.remote.HomeScreenApi
+import com.example.feature_home.data.mapper.toCacheDataSource
+import com.example.feature_home.data.mapper.toDomainDataSource
+import com.example.feature_home.data.remote.HomeFirestore
 import com.example.feature_home.domain.model.DomainDataSource
 import com.example.feature_home.domain.repository.HomeScreenRepository
 import kotlinx.coroutines.flow.Flow
@@ -13,24 +14,28 @@ import retrofit2.HttpException
 import java.io.IOException
 
 class HomeScreenRepositoryImpl(
-    private val api: HomeScreenApi,
+    private val api: HomeFirestore,
     private val db: HomeScreenDatabase
 ) : HomeScreenRepository {
 
     private val dao = db.dao
 
-    override fun fetchData(): Flow<Resource<DomainDataSource>> = flow {
+    override fun fetchData(
+        selectedCategory: Int
+    ): Flow<Resource<List<DomainDataSource>>> = flow {
         emit(Resource.Loading(isLoading = true))
 
-        val cache = dao.fetchCache()
+        val cache = dao.fetchCache(selectedCategory)
 
-        if (cache != null) {
-            emit(Resource.Success(cache.toDomainDataSource()))
+        if (cache.isNotEmpty()) {
+
+            emit(Resource.Success(cache.map { it.toDomainDataSource() }))
             emit(Resource.Loading(isLoading = false))
         }
 
+
         val response = try {
-            api.fetchCloudDataSource()
+            api.fetchCloudDataSource(selectedCategory)
         } catch (e: IOException) {
             emit(Resource.Error(error = e.message))
             null
@@ -42,9 +47,12 @@ class HomeScreenRepositoryImpl(
         response?.let { data ->
             db.withTransaction {
                 dao.clearCache()
-                dao.insertCache(data.toCacheDataSource())
+                dao.insertCache(data.map { it.toCacheDataSource() })
             }
-            emit(Resource.Success(dao.fetchCache()?.toDomainDataSource()))
+
+            emit(Resource.Success(
+                dao.fetchCache(selectedCategory).map { it.toDomainDataSource() }
+            ))
             emit(Resource.Loading(isLoading = false))
         }
     }

@@ -13,22 +13,26 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:padding="@dimen/top_bar_location_icon_padding"
+        android:contentDescription="@string/location_icon"
         android:src="@drawable/ic_geo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/spinnerLocation"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/light_orange" />
+        app:tint="@color/light_orange"
+        tools:ignore="ImageContrastCheck" />
 
     <Spinner
         android:id="@+id/spinnerLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:contentDescription="@string/select_location"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/ivLocation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivLocation"
-        app:layout_constraintTop_toTopOf="@+id/ivLocation" />
+        app:layout_constraintTop_toTopOf="@+id/ivLocation"
+        tools:ignore="TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

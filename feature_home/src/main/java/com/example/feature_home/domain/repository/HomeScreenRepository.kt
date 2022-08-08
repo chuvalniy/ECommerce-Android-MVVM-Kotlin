@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface HomeScreenRepository {
 
-    fun fetchData(): Flow<Resource<DomainDataSource>>
+    fun fetchData(selectedCategory: Int): Flow<Resource<List<DomainDataSource>>>
 }

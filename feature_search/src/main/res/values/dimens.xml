@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <dimen name="search_item_card_corner_radius">10dp</dimen>
+    <dimen name="search_item_card_elevation">1dp</dimen>
+    <dimen name="search_item_card_height">180dp</dimen>
+
+    <dimen name="search_item_btn_favorite_size">25dp</dimen>
+    <dimen name="search_item_btn_favorite_margin_top">12dp</dimen>
+    <dimen name="search_item_btn_favorite_margin_end">16dp</dimen>
+    <dimen name="search_item_btn_favorite_elevation">4dp</dimen>
+
+    <dimen name="search_item_text_discount_margin_end">8dp</dimen>
+
+    <dimen name="search_item_text_title_margin_top">6dp</dimen>
+    <dimen name="search_item_text_title_margin_bottom">16dp</dimen>
+
+    <dimen name="search_item_card_start_margin">18dp</dimen>
+
+<!--    Core -->
+    <dimen name="layout_margin">16dp</dimen>
     <dimen name="rounded_button_size">37dp</dimen>
-
-    <dimen name="best_seller_card_corner_radius">10dp</dimen>
-    <dimen name="best_seller_card_elevation">1dp</dimen>
-    <dimen name="best_seller_card_height">180dp</dimen>
-    <dimen name="best_seller_card_margin_bottom">8dp</dimen>
-    <dimen name="best_seller_card_margin_top">8dp</dimen>
-    <dimen name="best_seller_card_margin_horizontal">8dp</dimen>
-
-    <dimen name="best_seller_btn_favorite_size">25dp</dimen>
-    <dimen name="best_seller_btn_favorite_margin_top">12dp</dimen>
-    <dimen name="best_seller_btn_favorite_margin_end">16dp</dimen>
-    <dimen name="best_seller_btn_favorite_elevation">4dp</dimen>
-
-    <dimen name="best_seller_text_discount_margin_end">8dp</dimen>
-
-    <dimen name="best_seller_text_title_margin_top">6dp</dimen>
-    <dimen name="best_seller_text_title_margin_bottom">16dp</dimen>
-
-    <dimen name="hot_sales_card_start_margin">18dp</dimen>
+    <dimen name="section_content_divider_margin">40dp</dimen>
+    <dimen name="filter_button_size">48dp</dimen>
+    <dimen name="current_category_margin_start">8dp</dimen>
+    <dimen name="search_item_icon_size">14dp</dimen>
 
 </resources>

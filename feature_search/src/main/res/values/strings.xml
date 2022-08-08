@@ -1,4 +1,9 @@
 <resources>
 
     <string name="navigate_back">Navigate back</string>
+    <string name="top_bar_title">Search</string>
+    <string name="category">Category:</string>
+    <string name="filters">Filters</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="product_image">Product image</string>
 </resources>

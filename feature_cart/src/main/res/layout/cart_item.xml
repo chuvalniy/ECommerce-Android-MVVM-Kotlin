@@ -23,6 +23,7 @@
             android:id="@+id/ivCartProduct"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/product_image"
             tools:src="@drawable/cart_example" />
     </androidx.cardview.widget.CardView>
 
@@ -31,12 +32,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
+        android:contentDescription="@string/add_to_cart"
         android:padding="@dimen/cart_product_btn_remove_from_cart_padding"
         android:src="@drawable/ic_basket"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cvProductNumber"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
 
     <View
         android:id="@+id/cvProductNumber"
@@ -66,11 +69,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/cart_product_btn_remove_item_top_margin"
         android:background="@null"
+        android:contentDescription="@string/remove_one_item"
         android:padding="@dimen/cart_product_btn_remove_item_padding"
         android:src="@drawable/ic_remove"
         app:layout_constraintEnd_toEndOf="@+id/cvProductNumber"
         app:layout_constraintStart_toStartOf="@+id/cvProductNumber"
-        app:layout_constraintTop_toTopOf="@+id/cvProductNumber" />
+        app:layout_constraintTop_toTopOf="@+id/cvProductNumber"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/tvProductCounter"
@@ -89,11 +94,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/cart_product_btn_add_item_bottom_margin"
         android:background="@null"
+        android:contentDescription="@string/add_one_item"
         android:padding="@dimen/cart_product_btn_add_item_padding"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="@+id/cvProductNumber"
         app:layout_constraintEnd_toEndOf="@+id/tvProductCounter"
-        app:layout_constraintStart_toStartOf="@+id/tvProductCounter" />
+        app:layout_constraintStart_toStartOf="@+id/tvProductCounter"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/tvPrice"

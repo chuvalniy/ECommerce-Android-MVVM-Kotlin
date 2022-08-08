@@ -1,6 +1,7 @@
 package com.example.ecommercialapplication
 
 import android.app.Application
+import com.example.data_user_session.di.userSessionDataModule
 import com.example.ecommercialapplication.di.coreModule
 import com.example.feature_main.di.mainDataModule
 import com.example.feature_main.di.mainPresentationModule
@@ -25,6 +26,7 @@ class ShopApp : Application() {
             androidContext(this@ShopApp)
             modules(
                 coreModule,
+                userSessionDataModule,
                 mainDataModule,
                 mainPresentationModule,
                 homeScreenDataModule,

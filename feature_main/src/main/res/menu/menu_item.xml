@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/nav_graph_home"
         android:icon="@drawable/ic_home"
-        android:title="Home"/>
+        android:title="@string/home" />
 
     <item
         android:id="@+id/nav_graph_cart"
         android:icon="@drawable/ic_cart"
-        android:title="Cart" />
+        android:title="@string/cart" />
 
     <item
         android:id="@+id/favorites"
         android:icon="@drawable/ic_bordered_favorite"
-        android:title="Favorites" />
+        android:title="@string/favorites" />
 
     <item
         android:id="@+id/nav_graph_user_profile"
         android:icon="@drawable/ic_account"
-        android:title="Account" />
+        android:title="@string/account" />
 </menu>

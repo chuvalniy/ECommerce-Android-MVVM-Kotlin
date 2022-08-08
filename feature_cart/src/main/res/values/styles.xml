@@ -7,13 +7,13 @@
         <item name="android:fontFamily">@font/mavenpro_medium</item>
     </style>
     
-    <style name="Header">
+    <style name="Header1">
         <item name="android:textSize">35sp</item>
         <item name="android:textColor">@color/dark_blue</item>
         <item name="android:fontFamily">@font/mavenpro_bold</item>
     </style>
 
-    <style name="TitleMedium">
+    <style name="Title2">
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/mavenpro_medium</item>
     </style>
@@ -25,11 +25,11 @@
     </style>
 
 
-    <style name="TitleMedium.White" parent="TitleMedium">
+    <style name="TitleMedium.White" parent="Title2">
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="TitleMedium.Orange" parent="TitleMedium">
+    <style name="TitleMedium.Orange" parent="Title2">
         <item name="android:textColor">@color/light_orange</item>
     </style>
 

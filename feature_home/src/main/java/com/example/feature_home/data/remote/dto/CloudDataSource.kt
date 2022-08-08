@@ -1,10 +1,12 @@
 package com.example.feature_home.data.remote.dto
 
-import com.google.gson.annotations.SerializedName
-
-data class CloudDataSource(
-    @SerializedName("best_seller")
-    val bestSellers: List<BestSellerDto>,
-    @SerializedName("home_store")
-    val hotSales: List<HotSalesDto>
+class CloudDataSource (
+    val id: String = "",
+    val title: String = "",
+    val description: String = "",
+    val imagePreview: String = "",
+    val images: List<String> = emptyList(),
+    val price: Int = 0,
+    val subcategories: List<String> = emptyList(),
+    val category: Int = 0,
 )

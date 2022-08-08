@@ -19,6 +19,7 @@
             <ImageView
                 android:id="@+id/ivHotSales"
                 android:layout_width="match_parent"
+                android:contentDescription="@string/hot_sales_product_photo"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop" />
 
@@ -46,6 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/hot_sales_title_margin_bottom"
+                    tools:ignore="TextContrastCheck"
                     tools:text="Iphone 12" />
 
                 <TextView
@@ -54,6 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/hot_sales_subtitle_margin_bottom"
+                    tools:ignore="TextContrastCheck"
                     tools:text="Súper. Mega. Rápido." />
 
                 <TextView
@@ -64,11 +67,13 @@
                     android:layout_marginBottom="@dimen/hot_sales_button_buy_bottom_margin"
                     android:background="@drawable/background_rounded_ripple_white"
                     android:clickable="true"
+                    android:contentDescription="@string/hot_sales_buy_now"
                     android:focusable="true"
                     android:gravity="center"
                     android:paddingHorizontal="@dimen/hot_sales_button_buy_horizontal_size"
                     android:paddingVertical="@dimen/hot_sales_button_buy_vertical_size"
-                    android:text="@string/hot_sales_buy_now" />
+                    android:text="@string/hot_sales_buy_now"
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </LinearLayout>
 

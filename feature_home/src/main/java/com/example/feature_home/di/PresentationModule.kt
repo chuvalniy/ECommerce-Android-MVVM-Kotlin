@@ -7,6 +7,8 @@ import org.koin.dsl.module
 
 val homeScreenPresentationModule = module {
     viewModel {
-        HomeScreenViewModel(get())
+        HomeScreenViewModel(
+            fetchDataUseCase = get(),get(), get()
+        )
     }
 }

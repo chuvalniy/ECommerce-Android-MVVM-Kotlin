@@ -16,5 +16,10 @@
     <string name="delivery_cost">Delivery</string>
 
     <string name="checkout">Checkout</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="product_image">Product image</string>
+    <string name="remove_one_item">Remove one item</string>
+    <string name="add_one_item">Add one item</string>
+    <string name="go_back">Go back</string>
 
 </resources>

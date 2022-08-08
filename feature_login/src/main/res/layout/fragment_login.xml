@@ -12,8 +12,8 @@
         style="@style/Subtitle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Sign in"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:text="@string/sign_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,90 +22,93 @@
         android:id="@+id/tvEmailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/helper_top_margin_to_top_bar"
         style="@style/Subtitle2"
-        android:text="E-mail"
+        android:text="@string/e_mail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle" />
 
     <EditText
         android:id="@+id/etEmail"
+        style="@style/HelperMedium1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:inputType="textEmailAddress"
-        android:hint="example@example.com"
-        style="@style/HelperTextStyleMedium1"
-        android:layout_marginEnd="16dp"
-        android:paddingStart="12dp"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/edit_text_top_margin"
+        android:layout_marginEnd="@dimen/layout_margin"
         android:background="@drawable/white_rounded_background"
-        android:minHeight="56dp"
+        android:hint="@string/email_hint"
+        android:inputType="textEmailAddress"
+        android:minHeight="@dimen/edit_text_min_height"
+        android:paddingStart="@dimen/edit_text_start_padding"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/tvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Password"
+        android:layout_marginTop="@dimen/helper_tv_top_margin"
+        android:text="@string/password"
         style="@style/Subtitle2"
         app:layout_constraintStart_toStartOf="@+id/tvEmailTitle"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <EditText
         android:id="@+id/etPassword"
+        style="@style/HelperMedium1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/edit_text_top_margin"
         android:background="@drawable/white_rounded_background"
-        android:minHeight="56dp"
-        style="@style/HelperTextStyleMedium1"
+        android:hint="@string/password_hint"
         android:inputType="textPassword"
-        android:hint="*************"
-        android:paddingStart="12dp"
+        android:minHeight="@dimen/edit_text_min_height"
+        android:paddingStart="@dimen/edit_text_start_padding"
         app:layout_constraintEnd_toEndOf="@+id/etEmail"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/etEmail"
-        app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btnForgotPassword"
         style="@style/TextButtonGray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forgot password?"
+        android:text="@string/forgot_password"
         app:layout_constraintEnd_toEndOf="@+id/etPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btnToLogin"
         style="@style/ReportBugButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Create new account"
+        android:layout_marginBottom="@dimen/btn_to_register_bottom_margin"
+        android:text="@string/create_new_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/btnLogin"
+        style="@style/HeadlineBold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Sign in"
-        style="@style/HeadlineBold"
+        android:layout_marginTop="@dimen/btn_sign_in_top_margin"
         android:background="@drawable/orange_rounded_background"
         android:gravity="center"
-        android:minHeight="56dp"
+        android:minHeight="@dimen/edit_text_min_height"
+        android:text="@string/sign_in"
         app:layout_constraintEnd_toEndOf="@+id/etPassword"
         app:layout_constraintStart_toStartOf="@+id/etPassword"
-        app:layout_constraintTop_toBottomOf="@+id/btnForgotPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/btnForgotPassword"
+        tools:ignore="TextContrastCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

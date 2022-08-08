@@ -11,8 +11,8 @@
         android:id="@+id/btnProfileGoBack"
         android:layout_width="@dimen/rounded_button_size"
         android:layout_height="@dimen/rounded_button_size"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_margin"
         android:background="@drawable/background_rounded_ripple_dark_blue"
         android:contentDescription="@string/navigate_back"
         android:src="@drawable/ic_arrow_back"
@@ -33,9 +33,9 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivUserAvatar"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="@dimen/user_avatar_size"
+        android:layout_height="@dimen/user_avatar_size"
+        android:layout_marginTop="@dimen/section_divider_margin"
         android:src="@color/dark_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,8 +46,7 @@
         style="@style/Subtitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Shreya Ghosal"
+        android:layout_marginTop="@dimen/user_name_top_margin"
         app:layout_constraintEnd_toEndOf="@+id/ivUserAvatar"
         app:layout_constraintStart_toStartOf="@+id/ivUserAvatar"
         app:layout_constraintTop_toBottomOf="@+id/ivUserAvatar"
@@ -55,22 +54,22 @@
 
     <TextView
         android:id="@+id/tvUserEmail"
-        style="@style/HelperTextStyle"
+        style="@style/Helper3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="shreya_ghosal@gmail.com"
+        android:layout_marginTop="@dimen/helper_text_top_margin"
         app:layout_constraintEnd_toEndOf="@+id/tvUserName"
         app:layout_constraintStart_toStartOf="@+id/tvUserName"
         app:layout_constraintTop_toBottomOf="@+id/tvUserName"
+        tools:ignore="TextContrastCheck"
         tools:text="shreya_ghosal@gmail.com" />
 
     <TextView
         android:id="@+id/tvMyOrders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/section_divider_margin"
         style="@style/Subtitle1"
         android:text="@string/user_profile_my_orders"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,11 +78,10 @@
 
     <TextView
         android:id="@+id/tvMyOrdersHelper"
-        style="@style/HelperTextStyle"
+        style="@style/Helper3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Already have 12 orders"
+        android:layout_marginTop="@dimen/helper_text_top_margin"
         app:layout_constraintStart_toStartOf="@+id/tvMyOrders"
         app:layout_constraintTop_toBottomOf="@+id/tvMyOrders"
         tools:ignore="TextContrastCheck"
@@ -93,7 +91,7 @@
         android:id="@+id/btnGoToMyOrders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/layout_margin"
         android:background="@drawable/ic_baseline_arrow_forward_ios_24"
         android:backgroundTint="@color/gray_helper"
         android:contentDescription="@string/my_orders"
@@ -105,10 +103,10 @@
     <View
         android:id="@+id/divider2"
         android:layout_width="match_parent"
-        android:layout_height="0.25dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="4dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginStart="@dimen/divider_margin_horizontal"
+        android:layout_marginTop="@dimen/divider_vertical_space"
+        android:layout_marginEnd="@dimen/divider_margin_horizontal"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,35 +114,34 @@
 
     <TextView
         android:id="@+id/tvSettings"
+        style="@style/Subtitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        style="@style/Subtitle1"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/divider_vertical_space"
         android:text="@string/settings"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvMyOrders"
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <TextView
         android:id="@+id/tvSettingsHelper"
-        style="@style/HelperTextStyle"
+        style="@style/Helper3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/helper_text_top_margin"
         android:text="@string/change_e_mail_log_out"
         app:layout_constraintStart_toStartOf="@+id/tvSettings"
-        app:layout_constraintTop_toBottomOf="@+id/tvSettings" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSettings"
+        tools:ignore="TextContrastCheck" />
 
     <ImageButton
         android:id="@+id/btnGoToSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/ic_baseline_arrow_forward_ios_24"
         android:backgroundTint="@color/gray_helper"
         android:contentDescription="@string/my_orders"
         app:layout_constraintBottom_toBottomOf="@+id/tvSettingsHelper"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnGoToMyOrders"
         app:layout_constraintTop_toTopOf="@+id/tvSettings"
         tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 

@@ -1,4 +1,17 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_in">Sign in</string>
+    <string name="e_mail">E-mail</string>
+    <string name="email_hint">example@example.com</string>
+    <string name="password">Password</string>
+    <string name="password_hint">*************</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="sign_up">Sign up</string>
+    <string name="first_name">First name</string>
+    <string name="first_name_helper">Kevin</string>
+    <string name="second_name">Second name</string>
+    <string name="second_name_helper">Uoltes</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="accept_terms">Accept terms</string>
+    <string name="already_have_an_account">Already have an account?</string>
 </resources>

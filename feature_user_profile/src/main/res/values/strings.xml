@@ -21,5 +21,12 @@
     <string name="change_password">Change password</string>
     <string name="change_email">Change email</string>
     <string name="change_username">Change username</string>
+    <string name="user_icon">User icon</string>
+    <string name="email_icon">Email icon</string>
+    <string name="password_icon">Password icon</string>
+    <string name="notification_icon">Notification icon</string>
+    <string name="feedback_icon">Feedback icon</string>
+    <string name="about_icon">About icon</string>
+    <string name="log_out_icon">Log out icon</string>
 
 </resources>

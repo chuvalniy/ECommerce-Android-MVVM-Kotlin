@@ -6,6 +6,7 @@ import com.example.core.helpers.ViewBindingKotlinModel
 import com.example.feature_home.R
 import com.example.feature_home.databinding.BestSellerItemBinding
 import com.example.feature_home.domain.model.BestSellerDomain
+import com.example.feature_home.domain.model.DomainDataSource
 
 data class BestSellerEpoxyModel(
     val bestSeller: BestSellerDomain,
@@ -17,20 +18,15 @@ data class BestSellerEpoxyModel(
     override fun BestSellerItemBinding.bind() {
         setupMargins()
 
-        tvDefaultPrice.text = root.context.getString(
-            R.string.best_selelr_price_without_discount,
-            bestSeller.priceWithoutDiscount
-        )
-        tvDiscountPrice.text = root.context.getString(
+        tvPrice.text = root.context.getString(
             R.string.best_seller_discount_price,
-            bestSeller.discountPrice
+            bestSeller.price
         )
         tvTitle.text = bestSeller.title
-        btnAddFavorites.isChecked = bestSeller.isFavorites
 
         cvBestSeller.setOnClickListener { onProductClick() }
 
-        glide.load(bestSeller.picture).into(ivBestSeller)
+        glide.load(bestSeller.image).into(ivBestSeller)
     }
 
     private fun BestSellerItemBinding.setupMargins() {

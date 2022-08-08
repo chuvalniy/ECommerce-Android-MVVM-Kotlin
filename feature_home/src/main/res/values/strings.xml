@@ -32,5 +32,13 @@
 <!--    Search-->
     <string name="search_view_hint">Search</string>
     <string name="search">Search</string>
+    <string name="best_seller_product_image">Best seller product image</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="category_icon">Category icon</string>
+    <string name="hot_sales_product_photo">Hot sales product photo</string>
+    <string name="qr_code">QR code</string>
+    <string name="search_icon">Search icon</string>
+    <string name="location_icon">Location icon</string>
+    <string name="select_location">Select location</string>
 
 </resources>
