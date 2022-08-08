@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cvBestSeller"
+        android:id="@+id/cvItem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:elevation="@dimen/search_item_card_elevation"
@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/ivBestSeller"
+                    android:id="@+id/ivItem"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/search_item_card_height"
                     android:contentDescription="@string/product_image" />
@@ -48,11 +48,11 @@
             </FrameLayout>
 
             <TextView
-                android:id="@+id/tvDiscountPrice"
+                android:id="@+id/tvPrice"
                 style="@style/BestSellerDiscountPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/search_item_card_start_margin"
+                android:layout_marginStart="@dimen/text_view_start_margin"
                 android:layout_marginEnd="@dimen/search_item_text_discount_margin_end"
                 tools:text="$1,047" />
 
@@ -61,7 +61,7 @@
                 style="@style/BestSellerTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/search_item_card_start_margin"
+                android:layout_marginStart="@dimen/text_view_start_margin"
                 android:layout_marginTop="@dimen/search_item_text_title_margin_top"
                 android:layout_marginBottom="@dimen/search_item_text_title_margin_bottom"
                 tools:text="Samsung Galaxy s20 Ultra" />

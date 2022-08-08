@@ -14,6 +14,9 @@ import com.example.feature_details_screen.di.detailsPresentationModule
 import com.example.feature_home.di.homeScreenDataModule
 import com.example.feature_home.di.homeScreenDomainModule
 import com.example.feature_home.di.homeScreenPresentationModule
+import com.example.feature_search.di.searchDataModule
+import com.example.feature_search.di.searchDomainModule
+import com.example.feature_search.di.searchPresentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -37,7 +40,10 @@ class ShopApp : Application() {
                 detailsPresentationModule,
                 cartDataModule,
                 cartDomainModule,
-                cartPresentationModule
+                cartPresentationModule,
+                searchDataModule,
+                searchDomainModule,
+                searchPresentationModule
             )
         }
     }

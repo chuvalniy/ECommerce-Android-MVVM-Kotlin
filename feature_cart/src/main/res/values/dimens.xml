@@ -6,7 +6,7 @@
     <dimen name="top_bar_horizontal_margin">36dp</dimen>
     <dimen name="top_bar_top_margin">24dp</dimen>
     <dimen name="top_bar_button_size">37dp</dimen>
-    <dimen name="top_bar_add_address_margin_end">8dp</dimen>
+    <dimen name="top_bar_margin_end">8dp</dimen>
 
 <!--    Header -->
     <dimen name="header_my_cart_margin_horizontal">42dp</dimen>

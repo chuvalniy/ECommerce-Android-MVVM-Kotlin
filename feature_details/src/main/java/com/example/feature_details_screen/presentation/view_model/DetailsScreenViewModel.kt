@@ -57,15 +57,19 @@ class DetailsScreenViewModel(
     }
 
     fun addToCartButtonClicked() = viewModelScope.launch {
-        _uiChannel.send(UiEffect.NavigateToCartScreen)
+        _uiChannel.send(UiEffect.ShowSnackbar("in development"))
     }
 
     fun backButtonClicked() = viewModelScope.launch {
         _uiChannel.send(UiEffect.NavigateBack)
     }
 
+    fun goToCartButtonClicked() = viewModelScope.launch {
+        _uiChannel.send(UiEffect.NavigateToCartScreen)
+    }
+
     private suspend fun showSnackbar(message: String) {
-           _uiChannel.send(UiEffect.ShowSnackbar(message))
+        _uiChannel.send(UiEffect.ShowSnackbar(message))
     }
 
     sealed class UiEffect {

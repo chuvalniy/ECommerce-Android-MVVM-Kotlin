@@ -26,7 +26,6 @@ class HomeScreenRepositoryImpl(
         val cache = dao.fetchCache(selectedCategory)
 
         if (cache.isNotEmpty()) {
-
             emit(Resource.Success(cache.map { it.toDomainDataSource() }))
             emit(Resource.Loading(isLoading = false))
         }

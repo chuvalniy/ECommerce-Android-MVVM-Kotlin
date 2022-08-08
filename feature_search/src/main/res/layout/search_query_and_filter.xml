@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/section_divider"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/section_content_divider_margin"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:background="@drawable/rounded_white_background"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toStartOf="@+id/btnFilter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryBackground="@android:color/transparent"
+        app:queryHint="Enter product name..."
+        app:searchIcon="@drawable/ic_search"
+        app:theme="@style/AppSearchView" />
+
+    <ImageButton
+        android:id="@+id/btnFilter"
+        android:layout_width="@dimen/filter_button_size"
+        android:layout_height="@dimen/filter_button_size"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:background="@drawable/background_rounded_ripple_orange"
+        android:contentDescription="@string/filters"
+        android:src="@drawable/ic_sort"
+        app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchView"
+        app:tint="@color/white"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvCategory"
+        style="@style/HelperTextMedium2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/helper_top_margin"
+        android:text="@string/category"
+        app:layout_constraintStart_toStartOf="@+id/searchView"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvTotalItems"
+        style="@style/Subtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
+        app:layout_constraintEnd_toEndOf="@+id/btnFilter"
+        app:layout_constraintTop_toTopOf="@+id/tvCategory"
+        tools:text="40 items" />
+
+    <TextView
+        android:id="@+id/tvSelectedCategory"
+        style="@style/Subtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/current_category_margin_start"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
+        app:layout_constraintStart_toEndOf="@+id/tvCategory"
+        app:layout_constraintTop_toTopOf="@+id/tvCategory"
+        tools:text="Phones" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

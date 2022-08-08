@@ -40,9 +40,8 @@ class HomeScreenFragment : BaseFragment<FragmentHomeBinding>() {
             onProductClick = { id -> viewModel.productClicked(id) },
             onCategoryClick = { viewModel.categorySelected(it) },
             onSearchClick = { viewModel.searchClicked() }
-        )
-        with(binding.epoxyRecyclerView) {
-            setController(epoxyController!!)
+        ).also {
+            binding.epoxyRecyclerView.setController(it)
         }
     }
 

@@ -26,6 +26,7 @@ class DetailsScreenEpoxyController(
     private val glide: RequestManager,
     private val onBackButtonClick: () -> Unit,
     private val onAddToCartButtonClick: () -> Unit,
+    private val onGoToCartButtonClick: () -> Unit
 ) : TypedEpoxyController<DetailsScreenState>() {
 
     override fun buildModels(state: DetailsScreenState) {
@@ -33,6 +34,7 @@ class DetailsScreenEpoxyController(
         detailsTopBar {
             id("details_top_bar")
             onGoBackClick(this@DetailsScreenEpoxyController.onBackButtonClick)
+            onGoToCartClick(this@DetailsScreenEpoxyController.onGoToCartButtonClick)
         }
 
         if (state.isLoading) {

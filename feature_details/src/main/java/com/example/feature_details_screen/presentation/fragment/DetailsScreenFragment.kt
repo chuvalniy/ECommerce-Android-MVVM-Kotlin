@@ -46,6 +46,7 @@ class DetailsScreenFragment : BaseFragment<FragmentDetailsScreenBinding>() {
             glide,
             onAddToCartButtonClick = { viewModel.addToCartButtonClicked() },
             onBackButtonClick = { viewModel.backButtonClicked() },
+            onGoToCartButtonClick = { viewModel.goToCartButtonClicked() }
         ).also {
             binding.epoxyAdapter.setController(it)
         }

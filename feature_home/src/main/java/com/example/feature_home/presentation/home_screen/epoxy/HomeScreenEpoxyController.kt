@@ -14,10 +14,7 @@ class HomeScreenEpoxyController(
     private val onSearchClick: () -> Unit
 ) : TypedEpoxyController<HomeScreenState>() {
 
-    override fun buildModels(
-        state: HomeScreenState?
-    ) {
-
+    override fun buildModels(state: HomeScreenState?) {
         // Top bar
         TopBarEpoxyModel()
             .id("top_bar")
@@ -55,22 +52,25 @@ class HomeScreenEpoxyController(
             .spanSizeOverride { _, _, _ -> 2 }
             .addTo(this)
 
-        if (state?.isLoading == true) {
-            processLoadingState()
+        // Hot Sales content
+        if (state?.isLoading == true || state?.hotSales?.isEmpty() == true) {
+            val hotSalesShimmer = ShimmerHotSalesEpoxyModel()
+                .id("shimmer_hot_sales")
+
+            CarouselModel_()
+                .id("shimmer_hot_sales_carousel")
+                .models(listOf(hotSalesShimmer))
+                .numViewsToShowOnScreen(1F)
+                .addTo(this)
         } else if (state?.isLoading == false) {
-            processSuccessState(state)
+            val models = state.hotSales.map { item ->
+                HotSalesEpoxyModel(item, glide).id(item.id)
+            }
+            CarouselModel_()
+                .id("hot_sales")
+                .models(models)
+                .addTo(this)
         }
-    }
-
-    private fun processSuccessState(state: HomeScreenState) {
-        val models = state.hotSales.map { item ->
-            HotSalesEpoxyModel(item, glide).id(item.id)
-        }
-        CarouselModel_()
-            .id("hot_sales")
-            .models(models)
-            .addTo(this)
-
 
         // Best sellers header
         HeaderEpoxyModel(header = HeaderType.BEST_SELLERS)
@@ -78,33 +78,20 @@ class HomeScreenEpoxyController(
             .spanSizeOverride { _, _, _ -> 2 }
             .addTo(this)
 
-        // Best sellers content
-        state.bestSellers.forEachIndexed { index, bestSeller ->
-            BestSellerEpoxyModel(bestSeller, index, onProductClick, glide)
-                .id("best_sellers_${bestSeller.id}")
-                .addTo(this)
-        }
-    }
-
-    private fun processLoadingState() {
-        val hotSalesShimmerFirst = ShimmerHotSalesEpoxyModel()
-            .id("shimmer_hot_sales")
-
-        CarouselModel_()
-            .id("shimmer_hot_sales_carousel")
-            .models(listOf(hotSalesShimmerFirst))
-            .numViewsToShowOnScreen(1F)
-            .addTo(this)
-
-        HeaderEpoxyModel(header = HeaderType.BEST_SELLERS)
-            .id(HeaderType.BEST_SELLERS.name)
-            .spanSizeOverride { _, _, _ -> 2 }
-            .addTo(this)
-
-        repeat(4) {
-            ShimmerBestSellerEpoxyModel(it)
-                .id("shimmer_best_seller_$it")
-                .addTo(this)
+        // Best seller content
+        if (state?.isLoading == true || state?.bestSellers?.isEmpty() == true) {
+            repeat(4) {
+                ShimmerBestSellerEpoxyModel(it)
+                    .id("shimmer_best_seller_$it")
+                    .addTo(this)
+            }
+        } else if (state?.isLoading == false) {
+            // Best sellers content
+            state.bestSellers.forEachIndexed { index, bestSeller ->
+                BestSellerEpoxyModel(bestSeller, index, onProductClick, glide)
+                    .id("best_sellers_${bestSeller.id}")
+                    .addTo(this)
+            }
         }
     }
 }

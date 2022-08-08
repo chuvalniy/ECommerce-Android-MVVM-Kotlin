@@ -1,98 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:background="@color/light_gray"
-    tools:context=".presentation.SearchFragment">
+    android:orientation="vertical"
+    tools:context=".presentation.fragment.SearchFragment">
 
-    <ImageButton
-        android:id="@+id/btnProfileGoBack"
-        android:layout_width="@dimen/rounded_button_size"
-        android:layout_height="@dimen/rounded_button_size"
-        android:layout_marginStart="@dimen/layout_margin"
-        android:layout_marginTop="@dimen/layout_margin"
-        android:background="@drawable/background_rounded_ripple_dark_blue"
-        android:contentDescription="@string/navigate_back"
-        android:src="@drawable/ic_arrow_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+    <com.airbnb.epoxy.EpoxyRecyclerView
+        android:id="@+id/epoxyRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"/>
 
-    <TextView
-        android:id="@+id/tvSearch"
-        style="@style/Subtitle1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/top_bar_title"
-        app:layout_constraintBottom_toBottomOf="@+id/btnProfileGoBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnProfileGoBack" />
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/layout_margin"
-        android:layout_marginTop="@dimen/section_content_divider_margin"
-        android:layout_marginEnd="@dimen/layout_margin"
-        android:background="@drawable/rounded_white_background"
-        app:iconifiedByDefault="false"
-        app:layout_constraintEnd_toStartOf="@+id/btnFilter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnProfileGoBack"
-        app:queryBackground="@android:color/transparent"
-        app:queryHint="Enter product name..."
-        app:searchIcon="@drawable/ic_search"
-        app:theme="@style/AppSearchView" />
-
-    <ImageButton
-        android:id="@+id/btnFilter"
-        android:layout_width="@dimen/filter_button_size"
-        android:layout_height="@dimen/filter_button_size"
-        android:layout_marginEnd="@dimen/layout_margin"
-        android:background="@drawable/background_rounded_ripple_orange"
-        android:contentDescription="@string/filters"
-        android:src="@drawable/ic_sort"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/searchView"
-        app:tint="@color/white"
-        tools:ignore="ImageContrastCheck" />
-
-    <TextView
-        android:id="@+id/tvCategory"
-        style="@style/HelperTextMedium2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/layout_margin"
-        android:text="@string/category"
-        app:layout_constraintStart_toStartOf="@+id/searchView"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
-        tools:ignore="TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/tvTotalItems"
-        style="@style/Subtitle2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
-        app:layout_constraintEnd_toEndOf="@+id/btnFilter"
-        app:layout_constraintTop_toTopOf="@+id/tvCategory"
-        tools:text="40 items" />
-
-    <TextView
-        android:id="@+id/tvSelectedCategory"
-        style="@style/Subtitle2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/current_category_margin_start"
-        app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
-        app:layout_constraintStart_toEndOf="@+id/tvCategory"
-        app:layout_constraintTop_toTopOf="@+id/tvCategory"
-        tools:text="Phones" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

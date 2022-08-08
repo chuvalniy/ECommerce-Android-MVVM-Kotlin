@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageButton
+        android:id="@+id/btnSearchGoBack"
+        android:layout_width="@dimen/rounded_button_size"
+        android:layout_height="@dimen/rounded_button_size"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:background="@drawable/background_rounded_ripple_dark_blue"
+        android:contentDescription="@string/navigate_back"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tvSearch"
+        style="@style/Subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/top_bar_title"
+        android:layout_marginEnd="@dimen/top_bar_margin_end"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSearchGoBack"
+        app:layout_constraintEnd_toStartOf="@+id/btnAccount"
+        app:layout_constraintTop_toTopOf="@+id/btnSearchGoBack" />
+
+    <ImageButton
+        android:id="@+id/btnAccount"
+        android:layout_width="@dimen/rounded_button_size"
+        android:contentDescription="@string/go_to_account"
+        android:layout_height="@dimen/rounded_button_size"
+        android:background="@drawable/background_ripple_orange"
+        android:src="@drawable/ic_account"
+        android:layout_marginEnd="@dimen/layout_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSearchGoBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnSearchGoBack" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

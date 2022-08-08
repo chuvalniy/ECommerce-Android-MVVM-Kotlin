@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -36,10 +37,44 @@ dependencies {
 
     implementation project(path: ':core')
 
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:30.3.1')
+    // Firebase analytics
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    // Firebase Realtime Database
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.2.1'
+    implementation 'com.google.firebase:firebase-database:20.0.5'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    // Koin
+    implementation "io.insert-koin:koin-android:3.2.0-beta-1"
+
+    // Coroutines
+    def coroutine_version = "1.6.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutine_version"
+
+    // Room
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
     // Navigation Component
     def nav_version = "2.5.1"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+
+    // Epoxy
+    def epoxy_version = "4.6.3"
+    implementation "com.airbnb.android:epoxy:$epoxy_version"
+    kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
+
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'

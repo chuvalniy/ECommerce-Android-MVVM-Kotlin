@@ -23,7 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:layout_marginEnd="@dimen/top_bar_add_address_margin_end"
+        android:layout_marginEnd="@dimen/top_bar_margin_end"
         android:layout_weight="1"
         android:gravity="end|center"
         android:text="@string/add_address" />

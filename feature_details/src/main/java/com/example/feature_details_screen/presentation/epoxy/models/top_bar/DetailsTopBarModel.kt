@@ -13,8 +13,12 @@ abstract class DetailsTopBarModel : EpoxyModelWithHolder<DetailsTopBarModel.TopB
     @EpoxyAttribute(EpoxyAttribute.Option.DoNotHash)
     lateinit var onGoBackClick: () -> Unit
 
+    @EpoxyAttribute(EpoxyAttribute.Option.DoNotHash)
+    lateinit var onGoToCartClick: () -> Unit
+
     override fun bind(holder: TopBarHolder) {
         holder.buttonGoBack.setOnClickListener { onGoBackClick() }
+        holder.buttonGoToCart.setOnClickListener { onGoToCartClick() }
     }
 
     override fun getDefaultLayout(): Int {
@@ -23,6 +27,7 @@ abstract class DetailsTopBarModel : EpoxyModelWithHolder<DetailsTopBarModel.TopB
 
     class TopBarHolder : KotlinEpoxyHolder() {
         val buttonGoBack by bind<ImageButton>(R.id.btnGoBack)
+        val buttonGoToCart by bind<ImageButton>(R.id.btnCart)
     }
 }
 

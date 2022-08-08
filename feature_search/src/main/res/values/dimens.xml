@@ -15,7 +15,10 @@
     <dimen name="search_item_text_title_margin_top">6dp</dimen>
     <dimen name="search_item_text_title_margin_bottom">16dp</dimen>
 
-    <dimen name="search_item_card_start_margin">18dp</dimen>
+    <dimen name="text_view_start_margin">18dp</dimen>
+
+    <dimen name="card_view_margin">16dp</dimen>
+    <dimen name="card_view_margin_medium">8dp</dimen>
 
 <!--    Core -->
     <dimen name="layout_margin">16dp</dimen>
@@ -24,5 +27,8 @@
     <dimen name="filter_button_size">48dp</dimen>
     <dimen name="current_category_margin_start">8dp</dimen>
     <dimen name="search_item_icon_size">14dp</dimen>
+    <dimen name="top_bar_margin_end">8dp</dimen>
+    <dimen name="helper_top_margin">8dp</dimen>
+    <dimen name="section_divider">32dp</dimen>
 
 </resources>
