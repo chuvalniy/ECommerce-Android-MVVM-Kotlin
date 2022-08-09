@@ -16,14 +16,14 @@ class SearchViewModel(
     val uiState get() = _uiState.asStateFlow()
 
     private val _uiChannel = Channel<UiEffect>()
-    val _uiEffect get() = _uiChannel.receiveAsFlow()
+    val uiEffect get() = _uiChannel.receiveAsFlow()
 
     init {
         searchData()
     }
 
-    private fun searchData() = viewModelScope.launch {
-        searchDataUseCase().onEach { result ->
+    private fun searchData(query: String = _uiState.value.query) = viewModelScope.launch {
+        searchDataUseCase(query).onEach { result ->
             when (result) {
                 is Resource.Success -> {
                     _uiState.value = _uiState.value.copy(
@@ -46,9 +46,28 @@ class SearchViewModel(
         _uiChannel.send(UiEffect.ShowSnackbar(message))
     }
 
+    fun queryTextChanged(query: String) {
+        _uiState.value = _uiState.value.copy(query = query)
+
+        viewModelScope.launch { searchData() }
+    }
+
+    fun productClicked(id: String) = viewModelScope.launch {
+        _uiChannel.send(UiEffect.NavigateToDetail(id))
+    }
+
+    fun backButtonClicked() = viewModelScope.launch {
+        _uiChannel.send(UiEffect.NavigateBack)
+    }
+
+    fun filterButtonClicked() = viewModelScope.launch {
+        _uiChannel.send(UiEffect.NavigateToFilters)
+    }
+
     sealed class UiEffect {
         data class ShowSnackbar(val message: String) : UiEffect()
-        object NavigateToUserProfile : UiEffect()
+        data class NavigateToDetail(val id: String) : UiEffect()
+        object NavigateToFilters : UiEffect()
         object NavigateBack : UiEffect()
     }
 }

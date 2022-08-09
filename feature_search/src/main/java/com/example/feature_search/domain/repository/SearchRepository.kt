@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface SearchRepository {
 
-    fun searchData(): Flow<Resource<List<DomainDataSource>>>
+    fun searchData(query: String): Flow<Resource<List<DomainDataSource>>>
 }

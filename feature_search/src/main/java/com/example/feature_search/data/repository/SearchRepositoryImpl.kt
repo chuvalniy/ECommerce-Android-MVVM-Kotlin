@@ -18,10 +18,10 @@ class SearchRepositoryImpl(
 
     private val dao = db.dao
 
-    override fun searchData(): Flow<Resource<List<DomainDataSource>>> = flow {
+    override fun searchData(query: String): Flow<Resource<List<DomainDataSource>>> = flow {
         emit(Resource.Loading(isLoading = true))
 
-        val cache = dao.fetchCache()
+        val cache = dao.fetchCache(query)
 
         if (cache.isNotEmpty()) {
             emit(Resource.Success(cache.map { it.toDomainDataSource() }))
@@ -41,7 +41,7 @@ class SearchRepositoryImpl(
                 dao.insertCache(data.map { it.toCacheDataSource() })
             }
 
-            emit(Resource.Success(dao.fetchCache().map { it.toDomainDataSource() }))
+            emit(Resource.Success(dao.fetchCache(query).map { it.toDomainDataSource() }))
             emit(Resource.Loading(isLoading = false))
         }
     }

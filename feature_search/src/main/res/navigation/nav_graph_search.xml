@@ -14,6 +14,14 @@
         <deepLink
             android:id="@+id/deepLinkSearch"
             app:uri="myApp://featureSearch" />
+        <action
+            android:id="@+id/action_search_to_filterBottomDialogFragment"
+            app:destination="@id/filter_dialog" />
     </fragment>
+    <dialog
+        android:id="@+id/filter_dialog"
+        android:name="com.example.feature_search.presentation.fragment.FilterBottomDialogFragment"
+        android:label="fragment_filter_bottom_dialog"
+        tools:layout="@layout/fragment_filter_bottom_dialog" />
 
 </navigation>

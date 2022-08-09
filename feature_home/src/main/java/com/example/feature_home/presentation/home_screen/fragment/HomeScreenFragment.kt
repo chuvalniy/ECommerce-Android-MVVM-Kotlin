@@ -52,7 +52,6 @@ class HomeScreenFragment : BaseFragment<FragmentHomeBinding>() {
                     Snackbar.make(requireView(), effect.message, Snackbar.LENGTH_LONG).show()
                 }
                 is HomeScreenViewModel.UiEffect.NavigateToDetailsScreen -> {
-                    Log.d("TAGTAG", "effect ${effect.id}")
                     findNavController().navigate(Uri.parse("myApp://featureDetails/${effect.id}"))
                 }
                 is HomeScreenViewModel.UiEffect.NavigateToSearchScreen -> {

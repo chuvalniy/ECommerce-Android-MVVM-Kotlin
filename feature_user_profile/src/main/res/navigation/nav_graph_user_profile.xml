@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_user_profile_to_orders"
             app:destination="@id/orders" />
+        <deepLink
+            android:id="@+id/deepLinkUserProfile"
+            app:uri="myApp://featureUserProfile" />
     </fragment>
     <fragment
         android:id="@+id/settings"

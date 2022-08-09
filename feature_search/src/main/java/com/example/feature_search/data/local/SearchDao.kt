@@ -9,8 +9,8 @@ import com.example.feature_search.data.local.entity.CacheDataSource
 @Dao
 interface SearchDao {
 
-    @Query("SELECT * FROM ${SearchDatabase.DATABASE_NAME}")
-    suspend fun fetchCache(): List<CacheDataSource>
+    @Query("SELECT * FROM ${SearchDatabase.DATABASE_NAME} WHERE title LIKE '%' || :query || '%'")
+    suspend fun fetchCache(query: String): List<CacheDataSource>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCache(cache: List<CacheDataSource>)

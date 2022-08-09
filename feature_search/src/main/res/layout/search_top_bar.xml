@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageButton
-        android:id="@+id/btnSearchGoBack"
+        android:id="@+id/btnGoBack"
         android:layout_width="@dimen/rounded_button_size"
         android:layout_height="@dimen/rounded_button_size"
         android:layout_marginStart="@dimen/layout_margin"
@@ -23,22 +23,24 @@
         style="@style/Subtitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/top_bar_title"
-        android:layout_marginEnd="@dimen/top_bar_margin_end"
-        app:layout_constraintBottom_toBottomOf="@+id/btnSearchGoBack"
-        app:layout_constraintEnd_toStartOf="@+id/btnAccount"
-        app:layout_constraintTop_toTopOf="@+id/btnSearchGoBack" />
+        android:text="@string/search"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGoBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnGoBack" />
 
     <ImageButton
-        android:id="@+id/btnAccount"
+        android:id="@+id/btnFilter"
         android:layout_width="@dimen/rounded_button_size"
-        android:contentDescription="@string/go_to_account"
         android:layout_height="@dimen/rounded_button_size"
-        android:background="@drawable/background_ripple_orange"
-        android:src="@drawable/ic_account"
         android:layout_marginEnd="@dimen/layout_margin"
-        app:layout_constraintBottom_toBottomOf="@+id/btnSearchGoBack"
+        android:background="@drawable/background_ripple_orange"
+        android:contentDescription="@string/filters"
+        android:src="@drawable/ic_sort"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGoBack"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnSearchGoBack" />
+        app:layout_constraintTop_toTopOf="@+id/btnGoBack"
+        app:tint="@color/white"
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

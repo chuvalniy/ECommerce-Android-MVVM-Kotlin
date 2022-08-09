@@ -31,6 +31,7 @@
         android:id="@+id/tvCategory"
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/category_text_view_margin_top"
+        android:fontFamily="@font/mavenpro_medium"
         android:textColor="@color/dark_blue"
         tools:text="Example"
         android:textSize="@dimen/category_title_text_size"

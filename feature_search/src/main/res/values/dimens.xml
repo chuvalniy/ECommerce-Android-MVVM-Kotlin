@@ -30,5 +30,6 @@
     <dimen name="top_bar_margin_end">8dp</dimen>
     <dimen name="helper_top_margin">8dp</dimen>
     <dimen name="section_divider">32dp</dimen>
+    <dimen name="bottom_dialog_horizontal_margin">36dp</dimen>
 
 </resources>

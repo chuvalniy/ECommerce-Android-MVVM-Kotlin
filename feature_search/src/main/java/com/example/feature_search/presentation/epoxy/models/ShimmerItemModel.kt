@@ -1,32 +1,27 @@
 package com.example.feature_search.presentation.epoxy.models
 
 import android.view.ViewGroup
-import com.bumptech.glide.RequestManager
 import com.example.core.helpers.ViewBindingKotlinModel
 import com.example.feature_search.R
-import com.example.feature_search.databinding.SearchItemBinding
-import com.example.feature_search.domain.model.DomainDataSource
+import com.example.feature_search.databinding.ShimmerSearchItemBinding
 
-class SearchItemModel(
-    private val item: DomainDataSource,
-    private val glide: RequestManager,
-    private val index: Int,
-    private val onProductClick: (String) -> Unit
-) : ViewBindingKotlinModel<SearchItemBinding>(R.layout.search_item) {
+class ShimmerItemModel(
+    private val index: Int
+) : ViewBindingKotlinModel<ShimmerSearchItemBinding>(R.layout.shimmer_search_item) {
 
-    override fun SearchItemBinding.bind() {
+    override fun ShimmerSearchItemBinding.bind() {
         setupMargins()
 
-        tvTitle.text = item.title
-        tvPrice.text = item.price
-        glide.load(item.image).into(ivItem)
-
-        root.setOnClickListener { onProductClick(item.id) }
+        shimmerLayoutSearchItem.startShimmer()
     }
 
-    private fun SearchItemBinding.setupMargins() {
+    override fun ShimmerSearchItemBinding.unbind() {
+        shimmerLayoutSearchItem.stopShimmer()
+    }
+
+    private fun ShimmerSearchItemBinding.setupMargins() {
         val params: ViewGroup.MarginLayoutParams =
-            cvItem.layoutParams as ViewGroup.MarginLayoutParams
+            root.layoutParams as ViewGroup.MarginLayoutParams
         when (index % 2) {
             0 -> params.setMargins(
                 root.context.resources.getDimensionPixelSize(R.dimen.card_view_margin),
@@ -41,6 +36,6 @@ class SearchItemModel(
                 root.context.resources.getDimensionPixelSize(R.dimen.card_view_margin_medium)
             )
         }
-        cvItem.layoutParams = params
+        root.layoutParams = params
     }
 }
