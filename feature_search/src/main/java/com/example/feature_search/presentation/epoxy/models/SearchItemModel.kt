@@ -18,7 +18,7 @@ class SearchItemModel(
         setupMargins()
 
         tvTitle.text = item.title
-        tvPrice.text = item.price
+        tvPrice.text = root.resources.getString(R.string.formatted_product_price, item.price)
         glide.load(item.image).into(ivItem)
 
         root.setOnClickListener { onProductClick(item.id) }

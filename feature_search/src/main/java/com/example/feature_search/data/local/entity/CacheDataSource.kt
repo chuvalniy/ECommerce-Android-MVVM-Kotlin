@@ -13,4 +13,5 @@ data class CacheDataSource(
     val price: Int,
     val subcategories: String,
     val category: Int,
+    val brand: String
 )

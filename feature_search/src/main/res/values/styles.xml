@@ -82,14 +82,6 @@
         <item name="android:textSize">11sp</item>
     </style>
 
-    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
-        <item name="chipBackgroundColor">@color/chip_background_color</item>
-        <item name="android:textColor">@color/chip_text_color</item>
-        <item name="checkedIconTint">@color/white</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
-    </style>
-
-
     <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/dark_blue</item>

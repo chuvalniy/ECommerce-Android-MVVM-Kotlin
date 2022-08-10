@@ -8,11 +8,20 @@
     <string name="product_image">Product image</string>
     <string name="go_to_account">Go to account</string>
     <string name="filters">Filters</string>
-    <string name="search">Search</string>
+    <string name="search">Search Product</string>
+    <string name="search_product">Search Product</string>
+
+    <string name="formatted_product_price">$%1$s.00</string>
 
     <string-array name="rangeSliderValues">
         <item>0</item>
         <item>6000</item>
+    </string-array>
+
+    <string-array name="productCategoryValues">
+        <item>All products</item>
+        <item>Hot sales</item>
+        <item>Best seller</item>
     </string-array>
 
 </resources>

@@ -19,7 +19,6 @@
     <string name="hot_sales_new">New</string>
 
 <!--    Best seller -->
-    <string name="best_selelr_price_without_discount">$%1$s.00</string>
     <string name="best_seller_discount_price">$%1$s.00</string>
 
 <!--    Filter dialog -->

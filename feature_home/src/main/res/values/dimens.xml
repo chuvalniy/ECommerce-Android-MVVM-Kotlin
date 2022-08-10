@@ -21,6 +21,7 @@
 
     <!--    Hot sales -->
     <dimen name="hot_sales_card_height">195dp</dimen>
+    <dimen name="hot_sales_item_padding">8dp</dimen>
 
     <dimen name="hot_sales_card_start_margin">18dp</dimen>
     <dimen name="hot_sales_card_corner_radius">10dp</dimen>

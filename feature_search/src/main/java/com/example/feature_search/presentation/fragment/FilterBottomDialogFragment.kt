@@ -1,6 +1,7 @@
 package com.example.feature_search.presentation.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.feature_search.R
 import com.example.feature_search.databinding.FragmentFilterBottomDialogBinding
+import com.example.feature_search.presentation.view_model.CategoryType
 import com.example.feature_search.presentation.view_model.SearchViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.slider.RangeSlider
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class FilterBottomDialogFragment : BottomSheetDialogFragment() {
@@ -36,7 +39,7 @@ class FilterBottomDialogFragment : BottomSheetDialogFragment() {
 
         observeUiEffect()
 
-        val array = resources.getStringArray(R.array.rangeSliderValues)
+        val array = resources.getStringArray(R.array.productCategoryValues)
 
         val categorySpinnerAdapter = ArrayAdapter(
             requireContext(),
@@ -50,21 +53,46 @@ class FilterBottomDialogFragment : BottomSheetDialogFragment() {
             array
         )
 
-        val priceSpinnerAdapter = ArrayAdapter(
-            requireContext(),
-            R.layout.dropdown_item,
-            array
-        )
-
         binding.spinnerCategory.adapter = categorySpinnerAdapter
         binding.spinnerBrand.adapter = brandSpinnerAdapter
-        binding.spinnerPrice.adapter = priceSpinnerAdapter
+
+        binding.spinnerCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                viewModel.categorySelected(CategoryType.values()[position])
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+        }
+
+
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.uiState.collect { state ->
+                binding.sliderPrice.values = listOf(state.priceLeft.toFloat(), state.priceRight.toFloat())
+            }
+        }
+
+        binding.sliderPrice.addOnSliderTouchListener(object: RangeSlider.OnSliderTouchListener{
+            override fun onStartTrackingTouch(slider: RangeSlider) {}
+
+            override fun onStopTrackingTouch(slider: RangeSlider) {
+                val values = slider.values
+                viewModel.priceSelected(values[0], values[1])
+            }
+        })
 
         processButtonClicks()
     }
 
+    private fun setupAdapter() {
+
+
+    }
+
     private fun processButtonClicks() {
-        binding.btnGoBack.setOnClickListener { viewModel.backButtonClicked() }
+        binding.btnDone.setOnClickListener { viewModel.applyFiltersButtonClicked() }
+        binding.btnResetFilters.setOnClickListener { viewModel.resetFiltersButtonClicked() }
     }
 
     private fun observeUiEffect() {

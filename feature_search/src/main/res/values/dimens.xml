@@ -31,5 +31,6 @@
     <dimen name="helper_top_margin">8dp</dimen>
     <dimen name="section_divider">32dp</dimen>
     <dimen name="bottom_dialog_horizontal_margin">36dp</dimen>
+    <dimen name="chip_width">125dp</dimen>
 
 </resources>

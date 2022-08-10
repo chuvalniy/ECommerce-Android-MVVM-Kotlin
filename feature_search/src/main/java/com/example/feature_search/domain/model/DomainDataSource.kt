@@ -5,4 +5,5 @@ data class DomainDataSource(
     val title: String,
     val image: String,
     val price: String,
+    val brand: String
 )

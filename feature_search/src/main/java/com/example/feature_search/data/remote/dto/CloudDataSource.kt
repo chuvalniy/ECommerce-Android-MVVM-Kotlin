@@ -7,4 +7,5 @@ data class CloudDataSource(
     val price: Int = 0,
     val subcategories: List<String> = emptyList(),
     val category: Int = 0,
+    val brand: String = ""
 )

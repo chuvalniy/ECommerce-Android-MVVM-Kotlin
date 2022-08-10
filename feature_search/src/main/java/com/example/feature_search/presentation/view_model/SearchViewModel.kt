@@ -22,8 +22,20 @@ class SearchViewModel(
         searchData()
     }
 
-    private fun searchData(query: String = _uiState.value.query) = viewModelScope.launch {
-        searchDataUseCase(query).onEach { result ->
+    private fun searchData(
+        query: String = _uiState.value.query,
+        brand: String = _uiState.value.selectedBrand,
+        priceLeft: Int = _uiState.value.priceLeft,
+        priceRight: Int = _uiState.value.priceRight,
+        categoryType: CategoryType = _uiState.value.selectedCategory
+    ) = viewModelScope.launch {
+        searchDataUseCase(
+            query,
+            brand,
+            priceLeft,
+            priceRight,
+            categoryType.categoryName
+        ).onEach { result ->
             when (result) {
                 is Resource.Success -> {
                     _uiState.value = _uiState.value.copy(
@@ -52,6 +64,19 @@ class SearchViewModel(
         viewModelScope.launch { searchData() }
     }
 
+    fun brandSelected(brand: String) {
+        _uiState.value = _uiState.value.copy(selectedBrand = brand)
+
+        viewModelScope.launch { searchData() }
+    }
+
+    fun priceSelected(priceLeft: Float, priceRight: Float) {
+        _uiState.value = _uiState.value.copy(
+            priceLeft = priceLeft.toInt(),
+            priceRight = priceRight.toInt()
+        )
+    }
+
     fun productClicked(id: String) = viewModelScope.launch {
         _uiChannel.send(UiEffect.NavigateToDetail(id))
     }
@@ -62,6 +87,27 @@ class SearchViewModel(
 
     fun filterButtonClicked() = viewModelScope.launch {
         _uiChannel.send(UiEffect.NavigateToFilters)
+    }
+
+    fun applyFiltersButtonClicked() = viewModelScope.launch {
+        searchData()
+        _uiChannel.send(UiEffect.NavigateBack)
+    }
+
+    fun categorySelected(category: CategoryType) {
+        _uiState.value = _uiState.value.copy(selectedCategory = category)
+    }
+
+    fun resetFiltersButtonClicked() {
+        _uiState.value = _uiState.value.copy(
+            priceLeft = 0,
+            priceRight = 6000
+        )
+
+        viewModelScope.launch {
+            _uiChannel.send(UiEffect.NavigateBack)
+            searchData()
+        }
     }
 
     sealed class UiEffect {

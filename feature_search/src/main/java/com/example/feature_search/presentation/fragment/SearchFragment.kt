@@ -43,7 +43,8 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
             onQueryTextListener = { query -> viewModel.queryTextChanged(query) },
             onBackButtonClick = { viewModel.backButtonClicked() },
             onProductClick = { id -> viewModel.productClicked(id) },
-            onFilterButtonClick = { viewModel.filterButtonClicked() }
+            onFilterButtonClick = { viewModel.filterButtonClicked() },
+            onBrandClick = { viewModel.brandSelected(it) }
         ).also {
             binding.epoxyRecyclerView.setController(it)
         }

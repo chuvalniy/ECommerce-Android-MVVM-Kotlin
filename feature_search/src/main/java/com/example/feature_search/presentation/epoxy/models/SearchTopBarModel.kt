@@ -6,13 +6,10 @@ import com.example.feature_search.databinding.SearchTopBarBinding
 
 data class SearchTopBarModel(
     private val onBackButtonClick: () -> Unit,
-    private val onFilterButtonClick: () -> Unit
 ) : ViewBindingKotlinModel<SearchTopBarBinding>(R.layout.search_top_bar) {
 
     override fun SearchTopBarBinding.bind() {
         btnGoBack.setOnClickListener { onBackButtonClick() }
-        btnFilter.setOnClickListener { onFilterButtonClick() }
-
     }
 }
 

@@ -7,12 +7,12 @@
     tools:context=".presentation.fragment.FilterBottomDialogFragment">
 
     <ImageButton
-        android:id="@+id/btnGoBack"
+        android:id="@+id/btnResetFilters"
         android:layout_width="@dimen/rounded_button_size"
         android:layout_height="@dimen/rounded_button_size"
         android:layout_marginStart="@dimen/bottom_dialog_horizontal_margin"
         android:layout_marginTop="@dimen/layout_margin"
-        android:background="@drawable/background_rounded_ripple_dark_blue"
+        android:background="@drawable/shape_dark_blue_rounded"
         android:contentDescription="@string/navigate_back"
         android:src="@drawable/ic_close"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,20 +25,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/filter_options"
-        app:layout_constraintBottom_toBottomOf="@+id/btnGoBack"
+        app:layout_constraintBottom_toBottomOf="@+id/btnResetFilters"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnGoBack" />
+        app:layout_constraintTop_toTopOf="@+id/btnResetFilters" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnDone"
+        android:layout_width="80dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="36dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/light_orange"
+        app:layout_constraintBottom_toBottomOf="@+id/btnResetFilters"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnResetFilters">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mavenpro_medium"
+            android:text="Done"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/tvCategory"
         style="@style/Subtitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:text="Category"
-        app:layout_constraintStart_toStartOf="@+id/btnGoBack"
-        app:layout_constraintTop_toBottomOf="@+id/btnGoBack" />
+        app:layout_constraintStart_toStartOf="@+id/btnResetFilters"
+        app:layout_constraintTop_toBottomOf="@+id/btnResetFilters" />
 
     <FrameLayout
         android:id="@+id/flCategory"
@@ -47,7 +69,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="36dp"
-        android:background="@drawable/background_rounded_box_gray"
+        android:background="@drawable/shape_corners_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvCategory"
         app:layout_constraintTop_toBottomOf="@+id/tvCategory">
@@ -76,7 +98,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="36dp"
-        android:background="@drawable/background_rounded_box_gray"
+        android:background="@drawable/shape_corners_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBrand">
@@ -98,30 +120,24 @@
         app:layout_constraintStart_toStartOf="@+id/tvBrand"
         app:layout_constraintTop_toBottomOf="@+id/flBrand" />
 
-    <FrameLayout
-        android:id="@+id/flPrice"
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/sliderPrice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="36dp"
-        android:background="@drawable/background_rounded_box_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPrice">
-
-        <Spinner
-            android:id="@+id/spinnerPrice"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:layout_marginStart="16dp" />
-    </FrameLayout>
+        android:stepSize="1"
+        android:valueFrom="0"
+        android:valueTo="6000"
+        app:layout_constraintEnd_toEndOf="@+id/flBrand"
+        app:layout_constraintStart_toStartOf="@+id/flBrand"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flPrice" />
+        app:layout_constraintTop_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,8 +9,19 @@ import com.example.feature_search.data.local.entity.CacheDataSource
 @Dao
 interface SearchDao {
 
-    @Query("SELECT * FROM ${SearchDatabase.DATABASE_NAME} WHERE title LIKE '%' || :query || '%'")
-    suspend fun fetchCache(query: String): List<CacheDataSource>
+    @Query( " SELECT * FROM ${SearchDatabase.DATABASE_NAME}" +
+            " WHERE title LIKE '%' || :query || '%'" +
+            " AND brand LIKE '%' || :brand || '%'" +
+            " AND price >= :leftPrice" +
+            " AND price <= :rightPrice" +
+            " AND subcategories LIKE '%' || :category || '%'")
+    suspend fun fetchCache(
+        query: String,
+        brand: String,
+        leftPrice: Int,
+        rightPrice: Int,
+        category: String
+    ): List<CacheDataSource>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCache(cache: List<CacheDataSource>)

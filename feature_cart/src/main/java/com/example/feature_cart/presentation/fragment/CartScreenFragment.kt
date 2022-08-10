@@ -58,7 +58,7 @@ class CartScreenFragment : BaseFragment<FragmentCartScreenBinding>() {
                     is CartScreenViewModel.UiEffect.NavigateToMainScreen -> {
                         with(findNavController()) {
                             popBackStack()
-                            navigate(Uri.parse("myApp://featureMain"))
+                            navigate(Uri.parse("myApp://featureHome"))
                         }
                     }
                     is CartScreenViewModel.UiEffect.ShowSnackbar -> {

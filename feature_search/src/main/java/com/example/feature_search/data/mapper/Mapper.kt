@@ -11,7 +11,8 @@ fun CloudDataSource.toCacheDataSource(): CacheDataSource {
         image = images.first(),
         price = price,
         subcategories = subcategories.joinToString(","),
-        category = category
+        category = category,
+        brand = brand,
     )
 }
 
@@ -20,6 +21,7 @@ fun CacheDataSource.toDomainDataSource(): DomainDataSource {
         id = id,
         title = title,
         image = image,
-        price = price.toString()
+        price = price.toString(),
+        brand = brand
     )
 }

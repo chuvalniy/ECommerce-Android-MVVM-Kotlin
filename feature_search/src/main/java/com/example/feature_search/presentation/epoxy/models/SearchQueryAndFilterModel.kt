@@ -7,9 +7,12 @@ import com.example.feature_search.databinding.SearchQueryAndFilterBinding
 
 data class SearchQueryAndFilterModel(
     private val onQueryTextListener: (String) -> Unit,
+    private val onFilterButtonClick: () -> Unit
 ) : ViewBindingKotlinModel<SearchQueryAndFilterBinding>(R.layout.search_query_and_filter) {
 
     override fun SearchQueryAndFilterBinding.bind() {
         searchView.onQueryTextChanged(onQueryTextListener)
+        btnFilter.setOnClickListener { onFilterButtonClick() }
+
     }
 }
