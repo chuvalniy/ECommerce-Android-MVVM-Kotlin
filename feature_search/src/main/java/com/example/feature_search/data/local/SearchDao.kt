@@ -5,22 +5,22 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.feature_search.data.local.entity.CacheDataSource
+import com.example.feature_search.presentation.view_model.PriceFilter
 
 @Dao
 interface SearchDao {
 
-    @Query( " SELECT * FROM ${SearchDatabase.DATABASE_NAME}" +
+
+    @Query("SELECT * FROM ${SearchDatabase.DATABASE_NAME}" +
             " WHERE title LIKE '%' || :query || '%'" +
             " AND brand LIKE '%' || :brand || '%'" +
-            " AND price >= :leftPrice" +
-            " AND price <= :rightPrice" +
-            " AND subcategories LIKE '%' || :category || '%'")
+            " AND price BETWEEN :priceLeftBound AND :priceRightBound"
+    )
     suspend fun fetchCache(
         query: String,
         brand: String,
-        leftPrice: Int,
-        rightPrice: Int,
-        category: String
+        priceLeftBound: Int,
+        priceRightBound: Int
     ): List<CacheDataSource>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

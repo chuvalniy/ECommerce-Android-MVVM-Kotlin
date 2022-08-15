@@ -32,5 +32,7 @@
     <dimen name="section_divider">32dp</dimen>
     <dimen name="bottom_dialog_horizontal_margin">36dp</dimen>
     <dimen name="chip_width">125dp</dimen>
+    <dimen name="rb_text_start_padding">14dp</dimen>
+    <dimen name="rb_margin_bottom">24dp</dimen>
 
 </resources>

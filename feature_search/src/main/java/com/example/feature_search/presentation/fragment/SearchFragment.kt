@@ -8,16 +8,18 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.RequestManager
+import com.example.core.extension.onQueryTextChanged
+import com.example.core.extension.onTabSelected
 import com.example.core.ui.BaseFragment
 import com.example.feature_search.R
 import com.example.feature_search.databinding.FragmentSearchBinding
+import com.example.feature_search.domain.model.BrandList
 import com.example.feature_search.presentation.epoxy.SearchEpoxyController
 import com.example.feature_search.presentation.view_model.SearchState
 import com.example.feature_search.presentation.view_model.SearchViewModel
 import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class SearchFragment : BaseFragment<FragmentSearchBinding>() {
@@ -31,20 +33,38 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupTabLayout()
         setupAdapter()
 
         observeUiState()
         observeUiEffect()
+
+        processUiEvent()
+    }
+
+    private fun processUiEvent() {
+        binding.btnFilter.setOnClickListener { viewModel.filterButtonClicked() }
+
+        binding.searchView.onQueryTextChanged { searchQuery ->
+            viewModel.queryTextChanged(searchQuery)
+        }
+
+        binding.tabLayoutBrand.onTabSelected {
+            viewModel.tabSelected(BrandList.brandListData[it])
+        }
+    }
+
+    private fun setupTabLayout() {
+        BrandList.brandListUi.onEach {
+            binding.tabLayoutBrand.addTab(binding.tabLayoutBrand.newTab().setText(it))
+        }
     }
 
     private fun setupAdapter() {
         epoxyController = SearchEpoxyController(
             glide,
-            onQueryTextListener = { query -> viewModel.queryTextChanged(query) },
-            onBackButtonClick = { viewModel.backButtonClicked() },
-            onProductClick = { id -> viewModel.productClicked(id) },
-            onFilterButtonClick = { viewModel.filterButtonClicked() },
-            onBrandClick = { viewModel.brandSelected(it) }
+            onProductClick = { id -> viewModel.itemClicked(id) },
+
         ).also {
             binding.epoxyRecyclerView.setController(it)
         }
@@ -63,7 +83,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
                     is SearchViewModel.UiEffect.ShowSnackbar -> {
                         Snackbar.make(requireView(), effect.message, Snackbar.LENGTH_SHORT).show()
                     }
-                    is SearchViewModel.UiEffect.NavigateToFilters -> {
+                    is SearchViewModel.UiEffect.NavigateToFilter -> {
                         findNavController().navigate(R.id.action_search_to_filterBottomDialogFragment)
                     }
                 }

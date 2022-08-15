@@ -56,14 +56,6 @@
         <item name="cornerSizeBottomLeft">0dp</item>
     </style>
 
-    <style name="AppSearchView" parent="Widget.AppCompat.SearchView">
-        <item name="android:fontFamily">@font/mavenpro_medium</item>
-        <item name="android:textColorHint">@color/gray_helper</item>
-        <item name="android:editTextColor">@color/gray_helper</item>
-        <item name="android:textSize">20sp</item>
-        <item name="colorControlActivated">@color/gray_helper</item>
-    </style>
-
     <style name="BestSellerDiscountPrice">
         <item name="android:fontFamily">@font/mavenpro_bold</item>
         <item name="android:textColor">@color/dark_blue</item>
@@ -81,10 +73,18 @@
         <item name="android:textColor">@color/dark_blue</item>
         <item name="android:textSize">11sp</item>
     </style>
-
-    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/dark_blue</item>
-        <item name="android:fontFamily">@font/mavenpro_regular</item>
+    
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:fontFamily">@font/mavenpro_medium</item>
+        <item name="android:textColorHint">@color/gray_helper</item>
+        <item name="android:editTextColor">@color/dark_blue</item>
+        <item name="android:textSize">15sp</item>
+        <item name="colorControlActivated">@color/light_orange</item>
+    </style>
+    
+    <style name="TabText" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/mavenpro_medium</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/gray_helper</item>
     </style>
 </resources>

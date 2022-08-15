@@ -14,15 +14,12 @@
         <item name="android:windowBackground">@color/light_gray</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
         <!-- Customize your theme here. -->
-        <item name="chipStyle">@style/CustomChipStyle</item>
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_screen</item>
         <item name="android:statusBarColor">@color/dark_blue</item>
     </style>
-
-
 
 
 </resources>

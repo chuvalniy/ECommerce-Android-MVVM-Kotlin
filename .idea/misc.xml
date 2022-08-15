@@ -298,6 +298,9 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/background_rounded_box_white.xml" value="0.195" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/background_rounded_ripple_dark_blue.xml" value="0.148" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/background_rounded_ripple_orange.xml" value="0.1535" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/bg_rounded.xml" value="0.1245" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/bg_rounded_gray.xml" value="0.1245" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/bg_search_view.xml" value="0.1245" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/chip_font_family.xml" value="0.1535" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/ic_account.xml" value="0.1535" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/ic_arrow_back.xml" value="0.148" />
@@ -305,16 +308,22 @@
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/ic_close.xml" value="0.1275" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/ic_favorite.xml" value="0.148" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/ic_favorite_border.xml" value="0.148" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/ic_filter.xml" value="0.1245" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/ic_search.xml" value="0.148" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/ic_search2.xml" value="0.195" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/ic_sort.xml" value="0.148" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/ic_test.xml" value="0.1635" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/left_pointing_magnifying_glass_1f50d.xml" value="0.1245" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/rounded_white_background.xml" value="0.148" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/selector_toggle_button_custom.xml" value="0.148" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/shape_corners_gray.xml" value="0.1245" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/shape_dark_blue_rounded.xml" value="0.1245" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/shape_rounded_orange.xml" value="0.1245" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/drawable/sv_background.xml" value="0.1245" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/layout/dropdown_item.xml" value="0.4" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/layout/filter_fragment.xml" value="0.4" />
-        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/layout/fragment_filter_bottom_dialog.xml" value="0.264" />
-        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/layout/fragment_search.xml" value="0.264" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/layout/fragment_filter_bottom_dialog.xml" value="0.2" />
+        <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/layout/fragment_search.xml" value="0.2" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/layout/search_category_chip.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/layout/search_header.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/valen/AndroidStudioProjects/ECommercialApplication/feature_search/src/main/res/layout/search_item.xml" value="0.264" />

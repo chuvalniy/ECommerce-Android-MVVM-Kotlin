@@ -8,6 +8,7 @@ import com.example.feature_search.data.mapper.toDomainDataSource
 import com.example.feature_search.data.remote.SearchFirestore
 import com.example.feature_search.domain.model.DomainDataSource
 import com.example.feature_search.domain.repository.SearchRepository
+import com.example.feature_search.presentation.view_model.PriceFilter
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -21,18 +22,17 @@ class SearchRepositoryImpl(
     override fun searchData(
         query: String,
         brand: String,
-        leftPrice: Int,
-        rightPrice: Int,
-        category: String,
+        price: PriceFilter
     ): Flow<Resource<List<DomainDataSource>>> = flow {
         emit(Resource.Loading(isLoading = true))
 
-        val cache = dao.fetchCache(query, brand, leftPrice, rightPrice, category)
+        val cache = dao.fetchCache(query, brand, price.priceLeft, price.priceRight)
+        emit(Resource.Success(cache.map { it.toDomainDataSource() }))
 
-        if (cache.isNotEmpty()) {
-            emit(Resource.Success(cache.map { it.toDomainDataSource() }))
-            emit(Resource.Loading(isLoading = false))
-        }
+
+//        if (cache.isNotEmpty()) {
+//            emit(Resource.Loading(isLoading = false))
+//        }
 
         val response = try {
             api.fetchData()
@@ -49,7 +49,7 @@ class SearchRepositoryImpl(
 
             emit(
                 Resource.Success(
-                    dao.fetchCache(query, brand, leftPrice, rightPrice, category)
+                    dao.fetchCache(query, brand, price.priceLeft, price.priceRight)
                         .map { it.toDomainDataSource() })
             )
             emit(Resource.Loading(isLoading = false))

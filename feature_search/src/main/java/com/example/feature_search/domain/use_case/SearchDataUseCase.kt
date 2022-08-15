@@ -3,6 +3,7 @@ package com.example.feature_search.domain.use_case
 import com.example.core.utils.Resource
 import com.example.feature_search.domain.model.DomainDataSource
 import com.example.feature_search.domain.repository.SearchRepository
+import com.example.feature_search.presentation.view_model.PriceFilter
 import kotlinx.coroutines.flow.Flow
 
 class SearchDataUseCase(
@@ -12,18 +13,9 @@ class SearchDataUseCase(
     operator fun invoke(
         query: String,
         brand: String,
-        leftPrice: Int,
-        rightPrice: Int,
-        category: String
+        price: PriceFilter
     ): Flow<Resource<List<DomainDataSource>>> {
-        if (brand == "All products") return repository.searchData(
-            query,
-            "",
-            leftPrice,
-            rightPrice,
-            category
-        )
 
-        return repository.searchData(query, brand, leftPrice, rightPrice, category)
+        return repository.searchData(query, brand, price)
     }
 }

@@ -23,28 +23,18 @@ class SearchViewModel(
     }
 
     private fun searchData(
-        query: String = _uiState.value.query,
-        brand: String = _uiState.value.selectedBrand,
-        priceLeft: Int = _uiState.value.priceLeft,
-        priceRight: Int = _uiState.value.priceRight,
-        categoryType: CategoryType = _uiState.value.selectedCategory
+        query: String = _uiState.value.searchQuery,
+        brand: String = _uiState.value.brand,
+        price: PriceFilter = _uiState.value.priceFilter
     ) = viewModelScope.launch {
-        searchDataUseCase(
-            query,
-            brand,
-            priceLeft,
-            priceRight,
-            categoryType.categoryName
-        ).onEach { result ->
+        searchDataUseCase(query, brand, price).onEach { result ->
             when (result) {
                 is Resource.Success -> {
                     _uiState.value = _uiState.value.copy(
                         data = result.data ?: emptyList(),
-                        isLoading = false
                     )
                 }
                 is Resource.Error -> {
-                    _uiState.value = _uiState.value.copy(isLoading = false)
                     showSnackbar(message = result.error ?: "")
                 }
                 is Resource.Loading -> {
@@ -59,61 +49,36 @@ class SearchViewModel(
     }
 
     fun queryTextChanged(query: String) {
-        _uiState.value = _uiState.value.copy(query = query)
+        _uiState.value = _uiState.value.copy(searchQuery = query)
 
-        viewModelScope.launch { searchData() }
+        searchData()
     }
 
-    fun brandSelected(brand: String) {
-        _uiState.value = _uiState.value.copy(selectedBrand = brand)
+    fun tabSelected(brand: String) {
+        _uiState.value = _uiState.value.copy(brand = brand)
 
-        viewModelScope.launch { searchData() }
+        searchData()
     }
 
-    fun priceSelected(priceLeft: Float, priceRight: Float) {
-        _uiState.value = _uiState.value.copy(
-            priceLeft = priceLeft.toInt(),
-            priceRight = priceRight.toInt()
-        )
+    fun priceSelected(priceFilter: PriceFilter) {
+        _uiState.value = _uiState.value.copy(priceFilter = priceFilter)
+
+        searchData()
     }
 
-    fun productClicked(id: String) = viewModelScope.launch {
+
+    fun itemClicked(id: String) = viewModelScope.launch {
         _uiChannel.send(UiEffect.NavigateToDetail(id))
     }
 
-    fun backButtonClicked() = viewModelScope.launch {
-        _uiChannel.send(UiEffect.NavigateBack)
-    }
-
     fun filterButtonClicked() = viewModelScope.launch {
-        _uiChannel.send(UiEffect.NavigateToFilters)
-    }
-
-    fun applyFiltersButtonClicked() = viewModelScope.launch {
-        searchData()
-        _uiChannel.send(UiEffect.NavigateBack)
-    }
-
-    fun categorySelected(category: CategoryType) {
-        _uiState.value = _uiState.value.copy(selectedCategory = category)
-    }
-
-    fun resetFiltersButtonClicked() {
-        _uiState.value = _uiState.value.copy(
-            priceLeft = 0,
-            priceRight = 6000
-        )
-
-        viewModelScope.launch {
-            _uiChannel.send(UiEffect.NavigateBack)
-            searchData()
-        }
+        _uiChannel.send(UiEffect.NavigateToFilter)
     }
 
     sealed class UiEffect {
         data class ShowSnackbar(val message: String) : UiEffect()
         data class NavigateToDetail(val id: String) : UiEffect()
-        object NavigateToFilters : UiEffect()
+        object NavigateToFilter : UiEffect()
         object NavigateBack : UiEffect()
     }
 }

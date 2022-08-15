@@ -19,7 +19,9 @@ val searchDataModule = module {
             androidContext(),
             SearchDatabase::class.java,
             SearchDatabase.DATABASE_NAME
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     single<SearchRepository> {
