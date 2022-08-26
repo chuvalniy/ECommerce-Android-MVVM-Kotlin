@@ -17,8 +17,7 @@
   - Airbnb Epoxy (Recycler view adapter replacement)
   - Facebook Shimmer (Displays loading state)
 
-# todo
-login, user profile, search screens
-some user interactions (adding to cart, processing payment (not actually), searching and etc)
+# PS
+creation of this app is suspended. i don't have enough designer skills to complete this app in a way that i want.
 
-the goal is to create an ecommerce app that somehow can be interpreted as real production ecommerce app but with reduced functionality
+but I started new ecommerce app with design already done for me -> [repository](https://github.com/chuvalik/TECH-ECOMMERCE)
